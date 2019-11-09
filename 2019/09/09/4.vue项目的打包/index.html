@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第三次测试">
-<meta property="og:url" content="http://yoursite.com/2019/09/10/第三次测试/index.html">
+<meta property="og:title" content="4.项目的打包所要注意的问题">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/4.vue项目的打包/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-10T06:40:13.944Z">
+<meta property="og:updated_time" content="2019-11-09T03:54:57.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第三次测试">
+<meta name="twitter:title" content="4.项目的打包所要注意的问题">
+<meta name="twitter:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/10/第三次测试/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/09/4.vue项目的打包/">
 
 
 
 
 
-  <title>第三次测试 | Hexo</title>
+  <title>4.项目的打包所要注意的问题 | Hexo</title>
   
 
 
@@ -229,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/10/第三次测试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/4.vue项目的打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -246,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第三次测试</h1>
+          <h1 class="post-title" itemprop="name headline">4.项目的打包所要注意的问题</h1>
         
 
         <div class="post-meta">
@@ -258,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-10T14:40:13+08:00">
-                2019-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-09T23:51:07+08:00">
+                2019-09-09
               </time>
             
 
@@ -296,7 +299,10 @@
       
 
       
-        
+        <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
+
       
     </div>
     
@@ -320,18 +326,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/10/git遇到remote orgin问题/" rel="next" title="git中遇到remote origin already exists">
-                <i class="fa fa-chevron-left"></i> git中遇到remote origin already exists
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/10/第四次测试/" rel="prev" title="第四次测试">
-                第四次测试 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/10/1.vue项目中部分问题/" rel="prev" title="vue中遇到的一些问题">
+                vue中遇到的一些问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -384,8 +386,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -400,7 +411,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -427,6 +438,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包运行"><span class="nav-number">1.</span> <span class="nav-text">1. 打包运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-打包后在dist中遇到跨域的问题"><span class="nav-number">2.</span> <span class="nav-text">2. 打包后在dist中遇到跨域的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
