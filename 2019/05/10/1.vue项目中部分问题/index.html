@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.定义全局过滤器1234567891011import moment from &amp;apos;moment&amp;apos;Vue.filter(&amp;apos;dateFormat&amp;apos;, function (dataStr, pattern = &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;) &amp;#123;  return moment(dataStr).format(patter">
+<meta name="description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一.vue中遇到的一些问题">
 <meta property="og:url" content="http://yoursite.com/2019/05/10/1.vue项目中部分问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.定义全局过滤器1234567891011import moment from &amp;apos;moment&amp;apos;Vue.filter(&amp;apos;dateFormat&amp;apos;, function (dataStr, pattern = &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;) &amp;#123;  return moment(dataStr).format(patter">
+<meta property="og:description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-10T11:13:28.128Z">
+<meta property="og:updated_time" content="2019-11-14T14:13:10.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一.vue中遇到的一些问题">
-<meta name="twitter:description" content="1.定义全局过滤器1234567891011import moment from &amp;apos;moment&amp;apos;Vue.filter(&amp;apos;dateFormat&amp;apos;, function (dataStr, pattern = &amp;quot;YYYY-MM-DD HH:mm:ss&amp;quot;) &amp;#123;  return moment(dataStr).format(patter">
+<meta name="twitter:description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
 
 
 
@@ -299,9 +299,9 @@
       
 
       
-        <h3 id="1-定义全局过滤器"><a href="#1-定义全局过滤器" class="headerlink" title="1.定义全局过滤器"></a>1.定义全局过滤器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import moment from &apos;moment&apos;</span><br><span class="line"></span><br><span class="line">Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &#123;</span><br><span class="line"></span><br><span class="line">  return moment(dataStr).format(pattern)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;span&gt;发表时间：&#123;&#123; item.add_time | dateFormat &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-定义全局过滤器"><a href="#1-定义全局过滤器" class="headerlink" title="1.定义全局过滤器"></a>1.定义全局过滤器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> moment <span class="keyword">from</span> <span class="string">'moment'</span></span><br><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'dateFormat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">dataStr, pattern = <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> moment(dataStr).format(pattern)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;span&gt;发表时间：&#123;&#123; item.add_time | dateFormat &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-使axios请求"><a href="#2-使axios请求" class="headerlink" title="2.使axios请求"></a>2.使axios请求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line"></span><br><span class="line">      axios.get(&quot;/api/getnewslist&quot;)</span><br><span class="line"></span><br><span class="line">       .then((&#123;data&#125;)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">           if(data.status == 0)&#123;</span><br><span class="line"></span><br><span class="line">              this.newslist = data.message;</span><br><span class="line"></span><br><span class="line">               console.log(this.newslist)</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-使axios请求"><a href="#2-使axios请求" class="headerlink" title="2.使axios请求"></a>2.使axios请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line"></span><br><span class="line">      axios.get(<span class="string">"/api/getnewslist"</span>)</span><br><span class="line"></span><br><span class="line">       .then(<span class="function">(<span class="params">&#123;data&#125;</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span>(data.status == <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">this</span>.newslist = data.message;</span><br><span class="line"></span><br><span class="line">               <span class="built_in">console</span>.log(<span class="keyword">this</span>.newslist)</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>在body中要使用 v-for检索的时候 , 要注意使用 :key </p>
 <li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
@@ -327,9 +327,9 @@ async created() {
 <router-link :to="'/home/newsinfo/' + item.id">
 
 <h4 id="b-路由的配置"><a href="#b-路由的配置" class="headerlink" title="b.  路由的配置"></a>b.  路由的配置</h4><p><code>{</code></p>
-<p>​    <code>path: &quot;/home/newsinfo/:id&quot;,</code></p>
-<p>​    <code>component: NewsInfo</code></p>
-<p>  <code>},</code></p>
+<pre><code>`path: &quot;/home/newsinfo/:id&quot;,`
+
+`component: NewsInfo`</code></pre><p>  <code>},</code></p>
 <h4 id="c-获取id"><a href="#c-获取id" class="headerlink" title="c.  获取id"></a>c.  获取id</h4><p><code>this.$route.params.id</code></p>
 <h3 id="6-route和-router对象的区别"><a href="#6-route和-router对象的区别" class="headerlink" title="6.$route和$router对象的区别"></a>6.$route和$router对象的区别</h3><h4 id="1-route-表示-当前路由信息对象"><a href="#1-route-表示-当前路由信息对象" class="headerlink" title="(1) $route 表示(当前路由信息对象)"></a>(1) $route 表示(当前路由信息对象)</h4><p>表示当前激活的路由的状态信息，包含了当前 URL 解析得到的信息，还有 URL 匹配到的 route records（路由记录）。<br>路由信息对象：即$router会被注入每个组件中，可以利用它进行一些信息的获取。</p>
 <h4 id="2-router对象"><a href="#2-router对象" class="headerlink" title="(2)$router对象"></a>(2)$router对象</h4><ul>
@@ -468,7 +468,7 @@ async created() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
