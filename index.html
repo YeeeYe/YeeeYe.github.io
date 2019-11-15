@@ -229,6 +229,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/6.vue项目实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/13/6.vue项目实战/" itemprop="url">六.vue项目实战</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-13T08:50:01+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-Vue项目"><a href="#1-Vue项目" class="headerlink" title="1.Vue项目"></a>1.Vue项目</h2><h3 id="1-1-初始阶段进行文档的编写"><a href="#1-1-初始阶段进行文档的编写" class="headerlink" title="1.1 初始阶段进行文档的编写"></a>1.1 初始阶段进行文档的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">发布博客。以下的步骤： </span><br><span class="line">在本地博客文件夹根目录(git bash)输入：</span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"6.vue项目实战"</span> </span><br><span class="line">hexo g <span class="comment">//生成网页 </span></span><br><span class="line">hexo d <span class="comment">//部署到远端(github)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-vue-cli使用"><a href="#1-2-vue-cli使用" class="headerlink" title="1.2 vue-cli使用"></a>1.2 vue-cli使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>npm install -g @vue/cli@<span class="number">3.9</span><span class="number">.1</span></span><br><span class="line"><span class="number">2.</span>将配置环境变量  C:\dev\nodejs</span><br><span class="line"><span class="number">3.</span>vue create project-name</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看最终生效的 webpack 配置信息</span></span><br><span class="line">vue inspect &gt; output.js</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置文件参考文档</span></span><br><span class="line">https:<span class="comment">//cli.vuejs.org/zh/config/#devserver-proxy</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行App</span></span><br><span class="line">npm run serve</span><br><span class="line"></span><br><span class="line"><span class="comment">//编译App</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-vue-cli-的创建使用选项"><a href="#1-3-vue-cli-的创建使用选项" class="headerlink" title="1.3 vue-cli 的创建使用选项"></a>1.3 vue-cli 的创建使用选项</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">? Please pick a preset: Manually select features</span><br><span class="line">? Check the features needed <span class="keyword">for</span> your project: Babel, Router, Vuex, CSS Pre-processors, Linter        </span><br><span class="line">? Use history mode <span class="keyword">for</span> router? (Requires proper server setup <span class="keyword">for</span> index fallback <span class="keyword">in</span> production) No</span><br><span class="line">? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by <span class="keyword">default</span>): Less</span><br><span class="line">? Pick a linter / formatter config: Basic</span><br><span class="line">? Pick additional lint features: Lint and fix on commit</span><br><span class="line">? Where <span class="keyword">do</span> you prefer placing config <span class="keyword">for</span> Babel, PostCSS, ESLint, etc.? In dedicated config files</span><br><span class="line">? Save <span class="keyword">this</span> <span class="keyword">as</span> a preset <span class="keyword">for</span> future projects? No</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-将项目托管到-github"><a href="#1-4-将项目托管到-github" class="headerlink" title="1.4 将项目托管到 github"></a>1.4 将项目托管到 github</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1.打开git brash，输入命令 ssh-keygen -t rsa -C "youremail@example.com"</span><br><span class="line">#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容</span><br><span class="line">#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容</span><br><span class="line">#4.码云后台创建新项目</span><br><span class="line">#5.配置本地全局的账号和密码</span><br><span class="line">  git config --global user.name <span class="string">"shenhaieyu"</span></span><br><span class="line">  git config --global user.email <span class="string">"mazg1987@163.com"</span></span><br><span class="line">#6.关联远程仓库</span><br><span class="line">  cd project</span><br><span class="line">  git remote add origin git@gitee.com:shenhaieyu/zg-vuecms.git</span><br><span class="line">  git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5-严格模式的忽略"><a href="#1-5-严格模式的忽略" class="headerlink" title="1.5 严格模式的忽略"></a>1.5 严格模式的忽略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mui.js?01c3:3440 Uncaught TypeError: &apos;caller&apos;, &apos;callee&apos;, and &apos;arguments&apos; properties may not be accessed on strict mode functions or the arguments objects for calls to them</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6-vue中this-router-push-传参"><a href="#1-6-vue中this-router-push-传参" class="headerlink" title="1.6 vue中this.$router.push() 传参"></a>1.6 vue中this.$router.push() 传参</h3><h4 id="1-params-传参"><a href="#1-params-传参" class="headerlink" title="(1) .  params 传参"></a>(1) .  params 传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注意：patams传参 ，路径不能使用path 只能使用name,不然获取不到传的数据</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>: <span class="string">'dispatch'</span>, <span class="attr">params</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.params.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.params.paicheNo</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-query传参"><a href="#2-query传参" class="headerlink" title="(2) .  query传参"></a>(2) .  query传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">path</span>: <span class="string">'/transport/dispatch'</span>, <span class="attr">query</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.query.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.query.paicheNo</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-vuex的基本使用"><a href="#1-7-vuex的基本使用" class="headerlink" title="1.7 vuex的基本使用"></a>1.7 vuex的基本使用</h3><h4 id="1-基本的使用情况"><a href="#1-基本的使用情况" class="headerlink" title="(1). 基本的使用情况"></a>(1). 基本的使用情况</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  <span class="comment">//state用于存储数据</span></span><br><span class="line">  state: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//里面放的是方法,方法主要用于改变state里面的数据</span></span><br><span class="line">  mutations: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//方法,可以修改mutation</span></span><br><span class="line">  <span class="comment">//actions(方法 可以dispatch mutations)  actions中可以有异步操作    </span></span><br><span class="line">  actions: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//对外暴露数据,不修改vuex中的数据</span></span><br><span class="line">  getters: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.修改store中的数据  （参数1：是mutations的名字  参数2：传递给mutations的数据）</span></span><br><span class="line"> <span class="keyword">this</span>.$store.commit(<span class="string">"subtract"</span>,&#123;<span class="attr">num</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-vuex的缓存问题"><a href="#2-vuex的缓存问题" class="headerlink" title="(2). vuex的缓存问题"></a>(2). vuex的缓存问题</h4><p>vuex中数据在刷新网页的时候会丢失。解决思路：我们可以将 vuex 中的数据写到 localstorage 中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm install --save vuex-persistedstate </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//store.js </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">'vuex-persistedstate'</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    selected_card: &#123;&#125;, <span class="comment">//用户选择的银行卡</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    update_selected_card(state, payload) &#123;</span><br><span class="line">      state.selected_card = payload</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [createPersistedState()],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-8-qs-stringify-、qs-parse-的使用"><a href="#1-8-qs-stringify-、qs-parse-的使用" class="headerlink" title="1.8 qs.stringify()、qs.parse()的使用"></a>1.8 qs.stringify()、qs.parse()的使用</h3><p>qs可通过<strong>npm install qs</strong>命令进行安装，是一个npm仓库所管理的包。</p>
+<p>而qs.stringify()将对象 序列化成URL的形式，以&amp;进行拼接。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>:<span class="string">'hehe'</span>,<span class="attr">age</span>:<span class="number">10</span>&#125;;</span><br><span class="line"> qs.stringify(a)</span><br><span class="line"><span class="comment">// 'name=hehe&amp;age=10'</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(a)</span><br><span class="line"><span class="comment">// '&#123;"name":"hehe","age":10&#125;'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-9-发送的请求的不同的方法"><a href="#1-9-发送的请求的不同的方法" class="headerlink" title="1.9 发送的请求的不同的方法"></a>1.9 发送的请求的不同的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> QS <span class="keyword">from</span> <span class="string">'qs'</span>;</span><br><span class="line"><span class="comment">//设置超时时间</span></span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span>;</span><br><span class="line"><span class="comment">// post请求头</span></span><br><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.baseURL = <span class="string">"http://songshu.xiaomy.net/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">myaxios</span>(<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (method == <span class="string">"GET"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> axios.get(url, &#123; <span class="attr">params</span>: params &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == <span class="string">"POST"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> params = QS.stringify(params);</span><br><span class="line">        <span class="keyword">return</span> axios.post(url, params);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> myaxios(<span class="string">"POST"</span>, postusername, <span class="keyword">this</span>.obj)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.userlist = data.data.message;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.userlist);</span><br><span class="line">       <span class="comment">// this.headimg = this.userlist.headimg_url;</span></span><br><span class="line">       <span class="keyword">this</span>.$store.commit(<span class="string">"imgurl"</span>,<span class="keyword">this</span>.headimg);</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.getters.getimgurl,<span class="string">"22222"</span>);</span><br><span class="line">       <span class="keyword">this</span>.headimg = <span class="keyword">this</span>.$store.getters.getimgurl;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/5.vue项目的打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -303,152 +449,6 @@
             <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/6.vue项目实战/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/11/6.vue项目实战/" itemprop="url">6.vue项目实战</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-11T08:50:01+08:00">
-                2019-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-Vue项目"><a href="#1-Vue项目" class="headerlink" title="1.Vue项目"></a>1.Vue项目</h2><h3 id="1-1-初始阶段进行文档的编写"><a href="#1-1-初始阶段进行文档的编写" class="headerlink" title="1.1 初始阶段进行文档的编写"></a>1.1 初始阶段进行文档的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">发布博客。以下的步骤： </span><br><span class="line">在本地博客文件夹根目录(git bash)输入：</span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"6.vue项目实战"</span> </span><br><span class="line">hexo g <span class="comment">//生成网页 </span></span><br><span class="line">hexo d <span class="comment">//部署到远端(github)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-vue-cli使用"><a href="#1-2-vue-cli使用" class="headerlink" title="1.2 vue-cli使用"></a>1.2 vue-cli使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>npm install -g @vue/cli@<span class="number">3.9</span><span class="number">.1</span></span><br><span class="line"><span class="number">2.</span>将配置环境变量  C:\dev\nodejs</span><br><span class="line"><span class="number">3.</span>vue create project-name</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看最终生效的 webpack 配置信息</span></span><br><span class="line">vue inspect &gt; output.js</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置文件参考文档</span></span><br><span class="line">https:<span class="comment">//cli.vuejs.org/zh/config/#devserver-proxy</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行App</span></span><br><span class="line">npm run serve</span><br><span class="line"></span><br><span class="line"><span class="comment">//编译App</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-vue-cli-的创建使用选项"><a href="#1-3-vue-cli-的创建使用选项" class="headerlink" title="1.3 vue-cli 的创建使用选项"></a>1.3 vue-cli 的创建使用选项</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">? Please pick a preset: Manually select features</span><br><span class="line">? Check the features needed <span class="keyword">for</span> your project: Babel, Router, Vuex, CSS Pre-processors, Linter        </span><br><span class="line">? Use history mode <span class="keyword">for</span> router? (Requires proper server setup <span class="keyword">for</span> index fallback <span class="keyword">in</span> production) No</span><br><span class="line">? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by <span class="keyword">default</span>): Less</span><br><span class="line">? Pick a linter / formatter config: Basic</span><br><span class="line">? Pick additional lint features: Lint and fix on commit</span><br><span class="line">? Where <span class="keyword">do</span> you prefer placing config <span class="keyword">for</span> Babel, PostCSS, ESLint, etc.? In dedicated config files</span><br><span class="line">? Save <span class="keyword">this</span> <span class="keyword">as</span> a preset <span class="keyword">for</span> future projects? No</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-将项目托管到-github"><a href="#1-4-将项目托管到-github" class="headerlink" title="1.4 将项目托管到 github"></a>1.4 将项目托管到 github</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1.打开git brash，输入命令 ssh-keygen -t rsa -C "youremail@example.com"</span><br><span class="line">#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容</span><br><span class="line">#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容</span><br><span class="line">#4.码云后台创建新项目</span><br><span class="line">#5.配置本地全局的账号和密码</span><br><span class="line">  git config --global user.name <span class="string">"shenhaieyu"</span></span><br><span class="line">  git config --global user.email <span class="string">"mazg1987@163.com"</span></span><br><span class="line">#6.关联远程仓库</span><br><span class="line">  cd project</span><br><span class="line">  git remote add origin git@gitee.com:shenhaieyu/zg-vuecms.git</span><br><span class="line">  git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-5-严格模式的忽略"><a href="#1-5-严格模式的忽略" class="headerlink" title="1.5 严格模式的忽略"></a>1.5 严格模式的忽略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mui.js?01c3:3440 Uncaught TypeError: &apos;caller&apos;, &apos;callee&apos;, and &apos;arguments&apos; properties may not be accessed on strict mode functions or the arguments objects for calls to them</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-6-vue中this-router-push-传参"><a href="#1-6-vue中this-router-push-传参" class="headerlink" title="1.6 vue中this.$router.push() 传参"></a>1.6 vue中this.$router.push() 传参</h3><h4 id="1-params-传参"><a href="#1-params-传参" class="headerlink" title="(1) .  params 传参"></a>(1) .  params 传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注意：patams传参 ，路径不能使用path 只能使用name,不然获取不到传的数据</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>: <span class="string">'dispatch'</span>, <span class="attr">params</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.params.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.params.paicheNo</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-query传参"><a href="#2-query传参" class="headerlink" title="(2) .  query传参"></a>(2) .  query传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">path</span>: <span class="string">'/transport/dispatch'</span>, <span class="attr">query</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.query.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.query.paicheNo</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-vuex的基本使用"><a href="#1-7-vuex的基本使用" class="headerlink" title="1.7 vuex的基本使用"></a>1.7 vuex的基本使用</h3><h4 id="1-基本的使用情况"><a href="#1-基本的使用情况" class="headerlink" title="(1). 基本的使用情况"></a>(1). 基本的使用情况</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  <span class="comment">//state用于存储数据</span></span><br><span class="line">  state: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//里面放的是方法,方法主要用于改变state里面的数据</span></span><br><span class="line">  mutations: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//方法,可以修改mutation</span></span><br><span class="line">  <span class="comment">//actions(方法 可以dispatch mutations)  actions中可以有异步操作    </span></span><br><span class="line">  actions: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//对外暴露数据,不修改vuex中的数据</span></span><br><span class="line">  getters: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.修改store中的数据  （参数1：是mutations的名字  参数2：传递给mutations的数据）</span></span><br><span class="line"> <span class="keyword">this</span>.$store.commit(<span class="string">"subtract"</span>,&#123;<span class="attr">num</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-vuex的缓存问题"><a href="#2-vuex的缓存问题" class="headerlink" title="(2). vuex的缓存问题"></a>(2). vuex的缓存问题</h4><p>vuex中数据在刷新网页的时候会丢失。解决思路：我们可以将 vuex 中的数据写到 localstorage 中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm install --save vuex-persistedstate </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//store.js </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">'vuex-persistedstate'</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    selected_card: &#123;&#125;, <span class="comment">//用户选择的银行卡</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    update_selected_card(state, payload) &#123;</span><br><span class="line">      state.selected_card = payload</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [createPersistedState()],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-qs-stringify-、qs-parse-的使用"><a href="#1-8-qs-stringify-、qs-parse-的使用" class="headerlink" title="1.8 qs.stringify()、qs.parse()的使用"></a>1.8 qs.stringify()、qs.parse()的使用</h3><p>qs可通过<strong>npm install qs</strong>命令进行安装，是一个npm仓库所管理的包。</p>
-<p>而qs.stringify()将对象 序列化成URL的形式，以&amp;进行拼接。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>:<span class="string">'hehe'</span>,<span class="attr">age</span>:<span class="number">10</span>&#125;;</span><br><span class="line"> qs.stringify(a)</span><br><span class="line"><span class="comment">// 'name=hehe&amp;age=10'</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(a)</span><br><span class="line"><span class="comment">// '&#123;"name":"hehe","age":10&#125;'</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-9-发送的请求的不同的方法"><a href="#1-9-发送的请求的不同的方法" class="headerlink" title="1.9 发送的请求的不同的方法"></a>1.9 发送的请求的不同的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> QS <span class="keyword">from</span> <span class="string">'qs'</span>;</span><br><span class="line"><span class="comment">//设置超时时间</span></span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span>;</span><br><span class="line"><span class="comment">// post请求头</span></span><br><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.baseURL = <span class="string">"http://songshu.xiaomy.net/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">myaxios</span>(<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (method == <span class="string">"GET"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> axios.get(url, &#123; <span class="attr">params</span>: params &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == <span class="string">"POST"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> params = QS.stringify(params);</span><br><span class="line">        <span class="keyword">return</span> axios.post(url, params);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> myaxios(<span class="string">"POST"</span>, postusername, <span class="keyword">this</span>.obj)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.userlist = data.data.message;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.userlist);</span><br><span class="line">       <span class="comment">// this.headimg = this.userlist.headimg_url;</span></span><br><span class="line">       <span class="keyword">this</span>.$store.commit(<span class="string">"imgurl"</span>,<span class="keyword">this</span>.headimg);</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.getters.getimgurl,<span class="string">"22222"</span>);</span><br><span class="line">       <span class="keyword">this</span>.headimg = <span class="keyword">this</span>.$store.getters.getimgurl;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-
 
           
         
