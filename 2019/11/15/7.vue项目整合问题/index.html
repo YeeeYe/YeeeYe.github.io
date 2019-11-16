@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
+<meta name="description" content="一、vue项目整合中遇到的问题1.1 vuex中插件的使用1.1.2  插件的功能插件通常用来为 Vue 添加全局功能。插件的功能范围没有严格的限制——一般有下面几种：  添加全局方法或者属性。如: vue-custom-element 添加全局资源：指令/过滤器/过渡等。如 vue-touch 通过全局混入来添加一些组件选项。如 vue-router 添加 Vue 实例方法，通过把它们添加到 V">
 <meta property="og:type" content="article">
-<meta property="og:title" content="五.项目的打包所要注意的问题">
-<meta property="og:url" content="http://yoursite.com/2019/11/11/5.vue项目的打包/index.html">
+<meta property="og:title" content="七.vue项目整合问题">
+<meta property="og:url" content="http://yoursite.com/2019/11/15/7.vue项目整合问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
+<meta property="og:description" content="一、vue项目整合中遇到的问题1.1 vuex中插件的使用1.1.2  插件的功能插件通常用来为 Vue 添加全局功能。插件的功能范围没有严格的限制——一般有下面几种：  添加全局方法或者属性。如: vue-custom-element 添加全局资源：指令/过滤器/过渡等。如 vue-touch 通过全局混入来添加一些组件选项。如 vue-router 添加 Vue 实例方法，通过把它们添加到 V">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T00:48:42.662Z">
+<meta property="og:updated_time" content="2019-11-16T07:03:58.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="五.项目的打包所要注意的问题">
-<meta name="twitter:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
+<meta name="twitter:title" content="七.vue项目整合问题">
+<meta name="twitter:description" content="一、vue项目整合中遇到的问题1.1 vuex中插件的使用1.1.2  插件的功能插件通常用来为 Vue 添加全局功能。插件的功能范围没有严格的限制——一般有下面几种：  添加全局方法或者属性。如: vue-custom-element 添加全局资源：指令/过滤器/过渡等。如 vue-touch 通过全局混入来添加一些组件选项。如 vue-router 添加 Vue 实例方法，通过把它们添加到 V">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/11/5.vue项目的打包/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/15/7.vue项目整合问题/">
 
 
 
 
 
-  <title>五.项目的打包所要注意的问题 | Hexo</title>
+  <title>七.vue项目整合问题 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/5.vue项目的打包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/7.vue项目整合问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">五.项目的打包所要注意的问题</h1>
+          <h1 class="post-title" itemprop="name headline">七.vue项目整合问题</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-11T09:52:18+08:00">
-                2019-11-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-15T09:34:58+08:00">
+                2019-11-15
               </time>
             
 
@@ -299,9 +299,26 @@
       
 
       
-        <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
+        <h3 id="一、vue项目整合中遇到的问题"><a href="#一、vue项目整合中遇到的问题" class="headerlink" title="一、vue项目整合中遇到的问题"></a>一、vue项目整合中遇到的问题</h3><h4 id="1-1-vuex中插件的使用"><a href="#1-1-vuex中插件的使用" class="headerlink" title="1.1 vuex中插件的使用"></a>1.1 vuex中插件的使用</h4><h5 id="1-1-2-插件的功能"><a href="#1-1-2-插件的功能" class="headerlink" title="1.1.2  插件的功能"></a>1.1.2  插件的功能</h5><p>插件通常用来为 Vue 添加全局功能。插件的功能范围没有严格的限制——一般有下面几种：</p>
+<ol>
+<li>添加全局方法或者属性。如: <a href="https://github.com/karol-f/vue-custom-element" target="_blank" rel="noopener">vue-custom-element</a></li>
+<li>添加全局资源：指令/过滤器/过渡等。如 <a href="https://github.com/vuejs/vue-touch" target="_blank" rel="noopener">vue-touch</a></li>
+<li>通过全局混入来添加一些组件选项。如 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router</a></li>
+<li>添加 Vue 实例方法，通过把它们添加到 <code>Vue.prototype</code> 上实现。</li>
+<li>一个库，提供自己的 API，同时提供上面提到的一个或多个功能。如 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router</a></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vuex 状态持久化插件 —— vuex-persistedstate</span></span><br><span class="line"><span class="comment">//安装：</span></span><br><span class="line"></span><br><span class="line">　　npm install --save vuex-persistedstate</span><br><span class="line"></span><br><span class="line"><span class="comment">//引用：</span></span><br><span class="line"></span><br><span class="line">　　<span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">'vuex-persistedstate'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置：</span></span><br><span class="line"></span><br><span class="line">　　<span class="keyword">new</span> Vuex.Store(&#123;<span class="attr">plugins</span>: [createPersistedState()] &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//作用：</span></span><br><span class="line"></span><br><span class="line">　　将 vuex 状态保存到 localstorage 中</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
+<h5 id="1-1-3-持久化插件优点"><a href="#1-1-3-持久化插件优点" class="headerlink" title="1.1.3 持久化插件优点"></a>1.1.3 持久化插件优点</h5><p>Vuex 解决了多视图之间的数据共享问题。但是运用过程中又带来了一个新的问题是，Vuex 的状态存储并不能持久化。也就是说当你存储在 Vuex 中的 store 里的数据，只要一刷新页面，数据就丢失了。</p>
+<p>引入<a href="https://github.com/championswimmer/vuex-persist" target="_blank" rel="noopener">vuex-persist</a> 插件，它就是为 Vuex 持久化存储而生的一个插件。不需要你手动存取 storage ，而是直接将状态保存至 cookie 或者 localStorage 中</p>
+<h4 id="1-2图片的懒加载"><a href="#1-2图片的懒加载" class="headerlink" title="1.2图片的懒加载"></a>1.2图片的懒加载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-lazy=<span class="string">"item.v_pic"</span>  /&gt;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">/*懒加载的样式*/</span></span><br><span class="line"> img[lazy=<span class="string">"loading"</span>] &#123;</span><br><span class="line">     width: <span class="number">40</span>px;</span><br><span class="line">     height: <span class="number">300</span>px;</span><br><span class="line">     margin: auto;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3路由的返回设置"><a href="#1-3路由的返回设置" class="headerlink" title="1.3路由的返回设置"></a>1.3路由的返回设置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">reggoback()&#123;</span><br><span class="line">            <span class="keyword">this</span>.$router.go(<span class="number">-1</span>)</span><br><span class="line">            <span class="comment">//返回上一级的路由</span></span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>this.$router.go(val) =&gt; 在history记录中前进或者后退val步，当val为0时刷新当前页面。</li>
+<li>this.$router.push(path) =&gt; 在history栈中添加一条新的记录。</li>
+</ul>
 
       
     </div>
@@ -326,8 +343,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/25/4.vue中的切换动画/" rel="next" title="四. Vue中的切换动画">
-                <i class="fa fa-chevron-left"></i> 四. Vue中的切换动画
+              <a href="/2019/11/13/6.vue项目实战/" rel="next" title="六.vue项目实战">
+                <i class="fa fa-chevron-left"></i> 六.vue项目实战
               </a>
             
           </div>
@@ -335,10 +352,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/13/6.vue项目实战/" rel="prev" title="六.vue项目实战">
-                六.vue项目实战 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -452,7 +465,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包运行"><span class="nav-number">1.</span> <span class="nav-text">1. 打包运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-打包后在dist中遇到跨域的问题"><span class="nav-number">2.</span> <span class="nav-text">2. 打包后在dist中遇到跨域的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、vue项目整合中遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">一、vue项目整合中遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-vuex中插件的使用"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 vuex中插件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-2-插件的功能"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.2  插件的功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-3-持久化插件优点"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.3 持久化插件优点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2图片的懒加载"><span class="nav-number">1.2.</span> <span class="nav-text">1.2图片的懒加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3路由的返回设置"><span class="nav-number">1.3.</span> <span class="nav-text">1.3路由的返回设置</span></a></li></ol></li></ol></div>
             
 
           </div>
