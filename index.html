@@ -229,6 +229,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/特殊：前端问题持续更新/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/16/特殊：前端问题持续更新/" itemprop="url">特殊：前端问题持续更新</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-16T15:07:43+08:00">
+                2019-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-函数的副作用"><a href="#1-函数的副作用" class="headerlink" title="1. 函数的副作用"></a>1. 函数的副作用</h3><p>vue 中的 setstate 会产生副作用 ， 佐证为 watch 监听时里面的属性的改变不会引发监听的事件。</p>
+<p>函数的副作用的举例：</p>
+<ol>
+<li><p>纯函数的副作用 ， 通过函数直接改变obj中的属性值，会造成副作用</p>
+</li>
+<li><p>以下情况下没有副作用：通过函数的值改变 obj2 的值，再用 obj2 的值来替换 obj 的值 ，这样就不会造成函数的副作用 </p>
+</li>
+</ol>
+<h3 id="2-函数式编程思想-待更新"><a href="#2-函数式编程思想-待更新" class="headerlink" title="2. 函数式编程思想(待更新)"></a>2. 函数式编程思想(待更新)</h3><p> React 16.7.0  ——&gt; React 16.8.0 (Hook)</p>
+<p> Vue 2.0 ——&gt; Vue 3.0 ( Hook 、Proxy)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> vue中的 proxy代理  ，数据劫持的核心就是在代理对象的身上重新定义被代理对象的所有可枚举属性，并设置 getter 和 setter 监听着它的变化，然而实现这个功能就是一个方法：</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty() ，通过该方法在实例对象上重新定义了和data 对象里面所有的属性，然而就实现了数据劫持。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Tomcat服务器的搭建"><a href="#3-Tomcat服务器的搭建" class="headerlink" title="3. Tomcat服务器的搭建"></a>3. Tomcat服务器的搭建</h3><h5 id="（1）下载tomcat服务器"><a href="#（1）下载tomcat服务器" class="headerlink" title="（1）下载tomcat服务器"></a>（1）下载tomcat服务器</h5><p><a href="https://tomcat.apache.org/download-70.cgi" target="_blank" rel="noopener">https://tomcat.apache.org/download-70.cgi</a></p>
+<h5 id="（2）下载java的jdk、安装"><a href="#（2）下载java的jdk、安装" class="headerlink" title="（2）下载java的jdk、安装"></a>（2）下载java的jdk、安装</h5><p>配置环境变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Java\jdk1.8.0_144</span><br><span class="line">classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\tools.jar</span><br><span class="line">PATH配置：;%JAVA_HOME%\bin;</span><br></pre></td></tr></table></figure>
+
+<h5 id="（3）解压tomcat，修改里面的server-xml配置"><a href="#（3）解压tomcat，修改里面的server-xml配置" class="headerlink" title="（3）解压tomcat，修改里面的server.xml配置"></a>（3）解压tomcat，修改里面的server.xml配置</h5><p><img src="..%5Cimg%5C1.png" alt></p>
+<h5 id="（4）启动-tomcat-服务器"><a href="#（4）启动-tomcat-服务器" class="headerlink" title="（4）启动 tomcat 服务器"></a>（4）启动 tomcat 服务器</h5><h4 id="4-node中注意的东西"><a href="#4-node中注意的东西" class="headerlink" title="4. node中注意的东西"></a>4. node中注意的东西</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__filename : 包含文件名称的全路径</span><br><span class="line">__dirname : 文件所处的目录的绝对路径（不包含文件名称）</span><br><span class="line"></span><br><span class="line"><span class="comment">//在 node 中没有dom操作和 bom 操作的api ， 也就意味着window document 等对象在 node 中不可以使用 ， 可以使用如下：</span></span><br><span class="line">global.console.log(<span class="string">"aaa"</span>)</span><br><span class="line">global 就是 顶层对象</span><br><span class="line"></span><br><span class="line">process.argv  argv 是一个数组，默认情况下，前两项的数据分别是：Node.js环境的路径：当前执行的js文件的全路径 </span><br><span class="line"><span class="comment">// 从第三个参数开始表示命令行参数</span></span><br><span class="line">process.arch 就是系统的架构，<span class="number">64</span>位或者<span class="number">32</span>位</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-1-stat-和-fstat-的区别"><a href="#4-1-stat-和-fstat-的区别" class="headerlink" title="4.1 stat 和 fstat 的区别"></a>4.1 stat 和 fstat 的区别</h5><p>fs.stat 接收的第一个参数是一个文件路径字符串</p>
+<p>fs.fstat接收的是一个文件描述符；</p>
+<p>内核（kernel）利用文件描述符（file descriptor）来访问文件。文件描述符是非负整数。打开现存文件或新建文件时，内核会返回一个文件描述符。读写文件也需要使用文件描述符来指定待读写的文件</p>
+<p>其它的Fs方法中和这种类似的也是这样的描述；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基于Promise的API的所有方法调用之后都会给我们返回一个promise，然后我们就可以使用.then</span></span><br><span class="line">fsPromises.stat(<span class="string">"./tt"</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> fsPromises.mkdir(<span class="string">"./tt"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> fsPromises.writeFile(<span class="string">"./tt/bb.txt"</span>,<span class="string">"xxxxx你好"</span>);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/7.vue项目整合问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -534,7 +678,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/11/5.vue项目的打包/" itemprop="url">五.项目的打包所要注意的问题</a></h1>
+                <a class="post-title-link" href="/2019/11/11/5.vue项目的打包/" itemprop="url">五.项目的挂载服务器apache</a></h1>
         
 
         <div class="post-meta">
@@ -589,7 +733,47 @@
             <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
+<h3 id="3-Apache-服务器的搭建"><a href="#3-Apache-服务器的搭建" class="headerlink" title="3. Apache 服务器的搭建"></a>3. Apache 服务器的搭建</h3><h4 id="3-1-Apache的基础安装"><a href="#3-1-Apache的基础安装" class="headerlink" title="3.1 Apache的基础安装"></a>3.1 Apache的基础安装</h4><ol>
+<li><p>解压  建议把解压后的文件拷贝到不带中文的路径下</p>
+<p>httpd-2.4.35-win32-VC14.zip</p>
+</li>
+<li><p>打开解压后的Apache24目录，找到bin，打开cmd，输入httpd -t 命令，查看错误，如果是在win10 的环境下</p>
+<p>直接使用不可以话，在命令行前面加上 ./</p>
+</li>
+<li><p>修改conf下httpd.conf配置文件</p>
+<p><img src="..%5Cimg%5C2.png" alt></p>
+</li>
+<li><p>在E:/webapps(存放dist文件的文件夹)中准备一个index.html文件</p>
+</li>
+<li><p>​    输入对应的命令来注册apache服务</p>
+<p># 安装 Apache 服务，‐n 参数是指定服务名称</p>
+<p>$ httpd.exe -k install -n “Apache”</p>
+<p># 如果需要卸载 Apache，可以执行以下命令</p>
+<p>$ httpd.exe -k uninstall -n “Apache”</p>
+<p>\2.       启动apache服务器</p>
+<p>$ httpd.exe -k start -n “Apache”</p>
+<p># 重新启动 Apache 服务</p>
+<p>$ httpd.exe -k restart -n “Apache”</p>
+<p># 停止 Apache 服务</p>
+<p>$ httpd.exe -k stop -n “Apache”</p>
+</li>
+<li><p>在浏览器中输入localhost:8888查看是否有网页显示</p>
+</li>
+</ol>
+<h4 id="3-2-配置Apache虚拟逐主机"><a href="#3-2-配置Apache虚拟逐主机" class="headerlink" title="3.2 配置Apache虚拟逐主机"></a>3.2 配置Apache虚拟逐主机</h4><p>1、修改httpd.conf配置文件</p>
+<p><img src="..%5Cimg%5C3.png" alt="1574077927162"></p>
+<p>2.修改 vhost.conf 文件 （在conf—&gt;extra—&gt;httpd-vhosts文件中）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt; </span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    ServerName localhost</span><br><span class="line">	&lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">		Options FollowSymLinks Indexes </span><br><span class="line">		AllowOverride none</span><br><span class="line">		Require all granted</span><br><span class="line">	&lt;<span class="regexp">/Directory&gt; </span></span><br><span class="line"><span class="regexp">&lt;/</span>VirtualHost&gt;</span><br><span class="line">解决项目发布之后的跨域问题</span><br><span class="line">配置反向代理：</span><br><span class="line"><span class="number">1</span>、httpd.conf配置文件</span><br><span class="line"> </span><br><span class="line"><span class="number">2</span>、httpd-vhosts.conf配置</span><br><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt;</span><br><span class="line">    #绑定域名</span><br><span class="line">    ServerName localhost</span><br><span class="line">    #默认首页</span><br><span class="line">    DirectoryIndex index.html index.php</span><br><span class="line">    #指定网站根目录</span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    #指定目录分配权限</span><br><span class="line">    &lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">        #没有首页就显示列表（开发阶段可以这样）取值：all none Index</span><br><span class="line">        Options Indexes</span><br><span class="line">        #规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span><br><span class="line">        Order Deny,Allow</span><br><span class="line">        #全部禁止访问 取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> All</span><br><span class="line">        #但是，允许自己访问  取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> all</span><br><span class="line">    &lt;<span class="regexp">/Directory&gt;</span></span><br><span class="line"><span class="regexp">	Proxyrequests off</span></span><br><span class="line"><span class="regexp">	&lt;Proxy *&gt;</span></span><br><span class="line"><span class="regexp">		#规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span></span><br><span class="line"><span class="regexp">        Order Deny,Allow</span></span><br><span class="line"><span class="regexp">        #全部禁止访问 取值：all none 指定ip</span></span><br><span class="line"><span class="regexp">        Allow from All</span></span><br><span class="line"><span class="regexp">	&lt;/</span><span class="built_in">Proxy</span>&gt;</span><br><span class="line">        #配置反向代理</span><br><span class="line">		ProxyPass /api http:<span class="comment">//192.168.23.200:8899/api</span></span><br><span class="line">&lt;<span class="regexp">/VirtualHost&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/3、打开浏览器就可以访问网站了</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="3-3-开启apache服务器的gzip压缩："><a href="#3-3-开启apache服务器的gzip压缩：" class="headerlink" title="3.3  开启apache服务器的gzip压缩："></a>3.3  开启apache服务器的gzip压缩：</h4><p>1.打开 httpd.conf配置文件中下面两个模块的注释</p>
+<p>#LoadModule deflate_module modules/mod_deflate.so</p>
+<p>#LoadModule headers_module modules/mod_headers.so</p>
+<p>2.在httpd.conf配置文件最下面添加</p>
+<ifmodule deflate_module>
+
+<p>​    SetOutputFilter DEFLATE</p>
+<p>​    DeflateCompressionLevel 9</p>
+</ifmodule>
           
         
       
@@ -1252,7 +1436,7 @@ async created() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

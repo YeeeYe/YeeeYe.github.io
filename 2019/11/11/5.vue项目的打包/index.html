@@ -81,15 +81,18 @@
 
 <meta name="description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="五.项目的打包所要注意的问题">
+<meta property="og:title" content="五.项目的挂载服务器apache">
 <meta property="og:url" content="http://yoursite.com/2019/11/11/5.vue项目的打包/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T00:48:42.662Z">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/5.vue项目的打包/..%5Cimg%5C2.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/5.vue项目的打包/..%5Cimg%5C3.png">
+<meta property="og:updated_time" content="2019-11-18T12:17:51.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="五.项目的打包所要注意的问题">
+<meta name="twitter:title" content="五.项目的挂载服务器apache">
 <meta name="twitter:description" content="1. 打包运行123456789npm run build //注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的//需要注意的是我在//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js//vueapp\node_modules\@intervolga\o">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/11/5.vue项目的打包/..%5Cimg%5C2.png">
 
 
 
@@ -125,7 +128,7 @@
 
 
 
-  <title>五.项目的打包所要注意的问题 | Hexo</title>
+  <title>五.项目的挂载服务器apache | Hexo</title>
   
 
 
@@ -249,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">五.项目的打包所要注意的问题</h1>
+          <h1 class="post-title" itemprop="name headline">五.项目的挂载服务器apache</h1>
         
 
         <div class="post-meta">
@@ -302,7 +305,47 @@
         <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
+<h3 id="3-Apache-服务器的搭建"><a href="#3-Apache-服务器的搭建" class="headerlink" title="3. Apache 服务器的搭建"></a>3. Apache 服务器的搭建</h3><h4 id="3-1-Apache的基础安装"><a href="#3-1-Apache的基础安装" class="headerlink" title="3.1 Apache的基础安装"></a>3.1 Apache的基础安装</h4><ol>
+<li><p>解压  建议把解压后的文件拷贝到不带中文的路径下</p>
+<p>httpd-2.4.35-win32-VC14.zip</p>
+</li>
+<li><p>打开解压后的Apache24目录，找到bin，打开cmd，输入httpd -t 命令，查看错误，如果是在win10 的环境下</p>
+<p>直接使用不可以话，在命令行前面加上 ./</p>
+</li>
+<li><p>修改conf下httpd.conf配置文件</p>
+<p><img src="..%5Cimg%5C2.png" alt></p>
+</li>
+<li><p>在E:/webapps(存放dist文件的文件夹)中准备一个index.html文件</p>
+</li>
+<li><p>​    输入对应的命令来注册apache服务</p>
+<p># 安装 Apache 服务，‐n 参数是指定服务名称</p>
+<p>$ httpd.exe -k install -n “Apache”</p>
+<p># 如果需要卸载 Apache，可以执行以下命令</p>
+<p>$ httpd.exe -k uninstall -n “Apache”</p>
+<p>\2.       启动apache服务器</p>
+<p>$ httpd.exe -k start -n “Apache”</p>
+<p># 重新启动 Apache 服务</p>
+<p>$ httpd.exe -k restart -n “Apache”</p>
+<p># 停止 Apache 服务</p>
+<p>$ httpd.exe -k stop -n “Apache”</p>
+</li>
+<li><p>在浏览器中输入localhost:8888查看是否有网页显示</p>
+</li>
+</ol>
+<h4 id="3-2-配置Apache虚拟逐主机"><a href="#3-2-配置Apache虚拟逐主机" class="headerlink" title="3.2 配置Apache虚拟逐主机"></a>3.2 配置Apache虚拟逐主机</h4><p>1、修改httpd.conf配置文件</p>
+<p><img src="..%5Cimg%5C3.png" alt="1574077927162"></p>
+<p>2.修改 vhost.conf 文件 （在conf—&gt;extra—&gt;httpd-vhosts文件中）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt; </span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    ServerName localhost</span><br><span class="line">	&lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">		Options FollowSymLinks Indexes </span><br><span class="line">		AllowOverride none</span><br><span class="line">		Require all granted</span><br><span class="line">	&lt;<span class="regexp">/Directory&gt; </span></span><br><span class="line"><span class="regexp">&lt;/</span>VirtualHost&gt;</span><br><span class="line">解决项目发布之后的跨域问题</span><br><span class="line">配置反向代理：</span><br><span class="line"><span class="number">1</span>、httpd.conf配置文件</span><br><span class="line"> </span><br><span class="line"><span class="number">2</span>、httpd-vhosts.conf配置</span><br><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt;</span><br><span class="line">    #绑定域名</span><br><span class="line">    ServerName localhost</span><br><span class="line">    #默认首页</span><br><span class="line">    DirectoryIndex index.html index.php</span><br><span class="line">    #指定网站根目录</span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    #指定目录分配权限</span><br><span class="line">    &lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">        #没有首页就显示列表（开发阶段可以这样）取值：all none Index</span><br><span class="line">        Options Indexes</span><br><span class="line">        #规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span><br><span class="line">        Order Deny,Allow</span><br><span class="line">        #全部禁止访问 取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> All</span><br><span class="line">        #但是，允许自己访问  取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> all</span><br><span class="line">    &lt;<span class="regexp">/Directory&gt;</span></span><br><span class="line"><span class="regexp">	Proxyrequests off</span></span><br><span class="line"><span class="regexp">	&lt;Proxy *&gt;</span></span><br><span class="line"><span class="regexp">		#规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span></span><br><span class="line"><span class="regexp">        Order Deny,Allow</span></span><br><span class="line"><span class="regexp">        #全部禁止访问 取值：all none 指定ip</span></span><br><span class="line"><span class="regexp">        Allow from All</span></span><br><span class="line"><span class="regexp">	&lt;/</span><span class="built_in">Proxy</span>&gt;</span><br><span class="line">        #配置反向代理</span><br><span class="line">		ProxyPass /api http:<span class="comment">//192.168.23.200:8899/api</span></span><br><span class="line">&lt;<span class="regexp">/VirtualHost&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/3、打开浏览器就可以访问网站了</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="3-3-开启apache服务器的gzip压缩："><a href="#3-3-开启apache服务器的gzip压缩：" class="headerlink" title="3.3  开启apache服务器的gzip压缩："></a>3.3  开启apache服务器的gzip压缩：</h4><p>1.打开 httpd.conf配置文件中下面两个模块的注释</p>
+<p>#LoadModule deflate_module modules/mod_deflate.so</p>
+<p>#LoadModule headers_module modules/mod_headers.so</p>
+<p>2.在httpd.conf配置文件最下面添加</p>
+<ifmodule deflate_module>
+
+<p>​    SetOutputFilter DEFLATE</p>
+<p>​    DeflateCompressionLevel 9</p>
+</ifmodule>
       
     </div>
     
@@ -415,7 +458,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -452,7 +495,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包运行"><span class="nav-number">1.</span> <span class="nav-text">1. 打包运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-打包后在dist中遇到跨域的问题"><span class="nav-number">2.</span> <span class="nav-text">2. 打包后在dist中遇到跨域的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打包运行"><span class="nav-number">1.</span> <span class="nav-text">1. 打包运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-打包后在dist中遇到跨域的问题"><span class="nav-number">2.</span> <span class="nav-text">2. 打包后在dist中遇到跨域的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Apache-服务器的搭建"><span class="nav-number">3.</span> <span class="nav-text">3. Apache 服务器的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Apache的基础安装"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Apache的基础安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-配置Apache虚拟逐主机"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 配置Apache虚拟逐主机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-开启apache服务器的gzip压缩："><span class="nav-number">3.3.</span> <span class="nav-text">3.3  开启apache服务器的gzip压缩：</span></a></li></ol></li></ol></div>
             
 
           </div>
