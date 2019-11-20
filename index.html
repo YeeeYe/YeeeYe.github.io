@@ -229,6 +229,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/8.Git的简单用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/20/8.Git的简单用法/" itemprop="url">88.Git的简单用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-20T20:15:28+08:00">
+                2019-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-秘钥的生成"><a href="#1-秘钥的生成" class="headerlink" title="1.秘钥的生成"></a>1.秘钥的生成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1.打开git brash，输入命令 ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</span><br><span class="line">#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容</span><br><span class="line">#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容</span><br><span class="line">#4.码云后台创建新项目</span><br><span class="line">#5.配置本地全局的账号和密码</span><br><span class="line">  git config --global user.name &quot;dwbykst&quot;</span><br><span class="line">   git config --global user.email &quot;1491749434@qq.com&quot;</span><br><span class="line">#6.关联远程仓库</span><br><span class="line">  cd project</span><br><span class="line">  git remote add origin git@github.com:dwbskt/myvue.git</span><br><span class="line">  git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-如果已经绑定则解除"><a href="#1-1-如果已经绑定则解除" class="headerlink" title="1.1 如果已经绑定则解除"></a>1.1 如果已经绑定则解除</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/特殊：前端问题持续更新/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -318,13 +441,23 @@
 
 <h5 id="（3）解压tomcat，修改里面的server-xml配置"><a href="#（3）解压tomcat，修改里面的server-xml配置" class="headerlink" title="（3）解压tomcat，修改里面的server.xml配置"></a>（3）解压tomcat，修改里面的server.xml配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在apache-tomcat-7.0.96-windows-x64—&gt;apache-tomcat-7.0.96—&gt;conf 中</span><br><span class="line"></span><br><span class="line">修改如下的代码：</span><br><span class="line">&lt;Connector port = &quot;8090&quot; protocol:&quot;HTTP/1.1&quot;</span><br><span class="line">       connectionTimeout = &quot;20000&quot;</span><br><span class="line">       redirectPort = &quot;8843&quot; /&gt;</span><br></pre></td></tr></table></figure>
 
-<h5 id="（4）启动-tomcat-服务器"><a href="#（4）启动-tomcat-服务器" class="headerlink" title="（4）启动 tomcat 服务器"></a>（4）启动 tomcat 服务器</h5><h4 id="4-node中注意的东西"><a href="#4-node中注意的东西" class="headerlink" title="4. node中注意的东西"></a>4. node中注意的东西</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__filename : 包含文件名称的全路径</span><br><span class="line">__dirname : 文件所处的目录的绝对路径（不包含文件名称）</span><br><span class="line"></span><br><span class="line"><span class="comment">//在 node 中没有dom操作和 bom 操作的api ， 也就意味着window document 等对象在 node 中不可以使用 ， 可以使用如下：</span></span><br><span class="line">global.console.log(<span class="string">"aaa"</span>)</span><br><span class="line">global 就是 顶层对象</span><br><span class="line"></span><br><span class="line">process.argv  argv 是一个数组，默认情况下，前两项的数据分别是：Node.js环境的路径：当前执行的js文件的全路径 </span><br><span class="line"><span class="comment">// 从第三个参数开始表示命令行参数</span></span><br><span class="line">process.arch 就是系统的架构，<span class="number">64</span>位或者<span class="number">32</span>位</span><br></pre></td></tr></table></figure>
+<h5 id="（4）启动-tomcat-服务器"><a href="#（4）启动-tomcat-服务器" class="headerlink" title="（4）启动 tomcat 服务器"></a>（4）启动 tomcat 服务器</h5><h3 id="4-node中注意的东西"><a href="#4-node中注意的东西" class="headerlink" title="4. node中注意的东西"></a>4. node中注意的东西</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__filename : 包含文件名称的全路径</span><br><span class="line">__dirname : 文件所处的目录的绝对路径（不包含文件名称）</span><br><span class="line"></span><br><span class="line"><span class="comment">//在 node 中没有dom操作和 bom 操作的api ， 也就意味着window document 等对象在 node 中不可以使用 ， 可以使用如下：</span></span><br><span class="line">global.console.log(<span class="string">"aaa"</span>)</span><br><span class="line">global 就是 顶层对象</span><br><span class="line"></span><br><span class="line">process.argv  argv 是一个数组，默认情况下，前两项的数据分别是：Node.js环境的路径：当前执行的js文件的全路径 </span><br><span class="line"><span class="comment">// 从第三个参数开始表示命令行参数</span></span><br><span class="line">process.arch 就是系统的架构，<span class="number">64</span>位或者<span class="number">32</span>位</span><br></pre></td></tr></table></figure>
 
 <h5 id="4-1-stat-和-fstat-的区别"><a href="#4-1-stat-和-fstat-的区别" class="headerlink" title="4.1 stat 和 fstat 的区别"></a>4.1 stat 和 fstat 的区别</h5><p>fs.stat 接收的第一个参数是一个文件路径字符串</p>
 <p>fs.fstat接收的是一个文件描述符；</p>
 <p>内核（kernel）利用文件描述符（file descriptor）来访问文件。文件描述符是非负整数。打开现存文件或新建文件时，内核会返回一个文件描述符。读写文件也需要使用文件描述符来指定待读写的文件</p>
 <p>其它的Fs方法中和这种类似的也是这样的描述；</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基于Promise的API的所有方法调用之后都会给我们返回一个promise，然后我们就可以使用.then</span></span><br><span class="line">fsPromises.stat(<span class="string">"./tt"</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> fsPromises.mkdir(<span class="string">"./tt"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> fsPromises.writeFile(<span class="string">"./tt/bb.txt"</span>,<span class="string">"xxxxx你好"</span>);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-e-target-innerHTML"><a href="#5-e-target-innerHTML" class="headerlink" title="5. e.target.innerHTML"></a>5. e.target.innerHTML</h3><p>可以获取到 a 标签里的值，不是用value进行获取的。</p>
+<h3 id="6-axios-原生的了解"><a href="#6-axios-原生的了解" class="headerlink" title="6.  axios 原生的了解"></a>6.  axios 原生的了解</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// always executed</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>params 的传递是根据对象的形式，在发送请求的时候要进行封装成对象的形式。</p>
+<p>原生的 axios get请求的形式值得去了解一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">'axios'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Make a request for a user with a given ID</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// handle success</span></span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// handle error</span></span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;)</span><br><span class="line">  .finally(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// always executed</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>友情链接： <a href="https://www.npmjs.com/package/axios?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/axios?activeTab=readme</a></p>
+<h3 id="7-数组的-…-进行添加"><a href="#7-数组的-…-进行添加" class="headerlink" title="7. 数组的 … 进行添加"></a>7. 数组的 … 进行添加</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.array = [...cdata.message,...this.array]</span><br><span class="line"><span class="comment">//数组的叠加</span></span><br></pre></td></tr></table></figure>
 
 
           
@@ -761,7 +894,7 @@
 <li><p>在浏览器中输入localhost:8888查看是否有网页显示</p>
 </li>
 </ol>
-<h4 id="3-2-配置Apache虚拟逐主机"><a href="#3-2-配置Apache虚拟逐主机" class="headerlink" title="3.2 配置Apache虚拟逐主机"></a>3.2 配置Apache虚拟逐主机</h4><p>1、修改httpd.conf配置文件</p>
+<h4 id="3-2-配置Apache虚拟主机"><a href="#3-2-配置Apache虚拟主机" class="headerlink" title="3.2 配置Apache虚拟主机"></a>3.2 配置Apache虚拟主机</h4><p>1、修改httpd.conf配置文件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Virtual hosts   //508</span><br><span class="line">Include conf/extra/httpd-vhosts.conf  <span class="comment">//509</span></span><br></pre></td></tr></table></figure>
 
 <p>2.修改 vhost.conf 文件 （在conf—&gt;extra—&gt;httpd-vhosts文件中）</p>
@@ -1447,7 +1580,7 @@ async created() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
