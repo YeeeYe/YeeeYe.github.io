@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. MVC的简介MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9.react起始简介">
+<meta property="og:url" content="http://yoursite.com/2019/11/21/9-react起始简介/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1. MVC的简介MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-21T15:18:37.445Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9.react起始简介">
+<meta name="twitter:description" content="1. MVC的简介MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/21/9-react起始简介/">
+
+
+
+
+
+  <title>9.react起始简介 | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/9-react起始简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">9.react起始简介</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-21T18:25:33+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-MVC的简介"><a href="#1-MVC的简介" class="headerlink" title="1. MVC的简介"></a>1. MVC的简介</h3><p><a href="https://baike.baidu.com/item/MVC" target="_blank" rel="noopener">MVC</a>全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
+<p>M是指业务模型，V是指用户界面，C则是控制器，使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p>
+<h3 id="2-Vuex-和-Redux-的区别"><a href="#2-Vuex-和-Redux-的区别" class="headerlink" title="2.Vuex 和 Redux 的区别"></a>2.Vuex 和 Redux 的区别</h3><p>Redux 使用的是不可变数据，而Vuex的数据是可变的。Redux每次都是用新的state替换旧的state，而Vuex是直接修改</p>
+<p>Redux 在检测数据变化的时候，是通过的方式比较差异的，而其实和的原理一样，是通过来比较的（如果看源码会知道，其实他内部直接创建一个实例用来跟踪数据变化）</p>
+<h3 id="3-vue-和-react-监听数据的原理"><a href="#3-vue-和-react-监听数据的原理" class="headerlink" title="3. vue 和 react 监听数据的原理"></a>3. vue 和 react 监听数据的原理</h3><ul>
+<li><p>vue中借助Object.defineProperty(getter  setter) 做数据劫持</p>
+</li>
+<li><p>react很大程度上是通过比较对象的引用地址是否一致来看数据有没有变化(react中大量使用了不可变对象)</p>
+</li>
+</ul>
+<h3 id="4-react-安装的目录"><a href="#4-react-安装的目录" class="headerlink" title="4. react 安装的目录"></a>4. react 安装的目录</h3><h4 id="4-1-全局安装-webpack"><a href="#4-1-全局安装-webpack" class="headerlink" title="4.1 全局安装 webpack"></a>4.1 全局安装 webpack</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2.1	构建webpack应用</span><br><span class="line">运行npm init -y 快速初始化项目</span><br><span class="line">npm install webpack@4.27.1 -d</span><br><span class="line">npm install webpack-cli -d       提供一些基本命令(比如webpack命令)</span><br><span class="line">npm install  webpack-dev-server –d</span><br><span class="line">npm i html-webpack-plugin@3.2.0 --save-dev</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-创建webpack-应用"><a href="#4-2-创建webpack-应用" class="headerlink" title="4.2 创建webpack 应用"></a>4.2 创建webpack 应用</h4><p>   1.src文件夹 目录下的 index.html 、main.js</p>
+<ol start="2">
+<li><p>dist 文件夹 ， webpack.config.js 配置如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="keyword">var</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">//webpack基于node构建的，所有用的是CommonJS模块化规范</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode:<span class="string">"development"</span>,</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/main.js'</span>),</span><br><span class="line">    output: &#123; </span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>), </span><br><span class="line">        filename: <span class="string">'bundle.js'</span> </span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [ </span><br><span class="line">        <span class="comment">// 添加plugins节点配置插件</span></span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">            template:path.resolve(__dirname, <span class="string">'src/index.html'</span>),<span class="comment">//模板路径</span></span><br><span class="line">            filename:<span class="string">'index.html'</span><span class="comment">//自动生成的HTML文件的名称</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装webpack和webpack-cli</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack@4.27.1 -d</span><br><span class="line">npm install webpack-cli -d       提供一些基本命令(比如webpack命令)</span><br></pre></td></tr></table></figure>
+
+<p>4.index.html</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;../dist/bundle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>webpack</li>
+</ol>
+<h4 id="4-3-配置webpack-dev-serve"><a href="#4-3-配置webpack-dev-serve" class="headerlink" title="4.3.配置webpack-dev-serve"></a>4.3.配置webpack-dev-serve</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#1.安装webpack-dev-serve</span><br><span class="line">npm install  webpack-dev-server -d</span><br><span class="line"></span><br><span class="line">#2.package.json的scripts添加dev</span><br><span class="line"> <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open --port 3000 --hot --host 127.0.0.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">#3.npm run dev     webpack-dev-server将打包后的bundle.js托管到项目根路径下(内存中)，所以可以通过下面路径访问</span><br><span class="line">  http:<span class="comment">//localhost:8080/bundle.js    </span></span><br><span class="line"></span><br><span class="line">#4.修改index.html中引入bundle.js的路径</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">	&lt;!--使用webpack-dev-server打包后内存中的bundle.js--&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="../</span>bundle.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4-配置到内存中"><a href="#4-4-配置到内存中" class="headerlink" title="4.4. 配置到内存中"></a>4.4. 配置到内存中</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#1.安装html-webpack-plugin</span><br><span class="line">npm i html-webpack-plugin@<span class="number">3.2</span><span class="number">.0</span> --save-dev</span><br><span class="line"></span><br><span class="line">#2.修改webpack.config.js配置 ★☆★☆★☆★</span><br><span class="line"><span class="comment">// 导入自动生成HTMl文件的插件  ★☆★☆★☆★</span></span><br><span class="line"><span class="keyword">var</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">     mode:<span class="string">"development"</span>,</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/main.js'</span>),</span><br><span class="line">    output: &#123; </span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>), </span><br><span class="line">        filename: <span class="string">'bundle.js'</span> </span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [ </span><br><span class="line">        <span class="comment">// 添加plugins节点配置插件</span></span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">            template:path.resolve(__dirname, <span class="string">'src/index.html'</span>),<span class="comment">//模板路径</span></span><br><span class="line">            filename:<span class="string">'index.html'</span><span class="comment">//自动生成的HTML文件的名称</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-遇到问题报错如下"><a href="#5-遇到问题报错如下" class="headerlink" title="5. 遇到问题报错如下"></a>5. 遇到问题报错如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server  不是内部或外部命令，也不是可运行 的程序 或批处理文件。</span><br></pre></td></tr></table></figure>
+
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-在-webpack-中使用-react"><a href="#6-在-webpack-中使用-react" class="headerlink" title="6.在 webpack 中使用 react"></a>6.在 webpack 中使用 react</h3><p>​        1.运行 npm install react react-dom -S 安装包</p>
+<ul>
+<li><p>react： 专门用于创建组件和虚拟DOM的，同时组件的生命周期都在这个包中</p>
+</li>
+<li><p>react-dom： 专门进行DOM操作的，最主要的应用场景，就是`ReactDOM.render()</p>
+<p>2.在html页面上准备一个容器</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 容器，将来，使用 React 创建的虚拟DOM元素，都会被渲染到这个指定的容器中 --&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​        3.main.js 中引入包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;                        // 创建组件、虚拟DOM元素，生命周期</span><br><span class="line">import ReactDOM from &apos;react-dom&apos;      // 把创建好的 组件 和 虚拟DOM 放到页面上展示的</span><br></pre></td></tr></table></figure>
+
+<p>​       4.创建虚拟 dom ，并且渲染到页面上去</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>                        <span class="comment">// 创建组件、虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>      <span class="comment">// 把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这是 创建虚拟DOM元素的 API    &lt;h1 title="啊，五环" id="myh1"&gt;你比四环多一环&lt;/h1&gt;</span></span><br><span class="line"><span class="comment">//  第一个参数： 字符串类型的参数，表示要创建的标签的名称</span></span><br><span class="line"><span class="comment">//  第二个参数：对象类型的参数， 表示 创建的元素的属性节点</span></span><br><span class="line"><span class="comment">//  第三个参数： 子节点（包括 其它 虚拟DOM 获取 文本子节点）</span></span><br><span class="line"><span class="comment">//  参数n :  其它子节点</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myh3 = React.createElement(<span class="string">'h2'</span>,&#123;<span class="attr">title</span>:<span class="string">'这是title'</span>,<span class="attr">id</span>:<span class="string">'myh3'</span>&#125;,<span class="string">'这是myh3，下面没有子元素'</span>)</span><br><span class="line"><span class="keyword">const</span> mydiv = React.createElement(<span class="string">'div'</span>,&#123;<span class="attr">className</span>:<span class="string">'color'</span>&#125;,<span class="string">'这是一个div1的容器,下面有子元素'</span>,myh3)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 3. 渲染虚拟DOM元素</span></span><br><span class="line"><span class="comment">// 参数1： 表示要渲染的虚拟DOM对象</span></span><br><span class="line"><span class="comment">// 参数2： 指定容器,注意：这里不能直接放 容器元素的Id字符串，需要放一个容器的DOM对象</span></span><br><span class="line">ReactDOM.render(myh1, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//class使用 className</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-虚拟-dom的介绍（提高性能）"><a href="#7-虚拟-dom的介绍（提高性能）" class="headerlink" title="7. 虚拟 dom的介绍（提高性能）"></a>7. 虚拟 dom的介绍（提高性能）</h3><p>React.creatElement()相当于在内存中去构建 dom 。 当页面将要呈现的时候：</p>
+<p>1.浏览器会获取整个页面的内容</p>
+<p>2.构建dom树 document文档对象 (将页面上的标签，属性，文本转换成 dom 对象）</p>
+<p>3.在内存就好像如下的形式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    tagName:<span class="string">"div"</span>,</span><br><span class="line">    attrs:[</span><br><span class="line">        &#123; <span class="attr">id</span> : <span class="string">"box"</span>&#125;,</span><br><span class="line">        &#123; <span class="attr">name</span> : <span class="string">"dongwenbin"</span>&#125;</span><br><span class="line">        &#123; <span class="attr">class</span>: <span class="string">""</span>&#125;</span><br><span class="line">    ],</span><br><span class="line">    children:[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.新旧的dom进行差异对比，产生出差异dom，更新真实的dom，最后视图的更新</p>
+<h3 id="8-JSX-语法"><a href="#8-JSX-语法" class="headerlink" title="8.JSX 语法"></a>8.JSX 语法</h3><p>1.jsx语法：是一种符合 xml 规范的js语法 extend markup language 可拓展标记语言</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>安装babel：</span><br><span class="line">npm i babel-core@<span class="number">6.26</span><span class="number">.3</span> babel-loader@<span class="number">7.1</span><span class="number">.5</span> babel-plugin-transform-runtime --save-dev</span><br><span class="line"></span><br><span class="line">npm i babel-preset-env babel-preset-stage<span class="number">-0</span> --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>2.安装能够识别转换jsx语法的包 <code>babel-preset-react</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-react -D</span><br></pre></td></tr></table></figure>
+
+<p>3.添加 .babelrc 文件配置文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;env&quot;, &quot;stage-0&quot;, &quot;react&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.在 webpack.config.js中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module: &#123; //要打包的第三方模块</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; test: /\.js|jsx$/, use: &apos;babel-loader&apos;, exclude: /node_modules/ &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优点：不仅帮助我们创建虚拟dom，还允许我们在jsx中嵌入js表达式，js语法</p>
+<p>缺点：其本质依然是借助React.createElement()来创建虚拟dom</p>
+<p>在jsx中嵌入js代码 ， 需要用{} ， 数组里的 需要 key = “1”</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;arrStr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;item&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#125;)&#125;</span><br><span class="line"><span class="comment">//数组的遍历 ， 然后转换成指定的内容，也需要key 和 &#123;&#125; 进行才可以。</span></span><br><span class="line"></span><br><span class="line">&lt;label htmlFor=<span class="string">"name"</span>&gt;label&lt;<span class="regexp">/label&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#123;/</span>*  注释  *<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">只能有一个根标签，所有标签必须闭合</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-组件-amp-Props"><a href="#9-组件-amp-Props" class="headerlink" title="9.组件&amp;Props"></a>9.组件&amp;Props</h3><ol>
+<li><h5 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h5><p>函数内部的代码不会对函数的入参以及函数外部的代码有任何的影响</p>
+</li>
+<li><h5 id="React-的组件"><a href="#React-的组件" class="headerlink" title="React 的组件"></a>React 的组件</h5><p>2.1 函数组件（纯函数）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>                        <span class="comment">// 创建组件、虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>      <span class="comment">// 把创建好的 组件 和 虚拟DOM 放到页面上展示的</span></span><br><span class="line"><span class="comment">//react 中创建组件的第一种方式：使用纯函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(props)</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;&#123;props.age&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello;</span><br><span class="line"><span class="comment">//导出到外部的main.js中去接收</span></span><br></pre></td></tr></table></figure>
+
+<p>2.2//展开运算符{…obj}，节省了代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Hello</span> <span class="attr">name</span>=<span class="string">&#123;obj.name&#125;</span> <span class="attr">age</span>=<span class="string">&#123;obj.age&#125;</span> <span class="attr">gender</span>=<span class="string">&#123;obj.gender&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">Hello</span>&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Hello</span> &#123;<span class="attr">...obj</span>&#125;&gt;</span><span class="tag">&lt;/<span class="name">Hello</span>&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>));</span><br></pre></td></tr></table></figure>
+
+<p>2.2 类组件</p>
+<p>2.2.1 react中给我们了一个可以继承的类</p>
+</li>
+</ol>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Movie</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="comment">//super()需要是构造函数的第一行代码</span></span><br><span class="line">        <span class="keyword">super</span>()</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用class方式创建的组件允许组件有自己的state数据和action</span></span><br><span class="line">        <span class="comment">//函数的形式不可以的有自己的数据</span></span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            msg: <span class="string">'大家好，我是 class 创建的 Movie组件'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.state.msg&#125;&#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态对象只属于类， 不属于创建new的对象</span></span><br><span class="line"><span class="comment">//静态方法，也是属于类，通过类名直接调用</span></span><br><span class="line"><span class="comment">//继承可以把公共的类放在Animal中 es6</span></span><br><span class="line"><span class="comment">//继承：class Dog extends Anmial</span></span><br><span class="line">  <span class="keyword">constructor</span>(name,age,gender)&#123;</span><br><span class="line">     <span class="keyword">super</span>(name,age);</span><br><span class="line">    <span class="comment">//super调用父类的方法来初始化成员的信息</span></span><br><span class="line">    <span class="comment">//继承的情况下必须使用super在第一行的创建，才可以创建</span></span><br><span class="line">     <span class="keyword">this</span>.gender = gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-1-两种创建的对比"><a href="#9-1-两种创建的对比" class="headerlink" title="9.1 两种创建的对比"></a>9.1 两种创建的对比</h5><ul>
+<li>函数组件：又叫无状态组件、木偶组件、非受控组件 (只有props，没有state，没有生命周期钩子函数)</li>
+</ul>
+<ul>
+<li>Class组件：有状态组件、智能组件、受控组件（有state，有生命周期钩子函数）</li>
+</ul>
+<h3 id="10-state-的数据更改问题"><a href="#10-state-的数据更改问题" class="headerlink" title="10. state 的数据更改问题"></a>10. state 的数据更改问题</h3><p>借助 this.setState 来修改 ，可以入参两个参数 ；</p>
+<p>如果要立刻获取到更改完之后的数据，利用setState()函数指定第二个箭头参数    ,() =&gt; {}</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果我们不基于以前的值来更改当前state的值，我们可以这样下</span></span><br><span class="line">        <span class="comment">// this.setState(&#123;count:2&#125;)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果我们需要根据以前的值来更改当前的state的值，我们可以向下面这样写：</span></span><br><span class="line">        <span class="comment">// this.setState((state,props) =&gt; (&#123;</span></span><br><span class="line">        <span class="comment">//     count : ++state.count</span></span><br><span class="line">        <span class="comment">// &#125;))</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果我们想要修改state之后立马获取最新的数据，我们可以给setState()函数指定第二个参数</span></span><br><span class="line">        <span class="keyword">this</span>.setState(<span class="function">(<span class="params">state,props</span>) =&gt;</span> (&#123;</span><br><span class="line">            count : ++state.count</span><br><span class="line">        &#125;),()=&gt;&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.count)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">         <span class="comment">//state的更新可能是异步的!!!!</span></span><br><span class="line">        <span class="comment">//state的更新既可能是同步的,也可能是异步的。准确地说,在React内部机制能检测到的地方, setState就是异步的;在React检测不到的地方,例如setInterval,setTimeout里,setState就是同步更新的。”</span></span><br><span class="line">        <span class="comment">// setTimeout(() =&gt; &#123;</span></span><br><span class="line">        <span class="comment">//     this.setState(&#123;count:2&#125;)</span></span><br><span class="line">        <span class="comment">//     console.log(this.state.count)  //因为setState()写在了setTimeout()函数里面，所以现在的setState()就是同步更新的</span></span><br><span class="line">        <span class="comment">// &#125;, 1000);</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="10-1-state-更新的原理"><a href="#10-1-state-更新的原理" class="headerlink" title="10.1 state 更新的原理"></a>10.1 state 更新的原理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> setState本质是通过一个队列机制实现state更新的。 执行setState时，会将需要更新的state合并后放入状态队列，而不会立刻更新state，队列机制可以批量更新state。</span><br><span class="line">如果不通过setState而直接修改this.state，那么这个state不会放入状态队列中，下次调用setState时对状态队列进行合并时，会忽略之前直接被修改的state，这样我们就无法合并了，而且实际也没有把你想要的state更新上去。</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">this.setState(newState)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">newState 存入pending 队列   （待定队列）</td>
+</tr>
+<tr>
+<td align="center">判断是否处于 batch update  （分批更新）</td>
+</tr>
+<tr>
+<td align="center">1.保存在 dirtyComponents 中 (Y)           2.遍历dirtyComponents ，调用updateComponent，更新               pending state or props  (N)</td>
+</tr>
+</tbody></table>
+<p>10.1.1 如何知道已经被更新</p>
+<ul>
+<li>回调函数</li>
+<li>钩子函数</li>
+</ul>
+<p>10.1.2 需要注意的地方</p>
+<ul>
+<li>setState可能会引发不必要的渲染(renders)</li>
+<li>setState无法完全掌控应用中所有组件的状态</li>
+</ul>
+<h5 id="10-2-updateComponent-中的-diff"><a href="#10-2-updateComponent-中的-diff" class="headerlink" title="10.2 updateComponent 中的 diff"></a>10.2 updateComponent 中的 diff</h5><h5 id="a-tree-diff"><a href="#a-tree-diff" class="headerlink" title="(a) tree diff"></a>(a) tree diff</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">其实传统diff算法就是对每个节点一一对比，循环遍历所有的子节点，然后判断子节点的更新状态。通过循环递归对节点进行依次对比，算法时间复杂度达到 O(n^3) ，n是树的节点数，这个有多可怕呢？——如果要展示1000个节点，得执行上亿次比较。即便是CPU快能执行30亿条命令，也**很难在一秒内**计算出差异。。</span><br><span class="line"></span><br><span class="line">React 通过制定大胆的策略，将 O(n^3) 复杂度的问题转换成 O(n) 复杂度的问题。react根据自己的特点，实现了部分代码的简化。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">那么问题来了，如果DOM节点出现了跨层级操作,diff会咋办呢？</span><br><span class="line">答：diff只简单考虑同层级的节点位置变换，如果是跨层级的话，只有创建节点和删除节点的操作。</span><br></pre></td></tr></table></figure>
+
+<h5 id="b-component-diff"><a href="#b-component-diff" class="headerlink" title="(b) component diff"></a>(b) component diff</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">React应用是基于组件构建的，对于组件的比较优化侧重于以下几点：</span><br><span class="line">1. 同一类型组件遵从tree diff比较v-dom树</span><br><span class="line">2. 不同类型组件，先将该组件归类为dirty component，替换下整个组件下的所有子节点</span><br><span class="line">3. 同一类型组件Virtual Dom没有变化，React允许开发者使用shouldComponentUpdate（）来判断该组件是否进行diff，运用得当可以节省diff计算时间，提升性能</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如上图，当组件D → 组件G时，diff判断为不同类型的组件，虽然它们的结构相似甚至一样，diff仍然不会比较二者结构，会直接销毁D及其子节点，然后新建一个G相关的子tree，这显然会影响性能，官方虽然认定这种情况极少出现，但是开发中的这种现象造成的影响是非常大的。</span><br></pre></td></tr></table></figure>
+
+<h5 id="c-element-diff"><a href="#c-element-diff" class="headerlink" title="(c) element diff"></a>(c) element diff</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对于同一层级的element节点，diff提供了以下3种节点操作：</span><br><span class="line">1. INSERT_MARKUP 插入节点</span><br><span class="line">2. MOVE_EXISING 移动节点</span><br><span class="line">3. REMOVE_NODE 移除节点</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一般diff在比较集合[A,B,C,D]和[B，A，D，C]的时候会进行全部对比，即按对应位置逐个比较，发现每个位置对应的元素都有所更新，则把旧集合全部移除，替换成新的集合，如上图，但是这样的操作在React中显然是复杂、低效、影响性能的操作，因为新集合中所有的元素都可以进行复用，无需删除重新创建，耗费性能和内存，只需要移动元素位置即可。</span><br><span class="line"></span><br><span class="line">React对这一现象做出了一个高效的策略：允许开发者对同一层级的同组子节点添加唯一key值进行区分。意义就是代码上的一小步，性能上的一大步，甚至是翻天覆地的变化！</span><br></pre></td></tr></table></figure>
+
+<p>##### </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/21/9.react起始简介/" rel="next" title="9.react起始简介">
+                <i class="fa fa-chevron-left"></i> 9.react起始简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MVC的简介"><span class="nav-number">1.</span> <span class="nav-text">1. MVC的简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Vuex-和-Redux-的区别"><span class="nav-number">2.</span> <span class="nav-text">2.Vuex 和 Redux 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vue-和-react-监听数据的原理"><span class="nav-number">3.</span> <span class="nav-text">3. vue 和 react 监听数据的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-react-安装的目录"><span class="nav-number">4.</span> <span class="nav-text">4. react 安装的目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-全局安装-webpack"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 全局安装 webpack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-创建webpack-应用"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 创建webpack 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-配置webpack-dev-serve"><span class="nav-number">4.3.</span> <span class="nav-text">4.3.配置webpack-dev-serve</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-配置到内存中"><span class="nav-number">4.4.</span> <span class="nav-text">4.4. 配置到内存中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-遇到问题报错如下"><span class="nav-number">5.</span> <span class="nav-text">5. 遇到问题报错如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-在-webpack-中使用-react"><span class="nav-number">6.</span> <span class="nav-text">6.在 webpack 中使用 react</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-虚拟-dom的介绍（提高性能）"><span class="nav-number">7.</span> <span class="nav-text">7. 虚拟 dom的介绍（提高性能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-JSX-语法"><span class="nav-number">8.</span> <span class="nav-text">8.JSX 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-组件-amp-Props"><span class="nav-number">9.</span> <span class="nav-text">9.组件&amp;Props</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#纯函数"><span class="nav-number">9.0.1.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#React-的组件"><span class="nav-number">9.0.2.</span> <span class="nav-text">React 的组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-1-两种创建的对比"><span class="nav-number">9.0.3.</span> <span class="nav-text">9.1 两种创建的对比</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#10-state-的数据更改问题"><span class="nav-number">10.</span> <span class="nav-text">10. state 的数据更改问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#10-1-state-更新的原理"><span class="nav-number">10.0.1.</span> <span class="nav-text">10.1 state 更新的原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-2-updateComponent-中的-diff"><span class="nav-number">10.0.2.</span> <span class="nav-text">10.2 updateComponent 中的 diff</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a-tree-diff"><span class="nav-number">10.0.3.</span> <span class="nav-text">(a) tree diff</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-component-diff"><span class="nav-number">10.0.4.</span> <span class="nav-text">(b) component diff</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-element-diff"><span class="nav-number">10.0.5.</span> <span class="nav-text">(c) element diff</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
