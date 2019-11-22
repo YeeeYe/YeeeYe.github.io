@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/9-react起始简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/9.react起始简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dong Wenbin">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/21/9-react起始简介/" itemprop="url">9.react起始简介</a></h1>
+                <a class="post-title-link" href="/2019/11/21/9.react起始简介/" itemprop="url">9.react起始简介</a></h1>
         
 
         <div class="post-meta">
@@ -446,125 +446,6 @@
 
 <p>##### </p>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/9.react起始简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/21/9.react起始简介/" itemprop="url">9.react起始简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-21T18:25:33+08:00">
-                2019-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -1739,13 +1620,188 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/10/1.vue项目中部分问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/10/1.vue项目中部分问题/" itemprop="url">一.vue中遇到的一些问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-10T00:13:11+08:00">
+                2019-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-定义全局过滤器"><a href="#1-定义全局过滤器" class="headerlink" title="1.定义全局过滤器"></a>1.定义全局过滤器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> moment <span class="keyword">from</span> <span class="string">'moment'</span></span><br><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'dateFormat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">dataStr, pattern = <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> moment(dataStr).format(pattern)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;span&gt;发表时间：&#123;&#123; item.add_time | dateFormat &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使axios请求"><a href="#2-使axios请求" class="headerlink" title="2.使axios请求"></a>2.使axios请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line"></span><br><span class="line">      axios.get(<span class="string">"/api/getnewslist"</span>)</span><br><span class="line"></span><br><span class="line">       .then(<span class="function">(<span class="params">&#123;data&#125;</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span>(data.status == <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">this</span>.newslist = data.message;</span><br><span class="line"></span><br><span class="line">               <span class="built_in">console</span>.log(<span class="keyword">this</span>.newslist)</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在body中要使用 v-for检索的时候 , 要注意使用 :key </p>
+<li class="mui-table-view-cell mui-media" v-for="item in newslist" :key="item.id">
+
+<h3 id="3-exort-defalut"><a href="#3-exort-defalut" class="headerlink" title="3.exort defalut"></a>3.exort defalut</h3><ul>
+<li>export default 向外暴露的成员，可以使用任意的变量来接收</li>
+<li>在一个模块中，export default 只允许向外暴露1次</li>
+<li>在一个模块中，可以同时使用 export default 和 export 向外暴露成员</li>
+<li>export default只能直接输出，不能先定义再输出。</li>
+</ul>
+<h3 id="4-axios的封装问题"><a href="#4-axios的封装问题" class="headerlink" title="4.axios的封装问题"></a>4.axios的封装问题</h3><h4 id="1-陈旧的方法"><a href="#1-陈旧的方法" class="headerlink" title="(1)    陈旧的方法"></a>(1)    陈旧的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&quot;/api/getlunbo&quot;)</span><br><span class="line">.then((&#123; data &#125;) =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    if (data.status == 0) &#123;</span><br><span class="line"></span><br><span class="line">      this.bannerlist = data.message;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-封装之后的方法"><a href="#2-封装之后的方法" class="headerlink" title="(2)    封装之后的方法"></a>(2)    封装之后的方法</h4><pre><code>  import myaxios,{lunboURL} from &quot;../tool/myaxios&quot;
+
+async created() {
+
+     let {data} = await myaxios(&quot;GET&quot;,lunboURL);
+
+        if (data.status == 0) {
+
+        this.bannerlist = data.message;
+  }</code></pre><h3 id="5-通过id传参"><a href="#5-通过id传参" class="headerlink" title="5.通过id传参"></a>5.通过id传参</h3><h4 id="a-router-link的配置"><a href="#a-router-link的配置" class="headerlink" title="a.   router-link的配置"></a>a.   router-link的配置</h4><p>通过字符串的拼接的方式</p>
+<router-link :to="'/home/newsinfo/' + item.id">
+
+<h4 id="b-路由的配置"><a href="#b-路由的配置" class="headerlink" title="b.  路由的配置"></a>b.  路由的配置</h4><p><code>{</code></p>
+<pre><code>`path: &quot;/home/newsinfo/:id&quot;,`
+
+`component: NewsInfo`</code></pre><p>  <code>},</code></p>
+<h4 id="c-获取id"><a href="#c-获取id" class="headerlink" title="c.  获取id"></a>c.  获取id</h4><p><code>this.$route.params.id</code></p>
+<h3 id="6-route和-router对象的区别"><a href="#6-route和-router对象的区别" class="headerlink" title="6.$route和$router对象的区别"></a>6.$route和$router对象的区别</h3><h4 id="1-route-表示-当前路由信息对象"><a href="#1-route-表示-当前路由信息对象" class="headerlink" title="(1) $route 表示(当前路由信息对象)"></a>(1) $route 表示(当前路由信息对象)</h4><p>表示当前激活的路由的状态信息，包含了当前 URL 解析得到的信息，还有 URL 匹配到的 route records（路由记录）。<br>路由信息对象：即$router会被注入每个组件中，可以利用它进行一些信息的获取。</p>
+<h4 id="2-router对象"><a href="#2-router对象" class="headerlink" title="(2)$router对象"></a>(2)$router对象</h4><ul>
+<li>$route为当前router跳转对象里面可以获取name、path、query、params等。</li>
+<li>$router为VueRouter实例，想要导航到不同URL，则使用$router.push方法，返回上一个history使用$router.go方法。跟上面说的一样，这里的$router就管理路由的跳转，英文里er结尾的都表示一种人，这里你可以把这个想象中一个管理者，他来控制路由去哪里（push、go），这样就比较容易记。</li>
+</ul>
+<p>全局的路由实例，是router构造方法的实例。<br>在 Vue 实例内部，你可以通过 $router 访问路由实例</p>
+<h3 id="7-关于横向滚动条的报错"><a href="#7-关于横向滚动条的报错" class="headerlink" title="7.关于横向滚动条的报错"></a>7.关于横向滚动条的报错</h3><p><code>mui.min.js?44c0:8 [Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</code></p>
+<p>解决办法如下 , 在APP.vue的css中添加:</p>
+<p><code>\* {</code></p>
+<p>   <code>touch-action: none;</code></p>
+<p>  <code>}</code></p>
+<h3 id="8-严格模式"><a href="#8-严格模式" class="headerlink" title="8.严格模式"></a>8.严格模式</h3><p>在 babel 把 es6 的代码转换成 es5 的代码的时候 , 会默认启用严格模式 , 严格模式下是不可以使用 caller callee 这些东西的 , 但是 mui.js 中已经使用的这些 , 所以我们在不能更改 mui.js 的情况下 , 加上上面的语句 , 在火狐浏览器中只是警告 ,  谷歌浏览器中会报错 </p>
+<p>babel.config.js 中加入</p>
+<p> ignore:[“./lib/mui/js/mui.js”]</p>
+<h3 id="9-图片的懒加载"><a href="#9-图片的懒加载" class="headerlink" title="9.图片的懒加载"></a>9.图片的懒加载</h3><p>当打开一个有很多图片的页面时，先只加载页面上看到的图片，等滚动到页面下面时，再加载所需的图片。这就是图片懒加载 ( v-lazy )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">img[lazy=&quot;loading&quot;] &#123;</span><br><span class="line"></span><br><span class="line">     width: 40px;</span><br><span class="line"></span><br><span class="line">     height: 300px;</span><br><span class="line"></span><br><span class="line">     margin: auto;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-作用"><a href="#1-作用" class="headerlink" title="( 1 )  作用"></a>( 1 )  作用</h5><p>减少或延迟请求数，缓解浏览器的压力，增强用户体验。</p>
+<h5 id="2-实现方式"><a href="#2-实现方式" class="headerlink" title="( 2 )  实现方式"></a>( 2 )  实现方式</h5><p>1､设置图片src属性为同一张图片，同时自定义一个data-src属性来存储图片的真实地址<br> 2､ 页面初始化显示的时候或者浏览器发生滚动的时候判断图片是否在视野中<br> 3､ 当图片在视野中时，通过js自动改变该区域的图片的src属性为真实地址</p>
+<h3 id="10-区域滑动"><a href="#10-区域滑动" class="headerlink" title="10. 区域滑动"></a>10. 区域滑动</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mui-scroll-wrapper"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mui-scroll"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--这里放置真实显示的DOM内容--&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//引入需要的mui</span></span><br><span class="line"><span class="keyword">import</span> mui <span class="keyword">from</span> <span class="string">"../../../node_modules/mui/js/mui.js"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mounted() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当组件中的DOM结构被渲染好并放到页面中后 ，会执行这个钩子函数 , 保证页面已经存在了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果要操作元素最好在 mounted 里面，因为这里时候的DOM元素是最新的</span></span><br><span class="line"></span><br><span class="line">    mui(<span class="string">".mui-scroll-wrapper"</span>).scroll(&#123;</span><br><span class="line"></span><br><span class="line">      deceleration: <span class="number">0.0005</span> <span class="comment">//flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006</span></span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.abc&#123;</span><br><span class="line"></span><br><span class="line">  position: relative;</span><br><span class="line"></span><br><span class="line">  height: <span class="number">98</span>%;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 app.vue 中 :</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123;</span><br><span class="line"></span><br><span class="line">  height: <span class="number">100</span>%;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.container&#123;</span><br><span class="line"></span><br><span class="line">  height: <span class="number">100</span>%;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-只在当前页面生效css-scoped"><a href="#11-只在当前页面生效css-scoped" class="headerlink" title="11.只在当前页面生效css : scoped"></a>11.只在当前页面生效css : scoped</h3><h3 id="12-动画的过程获取位置信息"><a href="#12-动画的过程获取位置信息" class="headerlink" title="12.动画的过程获取位置信息"></a>12.动画的过程获取位置信息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动画的钩子函数</span></span><br><span class="line">    beforeEnter(el) &#123;</span><br><span class="line">      el.style.transform = <span class="string">"translate(0, 0)"</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    enter(el, done) &#123;</span><br><span class="line">      el.offsetWidth;</span><br><span class="line">      <span class="comment">// 获取小球的在页面中的位置</span></span><br><span class="line">      <span class="keyword">const</span> ballPosition = <span class="keyword">this</span>.$refs.ball.getBoundingClientRect();</span><br><span class="line">      <span class="comment">// 获取徽标在页面中的位置</span></span><br><span class="line">      <span class="keyword">const</span> badgePosition = <span class="built_in">document</span></span><br><span class="line">        .getElementById(<span class="string">"badge"</span>)</span><br><span class="line">        .getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> xDist = badgePosition.left - ballPosition.left;</span><br><span class="line">      <span class="keyword">const</span> yDist = badgePosition.top - ballPosition.top;</span><br><span class="line"></span><br><span class="line">      el.style.transform = <span class="string">`translate(<span class="subst">$&#123;xDist&#125;</span>px, <span class="subst">$&#123;yDist&#125;</span>px)`</span>;</span><br><span class="line">      el.style.transition = <span class="string">"all 1s ease"</span>;</span><br><span class="line">      done();</span><br><span class="line">    &#125;,</span><br><span class="line">    afterEnter(el) &#123;</span><br><span class="line">      <span class="keyword">this</span>.ballFlag = !<span class="keyword">this</span>.ballFlag;</span><br><span class="line">    &#125;,</span><br><span class="line">    addToCart()&#123;</span><br><span class="line">      <span class="keyword">this</span>.ballFlag = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</router-link></li>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1789,7 +1845,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
