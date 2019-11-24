@@ -81,14 +81,14 @@
 
 <meta name="description" content="1.秘钥的生成1234567891011#1.打开git brash，输入命令 ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容#4.码云后台创建新项目#5.配置本地全局的账号和密码  git co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8.Git的简单用法">
+<meta property="og:title" content="八.Git的简单用法">
 <meta property="og:url" content="http://yoursite.com/2019/11/20/8.Git的简单用法/index.html">
 <meta property="og:site_name" content="DWBBlog">
 <meta property="og:description" content="1.秘钥的生成1234567891011#1.打开git brash，输入命令 ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容#4.码云后台创建新项目#5.配置本地全局的账号和密码  git co">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-20T12:57:00.283Z">
+<meta property="og:updated_time" content="2019-11-23T04:44:52.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8.Git的简单用法">
+<meta name="twitter:title" content="八.Git的简单用法">
 <meta name="twitter:description" content="1.秘钥的生成1234567891011#1.打开git brash，输入命令 ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容#4.码云后台创建新项目#5.配置本地全局的账号和密码  git co">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>8.Git的简单用法 | DWBBlog</title>
+  <title>八.Git的简单用法 | DWBBlog</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">8.Git的简单用法</h1>
+          <h1 class="post-title" itemprop="name headline">八.Git的简单用法</h1>
         
 
         <div class="post-meta">
@@ -304,6 +304,10 @@
 <h4 id="1-1-如果已经绑定则解除"><a href="#1-1-如果已经绑定则解除" class="headerlink" title="1.1 如果已经绑定则解除"></a>1.1 如果已经绑定则解除</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
 
 <p>理解 ：在同一台电脑上的ssh只能绑定一个github ，之后再用git进行操作。</p>
+<h3 id="2-上传步骤"><a href="#2-上传步骤" class="headerlink" title="2.上传步骤"></a>2.上传步骤</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	修改本地代码，再提交的步骤</span><br><span class="line"><span class="number">1</span>	修改代码</span><br><span class="line"><span class="number">2</span>	git add *     将修改的代码提交到暂存区</span><br><span class="line"><span class="number">3</span>	git commit -m “第一次提交”  将暂存区的代码提交到本地库</span><br><span class="line"><span class="number">4</span>	git push      将本地库的代码提交到远程服务器</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-错误-error"><a href="#3-错误-error" class="headerlink" title="3.错误 error"></a>3.错误 error</h3><p>vue项目 git提交失败 running pre-commit hook:lint-staged</p>
+<p>那就是删除掉pre-commit hook，具体在项目文件夹.git\hooks目录下，找到文件pre-commit</p>
 
       
     </div>
@@ -338,8 +342,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/21/9.react起始简介/" rel="prev" title="9.react起始简介">
-                9.react起始简介 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/21/9.react起始简介/" rel="prev" title="九.react起始简介">
+                九.react起始简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,7 +421,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -454,7 +458,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-秘钥的生成"><span class="nav-number">1.</span> <span class="nav-text">1.秘钥的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-如果已经绑定则解除"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 如果已经绑定则解除</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-秘钥的生成"><span class="nav-number">1.</span> <span class="nav-text">1.秘钥的生成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-如果已经绑定则解除"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 如果已经绑定则解除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-上传步骤"><span class="nav-number">2.</span> <span class="nav-text">2.上传步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-错误-error"><span class="nav-number">3.</span> <span class="nav-text">3.错误 error</span></a></li></ol></div>
             
 
           </div>

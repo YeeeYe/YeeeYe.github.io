@@ -79,17 +79,13 @@
 
 
 
-<meta name="description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一.vue中遇到的一些问题">
-<meta property="og:url" content="http://yoursite.com/2019/05/10/1.vue项目中部分问题/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DWBBlog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="DWBBlog">
-<meta property="og:description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-14T14:13:10.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一.vue中遇到的一些问题">
-<meta name="twitter:description" content="1.定义全局过滤器1234567891011import moment from &apos;moment&apos;Vue.filter(&apos;dateFormat&apos;, function (dataStr, pattern = &quot;YYYY-MM-DD HH:mm:ss&quot;) &amp;#123;  return moment(dataStr).format(pattern)&amp;#125;)&amp;lt;span&amp;gt;发表时间：&amp;#12">
+<meta name="twitter:title" content="DWBBlog">
 
 
 
@@ -119,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/10/1.vue项目中部分问题/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
 
 
-  <title>一.vue中遇到的一些问题 | DWBBlog</title>
+  <title>DWBBlog</title>
   
 
 
@@ -144,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,9 +214,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -249,7 +246,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一.vue中遇到的一些问题</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/10/1.vue项目中部分问题/" itemprop="url">一.vue中遇到的一些问题</a></h1>
         
 
         <div class="post-meta">
@@ -299,7 +298,9 @@
       
 
       
-        <h3 id="1-定义全局过滤器"><a href="#1-定义全局过滤器" class="headerlink" title="1.定义全局过滤器"></a>1.定义全局过滤器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> moment <span class="keyword">from</span> <span class="string">'moment'</span></span><br><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'dateFormat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">dataStr, pattern = <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> moment(dataStr).format(pattern)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;span&gt;发表时间：&#123;&#123; item.add_time | dateFormat &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          
+            <h3 id="1-定义全局过滤器"><a href="#1-定义全局过滤器" class="headerlink" title="1.定义全局过滤器"></a>1.定义全局过滤器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> moment <span class="keyword">from</span> <span class="string">'moment'</span></span><br><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'dateFormat'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">dataStr, pattern = <span class="string">"YYYY-MM-DD HH:mm:ss"</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> moment(dataStr).format(pattern)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;span&gt;发表时间：&#123;&#123; item.add_time | dateFormat &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-使axios请求"><a href="#2-使axios请求" class="headerlink" title="2.使axios请求"></a>2.使axios请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line"></span><br><span class="line">      axios.get(<span class="string">"/api/getnewslist"</span>)</span><br><span class="line"></span><br><span class="line">       .then(<span class="function">(<span class="params">&#123;data&#125;</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span>(data.status == <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">this</span>.newslist = data.message;</span><br><span class="line"></span><br><span class="line">               <span class="built_in">console</span>.log(<span class="keyword">this</span>.newslist)</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">     &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
@@ -360,6 +361,8 @@ async created() {
 <h3 id="11-只在当前页面生效css-scoped"><a href="#11-只在当前页面生效css-scoped" class="headerlink" title="11.只在当前页面生效css : scoped"></a>11.只在当前页面生效css : scoped</h3><h3 id="12-动画的过程获取位置信息"><a href="#12-动画的过程获取位置信息" class="headerlink" title="12.动画的过程获取位置信息"></a>12.动画的过程获取位置信息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动画的钩子函数</span></span><br><span class="line">    beforeEnter(el) &#123;</span><br><span class="line">      el.style.transform = <span class="string">"translate(0, 0)"</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    enter(el, done) &#123;</span><br><span class="line">      el.offsetWidth;</span><br><span class="line">      <span class="comment">// 获取小球的在页面中的位置</span></span><br><span class="line">      <span class="keyword">const</span> ballPosition = <span class="keyword">this</span>.$refs.ball.getBoundingClientRect();</span><br><span class="line">      <span class="comment">// 获取徽标在页面中的位置</span></span><br><span class="line">      <span class="keyword">const</span> badgePosition = <span class="built_in">document</span></span><br><span class="line">        .getElementById(<span class="string">"badge"</span>)</span><br><span class="line">        .getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> xDist = badgePosition.left - ballPosition.left;</span><br><span class="line">      <span class="keyword">const</span> yDist = badgePosition.top - ballPosition.top;</span><br><span class="line"></span><br><span class="line">      el.style.transform = <span class="string">`translate(<span class="subst">$&#123;xDist&#125;</span>px, <span class="subst">$&#123;yDist&#125;</span>px)`</span>;</span><br><span class="line">      el.style.transition = <span class="string">"all 1s ease"</span>;</span><br><span class="line">      done();</span><br><span class="line">    &#125;,</span><br><span class="line">    afterEnter(el) &#123;</span><br><span class="line">      <span class="keyword">this</span>.ballFlag = !<span class="keyword">this</span>.ballFlag;</span><br><span class="line">    &#125;,</span><br><span class="line">    addToCart()&#123;</span><br><span class="line">      <span class="keyword">this</span>.ballFlag = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 </router-link></li>
+          
+        
       
     </div>
     
@@ -376,28 +379,12 @@ async created() {
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/15/2.git遇到remote orgin问题/" rel="prev" title="二. git中遇到remote origin already exists">
-                二. git中遇到remote origin already exists <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -407,11 +394,14 @@ async created() {
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -419,10 +409,6 @@ async created() {
 
 
           
-
-  
-
-
 
         </div>
         
@@ -443,17 +429,8 @@ async created() {
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -495,22 +472,6 @@ async created() {
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-定义全局过滤器"><span class="nav-number">1.</span> <span class="nav-text">1.定义全局过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使axios请求"><span class="nav-number">2.</span> <span class="nav-text">2.使axios请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-exort-defalut"><span class="nav-number">3.</span> <span class="nav-text">3.exort defalut</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-axios的封装问题"><span class="nav-number">4.</span> <span class="nav-text">4.axios的封装问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-陈旧的方法"><span class="nav-number">4.1.</span> <span class="nav-text">(1)    陈旧的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-封装之后的方法"><span class="nav-number">4.2.</span> <span class="nav-text">(2)    封装之后的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-通过id传参"><span class="nav-number">5.</span> <span class="nav-text">5.通过id传参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-router-link的配置"><span class="nav-number">5.1.</span> <span class="nav-text">a.   router-link的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-路由的配置"><span class="nav-number">5.2.</span> <span class="nav-text">b.  路由的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-获取id"><span class="nav-number">5.3.</span> <span class="nav-text">c.  获取id</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-route和-router对象的区别"><span class="nav-number">6.</span> <span class="nav-text">6.$route和$router对象的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-route-表示-当前路由信息对象"><span class="nav-number">6.1.</span> <span class="nav-text">(1) $route 表示(当前路由信息对象)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-router对象"><span class="nav-number">6.2.</span> <span class="nav-text">(2)$router对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-关于横向滚动条的报错"><span class="nav-number">7.</span> <span class="nav-text">7.关于横向滚动条的报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-严格模式"><span class="nav-number">8.</span> <span class="nav-text">8.严格模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-图片的懒加载"><span class="nav-number">9.</span> <span class="nav-text">9.图片的懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-作用"><span class="nav-number">9.0.1.</span> <span class="nav-text">( 1 )  作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-实现方式"><span class="nav-number">9.0.2.</span> <span class="nav-text">( 2 )  实现方式</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#10-区域滑动"><span class="nav-number">10.</span> <span class="nav-text">10. 区域滑动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-只在当前页面生效css-scoped"><span class="nav-number">11.</span> <span class="nav-text">11.只在当前页面生效css : scoped</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-动画的过程获取位置信息"><span class="nav-number">12.</span> <span class="nav-text">12.动画的过程获取位置信息</span></a></li></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -644,10 +605,6 @@ async created() {
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
