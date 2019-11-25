@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. React父子组件通信1.1 父亲给孩子传递参数1234return (&amp;lt;div&amp;gt;        App        &amp;lt;CMTItem name=&amp;#123;&apos;zhangsan&apos;&amp;#125; &amp;#123;...obj&amp;#125;&amp;gt;&amp;lt;/CMTItem&amp;gt;    &amp;lt;/div&amp;gt;)  1.2 孩子给父亲传递参数 12345678910111213141">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11.react生命周期">
+<meta property="og:url" content="http://yoursite.com/2019/11/25/11.react生命周期/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1. React父子组件通信1.1 父亲给孩子传递参数1234return (&amp;lt;div&amp;gt;        App        &amp;lt;CMTItem name=&amp;#123;&apos;zhangsan&apos;&amp;#125; &amp;#123;...obj&amp;#125;&amp;gt;&amp;lt;/CMTItem&amp;gt;    &amp;lt;/div&amp;gt;)  1.2 孩子给父亲传递参数 12345678910111213141">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-25T16:01:05.794Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="11.react生命周期">
+<meta name="twitter:description" content="1. React父子组件通信1.1 父亲给孩子传递参数1234return (&amp;lt;div&amp;gt;        App        &amp;lt;CMTItem name=&amp;#123;&apos;zhangsan&apos;&amp;#125; &amp;#123;...obj&amp;#125;&amp;gt;&amp;lt;/CMTItem&amp;gt;    &amp;lt;/div&amp;gt;)  1.2 孩子给父亲传递参数 12345678910111213141">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/25/11.react生命周期/">
+
+
+
+
+
+  <title>11.react生命周期 | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/11.react生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">11.react生命周期</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T16:16:07+08:00">
+                2019-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-React父子组件通信"><a href="#1-React父子组件通信" class="headerlink" title="1. React父子组件通信"></a>1. React父子组件通信</h3><h4 id="1-1-父亲给孩子传递参数"><a href="#1-1-父亲给孩子传递参数" class="headerlink" title="1.1 父亲给孩子传递参数"></a>1.1 父亲给孩子传递参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        App</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">CMTItem</span> <span class="attr">name</span>=<span class="string">&#123;</span>'<span class="attr">zhangsan</span>'&#125; &#123;<span class="attr">...obj</span>&#125;&gt;</span><span class="tag">&lt;/<span class="name">CMTItem</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-孩子给父亲传递参数"><a href="#1-2-孩子给父亲传递参数" class="headerlink" title="1.2 孩子给父亲传递参数"></a>1.2 孩子给父亲传递参数</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">// 父亲中用来接收参数的函数 </span></span><br><span class="line">&gt; getChild = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">&gt;         <span class="keyword">const</span> id = <span class="keyword">this</span>.state.CommentList.length + <span class="number">1</span>;</span><br><span class="line">&gt;         <span class="built_in">console</span>.log()</span><br><span class="line">&gt;         obj.id = id;</span><br><span class="line">&gt;         <span class="built_in">console</span>.log(<span class="string">"父亲接收数据的方法"</span>,obj);</span><br><span class="line">&gt;         <span class="keyword">this</span>.setState(<span class="function">(<span class="params">state</span>) =&gt;</span>(&#123;</span><br><span class="line">&gt;             CommentList :[obj,...this.state.CommentList] ★★</span><br><span class="line">&gt;             <span class="comment">// 用来添加到数组，</span></span><br><span class="line">&gt;         &#125;))</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; <span class="comment">// 父亲中的子组件的使用</span></span><br><span class="line">&gt;      <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">&gt;         App</span></span><br><span class="line"><span class="xml">&gt;         <span class="tag">&lt;<span class="name">CMTItem</span> <span class="attr">func</span>=<span class="string">&#123;reload&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">CMTItem</span>&gt;</span></span></span><br><span class="line"><span class="xml">&gt;     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">// 按钮绑定的函数用来传递数据</span></span><br><span class="line">&gt; postComment = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">&gt;         <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">&gt;         obj.user = <span class="keyword">this</span>.refs.user.value</span><br><span class="line">&gt;         obj.content = <span class="keyword">this</span>.refs.content.value</span><br><span class="line">&gt;         <span class="built_in">console</span>.log(obj)</span><br><span class="line">&gt;         <span class="keyword">if</span>(<span class="keyword">this</span>.refs.user.value&amp;&amp; <span class="keyword">this</span>.refs.content.value)&#123;</span><br><span class="line">&gt;             <span class="keyword">this</span>.props.func(obj); ★</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;         <span class="keyword">this</span>.refs.user.value = <span class="keyword">this</span>.refs.content.value =<span class="string">""</span></span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="1-3-Context的跨层传递"><a href="#1-3-Context的跨层传递" class="headerlink" title="1.3 Context的跨层传递"></a>1.3 Context的跨层传递</h4><ul>
+<li>使用要点：1.保证父子组件必须是类组件 ★</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个方法用于给子孙组件传递数据 (数据的跨层传递)</span></span><br><span class="line">    getChildContext() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            color: <span class="keyword">this</span>.state.color</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义向子孙组件传递的数据的类型</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">    color: PropTypes.string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子组件在使用父组件context数据的时候首先需要对父组件传递过来的数据做类型校验</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="comment">//从this.context中获取跨层传递的数据</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>这是CMTChild组件 &#123;this.context.color&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-react-组件的生命周期"><a href="#2-react-组件的生命周期" class="headerlink" title="2. react 组件的生命周期"></a>2. react 组件的生命周期</h3><h4 id="2-1-对比-vue-的生命周期"><a href="#2-1-对比-vue-的生命周期" class="headerlink" title="2.1 对比 vue 的生命周期"></a>2.1 对比 vue 的生命周期</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue生命周期：</span><br><span class="line"><span class="number">1.</span>	beforeCreate     组件创建之前，此时method和state还不可以使用</span><br><span class="line"><span class="number">2.</span>	created         组件创建完毕，此时method和state可以使用</span><br><span class="line"><span class="number">3.</span>	beforeMount    在内存中创建虚拟dom，此时页面还没有挂载</span><br><span class="line"><span class="number">4.</span>	mounted        内存中虚拟dom已经渲染到页面，此时页面是最新的</span><br><span class="line"><span class="number">5.</span>	beforeUpdate    页面更新之前，此时页面还是旧的</span><br><span class="line"><span class="number">6.</span>	updated        页面更新之后，此时页面是最新的</span><br><span class="line"><span class="number">7.</span>	beforeDestory    组件销毁之前</span><br><span class="line"><span class="number">8.</span>	destroyed       组件销毁之后</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-react-生命周期的介绍"><a href="#2-2-react-生命周期的介绍" class="headerlink" title="2.2 react 生命周期的介绍"></a>2.2 react 生命周期的介绍</h4><ul>
+<li>React组件的生命周期分为三个阶段：组件的创建阶段、组件的运行阶段、组件的销毁阶段</li>
+</ul>
+<h5 id="a-创建阶段"><a href="#a-创建阶段" class="headerlink" title="a. 创建阶段"></a>a. 创建阶段</h5><h6 id="1-static-defaultProps"><a href="#1-static-defaultProps" class="headerlink" title="1. static defaultProps"></a>1. static defaultProps</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在封装一个组件的时候，组件内部肯定有一些数据是必须的，哪怕用户没有传递一些相关的启动参数，这时候组件内部尽量给自己提供一个默认值；</span></span><br><span class="line"> <span class="comment">// 在 React 中使用静态的defaultProps属性来设置组件的默认属性值；</span></span><br><span class="line"> <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line">   initcount: <span class="number">0</span> <span class="comment">// 如果外界没有传递 initcount  那么自己初始化一个 数值为0</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> ReactTypes <span class="keyword">from</span> <span class="string">"prop-types"</span></span><br><span class="line"><span class="comment">// 这是创建一个 静态的 propTypes 对象，可以对外界传递过来的属性做类型校验；</span></span><br><span class="line"><span class="comment">// 注意： 如果要为传递过来的属性做类型校验，必须安装 React 提供的 第三方包叫做 prop-types ;</span></span><br><span class="line"><span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    <span class="comment">// 使用 prop-types 包 来定义 initcount 为 number 类型</span></span><br><span class="line">    <span class="comment">// isRequired 表示这个props属性是必须要传递的 </span></span><br><span class="line">    initcount: ReactTypes.number.isRequired </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果有些数据是必须的，必须要有初始值，但是没有传递，就可以使用 static</li>
+</ul>
+<h6 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2.constructor"></a>2.constructor</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.生命周期第二个执行的是constructor 构造函数 (执行一次)</span></span><br><span class="line">   <span class="comment">// 在创建组件对象的时候会自动调用构造函数</span></span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"constructor"</span>)</span><br><span class="line">       <span class="keyword">super</span>(props)</span><br><span class="line">       <span class="comment">//在构造函数中指定组件的私有数据</span></span><br><span class="line">       <span class="keyword">this</span>.state = &#123;</span><br><span class="line">           count: props.initcount</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">this</span>.divRef = React.createRef()</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-componentWillMount"><a href="#3-componentWillMount" class="headerlink" title="3.   componentWillMount"></a>3.   componentWillMount</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.当子组件接收到新的props会执行,在react16.4版本以后，setState修改state数据之后也会触发这个方法(执行多次)</span></span><br><span class="line">    <span class="comment">// 在该方法中不能通过this.setSate来修改state数据,因为在staic修饰的方法中就没有this</span></span><br><span class="line">    <span class="comment">//作用：将传递的props映射到state里面</span></span><br><span class="line">    <span class="comment">//参数： nextProps 外部传递过来的props属性</span></span><br><span class="line">    <span class="comment">//      prevState 之前的state状态</span></span><br><span class="line">    <span class="keyword">static</span> getDerivedStateFromProps(nextProps, prevState) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"getDerivedStateFromProps"</span>, nextProps, prevState)</span><br><span class="line">        <span class="comment">//获取到父组件中传递过来的initcount值</span></span><br><span class="line">        <span class="keyword">const</span> &#123; initcount &#125; = nextProps;</span><br><span class="line">        <span class="comment">//当父组件中传递过来的initcount发生改变了</span></span><br><span class="line">        <span class="keyword">if</span> (initcount != prevState.prevCount) &#123;</span><br><span class="line">            <span class="comment">//在方法中返回&#123;count:initcount&#125; 替换掉当前state中的 count值</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                count: initcount,</span><br><span class="line">                prevCount:initcount</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果父组件中传递过来的initcount没有变化，就返回一个空对象(此时不对当前的state做任何修改)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-render"><a href="#4-render" class="headerlink" title="4.render (){}"></a>4.render (){}</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4.创建虚拟dom，但是虚拟dom还没有挂载到页面 (执行多次)</span></span><br><span class="line">   <span class="comment">// render函数中不能使用setState()来修改state的数据，因为会死循环</span></span><br><span class="line">   render() &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"render"</span>, <span class="keyword">this</span>.divRef.current)  <span class="comment">//null</span></span><br><span class="line">       <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.divRef&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">           哈哈Counter &#123;this.state.count&#125;</span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-componentDidMount"><a href="#5-componentDidMount" class="headerlink" title="5.componentDidMount"></a>5.componentDidMount</h6><p>虚拟 dom 已经挂载到页面，此时可以获取到最新的页面（执行一次）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5.虚拟dom已经挂载到页面，此时可以获取到最新的页面 (执行一次)</span></span><br><span class="line">   componentDidMount() &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"componentDidMount"</span>, <span class="keyword">this</span>.divRef.current, <span class="keyword">this</span>.state)  <span class="comment">//null</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="b-运行阶段"><a href="#b-运行阶段" class="headerlink" title="b.  运行阶段"></a>b.  运行阶段</h5><h6 id="1-static-getDerivedStateFromProps"><a href="#1-static-getDerivedStateFromProps" class="headerlink" title="1.static getDerivedStateFromProps"></a>1.static getDerivedStateFromProps</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一个会执行：<span class="keyword">static</span> getDerivedStateFromProps</span><br><span class="line">当父组件给子组件传递的props发生变化的时候，会执行该方法。</span><br><span class="line">在react16<span class="number">.4</span>版本以后，当前组件的state发生变化，会触发forceUpdate方法，然后还是会触发该方法</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-shouldComponentUpdate"><a href="#2-shouldComponentUpdate" class="headerlink" title="2.shouldComponentUpdate"></a>2.shouldComponentUpdate</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第二个会执行: shouldComponentUpdate</span></span><br><span class="line">    <span class="comment">// 在这个函数中，我们可以设置指定条件下去更新页面，指定条件下不更新页面。这个函数中入参props和state都是最新的</span></span><br><span class="line">    <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">    shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"shouldComponentUpdate"</span>, nextProps, nextState)</span><br><span class="line">        <span class="comment">// 在 shouldComponentUpdate 中要求必须返回一个布尔值</span></span><br><span class="line">        <span class="comment">// 在 shouldComponentUpdate 中，如果返回的值是 false，则不会继续执行后续的生命周期函数，而是直接退回到了运行中的状态，此时后续的render函数并没有被调用，因此页面不会被更新，但是组件的 state 状态，却被修改了；</span></span><br><span class="line">        <span class="comment">// return nextState.count % 2 == 0 ? true : false;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-render"><a href="#3-render" class="headerlink" title="3.render"></a>3.render</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第三个会执行:render  此时会重新构建虚拟dom，但是新的虚拟dom还没有渲染到页面</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="4-getSnapshotBeforeUpdate"><a href="#4-getSnapshotBeforeUpdate" class="headerlink" title="4.getSnapshotBeforeUpdate"></a>4.getSnapshotBeforeUpdate</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第四个会执行getSnapshotBeforeUpdate 函数</span></span><br><span class="line">  <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">  getSnapshotBeforeUpdate() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"getSnapshotBeforeUpdate"</span>)</span><br><span class="line">      <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-componentDidUpdate-★★"><a href="#5-componentDidUpdate-★★" class="headerlink" title="5.componentDidUpdate ★★"></a>5.componentDidUpdate ★★</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">    <span class="comment">//表示组件已经更新完毕  此时可以获取到最新的页面</span></span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"componentDidUpdate"</span>, <span class="keyword">this</span>.state)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//只有在 componentDidMount 这个生命周期钩子函数中才可以写 setState， 其他钩子函数统统不可以写 ★</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="c-销毁阶段"><a href="#c-销毁阶段" class="headerlink" title="c . 销毁阶段"></a>c . 销毁阶段</h5><h6 id="1-componentWillUnmount"><a href="#1-componentWillUnmount" class="headerlink" title="1. componentWillUnmount()"></a>1. componentWillUnmount()</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//很关键的，我们获取当前rootNode的scrollHeight，传到componentDidUpdate 的参数perScrollHeight</span></span><br><span class="line">  <span class="comment">//在render方法调用之后，在componentDidUpdate之前执行，我们可以在这个方法中获取到元素的滚动位置的信息</span></span><br><span class="line">  <span class="comment">//还可以在该方法中做一些样式的微调</span></span><br><span class="line">  getSnapshotBeforeUpdate() &#123;</span><br><span class="line">      <span class="comment">//console.log(this.rootNode.clientHeight)</span></span><br><span class="line">      <span class="comment">//this.rootNode.style.backgroundColor = "red";</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.rootNode.scrollHeight;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/22/10.react进阶(二)/" rel="next" title="十、react进阶(事件处理和条件渲染)">
+                <i class="fa fa-chevron-left"></i> 十、react进阶(事件处理和条件渲染)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/25/12.拓展-GraphQL的介绍/" rel="prev" title="12.拓展-GraphQL的介绍">
+                12.拓展-GraphQL的介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-React父子组件通信"><span class="nav-number">1.</span> <span class="nav-text">1. React父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-父亲给孩子传递参数"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 父亲给孩子传递参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-孩子给父亲传递参数"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 孩子给父亲传递参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-Context的跨层传递"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Context的跨层传递</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-react-组件的生命周期"><span class="nav-number">2.</span> <span class="nav-text">2. react 组件的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-对比-vue-的生命周期"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 对比 vue 的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-react-生命周期的介绍"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 react 生命周期的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-创建阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text">a. 创建阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-static-defaultProps"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1. static defaultProps</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-constructor"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">2.constructor</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-componentWillMount"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">3.   componentWillMount</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-render"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">4.render (){}</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-componentDidMount"><span class="nav-number">2.2.1.5.</span> <span class="nav-text">5.componentDidMount</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-运行阶段"><span class="nav-number">2.2.2.</span> <span class="nav-text">b.  运行阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-static-getDerivedStateFromProps"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">1.static getDerivedStateFromProps</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-shouldComponentUpdate"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">2.shouldComponentUpdate</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-render"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">3.render</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-getSnapshotBeforeUpdate"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">4.getSnapshotBeforeUpdate</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-componentDidUpdate-★★"><span class="nav-number">2.2.2.5.</span> <span class="nav-text">5.componentDidUpdate ★★</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-销毁阶段"><span class="nav-number">2.2.3.</span> <span class="nav-text">c . 销毁阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-componentWillUnmount"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">1. componentWillUnmount()</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
