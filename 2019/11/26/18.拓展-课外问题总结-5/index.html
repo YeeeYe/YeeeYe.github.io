@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)A. C A D B    B. B D C A    C. C D A B     D. D A B C 2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？12345678910111213（1）创建新节点      createDocumentFragment()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15.拓展-课外问题总结(5)">
+<meta property="og:url" content="http://yoursite.com/2019/11/26/18.拓展-课外问题总结-5/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)A. C A D B    B. B D C A    C. C D A B     D. D A B C 2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？12345678910111213（1）创建新节点      createDocumentFragment()">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-26T11:19:03.071Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="15.拓展-课外问题总结(5)">
+<meta name="twitter:description" content="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)A. C A D B    B. B D C A    C. C D A B     D. D A B C 2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？12345678910111213（1）创建新节点      createDocumentFragment()">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/26/18.拓展-课外问题总结-5/">
+
+
+
+
+
+  <title>15.拓展-课外问题总结(5) | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/18.拓展-课外问题总结-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">15.拓展-课外问题总结(5)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:45:57+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是-B"><a href="#1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是-B" class="headerlink" title="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)"></a>1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)</h3><p>A. C A D B    B. B D C A    C. C D A B     D. D A B C</p>
+<h3 id="2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？"><a href="#2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？" class="headerlink" title="2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？"></a>2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）创建新节点</span><br><span class="line">      createDocumentFragment()    <span class="comment">//创建一个DOM片段</span></span><br><span class="line">      createElement()   <span class="comment">//创建一个具体的元素</span></span><br><span class="line">      createTextNode()   <span class="comment">//创建一个文本节点</span></span><br><span class="line">（<span class="number">2</span>）添加、移除、替换、插入</span><br><span class="line">      appendChild()</span><br><span class="line">      removeChild()</span><br><span class="line">      replaceChild()</span><br><span class="line">      insertBefore()</span><br><span class="line">（<span class="number">3</span>）查找</span><br><span class="line">      getElementsByTagName()    <span class="comment">//通过标签名称</span></span><br><span class="line">      getElementsByName()    <span class="comment">//通过元素的Name属性的值</span></span><br><span class="line">      getElementById()    <span class="comment">//通过元素Id，唯一性</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、请写出Jquery-Ajax简单调用方法"><a href="#3、请写出Jquery-Ajax简单调用方法" class="headerlink" title="3、请写出Jquery Ajax简单调用方法"></a>3、请写出Jquery Ajax简单调用方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">　　type: <span class="string">"post"</span>,　　　　　　　　　　<span class="comment">//以POST的方式发送请求</span></span><br><span class="line">　　url: url,　　　　　　　　　　　　<span class="comment">//拼凑的链接及参数</span></span><br><span class="line">　　contentType: <span class="string">"application/json"</span>,</span><br><span class="line">　　dataType: <span class="string">"json"</span>,</span><br><span class="line">　　success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span></span><br><span class="line"><span class="function">　　</span>&#123;</span><br><span class="line">　　　　<span class="comment">//成功获取一般处理程序响应后执行的代码</span></span><br><span class="line">　　&#125;,</span><br><span class="line">　　error: <span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span></span><br><span class="line"><span class="function">　　</span>&#123;</span><br><span class="line">　　　　<span class="comment">//收到一般处理程序响应失败后执行的代码</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、请你谈一谈你是如何理解前端模块化"><a href="#4、请你谈一谈你是如何理解前端模块化" class="headerlink" title="4、请你谈一谈你是如何理解前端模块化"></a>4、请你谈一谈你是如何理解前端模块化</h3><h3 id="5、请描述下cookies，sessionStorage和localStorage的区别？"><a href="#5、请描述下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="5、请描述下cookies，sessionStorage和localStorage的区别？"></a>5、请描述下cookies，sessionStorage和localStorage的区别？</h3><h3 id="6、什么是跨域？解决跨域的方法有哪些？"><a href="#6、什么是跨域？解决跨域的方法有哪些？" class="headerlink" title="6、什么是跨域？解决跨域的方法有哪些？"></a>6、什么是跨域？解决跨域的方法有哪些？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">跨域问题只有在前端的ajax和后台交互的过程中才会产生，当使用ajax从一个url向另外一个url发送请求时，只要两个url的协议、域名、端口号中任何一个不一样，就构成了跨域</span><br><span class="line"></span><br><span class="line">解决跨域<span class="number">9</span>种办法：</span><br><span class="line"><span class="number">1</span>、 JSONP：</span><br><span class="line">jsonp的原理就是利用&lt;script&gt;标签没有跨域限制，通过&lt;script&gt;标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。</span><br><span class="line">jsonp的缺点：只能发送<span class="keyword">get</span>一种请求。</span><br><span class="line"></span><br><span class="line">2、 跨域资源共享（CORS）</span><br><span class="line">它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</span><br><span class="line">CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</span><br><span class="line">浏览器将CORS跨域请求分为简单请求和非简单请求。</span><br><span class="line"></span><br><span class="line">3、 nginx代理跨域</span><br><span class="line">nginx代理跨域，实质和CORS跨域原理一样，通过配置文件设置请求响应头Access-Control-Allow-Origin…等字段。</span><br><span class="line"></span><br><span class="line">4、nodejs中间件代理跨域</span><br><span class="line">1）非vue框架的跨域</span><br><span class="line">使用node + express + http-proxy-middleware搭建一个proxy服务器。</span><br><span class="line">2）vue框架的跨域</span><br><span class="line">node + vue + webpack + webpack-dev-server搭建的项目，跨域请求接口，直接修改webpack.config.js配置。开发环境下，vue渲染服务和接口代理服务都是webpack-dev-server同一个，所以页面与代理接口之间不再跨域。</span><br><span class="line"></span><br><span class="line">5、 document.domain + iframe跨域</span><br><span class="line">此方案仅限主域相同，子域不同的跨域应用场景。实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。</span><br><span class="line"></span><br><span class="line">父窗口：(http://www.domain.com/a.html)</span><br><span class="line">子窗口：(http://child.domain.com/a.html)</span><br><span class="line">document.domain = 'domain.com';</span><br><span class="line">     </span><br><span class="line">6、location.hash + iframe跨域</span><br><span class="line">实现原理： a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。</span><br><span class="line"></span><br><span class="line">具体实现：A域：a.html -&gt; B域：b.html -&gt; A域：c.html，a与b不同域只能通过hash值单向通信，b与c也不同域也只能单向通信，但c与a同域，所以c可通过parent.parent访问a页面所有对象。</span><br><span class="line"></span><br><span class="line">7、window.name + iframe跨域</span><br><span class="line">window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。</span><br><span class="line"></span><br><span class="line">8、跨文档通信 API：window.postMessage()</span><br><span class="line">postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一。</span><br><span class="line">主要包括接受信息的”message”事件和发送消息的”postMessage”方法。</span><br><span class="line"></span><br><span class="line">9、WebSocket协议跨域</span><br><span class="line">WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。</span><br><span class="line"></span><br><span class="line">http://www.imooc.com/article/291931</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）"><a href="#8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）" class="headerlink" title="8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）"></a>8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）</h3><h3 id="9、请问在JavaScript程序中，alert-undefined-null-的输出结果是？（）"><a href="#9、请问在JavaScript程序中，alert-undefined-null-的输出结果是？（）" class="headerlink" title="9、请问在JavaScript程序中，alert(undefined == null)的输出结果是？（）"></a>9、请问在JavaScript程序中，alert(undefined == null)的输出结果是？（）</h3><p>  A. null   B. undefined   C. true    D. false</p>
+<h3 id="10、下面JavaScript代码显示结果是？（A）"><a href="#10、下面JavaScript代码显示结果是？（A）" class="headerlink" title="10、下面JavaScript代码显示结果是？（A）"></a>10、下面JavaScript代码显示结果是？（A）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> Bollean(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">If(x)&#123;</span><br><span class="line"></span><br><span class="line">alert(‘hi’);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="built_in">Boolean</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">If(y)&#123;</span><br><span class="line"></span><br><span class="line">Alert(‘hello’);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A. Hi   B. hi hello   C. hello   D.不显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean对象与Boolean原始值的区别   当一个值为false的Boolean对象放到条件语句当中的时候，Boolean对象的值会被当作true来计算   Boolean(0)强制转化成布尔值而不是布尔对象，仅返回一个为false的值</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="11、分析下面这两行JavaScript代码的作用（C）"><a href="#11、分析下面这两行JavaScript代码的作用（C）" class="headerlink" title="11、分析下面这两行JavaScript代码的作用（C）"></a>11、分析下面这两行JavaScript代码的作用（C）</h3><p>01  <a href="javascript:history.back()" target="_blank" rel="noopener"></a></p>
+<p>02  <a href="javascript:history.forward()" target="_blank" rel="noopener"></a></p>
+<p>A. 代码第1行的作用相当于前进按钮</p>
+<p>B. 代码第2行的作用相当于后退按钮</p>
+<p>C. 代码第1行的作用相当于后退按钮</p>
+<p>D. 以上表述都不正确</p>
+<h3 id="12、关于HTTP协议，下列说法错误的是（B）"><a href="#12、关于HTTP协议，下列说法错误的是（B）" class="headerlink" title="12、关于HTTP协议，下列说法错误的是（B）"></a>12、关于HTTP协议，下列说法错误的是（B）</h3><p>A. HTTP是无状态协议           B.HTTP是应用层协议</p>
+<p>B. HTTP是基于二进制的协议     D. HTTP状态码200表示成功</p>
+<h3 id="13、在HTML页面上包含如下所示的层对象，则JavaScript语句document-getElementById-“info”-innerHTML-的值是（B）"><a href="#13、在HTML页面上包含如下所示的层对象，则JavaScript语句document-getElementById-“info”-innerHTML-的值是（B）" class="headerlink" title="13、在HTML页面上包含如下所示的层对象，则JavaScript语句document.getElementById(“info”).innerHTML 的值是（B）"></a>13、在HTML页面上包含如下所示的层对象，则JavaScript语句document.getElementById(“info”).innerHTML 的值是（B）</h3><div id="”info”" style="”display:block”"><p>请填写</p></div>
+
+<p>A. 请填写</p>
+<p>B. </p><p>请填写</p><p></p>
+<p>C. id=”info” style=”display:block”</p>
+<p>D. <div id="”info”" style="”display:block”"><p>请填写</p></div></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/26/17.拓展-课外问题总结-4/" rel="next" title="15.拓展-课外问题总结(4)">
+                <i class="fa fa-chevron-left"></i> 15.拓展-课外问题总结(4)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是-B"><span class="nav-number">1.</span> <span class="nav-text">1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？"><span class="nav-number">2.</span> <span class="nav-text">2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、请写出Jquery-Ajax简单调用方法"><span class="nav-number">3.</span> <span class="nav-text">3、请写出Jquery Ajax简单调用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、请你谈一谈你是如何理解前端模块化"><span class="nav-number">4.</span> <span class="nav-text">4、请你谈一谈你是如何理解前端模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、请描述下cookies，sessionStorage和localStorage的区别？"><span class="nav-number">5.</span> <span class="nav-text">5、请描述下cookies，sessionStorage和localStorage的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、什么是跨域？解决跨域的方法有哪些？"><span class="nav-number">6.</span> <span class="nav-text">6、什么是跨域？解决跨域的方法有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）"><span class="nav-number">7.</span> <span class="nav-text">8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、请问在JavaScript程序中，alert-undefined-null-的输出结果是？（）"><span class="nav-number">8.</span> <span class="nav-text">9、请问在JavaScript程序中，alert(undefined == null)的输出结果是？（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、下面JavaScript代码显示结果是？（A）"><span class="nav-number">9.</span> <span class="nav-text">10、下面JavaScript代码显示结果是？（A）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、分析下面这两行JavaScript代码的作用（C）"><span class="nav-number">10.</span> <span class="nav-text">11、分析下面这两行JavaScript代码的作用（C）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、关于HTTP协议，下列说法错误的是（B）"><span class="nav-number">11.</span> <span class="nav-text">12、关于HTTP协议，下列说法错误的是（B）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、在HTML页面上包含如下所示的层对象，则JavaScript语句document-getElementById-“info”-innerHTML-的值是（B）"><span class="nav-number">12.</span> <span class="nav-text">13、在HTML页面上包含如下所示的层对象，则JavaScript语句document.getElementById(“info”).innerHTML 的值是（B）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

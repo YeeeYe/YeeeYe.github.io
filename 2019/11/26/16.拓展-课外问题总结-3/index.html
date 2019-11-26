@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、以下代码的输出结果是    10      1234567var a = [];for (var i=0;i&amp;lt;10;i++) &amp;#123;	a[i] = function()&amp;#123;		console.log(i);	&amp;#125;&amp;#125;a[6]();  解析： 1var声明的变量i ，没有形成一个块级的作用域，所以里面的funciton不能形成一个闭包，每次也不会保存i的值。只">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15.拓展-课外问题总结(3)">
+<meta property="og:url" content="http://yoursite.com/2019/11/26/16.拓展-课外问题总结-3/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1、以下代码的输出结果是    10      1234567var a = [];for (var i=0;i&amp;lt;10;i++) &amp;#123;	a[i] = function()&amp;#123;		console.log(i);	&amp;#125;&amp;#125;a[6]();  解析： 1var声明的变量i ，没有形成一个块级的作用域，所以里面的funciton不能形成一个闭包，每次也不会保存i的值。只">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-26T11:08:21.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="15.拓展-课外问题总结(3)">
+<meta name="twitter:description" content="1、以下代码的输出结果是    10      1234567var a = [];for (var i=0;i&amp;lt;10;i++) &amp;#123;	a[i] = function()&amp;#123;		console.log(i);	&amp;#125;&amp;#125;a[6]();  解析： 1var声明的变量i ，没有形成一个块级的作用域，所以里面的funciton不能形成一个闭包，每次也不会保存i的值。只">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/26/16.拓展-课外问题总结-3/">
+
+
+
+
+
+  <title>15.拓展-课外问题总结(3) | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/16.拓展-课外问题总结-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">15.拓展-课外问题总结(3)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:43:57+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1、以下代码的输出结果是    10     </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) &#123;</span><br><span class="line">	a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>]();</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var声明的变量i ，没有形成一个块级的作用域，所以里面的funciton不能形成一个闭包，每次也不会保存i的值。只有当a[i]（）这个函数执行的时候，funciton会沿着作用域链查找i的值，父级作用域就是window，这个时候i已经加到了10。</span><br></pre></td></tr></table></figure>
+
+<p>2.以下代码的输出结果是    6     </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) &#123;</span><br><span class="line">	a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>]();</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let声明的变量，属于块级作用域，声明周期就在大括号中，在外部是不可以打印的，所以funciton在内部就形成了一个闭包，funciton里面可以引用父级作用域的变量，引用的就是funciton被定义时的父作用域的变量值，所以在执行a[i] = function () &#123; console.log(i);&#125;的时候 fucniton都保存了当时的i值</span><br></pre></td></tr></table></figure>
+
+<p>3.以下代码的输出结果是   George,John,Thomas,James,Adrew,Martin     </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">6</span>)</span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"George"</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="string">"John"</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="string">"Thomas"</span></span><br><span class="line">arr[<span class="number">3</span>] = <span class="string">"James"</span></span><br><span class="line">arr[<span class="number">4</span>] = <span class="string">"Adrew"</span></span><br><span class="line">arr[<span class="number">5</span>] = <span class="string">"Martin"</span></span><br><span class="line">arr.splice = (<span class="number">2</span>,<span class="number">3</span>,<span class="string">"William"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr.toString());</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">splice 方法可以移除从start 位置开始的指定个数的元素并插入新元素，从而修改 arrayObj。返回值是一个由所移除的元素组成的新的Array 对象。</span><br><span class="line">只是作用于数组，不能作用于字符串，ToString方法不受影响。</span><br></pre></td></tr></table></figure>
+
+<p>4、以下代码的输出结果是      0,4,16,36,64     </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> newArray = array</span><br><span class="line">.filter(<span class="function">(<span class="params">v</span>) =&gt;</span> v % <span class="number">2</span> === <span class="number">0</span>) <span class="comment">//0，2，4，6，8			 .map((v) =&gt; Math.pow(v,2)); //pow返回v的2次幂的值</span></span><br><span class="line"><span class="built_in">console</span>.log(newArray.toString());</span><br></pre></td></tr></table></figure>
+
+<p>5、以下代码的输出结果是      {“a”:1,”b”:2,”c”:3}    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = &#123;</span><br><span class="line">	  a:<span class="number">1</span>,</span><br><span class="line">	  b:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> source1 = &#123;</span><br><span class="line">	  b:<span class="number">2</span>,</span><br><span class="line">	  c:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> source2 = &#123;</span><br><span class="line">	  c:<span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target,source1,source2);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(target));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.assign可以用来处理数组，但是会把数组视为对象。第一个参数是目标对象，后面的参数都是源对象。如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</span><br></pre></td></tr></table></figure>
+
+<p>6、以下代码的功能是 ：  <u>解决异步问题</u>    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">ms</span>)</span>&#123;</span><br><span class="line">	  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">			setTimeout(resolve,ms);</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line">			</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">message,ms</span>)</span>&#123;</span><br><span class="line">	  <span class="keyword">await</span> foo(ms);</span><br><span class="line">	  <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;</span><br><span class="line">			</span><br><span class="line">print(<span class="string">'hello world'</span>,<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决异步问题的方案：</span></span><br><span class="line"><span class="comment">//1.可以使用回调来解决</span></span><br><span class="line"><span class="comment">//2.可以使用promise来解决</span></span><br><span class="line"><span class="comment">//3.可以使用await和async来解决   （最简单）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//async是用来修饰方法的,加上async修饰的方法有三个作用</span></span><br><span class="line"><span class="comment">//1.在该方法内部可以使用await关键字</span></span><br><span class="line"><span class="comment">//2.该方法需要会默认返回一个Promise</span></span><br><span class="line"><span class="comment">//3.加async修饰的方法表示异步方法，不会堵塞当前线程的执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//await是用来等待Promise执行的结果的，await后面需要跟一个Promise</span></span><br><span class="line"><span class="comment">//1.可以将原来的异步变成同步任务</span></span><br><span class="line"><span class="comment">//2.只可以在async修饰的方法中使用</span></span><br></pre></td></tr></table></figure>
+
+<p>7、以下代码的输出结果是 </p>
+<p>object<br>string  object  object<br>number  Boolean  function    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="literal">null</span>;                   </span><br><span class="line"><span class="keyword">let</span> b = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">let</span> c = [];</span><br><span class="line"><span class="keyword">let</span> d = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> e = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> f = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">let</span> g = <span class="function"><span class="params">a</span> =&gt;</span> a+<span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> e);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> g);</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span>运算符的返回类型为字符串，值包括如下几种：</span><br><span class="line"><span class="number">1.</span><span class="literal">undefined</span> --未定义的变量或值</span><br><span class="line"><span class="number">2.</span>boolean    --布尔类型的变量或值</span><br><span class="line"><span class="number">3</span>．string   --字符串类型的变量或值</span><br><span class="line"><span class="number">4.</span>number   --数字类型的变量或值</span><br><span class="line"><span class="number">5.</span>object    --对象类型的变量或值，或者<span class="literal">null</span></span><br><span class="line"><span class="number">6.</span><span class="function"><span class="keyword">function</span>  --函数类型的变量或值</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/26/15.拓展-课外问题总结-2/" rel="next" title="15.拓展-课外问题总结(2)">
+                <i class="fa fa-chevron-left"></i> 15.拓展-课外问题总结(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/26/17.拓展-课外问题总结-4/" rel="prev" title="15.拓展-课外问题总结(4)">
+                15.拓展-课外问题总结(4) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

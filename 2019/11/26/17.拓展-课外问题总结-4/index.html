@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.分别一句话介绍，Cookie和session是什么，两者的关系和区别 1cookie   位于用户的计算机上，用来维护用户计算机中的信息，直到用户删除。   (比如我们在网页上登录某个软件时输入用户名及密码时如果保存为cookie，则每次我们访问的时候就不需要登录网站了。我们可以在浏览器上保存任何文本，而且我们还可以随时随地的去阻止它或者删除。我们同样也可以禁用或者编辑cookie，但是有一点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15.拓展-课外问题总结(4)">
+<meta property="og:url" content="http://yoursite.com/2019/11/26/17.拓展-课外问题总结-4/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1.分别一句话介绍，Cookie和session是什么，两者的关系和区别 1cookie   位于用户的计算机上，用来维护用户计算机中的信息，直到用户删除。   (比如我们在网页上登录某个软件时输入用户名及密码时如果保存为cookie，则每次我们访问的时候就不需要登录网站了。我们可以在浏览器上保存任何文本，而且我们还可以随时随地的去阻止它或者删除。我们同样也可以禁用或者编辑cookie，但是有一点">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-26T11:13:42.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="15.拓展-课外问题总结(4)">
+<meta name="twitter:description" content="1.分别一句话介绍，Cookie和session是什么，两者的关系和区别 1cookie   位于用户的计算机上，用来维护用户计算机中的信息，直到用户删除。   (比如我们在网页上登录某个软件时输入用户名及密码时如果保存为cookie，则每次我们访问的时候就不需要登录网站了。我们可以在浏览器上保存任何文本，而且我们还可以随时随地的去阻止它或者删除。我们同样也可以禁用或者编辑cookie，但是有一点">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/26/17.拓展-课外问题总结-4/">
+
+
+
+
+
+  <title>15.拓展-课外问题总结(4) | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/17.拓展-课外问题总结-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">15.拓展-课外问题总结(4)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:44:57+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.分别一句话介绍，Cookie和session是什么，两者的关系和区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie   位于用户的计算机上，用来维护用户计算机中的信息，直到用户删除。   (比如我们在网页上登录某个软件时输入用户名及密码时如果保存为cookie，则每次我们访问的时候就不需要登录网站了。我们可以在浏览器上保存任何文本，而且我们还可以随时随地的去阻止它或者删除。我们同样也可以禁用或者编辑cookie，但是有一点需要注意不要使用cookie来存储一些隐私数据，以防隐私泄露。)   session   session称为会话信息，位于web服务器上，主要负责访问者与网站之间的交互，当访问浏览器请求http地址时，将传递到web服务器上并与访问信息进行匹配， 当关闭网站时就表示会话已经结束，网站无法访问该信息了，所以它无法保存永久数据，我们无法访问以及禁用网站   session与cookie的区别   Cookie数据存在客户端本地，Session数据存在服务器   Cookie数据可以被客户端随意修改，Session因为数据在服务器，所以用户不可以随意修改,因此session更安全   Cookie的存储是有限制的(每个站点cookie不超过50个，每个cookie不超过4kb，cookie只能存储非中文的字符串)，Session没有限制   设置cookie时间可以使cookie过期。但是使用session-destory（），我们将会销毁会话。           如果我们需要经常登录一个站点时，最好用cookie来保存信息，要不然每次登陆都特别麻烦，如果对于需要安全性高的站点以及控制数据的能力时需要用会话效果更佳，当然我们也可以结合两者，使网站按照我们的想法进行运行</span><br></pre></td></tr></table></figure>
+
+<p>2一句话解释Bootstrap的栅格系统。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多<span class="number">12</span>列。</span><br><span class="line">栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</span><br><span class="line">（<span class="number">1</span>）第一步：创建栅格系统的容器　　　 </span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">.container是固定宽度，居中显示:下面是Bootstrap中.container类的代码</span><br><span class="line"></span><br><span class="line">.container-fluid是 <span class="number">100</span>% 宽度：下面是Bootstrap中.container-fluid类的代码</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)第二步：创建合适的栅格系统</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="row"&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-8"&gt;.col-md-8&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-4"&gt;.col-md-4&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-6"</span>&gt;.col-md<span class="number">-6</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-6"&gt;.col-md-6&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">每一个“row”代表一行，而内部的“col-md-数字”代表一个单元格；</span></span><br><span class="line"><span class="regexp">Bootstrap把每一行分成12等份，“col-md-数字”中的“数字”从1-12中取，数字等于几，就占几份；</span></span><br><span class="line"><span class="regexp">合理的选择单元格的数字配置，再往单元格中添加我们想要的内容，这样一个栅格系统就完成了！</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>  3一句话介绍Vuex是什么?用于哪些场景?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。（vuex是一个全局单例模式管理。）</span><br><span class="line">使用场景：当应用遇到多个组件共享状态的时候，使用vuex。即：多个视图依赖于同一个状态，不同视图的行为需要变更同一个状态。</span><br><span class="line"></span><br><span class="line">拓展内容：</span><br><span class="line">如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</span><br><span class="line">什么是单页应用</span><br><span class="line">在应用整个使用流程里浏览器由始至终没有刷新，所有的数据交互由ajax完成。但是用户体验起来和app一样，有明确的页面区分，即所谓的web app，整个webapp就一个html文件，里面的各个功能页面是javascript通过hash,或者history api来进行路由，并通过ajax拉取数据来实现响应功能。因为整个webapp就一个html，所以叫单页面。</span><br><span class="line">在我们以前开发web程序的时候，都是通过不同的html，js，css进行控制。网站就是网页的集合，但是如今react，angular，vue的诞生，产生了单页面应用（single page application），构建web应用可能只有一个页面，这个页面不再是简单地把内容进行布局排序，它已经成为web应用的容器。</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p> 4分别一句话介绍，父子组件怎么传值?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">父传子</span><br><span class="line">1.在子组件中声明props，这边的数据表示来自父亲的数据</span><br><span class="line">2.在父组件中使用子组件的时候给子组件绑定值</span><br><span class="line">3.在页面上使用父亲传递过来的值</span><br><span class="line">子传父</span><br><span class="line">1.在父亲中声明一个方法用于接收子组件的数据</span><br><span class="line">2.在创建子组件的时候把父亲中的函数传递给子组件</span><br><span class="line">3.点击子组件按钮执行子组件的方法，在子组件的方法中触发父组件传递过来的函数</span><br></pre></td></tr></table></figure>
+
+<p> 5 Vue router如何实现跳转，跳转后的view是否更新了，如果不能，怎样触发更新?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">首先在页面中引入VueJS以及vue-router模块，使用router-link可以把文字设置成超链接的形式，而to则是指要跳转到哪个路由，当路由跳转后所有的数据都会在router-view中呈现，在script中创建router实例，将创建的组件与路由绑定即可。</span><br><span class="line"></span><br><span class="line">&lt;!-- :key=&quot;$route.fullPath&quot; 解决同路由但不同查询参数跳转后数据不更新 --&gt; &lt;router-view :key=&quot;$route.fullPath&quot; /&gt;</span><br><span class="line">（：key=“一个具有唯一值的 key 属性即可”）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/26/16.拓展-课外问题总结-3/" rel="next" title="15.拓展-课外问题总结(3)">
+                <i class="fa fa-chevron-left"></i> 15.拓展-课外问题总结(3)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/26/18.拓展-课外问题总结-5/" rel="prev" title="15.拓展-课外问题总结(5)">
+                15.拓展-课外问题总结(5) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
