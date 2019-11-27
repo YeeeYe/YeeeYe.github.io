@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.  react-spring基本使用1.安装动画库    1npm install react-spring  2.引入动画库   1import &amp;#123; useSpring, animated, config &amp;#125; from &amp;apos;react-spring&amp;apos;  3.声明改变透明度的动画   12345678910111213 const opacityAnima">
+<meta property="og:type" content="article">
+<meta property="og:title" content="19.react-spring">
+<meta property="og:url" content="http://yoursite.com/2019/11/27/19.react-spring/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1.  react-spring基本使用1.安装动画库    1npm install react-spring  2.引入动画库   1import &amp;#123; useSpring, animated, config &amp;#125; from &amp;apos;react-spring&amp;apos;  3.声明改变透明度的动画   12345678910111213 const opacityAnima">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-27T14:34:01.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="19.react-spring">
+<meta name="twitter:description" content="1.  react-spring基本使用1.安装动画库    1npm install react-spring  2.引入动画库   1import &amp;#123; useSpring, animated, config &amp;#125; from &amp;apos;react-spring&amp;apos;  3.声明改变透明度的动画   12345678910111213 const opacityAnima">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/27/19.react-spring/">
+
+
+
+
+
+  <title>19.react-spring | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/19.react-spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">19.react-spring</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-27T22:31:39+08:00">
+                2019-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-react-spring基本使用"><a href="#1-react-spring基本使用" class="headerlink" title="1.  react-spring基本使用"></a>1.  react-spring基本使用</h1><p>1.安装动画库   </p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">npm</span> install react-spring</span><br></pre></td></tr></table></figure>
+
+<p>2.引入动画库  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; useSpring, animated, config &#125; from &apos;react-spring&apos;</span><br></pre></td></tr></table></figure>
+
+<p>3.声明改变透明度的动画  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> opacityAnimation = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">opacity</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        to: &#123; <span class="attr">opacity</span>: <span class="number">1</span> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"> &#123;<span class="comment">/*把要动画的元素通过animated来修饰*/</span>&#125;</span><br><span class="line">&lt;animated.div style=&#123;opacityAnimation&#125;&gt;Demo1&lt;<span class="regexp">/animated.div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/当我们要对组件进行动画的时候，我们需要使用animated方法把组件包裹起来，然后直接使用包裹后的组件名字</span></span><br><span class="line"><span class="regexp">const AnimatedDonut4 = animated(Donut4)</span></span><br><span class="line"><span class="regexp">return (</span></span><br><span class="line"><span class="regexp">        &lt;AnimatedDonut4&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>AnimatedDonut4&gt;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-动画的配置"><a href="#2-动画的配置" class="headerlink" title="2.  动画的配置"></a>2.  动画的配置</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4.声明改变颜色的动画</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        config的一些配置参数：</span></span><br><span class="line"><span class="comment">            mass：影响速度以及过渡的效果。</span></span><br><span class="line"><span class="comment">            tension：影响整体速度。</span></span><br><span class="line"><span class="comment">            friction：控制阻力及其减速的速度。</span></span><br><span class="line"><span class="comment">            clamp：是否应该瞬间过渡。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        config.default  &#123; mass: 1, tension: 170, friction: 26 &#125;</span></span><br><span class="line"><span class="comment">        config.gentle   &#123; mass: 1, tension: 120, friction: 14 &#125;</span></span><br><span class="line"><span class="comment">        config.wobbly   &#123; mass: 1, tension: 180, friction: 12 &#125;</span></span><br><span class="line"><span class="comment">        config.stiff    &#123; mass: 1, tension: 210, friction: 20 &#125;</span></span><br><span class="line"><span class="comment">        config.slow     &#123; mass: 1, tension: 280, friction: 60 &#125;</span></span><br><span class="line"><span class="comment">        config.molasses &#123; mass: 1, tension: 280, friction: 120 &#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">const</span> colorAnimation = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">color</span>: <span class="string">'blue'</span> &#125;,</span><br><span class="line">        color: <span class="string">'red'</span>,  <span class="comment">//默认情况下 to可以省略</span></span><br><span class="line">        config: config.slow, <span class="comment">//动画的配置</span></span><br><span class="line">        config: &#123; <span class="attr">duration</span>: <span class="number">2000</span>,<span class="attr">tension</span>: <span class="number">210</span> &#125;,</span><br><span class="line">        delay: <span class="number">2000</span>, <span class="comment">//动画的延迟时间</span></span><br><span class="line">        reset:<span class="literal">true</span>,  <span class="comment">//从from状态过渡到to状态的时候有动画</span></span><br><span class="line">        reverse: <span class="literal">true</span>, <span class="comment">//反转from和to的状态(reverse要生效，一定要先设置reset为true)</span></span><br><span class="line">        <span class="comment">//动画开始的时候调用</span></span><br><span class="line">        onStart:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"onStart"</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//动画停止的时候调用</span></span><br><span class="line">        onRest:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"onRest"</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//每一帧动画都会调用onFrame，即使动画没有开始也会调用，会将动画的属性值作为参数入参</span></span><br><span class="line">        onFrame:<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"onFrame"</span>,value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-添加多个动画属性和动画状态"><a href="#3-添加多个动画属性和动画状态" class="headerlink" title="3.  添加多个动画属性和动画状态"></a>3.  添加多个动画属性和动画状态</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5.创建多个属性的动画</span></span><br><span class="line">    <span class="keyword">const</span> multiAnimation = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">color</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">        to: [</span><br><span class="line">            &#123; <span class="attr">opacity</span>: <span class="number">1</span>, <span class="attr">color</span>: <span class="string">'#ffaaee'</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">opacity</span>: <span class="number">0.1</span>, <span class="attr">color</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">opacity</span>: <span class="number">.5</span>, <span class="attr">color</span>: <span class="string">'#008000'</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">opacity</span>: <span class="number">.8</span>, <span class="attr">color</span>: <span class="string">'black'</span> &#125;</span><br><span class="line">        ],</span><br><span class="line">        config: &#123; <span class="attr">duration</span>: <span class="number">2000</span> &#125;,</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>//通过async和await来控制多个动画状态</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> animation = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">left</span>: <span class="string">'0%'</span>, <span class="attr">top</span>: <span class="string">'0%'</span>, <span class="attr">width</span>: <span class="string">'0%'</span>, <span class="attr">height</span>: <span class="string">'0%'</span>, <span class="attr">background</span>: <span class="string">'lightgreen'</span> &#125;,</span><br><span class="line">to: <span class="keyword">async</span> (next, cancel) =&gt; &#123;</span><br><span class="line">     <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">left</span>: <span class="string">'0%'</span>, <span class="attr">top</span>: <span class="string">'0%'</span>, <span class="attr">width</span>: <span class="string">'100%'</span>, <span class="attr">height</span>: <span class="string">'100%'</span>,<span class="attr">background</span>: <span class="string">'lightblue'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">height</span>: <span class="string">'50%'</span>, <span class="attr">background</span>: <span class="string">'lightgreen'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">width</span>: <span class="string">'50%'</span>, <span class="attr">left</span>: <span class="string">'50%'</span>, <span class="attr">background</span>: <span class="string">'lightgoldenrodyellow'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">top</span>: <span class="string">'0%'</span>, <span class="attr">height</span>: <span class="string">'100%'</span>, <span class="attr">background</span>: <span class="string">'lightpink'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">top</span>: <span class="string">'50%'</span>, <span class="attr">height</span>: <span class="string">'50%'</span>, <span class="attr">background</span>: <span class="string">'lightsalmon'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">width</span>: <span class="string">'100%'</span>, <span class="attr">left</span>: <span class="string">'0%'</span>, <span class="attr">background</span>: <span class="string">'lightcoral'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">width</span>: <span class="string">'50%'</span>, <span class="attr">background</span>: <span class="string">'lightseagreen'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">top</span>: <span class="string">'0%'</span>, <span class="attr">height</span>: <span class="string">'100%'</span>, <span class="attr">background</span>: <span class="string">'lightskyblue'</span> &#125;)</span><br><span class="line"><span class="keyword">await</span> next(&#123; <span class="attr">width</span>: <span class="string">'100%'</span>, <span class="attr">background</span>: <span class="string">'lightslategrey'</span> &#125;)</span><br><span class="line"> &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-interpolate的使用"><a href="#4-interpolate的使用" class="headerlink" title="4.  interpolate的使用"></a>4.  interpolate的使用</h1><p>interpolate方法可以用来在动画执行的过程中，根据给定的起始、最终值，计算动画的每一步需要的值。</p>
+<p>interpolate还有一个作用可以让我们模拟css的关键帧。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; o, xyz, color &#125; = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">o</span>: <span class="number">0</span>, <span class="attr">xyz</span>: [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], <span class="attr">color</span>: <span class="string">'red'</span> &#125;,</span><br><span class="line">        to: &#123; <span class="attr">o</span>: <span class="number">1</span>, <span class="attr">xyz</span>: [<span class="number">10</span>, <span class="number">20</span>, <span class="number">5</span>], <span class="attr">color</span>: <span class="string">'green'</span> &#125;,</span><br><span class="line">        config: &#123; <span class="attr">duration</span>: <span class="number">2000</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;animated.div style=&#123;&#123;</span><br><span class="line">            color,</span><br><span class="line">            opacity: o.interpolate(<span class="function"><span class="params">v</span> =&gt;</span> v),</span><br><span class="line">            transform: xyz.interpolate(<span class="function">(<span class="params">x, y, z</span>) =&gt;</span> &#123; <span class="keyword">return</span> <span class="string">`translate3d(<span class="subst">$&#123;x&#125;</span>px,<span class="subst">$&#123;y&#125;</span>px,<span class="subst">$&#123;z&#125;</span>px)`</span> &#125;),</span><br><span class="line">            <span class="comment">//直接调用interpolate方法可以合并多个值，这边border使用多个值来设定样式</span></span><br><span class="line">            <span class="comment">//第一个参数是要合并的值；第二个参数是一个箭头函数，用来返回指定样式</span></span><br><span class="line">            border: interpolate([o, color], (o, color) =&gt; &#123; <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;o * <span class="number">10</span>&#125;</span>px solid <span class="subst">$&#123;color&#125;</span>`</span> &#125;),</span><br><span class="line">            <span class="comment">//interpolate还可以来做关键帧动画，range对应动画的阶段，output对应每一个动画阶段的输出值*</span></span><br><span class="line">            padding: o.interpolate(&#123; <span class="attr">range</span>: [<span class="number">0</span>, <span class="number">0.5</span>, <span class="number">1</span>], <span class="attr">output</span>: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">10</span>] &#125;).interpolate(<span class="function"><span class="params">o</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;o&#125;</span>%`</span>),</span><br><span class="line">            borderColor: o.interpolate(&#123; <span class="attr">range</span>: [<span class="number">0</span>, <span class="number">1</span>], <span class="attr">output</span>: [<span class="string">'pink'</span>, <span class="string">'yellow'</span>] &#125;),</span><br><span class="line">            <span class="comment">//interpolate在做关键帧动画的时候，可以省略range和output</span></span><br><span class="line">            opacity: o.interpolate([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.6</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0.1</span>, <span class="number">0.5</span>, <span class="number">1</span>])</span><br><span class="line">        &#125;&#125;&gt;&#123;<span class="comment">/*如果要把动画属性渲染到页面，此时只能有一个元素*/</span>&#125;</span><br><span class="line">            &#123;o.interpolate(<span class="function"><span class="params">v</span> =&gt;</span> v.toFixed(<span class="number">2</span>))&#125;</span><br><span class="line">        &lt;<span class="regexp">/animated.div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br></pre></td></tr></table></figure>
+
+<p>注意点：interpolate只能被动画属性调用，普通字段是不可以调用interpolate方法</p>
+<h1 id="5-使用state来控制动画"><a href="#5-使用state来控制动画" class="headerlink" title="5.   使用state来控制动画"></a>5.   使用state来控制动画</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//hook：允许我们在函数组件中使用state</span></span><br><span class="line">    <span class="keyword">const</span> [flag, setFlag] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这边所创建的animation的opacity的变化是通过一个flag的state来控制的</span></span><br><span class="line">    <span class="keyword">const</span> animation = useSpring(&#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">opacity</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        to: &#123; <span class="attr">opacity</span>: flag ? <span class="number">1</span> : <span class="number">0</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;button onClick=&#123;()=&gt;&#123;setFlag(!flag)&#125;&#125;&gt;点我切换透明度&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;animated.div onMouseOver=&#123;()=&gt;&#123;setFlag(true)&#125;&#125; onMouseOut=&#123;()=&gt;&#123;setFlag(false)&#125;&#125; style=&#123;animation&#125;&gt;透明度变了&lt;/</span>animated.div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="6-通过useSpring入参箭头函数来控制动画"><a href="#6-通过useSpring入参箭头函数来控制动画" class="headerlink" title="6. 通过useSpring入参箭头函数来控制动画"></a>6. 通过useSpring入参箭头函数来控制动画</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.useSpring()接收箭头函数，此时会返回一个数组</span></span><br><span class="line">    <span class="comment">//通过解构赋值获取到useSpring()函数返回的结果  animation表示动画属性，set可以用来修改动画属性，stop可以用来停止动画</span></span><br><span class="line">    <span class="keyword">const</span> [animation, <span class="keyword">set</span>, stop] = useSpring(() =&gt; (&#123; opacity: <span class="number">0</span> &#125;))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;animated.div style=&#123;animation&#125; onMouseOver=&#123;()=&gt;&#123;<span class="keyword">set</span>(&#123;opacity: <span class="number">1</span>&#125;)&#125;&#125; onMouseOut=&#123;()=&gt;&#123;<span class="keyword">set</span>(&#123;opacity: <span class="number">0</span>&#125;)&#125;&#125;&gt;移入移出动画&lt;<span class="regexp">/animated.div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-useSprings动画"><a href="#7-useSprings动画" class="headerlink" title="7.   useSprings动画"></a>7.   useSprings动画</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">useSprings可以用来创建一组Spring，每个Spring都有自己的配置。</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> items = [<span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.6</span>, <span class="number">0.8</span>, <span class="number">1.0</span>];</span><br><span class="line">    <span class="comment">//创建5个spring</span></span><br><span class="line">    <span class="comment">//第一个spring的opacity=0.2</span></span><br><span class="line">    <span class="comment">//第二个spring的opacity=0.4</span></span><br><span class="line">    <span class="comment">//第三个spring的opacity=0.6</span></span><br><span class="line">    <span class="comment">//第四个spring的opacity=0.8</span></span><br><span class="line">    <span class="comment">//第五个spring的opacity=1.0</span></span><br><span class="line">    <span class="keyword">const</span> springs = useSprings(<span class="number">5</span>, items.map(<span class="function"><span class="params">item</span> =&gt;</span> (&#123; <span class="attr">opacity</span>: item,<span class="attr">from</span>:&#123;<span class="attr">opacity</span>:<span class="number">0</span>&#125; &#125;)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        springs.map(<span class="function">(<span class="params">props,idx</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">animated.div</span> <span class="attr">key</span>=<span class="string">&#123;idx&#125;</span> <span class="attr">style</span>=<span class="string">&#123;props&#125;</span>&gt;</span>item springs<span class="tag">&lt;/<span class="name">animated.div</span>&gt;</span></span>)</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-useTrail动画"><a href="#8-useTrail动画" class="headerlink" title="8.   useTrail动画"></a>8.   useTrail动画</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//useTrail可以用来创建一组Spring，每个Spring都有相同的配置，每个Spring跟随前一个Spring，在交叉的动画中使用</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这种写法可以</span></span><br><span class="line">    <span class="comment">//const trail = useTrail(5, &#123;opacity: 1&#125;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//这种写法也可以</span></span><br><span class="line">    <span class="comment">//创建5个spring，每个spring的配置都是一样的</span></span><br><span class="line">    <span class="keyword">const</span> [trail, <span class="keyword">set</span>, stop] = useTrail(5, () =&gt; (&#123; opacity: <span class="number">1</span> &#125;))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;trail.map((p, idx) =&gt; <span class="tag">&lt;<span class="name">animated.div</span> <span class="attr">key</span>=<span class="string">&#123;idx&#125;</span> <span class="attr">style</span>=<span class="string">&#123;p&#125;</span> &gt;</span>哈哈<span class="tag">&lt;/<span class="name">animated.div</span>&gt;</span>)&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; set(&#123; opacity: 0 &#125;) &#125;&#125;&gt;点我改变透明度<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<h1 id="9-useTransition动画"><a href="#9-useTransition动画" class="headerlink" title="9.   useTransition动画"></a>9.   useTransition动画</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">useTransition 可以进行过渡动画 (显示-&gt;隐藏)</span><br><span class="line"></span><br><span class="line"><span class="comment">//1.useTransition 可以对一组元素进行过渡动画</span></span><br><span class="line">    <span class="keyword">const</span> [items, setItems] = useState([&#123; <span class="attr">text</span>: <span class="string">'zhangsan'</span>, <span class="attr">key</span>: <span class="number">1</span> &#125;, &#123; <span class="attr">text</span>: <span class="string">'lisi'</span>, <span class="attr">key</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">text</span>: <span class="string">'wangwu'</span>, <span class="attr">key</span>: <span class="number">3</span> &#125;])</span><br><span class="line">    <span class="comment">//使用useTransition创建过渡动画</span></span><br><span class="line">    <span class="keyword">const</span> transitions = useTransition(items, item =&gt; item.key, &#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">transform</span>: <span class="string">'translate3d(0,-40px,0)'</span> &#125;,</span><br><span class="line">        enter: &#123; <span class="attr">transform</span>: <span class="string">'translate3d(0,0px,0)'</span> &#125;,</span><br><span class="line">        leave: &#123; <span class="attr">transform</span>: <span class="string">'translate3d(0,-40px,0)'</span> &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setItems(state =&gt; [&#123; text: 'zhaoliu', key: 12 &#125;, ...state]) &#125;&#125;&gt;增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;</span></span><br><span class="line"><span class="xml">            transitions.map((&#123; item, props, key &#125;) =&gt;</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">animated.div</span> <span class="attr">key</span>=<span class="string">&#123;key&#125;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">...props</span>, <span class="attr">display:</span> "<span class="attr">inline-block</span>", <span class="attr">marginLeft:</span> "<span class="attr">20px</span>" &#125;&#125;&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="name">animated.div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            )</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.使用useTransition还可以两个组件的切换动画、以及单个组件的切换动画</span></span><br><span class="line">    <span class="keyword">const</span> [toggle, setToggle] = useState(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个transition动画</span></span><br><span class="line">    <span class="keyword">const</span> transitions = useTransition(toggle, <span class="literal">null</span>, &#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">position</span>: <span class="string">'absolute'</span>, <span class="attr">opacity</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        enter: &#123; <span class="attr">opacity</span>: <span class="number">1</span> &#125;,</span><br><span class="line">        leave: &#123; <span class="attr">opacity</span>: <span class="number">0</span> &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setToggle(state =&gt; !state) &#125;&#125;&gt;切换<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;</span></span><br><span class="line"><span class="xml">            transitions.map((&#123; item, key, props &#125;) =&gt;</span></span><br><span class="line">                &lt;React.Fragment key=&#123;key&#125;&gt;</span><br><span class="line">                    &#123;/* &#123;item &amp;&amp; &lt;animated.div key=&#123;key&#125; style=&#123;props&#125;&gt;切换单个组件&lt;/animated.div&gt;&#125; */&#125;</span><br><span class="line">                    &#123;item ? &lt;animated.div style=&#123;props&#125;&gt;组件1&lt;/animated.div&gt; : &lt;animated.div style=&#123;props&#125;&gt;组件2&lt;/animated.div&gt;&#125;</span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">React.Fragment</span>&gt;</span></span></span><br><span class="line"><span class="xml">            )</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用useTransition切换路由</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//App2.jsx</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'@/components2/About'</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'@/components2/Home'</span></span><br><span class="line"><span class="keyword">import</span> Search <span class="keyword">from</span> <span class="string">'@/components2/Search'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; useTransition, animated &#125; <span class="keyword">from</span> <span class="string">'react-spring'</span></span><br><span class="line"><span class="keyword">import</span> &#123; HashRouter, Route, Link, Switch, useLocation &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App2 = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//1.获取当前的location位置，useLocation这个方法必须要在被HashRouter包裹的节点/子节点中才可以使用</span></span><br><span class="line">    <span class="keyword">const</span> location = useLocation();</span><br><span class="line">    <span class="comment">//2.创建一个过渡动画</span></span><br><span class="line">    <span class="keyword">const</span> transitions = useTransition(location, location =&gt; location.pathname, &#123;</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">position</span>: <span class="string">'absolute'</span>, <span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">transform</span>: <span class="string">'translate3d(0,-40px,0)'</span> &#125;,</span><br><span class="line">        enter: &#123; <span class="attr">opacity</span>: <span class="number">1</span>, <span class="attr">transform</span>: <span class="string">'translate3d(0,0px,0)'</span> &#125;,</span><br><span class="line">        leave: &#123; <span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">transform</span>: <span class="string">'translate3d(0,-40px,0)'</span> &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;Link to=<span class="string">"/"</span>&gt;来到首页&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Link to="/</span>about<span class="string">"&gt;来到About&lt;/Link&gt;</span></span><br><span class="line"><span class="string">            &lt;Link to="</span>/search<span class="string">"&gt;来到Search&lt;/Link&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &#123;/*路由切换动画*/&#125;</span></span><br><span class="line"><span class="string">            &#123;transitions.map((&#123; item, props, key &#125;) =&gt; (</span></span><br><span class="line"><span class="string">                &lt;animated.div key=&#123;key&#125; style=&#123;props&#125;&gt;</span></span><br><span class="line"><span class="string">                    &lt;Switch&gt;</span></span><br><span class="line"><span class="string">                        &lt;Route path='/' exact component=&#123;Home&#125; /&gt;</span></span><br><span class="line"><span class="string">                        &lt;Route path='/about' component=&#123;About&#125; /&gt;</span></span><br><span class="line"><span class="string">                        &lt;Route path='/search' strict component=&#123;Search&#125; /&gt;</span></span><br><span class="line"><span class="string">                    &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">                &lt;/animated.div&gt;</span></span><br><span class="line"><span class="string">            ))&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default App2;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//main.js</span></span><br><span class="line"><span class="string">//这边必须要用HashRouter包裹App2，以便在App2中能使用useLocation方法</span></span><br><span class="line"><span class="string">ReactDom.render(&lt;HashRouter&gt;&lt;App2&gt;&lt;/App2&gt;&lt;/HashRouter&gt;,document.getElementById("</span>app<span class="string">"))</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="10-useChain使用"><a href="#10-useChain使用" class="headerlink" title="10.   useChain使用"></a>10.   useChain使用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">useChain可以创建动画链，让多个动画按照顺序执行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React, &#123; useState,useRef &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; useSpring ,useTransition,useChain, animated &#125; <span class="keyword">from</span> <span class="string">'react-spring'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'@/styles/demo14.css'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Demo14 = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//transition动画的数据源</span></span><br><span class="line">    <span class="keyword">const</span> data = [&#123; <span class="attr">name</span>: <span class="number">1</span>, <span class="attr">css</span>: <span class="string">"red"</span> &#125;, &#123; <span class="attr">name</span>: <span class="number">2</span>, <span class="attr">css</span>: <span class="string">"blue"</span> &#125;, &#123; <span class="attr">name</span>: <span class="number">3</span>, <span class="attr">css</span>: <span class="string">"yellow"</span> &#125;, &#123; <span class="attr">name</span>: <span class="number">4</span>, <span class="attr">css</span>: <span class="string">"pink"</span> &#125;];</span><br><span class="line">    <span class="comment">//定义一个open state用于控制窗口是否被打开</span></span><br><span class="line">    <span class="keyword">const</span> [open, setOpen] = useState(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//useRef()方法可以创建一个引用,这边使用useRef()创建一个spring动画的引用</span></span><br><span class="line">    <span class="keyword">const</span> springRef = useRef()</span><br><span class="line">    <span class="comment">//创建Spring动画,作用是当open为true的时候，让父盒子变大</span></span><br><span class="line">    <span class="keyword">const</span> &#123; size, background &#125; = useSpring(&#123;</span><br><span class="line">        ref: springRef,</span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">size</span>: <span class="string">'30%'</span>, <span class="attr">background</span>: <span class="string">'hotpink'</span> &#125;,</span><br><span class="line">        to: &#123; <span class="attr">size</span>: open ? <span class="string">'100%'</span> : <span class="string">'30%'</span>, <span class="attr">background</span>: open ? <span class="string">'white'</span> : <span class="string">'hotpink'</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个transRef的引用</span></span><br><span class="line">    <span class="keyword">const</span> transRef = useRef()</span><br><span class="line">    <span class="comment">//创建过渡动画(当父盒子打开后，若干子盒子呈现)</span></span><br><span class="line">    <span class="keyword">const</span> transitions = useTransition(open ? data : [], item =&gt; item.name, &#123;</span><br><span class="line">        ref: transRef,</span><br><span class="line">        unique: <span class="literal">true</span>, <span class="comment">//动画进入和离开使用相同的key</span></span><br><span class="line">        trail: <span class="number">400</span>/data.length,  <span class="comment">//动画的延迟时间</span></span><br><span class="line">        <span class="keyword">from</span>: &#123; <span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">transform</span>: <span class="string">'scale(0)'</span> &#125;,</span><br><span class="line">        enter: &#123; <span class="attr">opacity</span>: <span class="number">1</span>, <span class="attr">transform</span>: <span class="string">'scale(1)'</span> &#125;,</span><br><span class="line">        leave: &#123; <span class="attr">opacity</span>: <span class="number">0</span>, <span class="attr">transform</span>: <span class="string">'scale(0)'</span> &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建动画链  当open是true，先执行springRef动画；否则先执行transRef动画</span></span><br><span class="line">    <span class="comment">// 当open为true，0~0.1执行springRef动画，0.1之后执行transRef动画</span></span><br><span class="line">    <span class="comment">// 当open为false，0~0.6执行transRef动画，0.6之后执行springRef动画</span></span><br><span class="line">    useChain(open ? [springRef, transRef] : [transRef, springRef], [<span class="number">0</span>, open ? <span class="number">0.1</span> : <span class="number">0.6</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;animated.div className=<span class="string">"parent"</span> style=&#123;&#123; <span class="attr">width</span>: size, <span class="attr">height</span>: size, background &#125;&#125; onClick=&#123;() =&gt; setOpen(<span class="function"><span class="params">open</span> =&gt;</span> !open)&#125;&gt;</span><br><span class="line">            &#123;transitions.map(<span class="function">(<span class="params">&#123; item, key, props &#125;</span>) =&gt;</span> (</span><br><span class="line">                &lt;animated.div className=<span class="string">"item"</span> key=&#123;key&#125; style=&#123;&#123; ...props, <span class="attr">background</span>: item.css &#125;&#125; /&gt;</span><br><span class="line">            ))&#125;</span><br><span class="line">        &lt;<span class="regexp">/animated.div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Demo14;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/26/18.拓展-课外问题总结-5/" rel="next" title="15.拓展-课外问题总结(5)">
+                <i class="fa fa-chevron-left"></i> 15.拓展-课外问题总结(5)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-react-spring基本使用"><span class="nav-number">1.</span> <span class="nav-text">1.  react-spring基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-动画的配置"><span class="nav-number">2.</span> <span class="nav-text">2.  动画的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-添加多个动画属性和动画状态"><span class="nav-number">3.</span> <span class="nav-text">3.  添加多个动画属性和动画状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-interpolate的使用"><span class="nav-number">4.</span> <span class="nav-text">4.  interpolate的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-使用state来控制动画"><span class="nav-number">5.</span> <span class="nav-text">5.   使用state来控制动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-通过useSpring入参箭头函数来控制动画"><span class="nav-number">6.</span> <span class="nav-text">6. 通过useSpring入参箭头函数来控制动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-useSprings动画"><span class="nav-number">7.</span> <span class="nav-text">7.   useSprings动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-useTrail动画"><span class="nav-number">8.</span> <span class="nav-text">8.   useTrail动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-useTransition动画"><span class="nav-number">9.</span> <span class="nav-text">9.   useTransition动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-useChain使用"><span class="nav-number">10.</span> <span class="nav-text">10.   useChain使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
