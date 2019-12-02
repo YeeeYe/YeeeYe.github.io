@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.react-virtualized是一个react中的虚拟化的库，使用它来做列表、Grid可以提高性能，减少dom操作。  Grid：用于优化构建任意网状的结构，传入一个二维的数组，渲染出类似棋盘的结构。  List：List是基于Grid来实现的，但是是一个维的列表，而不是网状。  Collection：类似于瀑布流的形式，同样可以水平和垂直方向滚动。   2.FluxFlux 是一种架构思">
+<meta property="og:type" content="article">
+<meta property="og:title" content="21.Flux和Redux">
+<meta property="og:url" content="http://yoursite.com/2019/12/02/21-Flux和Redux/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1.react-virtualized是一个react中的虚拟化的库，使用它来做列表、Grid可以提高性能，减少dom操作。  Grid：用于优化构建任意网状的结构，传入一个二维的数组，渲染出类似棋盘的结构。  List：List是基于Grid来实现的，但是是一个维的列表，而不是网状。  Collection：类似于瀑布流的形式，同样可以水平和垂直方向滚动。   2.FluxFlux 是一种架构思">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/12/02/21-Flux和Redux/1.png">
+<meta property="og:updated_time" content="2019-12-02T15:00:28.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="21.Flux和Redux">
+<meta name="twitter:description" content="1.react-virtualized是一个react中的虚拟化的库，使用它来做列表、Grid可以提高性能，减少dom操作。  Grid：用于优化构建任意网状的结构，传入一个二维的数组，渲染出类似棋盘的结构。  List：List是基于Grid来实现的，但是是一个维的列表，而不是网状。  Collection：类似于瀑布流的形式，同样可以水平和垂直方向滚动。   2.FluxFlux 是一种架构思">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/02/21-Flux和Redux/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/21-Flux和Redux/">
+
+
+
+
+
+  <title>21.Flux和Redux | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/21-Flux和Redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">21.Flux和Redux</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-02T20:52:25+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-react-virtualized"><a href="#1-react-virtualized" class="headerlink" title="1.react-virtualized"></a>1.react-virtualized</h2><p>是一个react中的虚拟化的库，使用它来做列表、Grid可以提高性能，减少dom操作。</p>
+<ul>
+<li><p>Grid：用于优化构建任意网状的结构，传入一个二维的数组，渲染出类似棋盘的结构。</p>
+</li>
+<li><p>List：List是基于Grid来实现的，但是是一个维的列表，而不是网状。</p>
+</li>
+<li><p>Collection：类似于瀑布流的形式，同样可以水平和垂直方向滚动。</p>
+</li>
+</ul>
+<h2 id="2-Flux"><a href="#2-Flux" class="headerlink" title="2.Flux"></a>2.Flux</h2><p>Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰</p>
+<p>Flux把应用分为4个部分:</p>
+<ol>
+<li><p>View  :  视图</p>
+</li>
+<li><p>Action  ：动作</p>
+</li>
+<li><p>Dispatcher ：派发器，用来接收Action</p>
+</li>
+<li><p>Store ： 数据层</p>
+</li>
+</ol>
+<p>Flux最大特点：数据单向流动</p>
+<h2 id="3-Redux"><a href="#3-Redux" class="headerlink" title="3.Redux"></a>3.Redux</h2><p>我们把Flux看做一个框架的理念的话，Redux是Flux的一种实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Redux在此基础上强调三个基本原则：</span><br><span class="line"><span class="number">1.</span>唯一数据源 ：唯一数据源指的是应用的状态数据应该只存储在唯一的一个Store上。</span><br><span class="line"><span class="number">2.</span>保持状态只读 ： 保持状态只读，就是说不能去直接修改状态，要修改Store的状态，必须要通过派发一个action对象完成。</span><br><span class="line"><span class="number">3.</span>数据改变只能通过纯函数完成 ：这里所说的纯函数就是把Reducer，Reducer描述了state状态如何修改。Redux这个名字的前三个字母Red代表的就是Reducer，其实Redux名字的含义就是Reducer+Flux。</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/02/21-Flux和Redux/1.png" alt="BP"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.安装redux   yarn add redux</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.引入createStore，用来创建一个Store对象</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.创建actions。action是改变state的唯一途径，返回一个普通的javascript对象，</span></span><br><span class="line"><span class="comment">//它描述了一个行为且是改变state的唯一途径。</span></span><br><span class="line"><span class="comment">//这个行为我们需要通过dispatch函数来触发action，从而改变对应的state。</span></span><br><span class="line"><span class="comment">//action必须带有type指明具体的行为名称，且能附带上额外的信息。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addFn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>:<span class="string">'ADD'</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minusFn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>:<span class="string">'MINUS'</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">4.创建reducer</span></span><br><span class="line"><span class="comment">    这是一个 reducer，形式为 (state, action) =&gt; state 的纯函数。</span></span><br><span class="line"><span class="comment">    该reducer可以接收action，描述如何通过action把state转变成下一个state。</span></span><br><span class="line"><span class="comment">    state的形式取决于你，可以是基本类型、数组、对象、甚至是Immutable.js 生成的数据结构。</span></span><br><span class="line"><span class="comment">    惟一的要点是当state变化时需要返回全新的对象，而不是修改传入的参数。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = <span class="number">0</span>, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">'ADD'</span>:</span><br><span class="line">          <span class="keyword">return</span> state + <span class="number">1</span></span><br><span class="line">      <span class="keyword">case</span> <span class="string">'MINUS'</span>:</span><br><span class="line">          <span class="keyword">return</span> state - <span class="number">1</span></span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">          <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.创建一个store。store对象的API 有 &#123; subscribe, dispatch, getState &#125;。</span></span><br><span class="line"><span class="keyword">let</span> store = createStore(counter)</span><br><span class="line"></span><br><span class="line"><span class="comment">//6.订阅更新，监听state的变化</span></span><br><span class="line">store.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(store.getState(),<span class="string">"xxxx"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//7.通过dispatch来触发action修改state</span></span><br><span class="line">store.dispatch(addFn())</span><br><span class="line">store.dispatch(addFn())</span><br><span class="line">store.dispatch(minusFn())</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-1-异步处理"><a href="#3-1-异步处理" class="headerlink" title="3.1 异步处理"></a>3.1 异步处理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">异步处理：</span><br><span class="line"><span class="number">1.</span>	yarn add redux-thunk </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>	<span class="keyword">const</span> store=createStore(couter ,applyMiddleware(thunk))</span><br><span class="line">    <span class="keyword">import</span> &#123; createStore,applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>	声明异步action</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addAsynFn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">dispatch</span>=&gt;</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            dispatch(addFn())</span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>react-redux是在react中使用redux的一个插件，使用它可以方便快捷的在react中用redux。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//react-redux的使用步骤</span></span><br><span class="line"><span class="comment">//1.安装 yarn add react-redux</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.react-redux 给我们提供了两个接口：一个Provider，一个是connect</span></span><br><span class="line"><span class="comment">//2.1 Provider组件的作用：在子组件中快速获取到store对象</span></span><br><span class="line"><span class="comment">//2.2 connect组件的作用：连接React组件与Redux store。连接操作不会改变原来的组件类,反而返回一个新的已与Redux store连接的组件类。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在index.js中引入Provider组件，并且作为项目根组件包裹App组件，然后传入store</span></span><br><span class="line">ReactDOM.render(&lt;Provider store=&#123;store&#125;&gt;&lt;App/&gt;&lt;/Provider&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.在需要视同redux的组件中引入connect组件，然后使用connect将当前组件和redux的store关联</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123; addFn, minusFn, addAsynFn &#125; <span class="keyword">from</span> <span class="string">'./actions/index'</span></span><br><span class="line"><span class="comment">//会将store中state的数据映射到组件的props中</span></span><br><span class="line"><span class="keyword">const</span> mapStatetoProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">num</span>: state &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//会将actions映射到组件的props中 </span></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = &#123; addFn, minusFn, addAsynFn &#125;</span><br><span class="line"><span class="comment">//使用connect返回一个已经把App和store联系起来的一个组件</span></span><br><span class="line">App = connect(mapStatetoProps, mapDispatchToProps)(App)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.在组件的页面中就可以使用store了</span></span><br><span class="line">        <span class="keyword">const</span> num = <span class="keyword">this</span>.props.num</span><br><span class="line">        <span class="keyword">const</span> addFn = <span class="keyword">this</span>.props.addFn</span><br><span class="line">        <span class="keyword">const</span> minusFn = <span class="keyword">this</span>.props.minusFn</span><br><span class="line">        <span class="keyword">const</span> addAsynFn = <span class="keyword">this</span>.props.addAsynFn</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">                &lt;h1&gt;你好吗？&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;p&gt;现在的总数是：&#123;num&#125;&lt;/</span>p&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addFn&#125;&gt;加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;button onClick=&#123;minusFn&#125;&gt;减1&lt;/</span>button&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addAsynFn&#125;&gt;异步加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125; </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+<p>合并多个reducers</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.使用combineReducers合并多个reducer</span></span><br><span class="line"><span class="keyword">import</span> &#123;combineReducers&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;counter&#125; <span class="keyword">from</span> <span class="string">'./counter'</span>;  </span><br><span class="line"><span class="keyword">import</span> &#123;location&#125; <span class="keyword">from</span> <span class="string">'./location'</span>;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> combineReducers(&#123;counter,location&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.在index.js中引入合并后的reducer，并且使用合并后的reducer创建store</span></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducers/index'</span></span><br><span class="line"><span class="keyword">let</span> store = createStore(reducer,applyMiddleware(thunk))</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在页面使用store的时候需要从state中获取对应的数据</span></span><br><span class="line"><span class="keyword">const</span> mapStatetoProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">num</span>:state.counter,<span class="attr">location</span>:state.location&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-redux的不可变数据"><a href="#4-redux的不可变数据" class="headerlink" title="4.redux的不可变数据"></a>4.redux的不可变数据</h2><p>在redux中整个应用共用一个state。如何判断state更新呢？Redux采用不可变数据。</p>
+<p>我们在判断数据是否相同时，并不需要深入判断数据对象的值是否相同，只需要浅比较即可，也就是判断是否为同一个数据对象地址，因为不可变数据对象在数据变化时均会重新创建一个新的数据对象，数据对象的地址不会相同。这也就是为什么在Reactjs，Redux中才有不可变数据对象。</p>
+<h2 id="5-fetch的使用"><a href="#5-fetch的使用" class="headerlink" title="5.fetch的使用"></a>5.fetch的使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//安装  yarn add whatwg-fetch es6-promise</span></span><br><span class="line"></span><br><span class="line">fetch(<span class="string">'/api/home'</span>, &#123;</span><br><span class="line">            credentials: <span class="string">"include"</span>,</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            fetch不管在同域还是在跨域的情况下，默认都不携带cookie的，所以那些需要权限验证的请求就无法正常获取到数据，这时候需要配置credentials项，有一下三个选项可添：</span></span><br><span class="line"><span class="comment">             omit： 默认值，忽略cookie的发送</span></span><br><span class="line"><span class="comment">             same-origin： 表示cookie只能同域发送，不能跨域发送</span></span><br><span class="line"><span class="comment">             include： 表示既可以同域发送，也可以跨域发送</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">        &#125;)</span><br><span class="line">            .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="comment">//有三种方式解析获取到的数据：</span></span><br><span class="line">                <span class="comment">//1  json数据       用reponse.json()来解析</span></span><br><span class="line">                <span class="comment">//2  xml格式文件    用response.text()来解析</span></span><br><span class="line">                <span class="comment">//3  图片文件       用response.blob()来解析</span></span><br><span class="line">                <span class="keyword">return</span> response.json();</span><br><span class="line">            &#125;)</span><br><span class="line">            .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(data);</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> handleRequestPOST = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//post请求需要提交的数据</span></span><br><span class="line">        fetch(<span class="string">'/api/submit'</span>, &#123;</span><br><span class="line">            method: <span class="string">'post'</span>,   <span class="comment">//请求方式</span></span><br><span class="line">            credentials: <span class="string">"include"</span>,</span><br><span class="line">            headers: &#123;</span><br><span class="line">                <span class="comment">//post请求格式</span></span><br><span class="line">                <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">//post请求发送的数据需要是这样的</span></span><br><span class="line">            body: <span class="string">"name=zhangsan&amp;content=宝宝不开心"</span></span><br><span class="line">        &#125;)</span><br><span class="line">            .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json())</span><br><span class="line">            .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(data);</span><br><span class="line">            &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'error is'</span>, error));</span><br></pre></td></tr></table></figure>
+
+<p>代理的配置：</p>
+<ol>
+<li><p>yarn add http-proxy-middleware</p>
+</li>
+<li><p>在src目录下创建setupProxy.js</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> proxy = <span class="built_in">require</span>(<span class="string">"http-proxy-middleware"</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">app</span>) </span>&#123;</span><br><span class="line">  app.use(</span><br><span class="line">    proxy(<span class="string">"/api/*"</span>, &#123;</span><br><span class="line">      target: <span class="string">"http://localhost:9999/"</span>,</span><br><span class="line">      changeOrigin: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"><span class="comment">//   app.use(</span></span><br><span class="line"><span class="comment">//     proxy("/fans/**", &#123;</span></span><br><span class="line"><span class="comment">//       target: "https://easy-mock.com/mock/5c0f31837214cf627b8d43f0/",</span></span><br><span class="line"><span class="comment">//       changeOrigin: true</span></span><br><span class="line"><span class="comment">//     &#125;)</span></span><br><span class="line"><span class="comment">//   );</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-fetch的封装"><a href="#5-1-fetch的封装" class="headerlink" title="5.1 fetch的封装"></a>5.1 fetch的封装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'whatwg-fetch'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'es6-promise'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//导出get请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchget</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = fetch(url, &#123;</span><br><span class="line">        credentials: <span class="string">'include'</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'application/json, text/plain, */*'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result.then(<span class="function"><span class="params">response</span> =&gt;</span> response.json());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送 post 请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchpost</span>(<span class="params">url, paramsObj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = fetch(url, &#123;</span><br><span class="line">        method: <span class="string">'POST'</span>,</span><br><span class="line">        credentials: <span class="string">'include'</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'application/json, text/plain, */*'</span>,</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        body: obj2params(paramsObj)</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result.then(<span class="function"><span class="params">response</span> =&gt;</span> response.json());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将对象拼接成 key1=val1&amp;key2=val2&amp;key3=val3 的字符串形式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2params</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> item;</span><br><span class="line">    <span class="keyword">for</span> (item <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        result += <span class="string">'&amp;'</span> + item + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(obj[item]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result) &#123;</span><br><span class="line">        result = result.slice(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/29/20-creat-react-app/" rel="next" title="20.creat-react-app">
+                <i class="fa fa-chevron-left"></i> 20.creat-react-app
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-react-virtualized"><span class="nav-number">1.</span> <span class="nav-text">1.react-virtualized</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Flux"><span class="nav-number">2.</span> <span class="nav-text">2.Flux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Redux"><span class="nav-number">3.</span> <span class="nav-text">3.Redux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-异步处理"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 异步处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-redux的不可变数据"><span class="nav-number">4.</span> <span class="nav-text">4.redux的不可变数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-fetch的使用"><span class="nav-number">5.</span> <span class="nav-text">5.fetch的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-fetch的封装"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 fetch的封装</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
