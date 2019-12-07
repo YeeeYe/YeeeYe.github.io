@@ -229,6 +229,334 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/07/23-react-native/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/07/23-react-native/" itemprop="url">23.react-native</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-07T16:39:12+08:00">
+                2019-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-App开发模式介绍"><a href="#1-App开发模式介绍" class="headerlink" title="1.App开发模式介绍"></a>1.App开发模式介绍</h2><p>Web App ： 用html+css+js写的网页程序</p>
+<p>混合式App开发：（HybirdApp）就是使用前端已有的技术，HTML + CSS + JS ，然后再搭配一些相关的打包编译技术，就能够开发出一个手机App，安装到手机中进行使用。</p>
+<p>原生(native app)App：使用IOS、Android 官方提供的工具、开发平台、配套语言进行手机App开发的方式</p>
+<p><img src="/2019/12/07/23-react-native/1.png" alt="BP"></p>
+<p><img src="/2019/12/07/23-react-native/2.png" alt="BP"></p>
+<h2 id="2-hybird开发技术选型"><a href="#2-hybird开发技术选型" class="headerlink" title="2.hybird开发技术选型"></a>2.hybird开发技术选型</h2><p>Vue.js 和 Weex</p>
+<p>React.js 和 React-Native </p>
+<p>Angular.js 和 Ionic</p>
+<p>Html5+ ：把html+css+js开发web应用打包成apk</p>
+<img src="/2019/12/07/23-react-native/3.png" alt="BP" style="zoom: 150%;">
+
+<h2 id="3-安卓环境配置"><a href="#3-安卓环境配置" class="headerlink" title="3.安卓环境配置"></a>3.安卓环境配置</h2><h5 id="1-安装java-jdk"><a href="#1-安装java-jdk" class="headerlink" title="1.安装java jdk"></a>1.安装java jdk</h5><p>​    A) 修改环境变量，新增<code>JAVA_HOME</code>的系统环境变量，值为<code>C:\Program Files (x86)\Java\jdk1.8.0_112</code>，也就是安装JDK的根目录</p>
+<p>   B) 修改系统环境变量<code>Path</code>，在<code>Path</code>之后新增<code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</code></p>
+<p>   C) 新建<strong>系统环境变量</strong><code>CLASSPATH</code>，值为<code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p>
+<p>   D) 保存所有的系统环境变量，同时退出系统环境变量配置窗口，然后运行cmd命令行工具，输入<code>javac</code>，如果能出现javac的命令选项，就表示配置成功！</p>
+<p>注意：在win10 的环境下可以将相对路径换成绝对路径</p>
+<p>classpath：</p>
+<p><img src="/2019/12/07/23-react-native/4.png" alt="BP"></p>
+<p>path：</p>
+<p><img src="/2019/12/07/23-react-native/5.png" alt="BP"></p>
+<h5 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h5><h5 id="3-安装Git环境"><a href="#3-安装Git环境" class="headerlink" title="3.安装Git环境"></a>3.安装Git环境</h5><h5 id="4-安装python2环境"><a href="#4-安装python2环境" class="headerlink" title="4.安装python2环境"></a>4.安装python2环境</h5><h5 id="5-将android压缩包解压之后放到c盘根目录"><a href="#5-将android压缩包解压之后放到c盘根目录" class="headerlink" title="5.将android压缩包解压之后放到c盘根目录"></a>5.将android压缩包解压之后放到c盘根目录</h5><p>A) 在系统环境变量中新建<code>ANDROID_HOME</code>，值为android SDK Manager的安装路径<code>C:\android</code></p>
+<p>B) 紧接着，在Path中新增<code>;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;</code></p>
+<p>注意：win10 如上图path的最后的写法</p>
+<h5 id="6-（非必须）模拟器"><a href="#6-（非必须）模拟器" class="headerlink" title="6.（非必须）模拟器"></a>6.（非必须）模拟器</h5><p>A) 将C:\android\platform-tools\adb.exe拷贝一份，重命名为nox_adb.exe，替换掉D:\Program Files\Nox\bin下的nox_adb.exe文件</p>
+<p>B) 打开夜神模拟器</p>
+<p>C) 连接夜神模拟器  adb connect 127.0.0.1:62001   /  adb disconnect 127.0.0.1:62001</p>
+<p>D) 查看安卓连接设备  adb devices</p>
+<p>E) 配置夜神模拟器  375*667   dpi:163</p>
+<h5 id="7-安装yarn和react-native-cli"><a href="#7-安装yarn和react-native-cli" class="headerlink" title="7.安装yarn和react-native-cli"></a>7.安装yarn和react-native-cli</h5><p>npm install -g yarn react-native-cli</p>
+<p>设置下载源：</p>
+<p>yarn config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> –global </p>
+<p>yarn config set disturl <a href="https://npm.taobao.org/dist" target="_blank" rel="noopener">https://npm.taobao.org/dist</a> –global</p>
+<h5 id="8-react-native-init"><a href="#8-react-native-init" class="headerlink" title="8.react-native-init"></a>8.react-native-init</h5><p>通过react-native-init命令创建一个App (注意项目不要放在中文路径下)</p>
+<h5 id="9-react-native-run-android"><a href="#9-react-native-run-android" class="headerlink" title="9.react-native run-android"></a>9.react-native run-android</h5><p>进入testRN目录，通过npx<br>react-native run-android命令来运行项目</p>
+<h5 id="10-问题"><a href="#10-问题" class="headerlink" title="10.问题"></a>10.问题</h5><p><img src="/2019/12/07/23-react-native/6.png" alt="BP"></p>
+<p>A)       在android/app/src/main下新建assets文件夹</p>
+<p>B)       在项目根目录下输入如下命令：</p>
+<p>react-native bundle –platform android –dev false –entry-file index.js –bundle-output android/app/src/main/assets/index.android.bundle –assets-dest android/app/src/main/res</p>
+<p><img src="/2019/12/07/23-react-native/7.png" alt="BP"></p>
+<p>C)      重新使用 react-native run-android 来启动项目</p>
+<h5 id="11-热更新解决端口被占用的问题"><a href="#11-热更新解决端口被占用的问题" class="headerlink" title="11.热更新解决端口被占用的问题"></a>11.热更新解决端口被占用的问题</h5><p>A) netstat -ano | findstr “8081”</p>
+<p>B) tasklist|findstr “pid”   如果结果显示 java.exe，则说明8081端口被占用了</p>
+<p>C) react-native  run-android 把项目安装到夜神模拟器</p>
+<p>D)关闭以下窗口，然后通过react-native start –port  9999 重新打开服务端口</p>
+<p><img src="/2019/12/07/23-react-native/8.png" alt="BP"></p>
+<p>E) 打开夜神模拟器，打开app，摇一摇</p>
+<p><img src="/2019/12/07/23-react-native/9.png" alt="BP"></p>
+<p>F) 打开夜神模拟器，摇一摇</p>
+<p><img src="/2019/12/07/23-react-native/10.png" alt="BP"></p>
+<h2 id="4-RN基础组件"><a href="#4-RN基础组件" class="headerlink" title="4.RN基础组件"></a>4.RN基础组件</h2><p>View     —&gt;视图    </p>
+<p>Text      —&gt;文本</p>
+<p>Image    —&gt;图片</p>
+<p>TextInput —&gt;文本输入框</p>
+<p>ScrollView —&gt;滚动视图</p>
+<p>StyleSheet —&gt;创建样式 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Sample React Native App</span></span><br><span class="line"><span class="comment"> * https://github.com/facebook/react-native</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @format</span></span><br><span class="line"><span class="comment"> * @flow</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 1.首先在开头导入所需要的组件的名称</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  SafeAreaView,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  ScrollView,</span><br><span class="line">  View,</span><br><span class="line">  Text,</span><br><span class="line">  StatusBar,</span><br><span class="line">  Image,</span><br><span class="line">  TextInput</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.在App中定义所有的函数和变量的值</span></span><br><span class="line"><span class="keyword">const</span> App: <span class="function"><span class="params">()</span> =&gt;</span> React$Node = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, onChangeText] = React.useState(<span class="string">'Useless Placeholder'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> pic = &#123;</span><br><span class="line">    uri: <span class="string">'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在return中返回需要映射的组件</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">          &lt;Text&gt;这是View&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">          &lt;View style=&#123;styles.box&#125;&gt;&lt;/</span>View&gt;</span><br><span class="line">          &lt;View style=&#123;&#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">backgroundColor</span>:<span class="string">'blue'</span>&#125;&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">          &lt;Image source=&#123;pic&#125; style=&#123;&#123; <span class="attr">width</span>: <span class="number">193</span>, <span class="attr">height</span>: <span class="number">110</span> &#125;&#125; /&gt;</span><br><span class="line">          &lt;Image source=&#123;<span class="built_in">require</span>(<span class="string">'./images/1.png'</span>)&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Image</span>&gt;</span></span></span><br><span class="line">          &lt;TextInput</span><br><span class="line">            style=&#123;&#123; <span class="attr">height</span>: <span class="number">40</span>, <span class="attr">borderColor</span>: <span class="string">'red'</span>, <span class="attr">borderWidth</span>: <span class="number">1</span> &#125;&#125;</span><br><span class="line">            onChangeText=&#123;text =&gt; onChangeText(text)&#125;</span><br><span class="line">            value=&#123;value&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">      &lt;<span class="regexp">/ScrollView&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  box:&#123;</span><br><span class="line">    width:<span class="number">300</span>,</span><br><span class="line">    height:<span class="number">200</span>,</span><br><span class="line">    borderColor:<span class="string">'yellow'</span>,</span><br><span class="line">    borderWidth:<span class="number">2</span>,</span><br><span class="line">    borderStyle:<span class="string">"solid"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-交互组件"><a href="#5-交互组件" class="headerlink" title="5.交互组件"></a>5.交互组件</h2><p>Button —&gt;按钮</p>
+<p>Picker  —&gt;选择视图</p>
+<p>Switch —&gt;开关</p>
+<p>Slider  —&gt;滑块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">          onPress=&#123;onPressLearnMore&#125;</span><br><span class="line">          title=<span class="string">"Learn More"</span></span><br><span class="line">          color=<span class="string">"#841584"</span></span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Picker</span><br><span class="line">          selectedValue=&#123;language&#125;</span><br><span class="line">          style=&#123;&#123; <span class="attr">height</span>: <span class="number">50</span>, <span class="attr">width</span>: <span class="number">100</span> &#125;&#125;</span><br><span class="line">          onValueChange=&#123;(itemValue, itemIndex) =&gt;</span><br><span class="line">            onChangeLanaguage(itemValue)</span><br><span class="line">          &#125;&gt;</span><br><span class="line">          &lt;Picker.Item label=<span class="string">"Java"</span> value=<span class="string">"java"</span> /&gt;</span><br><span class="line">          &lt;Picker.Item label=<span class="string">"JavaScript"</span> value=<span class="string">"js"</span> /&gt;</span><br><span class="line">        &lt;<span class="regexp">/Picker&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;Slider maximumValue=&#123;100&#125; minimumValue=&#123;0&#125; onValueChange=&#123;(value) =&gt; console.log(value)&#125; step=&#123;2&#125; value=&#123;50&#125;&gt;&lt;/</span>Slider&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Switch value=&#123;switchStatus&#125; onValueChange=&#123;(value) =&gt; &#123; onChangeswitchStatus(value) &#125;&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [switchStatus, onChangeswitchStatus] = React.useState(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> [language, onChangeLanaguage] = React.useState(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> onPressLearnMore = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"xxx"</span>)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-列表组件"><a href="#6-列表组件" class="headerlink" title="6.   列表组件"></a>6.   列表组件</h2><p>FlatList  : 列表</p>
+<p>Section  ：分组列表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;SectionList</span><br><span class="line">        renderItem=&#123;(&#123; item, index, section &#125;) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span>&#125;</span><br><span class="line">        sections=&#123;[</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title1'</span>, <span class="attr">data</span>: [<span class="string">'item1'</span>, <span class="string">'item2'</span>], <span class="attr">renderItem</span>: overrideRenderItem &#125;,</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title2'</span>, <span class="attr">data</span>: [<span class="string">'item3'</span>, <span class="string">'item4'</span>], <span class="attr">renderItem</span>: overrideRenderItem2 &#125;,</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title3'</span>, <span class="attr">data</span>: [<span class="string">'item5'</span>, <span class="string">'item6'</span>] &#125;,</span><br><span class="line">        ]&#125;</span><br><span class="line">      /&gt;</span><br><span class="line"></span><br><span class="line">      &lt;FlatList</span><br><span class="line">        data=&#123;[&#123; <span class="attr">key</span>: <span class="string">'a'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'b'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'a'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'b'</span> &#125;]&#125;</span><br><span class="line">        renderItem=&#123;(&#123; item &#125;) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">Text</span>&gt;</span>&#123;item.key&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span>&#125;</span><br><span class="line">        ItemSeparatorComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">height:</span> <span class="attr">1</span>, <span class="attr">width:</span> '<span class="attr">100</span>%', <span class="attr">backgroundColor:</span> "<span class="attr">red</span>" &#125;&#125;&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        ListHeaderComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span><span class="tag">&lt;<span class="name">Text</span>&gt;</span>列表头<span class="tag">&lt;/<span class="name">Text</span>&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        ListFooterComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span><span class="tag">&lt;<span class="name">Text</span>&gt;</span>列表尾<span class="tag">&lt;/<span class="name">Text</span>&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        numColumns=&#123;<span class="number">2</span>&#125;</span><br><span class="line">        columnWrapperStyle=&#123;&#123; <span class="attr">borderWidth</span>: <span class="number">1</span>, <span class="attr">borderColor</span>: <span class="string">'blue'</span>, <span class="attr">paddingLeft</span>: <span class="number">20</span> &#125;&#125;  <span class="comment">//指定每一行容器的样式(设置多列的情况下)</span></span><br><span class="line">        getItemLayout=&#123;(data, index) =&gt; (</span><br><span class="line">          &#123; <span class="attr">length</span>: <span class="number">100</span>, <span class="attr">offset</span>: (<span class="number">100</span> + <span class="number">2</span>) * index, index &#125;</span><br><span class="line">        )&#125;   <span class="comment">//当行高固定的时候可以使用这个属性来优化性能</span></span><br><span class="line">        refreshing=&#123;<span class="literal">false</span>&#125;     <span class="comment">//当前是否正在刷新</span></span><br><span class="line">        onEndReachedThreshold=&#123;<span class="number">0</span>&#125;  <span class="comment">//到距离底部0的时候触发onEndReached方法</span></span><br><span class="line">        onEndReached=&#123;() =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">"拉到底部了"</span>) &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> overrideRenderItem = <span class="function">(<span class="params">&#123; item, index, section: &#123; title, data &#125; &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> '<span class="attr">red</span>' &#125;&#125; <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>Override1&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">  <span class="keyword">const</span> overrideRenderItem2 = <span class="function">(<span class="params">&#123; item, index, section: &#123; title, data &#125; &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> '<span class="attr">blue</span>' &#125;&#125; <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>Override2&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-其他组件"><a href="#7-其他组件" class="headerlink" title="7.其他组件"></a>7.其他组件</h2><p>ActivityIndicator     —&gt; 提示的Activity</p>
+<p>Alert              —&gt;提示弹框</p>
+<p>Modal             —&gt;模态页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button onPress=&#123;showModal&#125; title=<span class="string">"弹出Modal"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line">      &lt;Button onPress=&#123;showAlert&#125; title=<span class="string">"弹出Alert"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">      &lt;Modal</span><br><span class="line">        animationType=<span class="string">'slide'</span>           <span class="comment">// 从底部滑入</span></span><br><span class="line">        transparent=&#123;<span class="literal">false</span>&#125;             <span class="comment">// 不透明</span></span><br><span class="line">        visible=&#123;showmodal&#125;    <span class="comment">// 根据isModal决定是否显示</span></span><br><span class="line">        onRequestClose=&#123;() =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">"onRequestClose"</span>) &#125;&#125;  <span class="comment">// android必须实现</span></span><br><span class="line">      &gt;</span><br><span class="line">        &lt;View style=&#123;styles.modalViewStyle&#125;&gt;</span><br><span class="line">          &#123;<span class="comment">/* 关闭页面 */</span>&#125;</span><br><span class="line">          &lt;TouchableOpacity</span><br><span class="line">            onPress=&#123;() =&gt; &#123;</span><br><span class="line">              onChangeShowmodal(<span class="literal">false</span>)</span><br><span class="line">            &#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;Text&gt;关闭页面&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Modal&gt;</span><br><span class="line"></span><br><span class="line">      &lt;ActivityIndicator animating=&#123;<span class="literal">true</span>&#125; color=<span class="string">"blue"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ActivityIndicator</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">showAlert = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Alert.alert(</span><br><span class="line">      <span class="string">'Alert Title'</span>,</span><br><span class="line">      <span class="string">'My Alert Msg'</span>,</span><br><span class="line">      [</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'Ask me later'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Ask me later pressed'</span>) &#125;,</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'Cancel'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Cancel Pressed'</span>), <span class="attr">style</span>: <span class="string">'cancel'</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'OK'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'OK Pressed'</span>) &#125;,</span><br><span class="line">      ],</span><br><span class="line">      &#123; <span class="attr">cancelable</span>: <span class="literal">false</span> &#125;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showModal = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    onChangeShowmodal(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> <span class="keyword">const</span> [showModal1,onChangeShowmodal] = React.useState(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Animated的使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [fadeInOpacity, onChangeFadeInOpacity] = React.useState(<span class="keyword">new</span> Animated.Value(<span class="number">0</span>))</span><br><span class="line">  React.useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Animated.timing(fadeInOpacity, &#123;</span><br><span class="line">      toValue: <span class="number">1</span>, <span class="comment">// 目标值</span></span><br><span class="line">      duration: <span class="number">2500</span>, <span class="comment">// 动画时间</span></span><br><span class="line">    &#125;).start();</span><br><span class="line">  &#125;, [])</span><br><span class="line"></span><br><span class="line"> &lt;Animated.View                       <span class="comment">// 使用专门的可动画化的View组件</span></span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          opacity: fadeInOpacity          <span class="comment">// 将透明度指定为动画变量值</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;Text&gt;测试透明度动画&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Animated.View&gt;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/22-react项目练手/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/04/22-react项目练手/" itemprop="url">22.react项目练手</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-04T23:06:14+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-小问题"><a href="#1-小问题" class="headerlink" title="1.小问题"></a>1.小问题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Intervention] Unable to preventDefault inside passive event listener due to target being treated <span class="keyword">as</span> passive. See &lt;URL&gt;</span><br><span class="line">    </span><br><span class="line">由于目标被当作被动事件监听器，无法防止被动事件监听器中的默认值。看到&lt; URL &gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">   touch-action: none;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-路由使用"><a href="#2-路由使用" class="headerlink" title="2.路由使用"></a>2.路由使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter (RTab);</span><br><span class="line"></span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">      &lt;RNav&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RNav</span>&gt;</span></span></span><br><span class="line">      &lt;RouterMap&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RouterMap</span>&gt;</span></span></span><br><span class="line">      &lt;Button type=<span class="string">'primary'</span>&gt;按钮&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;RTab&gt;&lt;/</span>RTab&gt;  </span><br><span class="line">&lt;<span class="regexp">/HashRouter&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-路由传值"><a href="#3-路由传值" class="headerlink" title="3.路由传值"></a>3.路由传值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  1. 导入get的方法</span></span><br><span class="line"><span class="keyword">import</span> &#123;fetchget,fetchpost&#125; <span class="keyword">from</span> <span class="string">'../../untils/myfetch.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 获取数据</span></span><br><span class="line"><span class="keyword">async</span> componentDidMount() &#123;</span><br><span class="line">        <span class="comment">// 获取广告数据</span></span><br><span class="line">        <span class="keyword">const</span> result =<span class="keyword">await</span> fetchget(<span class="string">'/api/homead'</span>)</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            ads: result</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 传值</span></span><br><span class="line"> &lt;Ad ads=&#123;<span class="keyword">this</span>.state.ads&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Ad</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 渲染到页面上</span></span><br><span class="line">&lt;div className=<span class="string">"ad-container clear-fix"</span>&gt;</span><br><span class="line">      &#123;<span class="keyword">this</span>.props.ads.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span> <span class="attr">className</span>=<span class="string">"ad-item float-left"</span>&gt;</span></span></span><br><span class="line">               &lt;a href=&#123;item.link&#125; target="_blank"&gt;</span><br><span class="line">                     &lt;img src=&#123;require(item.img+'')&#125; alt=&#123;item.title&#125;/&gt;</span><br><span class="line">               &lt;/a&gt;</span><br><span class="line"><span class="xml">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">     &#125;)&#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>拓展 </p>
+<ol>
+<li>根据 ads 的长度进行判断是否加载</li>
+<li>导入 ActivityIndicator 组件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;ActivityIndicator&#125; <span class="keyword">from</span> <span class="string">'antd-mobile'</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">         <span class="comment">//传递数据给子组件</span></span><br><span class="line">         <span class="keyword">this</span>.state.ads.length</span><br><span class="line">          ? <span class="xml"><span class="tag">&lt;<span class="name">Ad</span> <span class="attr">ads</span>=<span class="string">&#123;this.state.ads&#125;/</span>&gt;</span></span></span><br><span class="line">         : &lt;ActivityIndicator text="loading..."/&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/21-Flux和Redux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -331,7 +659,7 @@
 <h3 id="3-1-异步处理"><a href="#3-1-异步处理" class="headerlink" title="3.1 异步处理"></a>3.1 异步处理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">异步处理：</span><br><span class="line"><span class="number">1.</span>	yarn add redux-thunk </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>	<span class="keyword">const</span> store=createStore(couter ,applyMiddleware(thunk))</span><br><span class="line">    <span class="keyword">import</span> &#123; createStore,applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>	声明异步action</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addAsynFn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">dispatch</span>=&gt;</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            dispatch(addFn())</span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>react-redux是在react中使用redux的一个插件，使用它可以方便快捷的在react中用redux。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//react-redux的使用步骤</span></span><br><span class="line"><span class="comment">//1.安装 yarn add react-redux</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.react-redux 给我们提供了两个接口：一个Provider，一个是connect</span></span><br><span class="line"><span class="comment">//2.1 Provider组件的作用：在子组件中快速获取到store对象</span></span><br><span class="line"><span class="comment">//2.2 connect组件的作用：连接React组件与Redux store。连接操作不会改变原来的组件类,反而返回一个新的已与Redux store连接的组件类。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在index.js中引入Provider组件，并且作为项目根组件包裹App组件，然后传入store</span></span><br><span class="line">ReactDOM.render(&lt;Provider store=&#123;store&#125;&gt;&lt;App/&gt;&lt;/Provider&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.在需要视同redux的组件中引入connect组件，然后使用connect将当前组件和redux的store关联</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123; addFn, minusFn, addAsynFn &#125; <span class="keyword">from</span> <span class="string">'./actions/index'</span></span><br><span class="line"><span class="comment">//会将store中state的数据映射到组件的props中</span></span><br><span class="line"><span class="keyword">const</span> mapStatetoProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">num</span>: state &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//会将actions映射到组件的props中 </span></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = &#123; addFn, minusFn, addAsynFn &#125;</span><br><span class="line"><span class="comment">//使用connect返回一个已经把App和store联系起来的一个组件</span></span><br><span class="line">App = connect(mapStatetoProps, mapDispatchToProps)(App)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.在组件的页面中就可以使用store了</span></span><br><span class="line">        <span class="keyword">const</span> num = <span class="keyword">this</span>.props.num</span><br><span class="line">        <span class="keyword">const</span> addFn = <span class="keyword">this</span>.props.addFn</span><br><span class="line">        <span class="keyword">const</span> minusFn = <span class="keyword">this</span>.props.minusFn</span><br><span class="line">        <span class="keyword">const</span> addAsynFn = <span class="keyword">this</span>.props.addAsynFn</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">                &lt;h1&gt;你好吗？&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;p&gt;现在的总数是：&#123;num&#125;&lt;/</span>p&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addFn&#125;&gt;加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;button onClick=&#123;minusFn&#125;&gt;减1&lt;/</span>button&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addAsynFn&#125;&gt;异步加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125; </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//react-redux的使用步骤</span></span><br><span class="line"><span class="comment">//1.安装 yarn add react-redux</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.react-redux 给我们提供了两个接口：一个Provider，一个是connect</span></span><br><span class="line"><span class="comment">//2.1 Provider组件的作用：在子组件中快速获取到store对象</span></span><br><span class="line"><span class="comment">//2.2 connect组件的作用：连接React组件与Redux store。连接操作不会改变原来的组件类,反而返回一个新的已与Redux store连接的组件类。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在index.js中引入Provider组件，并且作为项目根组件包裹App组件，然后传入store</span></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span><span class="tag">&lt;<span class="name">App</span>/&gt;</span><span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.在需要视同redux的组件中引入connect组件，然后使用connect将当前组件和redux的store关联</span></span><br><span class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> &#123; addFn, minusFn, addAsynFn &#125; <span class="keyword">from</span> <span class="string">'./actions/index'</span></span><br><span class="line"><span class="comment">//会将store中state的数据映射到组件的props中</span></span><br><span class="line"><span class="keyword">const</span> mapStatetoProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">num</span>: state &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//会将actions映射到组件的props中 </span></span><br><span class="line"><span class="keyword">const</span> mapDispatchToProps = &#123; addFn, minusFn, addAsynFn &#125;</span><br><span class="line"><span class="comment">//使用connect返回一个已经把App和store联系起来的一个组件</span></span><br><span class="line">App = connect(mapStatetoProps, mapDispatchToProps)(App)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.在组件的页面中就可以使用store了</span></span><br><span class="line">        <span class="keyword">const</span> num = <span class="keyword">this</span>.props.num</span><br><span class="line">        <span class="keyword">const</span> addFn = <span class="keyword">this</span>.props.addFn</span><br><span class="line">        <span class="keyword">const</span> minusFn = <span class="keyword">this</span>.props.minusFn</span><br><span class="line">        <span class="keyword">const</span> addAsynFn = <span class="keyword">this</span>.props.addAsynFn</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">                &lt;h1&gt;你好吗？&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;p&gt;现在的总数是：&#123;num&#125;&lt;/</span>p&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addFn&#125;&gt;加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125;</span></span><br><span class="line"><span class="regexp">                &#123;&lt;button onClick=&#123;minusFn&#125;&gt;减1&lt;/</span>button&gt;&#125;</span><br><span class="line">                &#123;&lt;button onClick=&#123;addAsynFn&#125;&gt;异步加<span class="number">1</span>&lt;<span class="regexp">/button&gt;&#125; </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
 
 <p>合并多个reducers</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.使用combineReducers合并多个reducer</span></span><br><span class="line"><span class="keyword">import</span> &#123;combineReducers&#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;counter&#125; <span class="keyword">from</span> <span class="string">'./counter'</span>;  </span><br><span class="line"><span class="keyword">import</span> &#123;location&#125; <span class="keyword">from</span> <span class="string">'./location'</span>;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> combineReducers(&#123;counter,location&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.在index.js中引入合并后的reducer，并且使用合并后的reducer创建store</span></span><br><span class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'./reducers/index'</span></span><br><span class="line"><span class="keyword">let</span> store = createStore(reducer,applyMiddleware(thunk))</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在页面使用store的时候需要从state中获取对应的数据</span></span><br><span class="line"><span class="keyword">const</span> mapStatetoProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">num</span>:state.counter,<span class="attr">location</span>:state.location&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1476,6 +1804,9 @@
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*3.配置路由规则  Route同时会占坑*/</span>&#125;</span><br><span class="line">&#123;<span class="comment">/*路由默认会使用模糊匹配</span></span><br><span class="line"><span class="comment">比如：访问路径 /movie  能够匹配 / 和 /movie */</span>&#125;</span><br><span class="line">&#123;<span class="comment">/* exact表示精确匹配 ：访问路径需要和路由的路径完全一致才能匹配 */</span>&#125;  ★</span><br><span class="line">&lt;Route path=<span class="string">"/"</span> component=&#123;Home&#125; exact&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/* strict : 如果路由规则中的路径有/，则要求访问路径中也要有/才能匹配(只看/) */</span>&#125; </span><br><span class="line">&lt;Route path=<span class="string">"/about/:name/:id"</span> component=&#123;About&#125; strict&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">&lt;Route path=<span class="string">"/movie"</span> component=&#123;Movie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/*4.点击Link去访问路由*/</span>&#125;</span><br><span class="line">&lt;Link to=<span class="string">"/"</span>&gt;来到首页&lt;<span class="regexp">/Link&gt; </span></span><br><span class="line"><span class="regexp">&lt;Link to="/</span>about/zhangsan/<span class="number">13</span><span class="string">"&gt;来到关于我们&lt;/Link&gt;  &lt;Link to="</span>/movie<span class="string">"&gt;来到电影&lt;/Link&gt;</span></span><br><span class="line"><span class="string">&lt;br/&gt;</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter (RTab);</span><br><span class="line"></span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">      &lt;RNav&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RNav</span>&gt;</span></span></span><br><span class="line">      &lt;RouterMap&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RouterMap</span>&gt;</span></span></span><br><span class="line">      &lt;Button type=<span class="string">'primary'</span>&gt;按钮&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;RTab&gt;&lt;/</span>RTab&gt;  </span><br><span class="line">&lt;<span class="regexp">/HashRouter&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>hashrouter 只建议套一个，一般套在最前面</p>
 <h3 id="2-switch和redirect和组件懒加载"><a href="#2-switch和redirect和组件懒加载" class="headerlink" title="2.  switch和redirect和组件懒加载"></a>2.  switch和redirect和组件懒加载</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*当使用组件懒加载的时候，往往是和Suspense结合使用，fallback表示组件没有加载完毕的时候显示的信息*/</span>&#125;</span><br><span class="line">&lt;Suspense fallback=&#123;&lt;div&gt;Loading...&lt;<span class="regexp">/div&gt;&#125;&gt;</span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*Switch表示路由互斥，我们使用Switch之后，只会匹配一个路由规则*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*我们需要给根路径的路由加上exact属性来精确匹配，否则所有的访问路径都会匹配Home组件*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Route path="/</span><span class="string">" component=&#123;Home&#125; exact&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/about/:name/:id<span class="string">" component=&#123;About&#125; strict&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/movie<span class="string">" component=&#123;Movie&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/search<span class="string">" component=&#123;Search&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#123;/*当没有匹配的路由的时候来到跟路由*/&#125; 重定向</span></span><br><span class="line"><span class="string">&lt;Redirect to="</span>/<span class="string">" /&gt;</span></span><br><span class="line"><span class="string">&lt;/Switch&gt;</span></span><br><span class="line"><span class="string">&lt;/Suspense&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="3-路由的传参"><a href="#3-路由的传参" class="headerlink" title="3.路由的传参"></a>3.路由的传参</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  <span class="comment">/*通过params方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.match.params  </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/about/zhangsan/13"</span>&gt;来到关于我们-params方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">  <span class="comment">//获取路由中的参数信息</span></span><br><span class="line"> <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>About组件&#123;props.match.params.id&#125;&#123;props.match.params.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> <span class="comment">/*通过search方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.search </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/movie?name=xiaoming"</span>&gt;来到电影-search方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> <span class="comment">/*通过query方式传参  </span></span><br><span class="line"><span class="comment">   获取参数:props.location.query </span></span><br><span class="line"><span class="comment">   好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">query</span>: &#123; <span class="attr">name</span>: <span class="string">'sunny'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">2</span>-query方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> <span class="comment">/*通过state方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.state   </span></span><br><span class="line"><span class="comment">  好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，</span></span><br><span class="line"><span class="comment">  参数是加密的，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">state</span>: &#123; <span class="attr">name</span>: <span class="string">'haha'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">3</span>-state方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -1497,361 +1828,6 @@
 <h4 id="6-3-useContext-的使用"><a href="#6-3-useContext-的使用" class="headerlink" title="6.3 useContext 的使用"></a>6.3 useContext 的使用</h4><p>作用：可以向子孙组件发布数据</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.在App.jsx</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;name:</span>"<span class="attr">zhangsan</span>"&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="xml">        App</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Demo2</span>&gt;</span><span class="tag">&lt;/<span class="name">Demo2</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.Child.jsx</span></span><br><span class="line"><span class="keyword">import</span> React,&#123;useContext&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> MyContext <span class="keyword">from</span> <span class="string">'@/context.js'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在子组件中获取父组件发布的数据</span></span><br><span class="line">    <span class="keyword">const</span> contextValue = useContext(MyContext);</span><br><span class="line">    <span class="built_in">console</span>.log(contextValue)</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义context.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> MyContext = React.createContext();</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyContext;</span><br></pre></td></tr></table></figure>
 
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/13.拓展-课外问题总结-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/25/13.拓展-课外问题总结-1/" itemprop="url">13.拓展-课外问题总结(1)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T16:18:44+08:00">
-                2019-11-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.打印如下的函数的值:</p>
-<p>function Foo(){</p>
-<p>​           getName = function(){alter(1);};</p>
-<p>​           return this;</p>
-<p>​       }</p>
-<p>​       Foo.getName = function(){alert(2)};</p>
-<p>​       Foo.prototype.getName = function(){alert(3)};</p>
-<p>​       var getName = function(){alert(4)};</p>
-<p>​       function getName(){alert(5)};</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Foo.getName()  ;  //2   是调用方式2的函数代码块，结果为“2”！</span><br><span class="line"> getName();  // 4    预解析，函数声明提前于变量声明，但是最终会被变量覆盖</span><br><span class="line"> Foo().getName();1   普通函数this指向,首先结果是&quot;this&quot; 并指向window,第二个就是this.getName(),全局getName指向的匿名函数</span><br><span class="line"> getName();   //1方式1执行出来的那个全局变量getName 指针指向的匿名函数,方式4已经被覆盖了,所以结果为 “1”.</span><br><span class="line">(new Foo()).getName();  //3  首先产生一个新的实例对象, 继承了Foo()这个构造函数中的getName方法, 再执行方式3函数块</span><br><span class="line">	优先级:	new Foo() &gt;  Foo() &gt; new Foo</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new Foo.getName()</span><br><span class="line">等价于new (Foo.getName())，先执行Foo.getName()，输出2，再创建Foo.getName()方法的实例。</span><br><span class="line">new new Foo().getName()</span><br><span class="line">相当于new (new Foo().getName())，即先执行new Foo().getName()，由第六步可知，输出3，再创建Foo.prototype.getName()这个函数的实例返回。</span><br></pre></td></tr></table></figure>
-
-<p><em>2.**</em>打印出了什么<strong>?</strong>该题考察了什么知识点**?</p>
-<p><strong>for(var i=0;i&lt;5;i++){</strong></p>
-<p>​                     <strong>setTimeout(function(){</strong></p>
-<p>​                            <strong>console.log(i);</strong></p>
-<p>​                     <strong>},i*1000)</strong></p>
-<p>​              <strong>}</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5-5</span><br><span class="line">setTimeout是异步执行，也即每一次for循环执行一次，settimeout都会执行一次，但是里面的settimeout并没有立即被执行，而是等到for循环结束，再执行；for循环了5次，就放了5次，当主线程执行完成后，才进入任务队列里面执行。</span><br></pre></td></tr></table></figure>
-
-<p><em>3.*什么是时间委托</em>?*请写代码举例说明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">事件代理，JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</span><br><span class="line">举例: 有一个节点树div&gt;ul&gt;li&gt;a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a&gt;li&gt;ul&gt;div，有这样一个机制，那么我们给最外面的div加点击事件，那么里面的ul，li，a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=<span class="string">"ul1"</span>&gt;</span><br><span class="line">    &lt;li&gt;<span class="number">111</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li&gt;222&lt;/</span>li&gt;</span><br><span class="line">    &lt;li&gt;<span class="number">333</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li&gt;444&lt;/</span>li&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">window.onload = function()&#123;</span></span><br><span class="line"><span class="regexp">    var oUl = document.getElementById("ul1");</span></span><br><span class="line"><span class="regexp">    var aLi = oUl.getElementsByTagName('li');</span></span><br><span class="line"><span class="regexp">    for(var i=0;i&lt;aLi.length;i++)&#123;</span></span><br><span class="line"><span class="regexp">        aLi[i].onclick = function()&#123;</span></span><br><span class="line"><span class="regexp">            alert(123);</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125; /</span><span class="regexp">/原来的方法</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">"ul1"</span>);</span><br><span class="line">　　oUl.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">　　　　<span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event;</span><br><span class="line">　　　　<span class="keyword">var</span> target = ev.target || ev.srcElement;</span><br><span class="line">　　　　<span class="keyword">if</span>(target.nodeName.toLowerCase() == <span class="string">'li'</span>)&#123;</span><br><span class="line">　 　　　　　　 alert(<span class="number">123</span>);</span><br><span class="line">　　　　　　　  alert(target.innerHTML);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;<span class="comment">//优化后的方法</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Event对象提供了一个属性叫target，可以返回事件的目标节点，我们成为事件源，也就是说，target就可以表示为当前的事件操作的dom，但是不是真正操作dom，当然，这个是有兼容性的，标准浏览器用ev.target，IE浏览器用event.srcElement，此时只是获取了当前节点的位置，并不知道是什么节点名称，这里我们用nodeName来获取具体是什么标签名，这个返回的是一个大写的，我们需要转成小写再做比较（习惯问题）：</span><br></pre></td></tr></table></figure>
-
-<p>4.jquery或者zepto中调用接口,请求数据,使用ajax方法,请写代码举例说明</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form id=<span class="string">"form"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"file"</span> name=<span class="string">"file"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮"</span> id=<span class="string">"btn"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   $(<span class="string">'#btn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fd = <span class="keyword">new</span> FormData($(<span class="string">'form'</span>)[<span class="number">0</span>])</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            method: <span class="string">'post'</span>,</span><br><span class="line">            url: <span class="string">''</span>,</span><br><span class="line">            data: fd,</span><br><span class="line">            contentType: <span class="literal">false</span>,</span><br><span class="line">            processData: <span class="literal">false</span>,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'res'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将jsonp的发送方式设置在了$ajax中</span></span><br><span class="line">$(<span class="string">'#btn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        method : <span class="string">'POST'</span></span><br><span class="line">        url : <span class="string">'http://localhost/Ajax_day4/demo1.php'</span>,</span><br><span class="line">        success : <span class="function"><span class="keyword">function</span> (<span class="params">datas</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(datas);</span><br><span class="line">        &#125;,</span><br><span class="line">            <span class="comment">// 如果在dataType中设置'jsonp'，表示当前请求以jsonp形式发送，与dataType的原始功能无关</span></span><br><span class="line">        dataType : <span class="string">'jsonp'</span></span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ajax设置请求头</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">         type: type,</span><br><span class="line">         headers: &#123;</span><br><span class="line">            <span class="string">'token'</span>:<span class="string">'token_value'</span></span><br><span class="line">         &#125;,</span><br><span class="line">         url: url,</span><br><span class="line">         data: data,</span><br><span class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">         &#125;,</span><br><span class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">         &#125;,</span><br><span class="line">         complete: <span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest, status</span>) </span>&#123; <span class="comment">//请求完成后最终执行参数　</span></span><br><span class="line">         &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>5.怎么检测一个变量不是数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、从原型入手，Array.prototype.isPrototypeOf(obj);</span><br><span class="line">利用isPrototypeOf()方法，判定Array是不是在obj的原型链中，如果是，则返回true,否则false。</span><br><span class="line">2. Array.isArray()方法。</span><br></pre></td></tr></table></figure>
-
-<p>6.decodeURI的好处</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用于对 <span class="built_in">encodeURI</span>() 函数编码过的 URI 进行解码。</span><br><span class="line">参数中如果出现#，/,&amp;这些字符，就必须要用decodeURIComponent了，不然这些特殊字符会导致我们接收参数的错误</span><br></pre></td></tr></table></figure>
-
-<p>7.解析字符串得到(<a href="http://www.baidu.com/?a=1&amp;b=2)**,得出{a:1,b:2}" target="_blank" rel="noopener">http://www.baidu.com/?a=1&amp;b=2)**,得出{a:1,b:2}</a>**</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> param = url.split(<span class="string">"?"</span>)[<span class="number">1</span>];            <span class="comment">//获取param</span></span><br><span class="line"><span class="keyword">let</span> arr = param.split(<span class="string">"&amp;"</span>);</span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		<span class="keyword">let</span> arr_param = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">		obj[arr_param[<span class="number">0</span>]] = arr_param[<span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/12-拓展-GraphQL简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/25/12-拓展-GraphQL简介/" itemprop="url">12.拓展-GraphQL简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T16:17:41+08:00">
-                2019-11-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-GraphQL"><a href="#1-GraphQL" class="headerlink" title="1.GraphQL"></a>1.GraphQL</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h2><p>GraphQL 是一种 API 查询语言<br>GraphQL 是一种为 API 接口和查询已有数据运行时环境的查询语言. 它提供了一套完整的和易于理解的 API 接口数据描述, 给客户端权力去精准查询他们需要的数据, 而不用再去实现其他更多的代码, 使 API 接口开发变得更简单高效, 支持强大的开发者工具.</p>
-<p>友情链接：</p>
-<p><a href="https://graphql.org/" target="_blank" rel="noopener">https://graphql.org</a></p>
-<p><a href="https://graphql.js.cool/" target="_blank" rel="noopener">https://graphql.js.cool/</a></p>
-<h3 id="1-1-1-What-is-GraphQL"><a href="#1-1-1-What-is-GraphQL" class="headerlink" title="1.1.1 What is GraphQL?"></a>1.1.1 What is GraphQL?</h3><p>正如副标题所说，GraphQL 是由 Facebook 创造的用于描述复杂数据模型的一种查询语言。这里查询语言所指的并不是常规意义上的类似 sql 语句的查询语言，而是一种用于前后端数据查询方式的规范。</p>
-<h3 id="1-1-2-Why-using-GraphQL"><a href="#1-1-2-Why-using-GraphQL" class="headerlink" title="1.1.2 Why using GraphQL?"></a>1.1.2 Why using GraphQL?</h3><p>当今客户端和服务端主要的交互方式有 2 种，分别是 REST 和 ad hoc 端点。GraphQL 官网指出了它们的不足之处主要在于：当需求或数据发生变化时，它们都需要建立新的接口来适应变化，而不断添加的接口，会造成服务器代码的不断增长，即使通过增加接口版本，也并不能够完全限制服务器代码的增长。</p>
-<h5 id="GraphQL-特性"><a href="#GraphQL-特性" class="headerlink" title="GraphQL 特性"></a>GraphQL 特性</h5><ul>
-<li>首先，它是<strong>声明式的</strong>。查询的结果格式由请求方（即客户端）决定而非响应方（即服务器端）决定，也就是说，一个 GraphQL 查询结果的返回是同客户端请求时的结构一样的，不多不少，不增不减。</li>
-<li>其次，它是<strong>可组合的</strong>。一个 GraphQL 的查询结构是一个有层次的字段集，它可以任意层次地进行嵌套或组合，也就是说它可以通过对字段进行组合、嵌套来满足需求。</li>
-<li>第三，它是<strong>强类型的</strong>。强类型保证，只有当一个 GraphQL 查询满足所设定的查询类型，那么查询的结果才会被执行。</li>
-</ul>
-<p><img src="/2019/11/25/12-拓展-GraphQL简介/3.png" alt="BP"></p>
-<h2 id="1-2-Node-js-环境简单用法"><a href="#1-2-Node-js-环境简单用法" class="headerlink" title="1.2  Node.js 环境简单用法"></a>1.2  Node.js 环境简单用法</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>GraphQL 规范的参考实现, 专为在 Node.js 环境中运行 GraphQL 而设计.</p>
-<p>通过 命令行 执行 <code>GraphQL.js</code> hello world 脚本:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install graphql</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-创建-hello-js"><a href="#2-创建-hello-js" class="headerlink" title="2.创建 hello.js"></a>2.创建 hello.js</h3><p>然后执行 <code>node hello.js</code>.</p>
-<p><code>hello.js</code>源码:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; graphql, buildSchema &#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> schema = buildSchema(<span class="string">`</span></span><br><span class="line"><span class="string">  type Query &#123;</span></span><br><span class="line"><span class="string">    hello: String</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> root = &#123; <span class="attr">hello</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'Hello world!'</span> &#125;;</span><br><span class="line"></span><br><span class="line">graphql(schema, <span class="string">'&#123; hello &#125;'</span>, root).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(response);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-Express-运行"><a href="#1-3-Express-运行" class="headerlink" title="1.3 Express 运行"></a>1.3 Express 运行</h2><p>通过 Express 实现的 GraphQL 参考实现, 你可以联合 Express 运行或独立运行.</p>
-<p>为了方便下面的步骤，我们在graphql文件夹中手动创建下面的目录结构，并安装指定的依赖</p>
-<p><img src="/2019/11/25/12-拓展-GraphQL简介/1.png" alt="BP"></p>
-<p>运行一个 <code>express-graphql</code> 安装项目依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express express-graphql graphql</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-index-js代码"><a href="#1-index-js代码" class="headerlink" title="1.index.js代码"></a>1.index.js代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> expressGraphql = <span class="built_in">require</span>(<span class="string">'express-graphql'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="comment">// 配置路由</span></span><br><span class="line">app.use(<span class="string">'/graphql'</span>, expressGraphql(<span class="function"><span class="params">req</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    schema: <span class="built_in">require</span>(<span class="string">'./schema'</span>), <span class="comment">// graphql相关代码主目录</span></span><br><span class="line">    graphiql: <span class="literal">true</span> <span class="comment">// 是否开启可视化工具</span></span><br><span class="line">    <span class="comment">// ... 此处还有很多参数，为了简化文章，此处就一一举出, 具体可以看 刚才开篇提到的 express文档,</span></span><br><span class="line">    <span class="comment">// 也可以在文章末尾拉取项目demo进行查阅</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 服务使用3000端口</span></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"graphql server is ok open http://localhost:3000/graphql"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-graphql-schema-js代码"><a href="#2-graphql-schema-js代码" class="headerlink" title="2.graphql/schema.js代码"></a>2.graphql/schema.js代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLSchema,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 规范写法，声明query(查询类型接口) 和 mutation(修改类型接口)</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">new</span> GraphQLSchema(&#123;</span><br><span class="line">  query: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Query'</span>,</span><br><span class="line">    description: <span class="string">'查询数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 查询类型接口方法名称</span></span><br><span class="line">      fetchObjectData: <span class="built_in">require</span>(<span class="string">'./queries/fetchObjectData'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  mutation: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Mutation'</span>,</span><br><span class="line">    description: <span class="string">'修改数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 修改类型接口方法名称</span></span><br><span class="line">      updateData: <span class="built_in">require</span>(<span class="string">'./mutations/updateData'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-graphql-queries-fetchObjectData-js代码"><a href="#3-graphql-queries-fetchObjectData-js代码" class="headerlink" title="3.graphql/queries/fetchObjectData.js代码"></a>3.graphql/queries/fetchObjectData.js代码</h3><p>先在graphql/queries文件夹下创建fetchObjectData.js文件, 并填入以下代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLID,</span><br><span class="line">  GraphQLInt,</span><br><span class="line">  GraphQLFloat,</span><br><span class="line">  GraphQLString,</span><br><span class="line">  GraphQLBoolean,</span><br><span class="line">  GraphQLNonNull,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 定义接口返回的数据结构</span></span><br><span class="line"><span class="keyword">const</span> userType = <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">  name: <span class="string">'userItem'</span>,</span><br><span class="line">  description: <span class="string">'用户信息'</span>,</span><br><span class="line">  fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    id: &#123;</span><br><span class="line">      type: GraphQLID,</span><br><span class="line">      description: <span class="string">'数据唯一标识'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    username: &#123;</span><br><span class="line">      type: GraphQLString,</span><br><span class="line">      description: <span class="string">'用户名'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: &#123;</span><br><span class="line">      type: GraphQLInt,</span><br><span class="line">      description: <span class="string">'年龄'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    height: &#123;</span><br><span class="line">      type: GraphQLFloat,</span><br><span class="line">      description: <span class="string">'身高'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    isMarried: &#123;</span><br><span class="line">      type: GraphQLBoolean,</span><br><span class="line">      description: <span class="string">'是否已婚'</span>,</span><br><span class="line">      deprecationReason: <span class="string">"这个字段现在不需要了"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: userType,</span><br><span class="line">  description: <span class="string">'object类型数据例子'</span>,</span><br><span class="line">  <span class="comment">// 定义接口传参的数据结构</span></span><br><span class="line">  args: &#123;</span><br><span class="line">    isReturn: &#123;</span><br><span class="line">      type: <span class="keyword">new</span> GraphQLNonNull(GraphQLBoolean),</span><br><span class="line">      description: <span class="string">'是否返回数据'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params, context</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; isReturn &#125; = params</span><br><span class="line">    <span class="keyword">if</span> (isReturn) &#123;</span><br><span class="line">      <span class="comment">// 返回的数据与前面定义的返回数据结构一致</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">          <span class="string">"id"</span>: <span class="string">"110000199811259999"</span>,</span><br><span class="line">          <span class="string">"username"</span>: <span class="string">"DongWenbin"</span>,</span><br><span class="line">          <span class="string">"age"</span>: <span class="number">21</span>,</span><br><span class="line">          <span class="string">"height"</span>: <span class="number">182.5</span>,</span><br><span class="line">          <span class="string">"isMarried"</span>: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-graphql-mutations-updateData-js代码"><a href="#4-graphql-mutations-updateData-js代码" class="headerlink" title="4.graphql/mutations/updateData.js代码"></a>4.graphql/mutations/updateData.js代码</h3><p>先在graphql/mutations文件夹下创建updateData.js文件, 并填入以下代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLInt</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: GraphQLInt,  <span class="comment">// 定义返回的数据类型</span></span><br><span class="line">  description: <span class="string">'修改例子'</span>,</span><br><span class="line">  args: &#123;  <span class="comment">// 定义传参的数据结构</span></span><br><span class="line">    num: &#123;</span><br><span class="line">      type: GraphQLInt,</span><br><span class="line">      description: <span class="string">'数量'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; num &#125; = params</span><br><span class="line">    count += num</span><br><span class="line">    <span class="keyword">return</span> count</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>好了，到此为止，简单的GraphQL服务器就搭建好了，让我们来启动看看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js  // 启动项目</span><br></pre></td></tr></table></figure>
-
-<p>然后我们在浏览器打开 <a href="http://localhost:3000/graphql" target="_blank" rel="noopener">http://localhost:3000/graphql</a> 如下图所示</p>
-<p><img src="/2019/11/25/12-拓展-GraphQL简介/2.png" alt="BP"></p>
-<p>我们可以看到页面分为3栏，左边的是调用api用的，中间是调用api返回的结果 右边实际上就是我们刚才定义接口相关的东西，也就是api文档。<br>我们在左边粘贴以下代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">query fetchObjectData &#123;</span><br><span class="line">  fetchObjectData(</span><br><span class="line">    isReturn: <span class="literal">true</span></span><br><span class="line">  ) &#123;</span><br><span class="line">    id</span><br><span class="line">    username</span><br><span class="line">    age</span><br><span class="line">    height</span><br><span class="line">    isMarried</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mutation updateData &#123;</span><br><span class="line">  updateData(</span><br><span class="line">    num: <span class="number">2</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-4-语法规范"><a href="#1-4-语法规范" class="headerlink" title="1.4 语法规范"></a>1.4 语法规范</h2><h3 id="1、导入GraphQL-js及类型"><a href="#1、导入GraphQL-js及类型" class="headerlink" title="1、导入GraphQL.js及类型"></a>1、导入GraphQL.js及类型</h3><p>graphql 无论在定义接口参数和接口返回结果时, 都需要先定义好其中所包含数据结构的类型, 这不难理解，可以理解为我们定义的就是数据模型，其中常用的类型如下。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    GraphQLList,  <span class="comment">// 数组列表</span></span><br><span class="line">    GraphQLObjectType, <span class="comment">// 对象</span></span><br><span class="line">    GraphQLString, <span class="comment">// 字符串</span></span><br><span class="line">    GraphQLInt,  <span class="comment">// int类型</span></span><br><span class="line">    GraphQLFloat,  <span class="comment">// float类型</span></span><br><span class="line">    GraphQLEnumType,  <span class="comment">// 枚举类型</span></span><br><span class="line">    GraphQLNonNull,  <span class="comment">// 非空类型</span></span><br><span class="line">    GraphQLSchema <span class="comment">// schema(定义接口时使用)</span></span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、定义schema"><a href="#2、定义schema" class="headerlink" title="2、定义schema"></a>2、定义schema</h3><p>schema实例中，一般规范为<br>query: 定义查询类的接口<br>mutation: 定义修改类的接口</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> GraphQLSchema(&#123;</span><br><span class="line">  query: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Query'</span>, <span class="comment">// 查询实例名称</span></span><br><span class="line">    description: <span class="string">'查询数据'</span>, <span class="comment">// 接口描述</span></span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 查询类型接口方法名称</span></span><br><span class="line">      fetchDataApi1: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi1'</span>),</span><br><span class="line">      fetchDataApi2: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi2'</span>),</span><br><span class="line">      fetchDataApi3: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi3'</span>),</span><br><span class="line">      ...</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  mutation: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Mutation'</span>,</span><br><span class="line">    description: <span class="string">'修改数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 修改类型接口方法名称</span></span><br><span class="line">      updateDataApi1: <span class="built_in">require</span>(<span class="string">'./mutations/updateDataApi1'</span>),</span><br><span class="line">      updateDataApi2: <span class="built_in">require</span>(<span class="string">'./mutations/updateDataApi2'</span>),</span><br><span class="line">      ...</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、接口方法定义"><a href="#3、接口方法定义" class="headerlink" title="3、接口方法定义"></a>3、接口方法定义</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用需要用到的数据类型</span></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLID,</span><br><span class="line">  GraphQLString,</span><br><span class="line">  GraphQLNonNull,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 第一部分 定义接口返回的数据结构</span></span><br><span class="line"><span class="comment">// 不难看出来，下面定义的是</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   &#123;</span></span><br><span class="line"><span class="comment">      id</span></span><br><span class="line"><span class="comment">      username</span></span><br><span class="line"><span class="comment">   &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> userType = <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">  name: <span class="string">'userItem'</span>,</span><br><span class="line">  description: <span class="string">'用户信息'</span>,</span><br><span class="line">  fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    id: &#123;</span><br><span class="line">      type: GraphQLID,</span><br><span class="line">      description: <span class="string">'数据唯一标识'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    username: &#123;</span><br><span class="line">      type: GraphQLString,</span><br><span class="line">      description: <span class="string">'用户名'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 第二部分 定义接口</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: userType,</span><br><span class="line">  description: <span class="string">'object类型数据例子'</span>,</span><br><span class="line">  <span class="comment">// 定义接口传参的数据结构</span></span><br><span class="line">  args: &#123;</span><br><span class="line">    isReturn: &#123;</span><br><span class="line">      type: <span class="keyword">new</span> GraphQLNonNull(GraphQLBoolean),</span><br><span class="line">      description: <span class="string">'是否返回数据'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params, context</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; isReturn &#125; = params</span><br><span class="line">    <span class="comment">// 返回的数据与前面定义的返回数据结构一致</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">       <span class="string">"id"</span>: <span class="string">"5bce2b8c7fde05hytsdsc12c"</span>,</span><br><span class="line">       <span class="string">"username"</span>: <span class="string">"Davis"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-5-前后端交互（入门）"><a href="#1-5-前后端交互（入门）" class="headerlink" title="1.5 前后端交互（入门）"></a>1.5 前后端交互（入门）</h2><h3 id="1、准备"><a href="#1、准备" class="headerlink" title="1、准备"></a>1、准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save express express-graphql graphql cors</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-服务器端代码app-js"><a href="#2-服务器端代码app-js" class="headerlink" title="2.服务器端代码app.js"></a>2.服务器端代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> graphqlHTTP = <span class="built_in">require</span>(<span class="string">'express-graphql'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; buildSchema &#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>);</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">'cors'</span>); <span class="comment">// 用来解决跨域问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 schema，需要注意到：</span></span><br><span class="line"><span class="comment">// 1. 感叹号 ！ 代表 not-null</span></span><br><span class="line"><span class="comment">// 2. rollDice 接受参数</span></span><br><span class="line"><span class="keyword">const</span> schema = buildSchema(<span class="string">`</span></span><br><span class="line"><span class="string">  type Query &#123;</span></span><br><span class="line"><span class="string">    username: String</span></span><br><span class="line"><span class="string">    age: Int!</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line"><span class="keyword">const</span> root = &#123;</span><br><span class="line">    username: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'董文斌'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">100</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">app.use(cors());</span><br><span class="line">app.use(<span class="string">'/graphql'</span>, graphqlHTTP(&#123;</span><br><span class="line">    schema: schema,</span><br><span class="line">    rootValue: root,</span><br><span class="line">    graphiql: <span class="literal">true</span></span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3300</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Running a GraphQL API server at http://localhost:3300/graphql'</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-客户端代码index-html"><a href="#3-客户端代码index-html" class="headerlink" title="3. 客户端代码index.html"></a>3. 客户端代码index.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>graphql demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span>获取当前用户数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"age"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> test = <span class="built_in">document</span>.querySelector(<span class="string">'.test'</span>);</span></span><br><span class="line"><span class="javascript">    test.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> username = <span class="built_in">document</span>.querySelector(<span class="string">'.username'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> age = <span class="built_in">document</span>.querySelector(<span class="string">'.age'</span>);</span></span><br><span class="line"><span class="javascript">        fetch(<span class="string">'http://localhost:3300/graphql'</span>, &#123;</span></span><br><span class="line">            headers: &#123;</span><br><span class="line"><span class="javascript">                <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span></span><br><span class="line"><span class="javascript">                <span class="string">'Accept'</span>: <span class="string">'application/json'</span></span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">            method: <span class="string">'POST'</span>,</span></span><br><span class="line"><span class="javascript">            body: <span class="built_in">JSON</span>.stringify(&#123;</span></span><br><span class="line">                query: `&#123;</span><br><span class="line">                    username,</span><br><span class="line">                    age,</span><br><span class="line">            &#125;`</span><br><span class="line">            &#125;),</span><br><span class="line"><span class="javascript">            mode: <span class="string">'cors'</span> <span class="comment">// no-cors, cors, *same-origin</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> response.json();</span></span><br><span class="line">            &#125;)</span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'返回结果'</span>, res);</span></span><br><span class="line"><span class="javascript">                username.innerHTML = <span class="string">`姓名：<span class="subst">$&#123;res.data.username&#125;</span>`</span>;</span></span><br><span class="line"><span class="javascript">                age.innerHTML = <span class="string">`年龄：<span class="subst">$&#123;res.data.age&#125;</span>`</span></span></span><br><span class="line">            &#125;)</span><br><span class="line"><span class="javascript">            .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.error(<span class="string">'错误'</span>, err);</span></span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-6-总结"><a href="#1-6-总结" class="headerlink" title="1.6 总结"></a>1.6 总结</h2><p>目前前后端的结构大概如下图。后端通过 DAO 层与数据库连接，服务于主要处理业务逻辑的 Service 层，为 Controller 层提供数据源并产出 API；前端通过浏览器 URL 进行路由命中获取目标视图状态，而页面视图是由组件嵌套组成，每个组件维护着各自的组件级状态，一些稍微复杂的应用还会使用集中式状态管理的工具，比如 Vuex、Redux、Mobx 等。前后端只通过 API 来交流，这也是现在前后端分离开发的基础。</p>
-<p><img src="/2019/11/25/12-拓展-GraphQL简介/4.png" alt="BP"></p>
-<p>如果使用 GraphQL，那么后端将不再产出 API，而是将 Controller 层维护为 Resolver，和前端约定一套 Schema，这个 Schema 将用来生成接口文档，前端直接通过 Schema 或生成的接口文档来进行自己期望的请求。</p>
-<p>经过几年一线开发者的填坑，已经有一些不错的工具链可以使用于开发与生产，很多语言也提供了对 GraphQL 的支持，比如 Java/Nodejs、Java、PHP、Ruby、Python、Go、C# 等。</p>
-<p>一些比较有名的公司比如 Twitter、IBM、Coursera、Airbnb、Facebook、Github、携程等，内部或外部 API 从 RESTful 转为了 GraphQL 风格，特别是 Github，它的 v4 版外部 API 只使用 GraphQL。据一位在 Twitter 工作的大佬说硅谷不少一线二线的公司都在想办法转到 GraphQL 上，但是同时也说了 GraphQL 还需要时间发展，因为将它使用到生产环境需要前后端大量的重构，这无疑需要高层的推动和决心。</p>
-<p>正如尤雨溪所说，为什么 GraphQL 两三年前没有广泛使用起来呢，可能有下面两个原因：</p>
-<blockquote>
-<ol>
-<li>GraphQL 的 field resolve 如果按照 naive 的方式来写，每一个 field 都对数据库直接跑一个 query，会产生大量冗余 query，虽然网络层面的请求数被优化了，但数据库查询可能会成为性能瓶颈，这里面有很大的优化空间，但并不是那么容易做。FB 本身没有这个问题，因为他们内部数据库这一层也是抽象掉的，写 GraphQL 接口的人不需要顾虑 query 优化的问题。</li>
-<li>GraphQL 的利好主要是在于前端的开发效率，但落地却需要服务端的全力配合。如果是小公司或者整个公司都是全栈，那可能可以做，但在很多前后端分工比较明确的团队里，要推动 GraphQL 还是会遇到各种协作上的阻力。</li>
-</ol>
-</blockquote>
-<p>大约可以概括为性能瓶颈和团队分工的原因，希望随着社区的发展，基础设施的完善，会渐渐有完善的解决方案提出，让广大前后端开发者们可以早日用上此利器。</p>
 
           
         
@@ -1937,7 +1913,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

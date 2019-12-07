@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.App开发模式介绍Web App ： 用html+css+js写的网页程序 混合式App开发：（HybirdApp）就是使用前端已有的技术，HTML + CSS + JS ，然后再搭配一些相关的打包编译技术，就能够开发出一个手机App，安装到手机中进行使用。 原生(native app)App：使用IOS、Android 官方提供的工具、开发平台、配套语言进行手机App开发的方式   2.hy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="23.react-native">
+<meta property="og:url" content="http://yoursite.com/2019/12/07/23-react-native/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1.App开发模式介绍Web App ： 用html+css+js写的网页程序 混合式App开发：（HybirdApp）就是使用前端已有的技术，HTML + CSS + JS ，然后再搭配一些相关的打包编译技术，就能够开发出一个手机App，安装到手机中进行使用。 原生(native app)App：使用IOS、Android 官方提供的工具、开发平台、配套语言进行手机App开发的方式   2.hy">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/12/07/23-react-native/10.png">
+<meta property="og:updated_time" content="2019-12-07T09:06:21.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="23.react-native">
+<meta name="twitter:description" content="1.App开发模式介绍Web App ： 用html+css+js写的网页程序 混合式App开发：（HybirdApp）就是使用前端已有的技术，HTML + CSS + JS ，然后再搭配一些相关的打包编译技术，就能够开发出一个手机App，安装到手机中进行使用。 原生(native app)App：使用IOS、Android 官方提供的工具、开发平台、配套语言进行手机App开发的方式   2.hy">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/07/23-react-native/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/07/23-react-native/">
+
+
+
+
+
+  <title>23.react-native | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/07/23-react-native/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">23.react-native</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-07T16:39:12+08:00">
+                2019-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-App开发模式介绍"><a href="#1-App开发模式介绍" class="headerlink" title="1.App开发模式介绍"></a>1.App开发模式介绍</h2><p>Web App ： 用html+css+js写的网页程序</p>
+<p>混合式App开发：（HybirdApp）就是使用前端已有的技术，HTML + CSS + JS ，然后再搭配一些相关的打包编译技术，就能够开发出一个手机App，安装到手机中进行使用。</p>
+<p>原生(native app)App：使用IOS、Android 官方提供的工具、开发平台、配套语言进行手机App开发的方式</p>
+<p><img src="/2019/12/07/23-react-native/1.png" alt="BP"></p>
+<p><img src="/2019/12/07/23-react-native/2.png" alt="BP"></p>
+<h2 id="2-hybird开发技术选型"><a href="#2-hybird开发技术选型" class="headerlink" title="2.hybird开发技术选型"></a>2.hybird开发技术选型</h2><p>Vue.js 和 Weex</p>
+<p>React.js 和 React-Native </p>
+<p>Angular.js 和 Ionic</p>
+<p>Html5+ ：把html+css+js开发web应用打包成apk</p>
+<img src="/2019/12/07/23-react-native/3.png" alt="BP" style="zoom: 150%;">
+
+<h2 id="3-安卓环境配置"><a href="#3-安卓环境配置" class="headerlink" title="3.安卓环境配置"></a>3.安卓环境配置</h2><h5 id="1-安装java-jdk"><a href="#1-安装java-jdk" class="headerlink" title="1.安装java jdk"></a>1.安装java jdk</h5><p>​    A) 修改环境变量，新增<code>JAVA_HOME</code>的系统环境变量，值为<code>C:\Program Files (x86)\Java\jdk1.8.0_112</code>，也就是安装JDK的根目录</p>
+<p>   B) 修改系统环境变量<code>Path</code>，在<code>Path</code>之后新增<code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</code></p>
+<p>   C) 新建<strong>系统环境变量</strong><code>CLASSPATH</code>，值为<code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p>
+<p>   D) 保存所有的系统环境变量，同时退出系统环境变量配置窗口，然后运行cmd命令行工具，输入<code>javac</code>，如果能出现javac的命令选项，就表示配置成功！</p>
+<p>注意：在win10 的环境下可以将相对路径换成绝对路径</p>
+<p>classpath：</p>
+<p><img src="/2019/12/07/23-react-native/4.png" alt="BP"></p>
+<p>path：</p>
+<p><img src="/2019/12/07/23-react-native/5.png" alt="BP"></p>
+<h5 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h5><h5 id="3-安装Git环境"><a href="#3-安装Git环境" class="headerlink" title="3.安装Git环境"></a>3.安装Git环境</h5><h5 id="4-安装python2环境"><a href="#4-安装python2环境" class="headerlink" title="4.安装python2环境"></a>4.安装python2环境</h5><h5 id="5-将android压缩包解压之后放到c盘根目录"><a href="#5-将android压缩包解压之后放到c盘根目录" class="headerlink" title="5.将android压缩包解压之后放到c盘根目录"></a>5.将android压缩包解压之后放到c盘根目录</h5><p>A) 在系统环境变量中新建<code>ANDROID_HOME</code>，值为android SDK Manager的安装路径<code>C:\android</code></p>
+<p>B) 紧接着，在Path中新增<code>;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;</code></p>
+<p>注意：win10 如上图path的最后的写法</p>
+<h5 id="6-（非必须）模拟器"><a href="#6-（非必须）模拟器" class="headerlink" title="6.（非必须）模拟器"></a>6.（非必须）模拟器</h5><p>A) 将C:\android\platform-tools\adb.exe拷贝一份，重命名为nox_adb.exe，替换掉D:\Program Files\Nox\bin下的nox_adb.exe文件</p>
+<p>B) 打开夜神模拟器</p>
+<p>C) 连接夜神模拟器  adb connect 127.0.0.1:62001   /  adb disconnect 127.0.0.1:62001</p>
+<p>D) 查看安卓连接设备  adb devices</p>
+<p>E) 配置夜神模拟器  375*667   dpi:163</p>
+<h5 id="7-安装yarn和react-native-cli"><a href="#7-安装yarn和react-native-cli" class="headerlink" title="7.安装yarn和react-native-cli"></a>7.安装yarn和react-native-cli</h5><p>npm install -g yarn react-native-cli</p>
+<p>设置下载源：</p>
+<p>yarn config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> –global </p>
+<p>yarn config set disturl <a href="https://npm.taobao.org/dist" target="_blank" rel="noopener">https://npm.taobao.org/dist</a> –global</p>
+<h5 id="8-react-native-init"><a href="#8-react-native-init" class="headerlink" title="8.react-native-init"></a>8.react-native-init</h5><p>通过react-native-init命令创建一个App (注意项目不要放在中文路径下)</p>
+<h5 id="9-react-native-run-android"><a href="#9-react-native-run-android" class="headerlink" title="9.react-native run-android"></a>9.react-native run-android</h5><p>进入testRN目录，通过npx<br>react-native run-android命令来运行项目</p>
+<h5 id="10-问题"><a href="#10-问题" class="headerlink" title="10.问题"></a>10.问题</h5><p><img src="/2019/12/07/23-react-native/6.png" alt="BP"></p>
+<p>A)       在android/app/src/main下新建assets文件夹</p>
+<p>B)       在项目根目录下输入如下命令：</p>
+<p>react-native bundle –platform android –dev false –entry-file index.js –bundle-output android/app/src/main/assets/index.android.bundle –assets-dest android/app/src/main/res</p>
+<p><img src="/2019/12/07/23-react-native/7.png" alt="BP"></p>
+<p>C)      重新使用 react-native run-android 来启动项目</p>
+<h5 id="11-热更新解决端口被占用的问题"><a href="#11-热更新解决端口被占用的问题" class="headerlink" title="11.热更新解决端口被占用的问题"></a>11.热更新解决端口被占用的问题</h5><p>A) netstat -ano | findstr “8081”</p>
+<p>B) tasklist|findstr “pid”   如果结果显示 java.exe，则说明8081端口被占用了</p>
+<p>C) react-native  run-android 把项目安装到夜神模拟器</p>
+<p>D)关闭以下窗口，然后通过react-native start –port  9999 重新打开服务端口</p>
+<p><img src="/2019/12/07/23-react-native/8.png" alt="BP"></p>
+<p>E) 打开夜神模拟器，打开app，摇一摇</p>
+<p><img src="/2019/12/07/23-react-native/9.png" alt="BP"></p>
+<p>F) 打开夜神模拟器，摇一摇</p>
+<p><img src="/2019/12/07/23-react-native/10.png" alt="BP"></p>
+<h2 id="4-RN基础组件"><a href="#4-RN基础组件" class="headerlink" title="4.RN基础组件"></a>4.RN基础组件</h2><p>View     —&gt;视图    </p>
+<p>Text      —&gt;文本</p>
+<p>Image    —&gt;图片</p>
+<p>TextInput —&gt;文本输入框</p>
+<p>ScrollView —&gt;滚动视图</p>
+<p>StyleSheet —&gt;创建样式 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Sample React Native App</span></span><br><span class="line"><span class="comment"> * https://github.com/facebook/react-native</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @format</span></span><br><span class="line"><span class="comment"> * @flow</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 1.首先在开头导入所需要的组件的名称</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  SafeAreaView,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  ScrollView,</span><br><span class="line">  View,</span><br><span class="line">  Text,</span><br><span class="line">  StatusBar,</span><br><span class="line">  Image,</span><br><span class="line">  TextInput</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.在App中定义所有的函数和变量的值</span></span><br><span class="line"><span class="keyword">const</span> App: <span class="function"><span class="params">()</span> =&gt;</span> React$Node = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, onChangeText] = React.useState(<span class="string">'Useless Placeholder'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> pic = &#123;</span><br><span class="line">    uri: <span class="string">'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.在return中返回需要映射的组件</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">          &lt;Text&gt;这是View&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">          &lt;View style=&#123;styles.box&#125;&gt;&lt;/</span>View&gt;</span><br><span class="line">          &lt;View style=&#123;&#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">backgroundColor</span>:<span class="string">'blue'</span>&#125;&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">          &lt;Image source=&#123;pic&#125; style=&#123;&#123; <span class="attr">width</span>: <span class="number">193</span>, <span class="attr">height</span>: <span class="number">110</span> &#125;&#125; /&gt;</span><br><span class="line">          &lt;Image source=&#123;<span class="built_in">require</span>(<span class="string">'./images/1.png'</span>)&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Image</span>&gt;</span></span></span><br><span class="line">          &lt;TextInput</span><br><span class="line">            style=&#123;&#123; <span class="attr">height</span>: <span class="number">40</span>, <span class="attr">borderColor</span>: <span class="string">'red'</span>, <span class="attr">borderWidth</span>: <span class="number">1</span> &#125;&#125;</span><br><span class="line">            onChangeText=&#123;text =&gt; onChangeText(text)&#125;</span><br><span class="line">            value=&#123;value&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">      &lt;<span class="regexp">/ScrollView&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = StyleSheet.create(&#123;</span><br><span class="line">  box:&#123;</span><br><span class="line">    width:<span class="number">300</span>,</span><br><span class="line">    height:<span class="number">200</span>,</span><br><span class="line">    borderColor:<span class="string">'yellow'</span>,</span><br><span class="line">    borderWidth:<span class="number">2</span>,</span><br><span class="line">    borderStyle:<span class="string">"solid"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-交互组件"><a href="#5-交互组件" class="headerlink" title="5.交互组件"></a>5.交互组件</h2><p>Button —&gt;按钮</p>
+<p>Picker  —&gt;选择视图</p>
+<p>Switch —&gt;开关</p>
+<p>Slider  —&gt;滑块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">          onPress=&#123;onPressLearnMore&#125;</span><br><span class="line">          title=<span class="string">"Learn More"</span></span><br><span class="line">          color=<span class="string">"#841584"</span></span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Picker</span><br><span class="line">          selectedValue=&#123;language&#125;</span><br><span class="line">          style=&#123;&#123; <span class="attr">height</span>: <span class="number">50</span>, <span class="attr">width</span>: <span class="number">100</span> &#125;&#125;</span><br><span class="line">          onValueChange=&#123;(itemValue, itemIndex) =&gt;</span><br><span class="line">            onChangeLanaguage(itemValue)</span><br><span class="line">          &#125;&gt;</span><br><span class="line">          &lt;Picker.Item label=<span class="string">"Java"</span> value=<span class="string">"java"</span> /&gt;</span><br><span class="line">          &lt;Picker.Item label=<span class="string">"JavaScript"</span> value=<span class="string">"js"</span> /&gt;</span><br><span class="line">        &lt;<span class="regexp">/Picker&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;Slider maximumValue=&#123;100&#125; minimumValue=&#123;0&#125; onValueChange=&#123;(value) =&gt; console.log(value)&#125; step=&#123;2&#125; value=&#123;50&#125;&gt;&lt;/</span>Slider&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Switch value=&#123;switchStatus&#125; onValueChange=&#123;(value) =&gt; &#123; onChangeswitchStatus(value) &#125;&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [switchStatus, onChangeswitchStatus] = React.useState(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">const</span> [language, onChangeLanaguage] = React.useState(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> onPressLearnMore = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"xxx"</span>)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-列表组件"><a href="#6-列表组件" class="headerlink" title="6.   列表组件"></a>6.   列表组件</h2><p>FlatList  : 列表</p>
+<p>Section  ：分组列表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;SectionList</span><br><span class="line">        renderItem=&#123;(&#123; item, index, section &#125;) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span>&#125;</span><br><span class="line">        sections=&#123;[</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title1'</span>, <span class="attr">data</span>: [<span class="string">'item1'</span>, <span class="string">'item2'</span>], <span class="attr">renderItem</span>: overrideRenderItem &#125;,</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title2'</span>, <span class="attr">data</span>: [<span class="string">'item3'</span>, <span class="string">'item4'</span>], <span class="attr">renderItem</span>: overrideRenderItem2 &#125;,</span><br><span class="line">          &#123; <span class="attr">title</span>: <span class="string">'Title3'</span>, <span class="attr">data</span>: [<span class="string">'item5'</span>, <span class="string">'item6'</span>] &#125;,</span><br><span class="line">        ]&#125;</span><br><span class="line">      /&gt;</span><br><span class="line"></span><br><span class="line">      &lt;FlatList</span><br><span class="line">        data=&#123;[&#123; <span class="attr">key</span>: <span class="string">'a'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'b'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'a'</span> &#125;, &#123; <span class="attr">key</span>: <span class="string">'b'</span> &#125;]&#125;</span><br><span class="line">        renderItem=&#123;(&#123; item &#125;) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">Text</span>&gt;</span>&#123;item.key&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span>&#125;</span><br><span class="line">        ItemSeparatorComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">height:</span> <span class="attr">1</span>, <span class="attr">width:</span> '<span class="attr">100</span>%', <span class="attr">backgroundColor:</span> "<span class="attr">red</span>" &#125;&#125;&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        ListHeaderComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span><span class="tag">&lt;<span class="name">Text</span>&gt;</span>列表头<span class="tag">&lt;/<span class="name">Text</span>&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        ListFooterComponent=&#123;() =&gt; <span class="xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span><span class="tag">&lt;<span class="name">Text</span>&gt;</span>列表尾<span class="tag">&lt;/<span class="name">Text</span>&gt;</span><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span>&#125;</span><br><span class="line">        numColumns=&#123;<span class="number">2</span>&#125;</span><br><span class="line">        columnWrapperStyle=&#123;&#123; <span class="attr">borderWidth</span>: <span class="number">1</span>, <span class="attr">borderColor</span>: <span class="string">'blue'</span>, <span class="attr">paddingLeft</span>: <span class="number">20</span> &#125;&#125;  <span class="comment">//指定每一行容器的样式(设置多列的情况下)</span></span><br><span class="line">        getItemLayout=&#123;(data, index) =&gt; (</span><br><span class="line">          &#123; <span class="attr">length</span>: <span class="number">100</span>, <span class="attr">offset</span>: (<span class="number">100</span> + <span class="number">2</span>) * index, index &#125;</span><br><span class="line">        )&#125;   <span class="comment">//当行高固定的时候可以使用这个属性来优化性能</span></span><br><span class="line">        refreshing=&#123;<span class="literal">false</span>&#125;     <span class="comment">//当前是否正在刷新</span></span><br><span class="line">        onEndReachedThreshold=&#123;<span class="number">0</span>&#125;  <span class="comment">//到距离底部0的时候触发onEndReached方法</span></span><br><span class="line">        onEndReached=&#123;() =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">"拉到底部了"</span>) &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> overrideRenderItem = <span class="function">(<span class="params">&#123; item, index, section: &#123; title, data &#125; &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> '<span class="attr">red</span>' &#125;&#125; <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>Override1&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">  <span class="keyword">const</span> overrideRenderItem2 = <span class="function">(<span class="params">&#123; item, index, section: &#123; title, data &#125; &#125;</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> '<span class="attr">blue</span>' &#125;&#125; <span class="attr">key</span>=<span class="string">&#123;index&#125;</span>&gt;</span>Override2&#123;item&#125;<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-其他组件"><a href="#7-其他组件" class="headerlink" title="7.其他组件"></a>7.其他组件</h2><p>ActivityIndicator     —&gt; 提示的Activity</p>
+<p>Alert              —&gt;提示弹框</p>
+<p>Modal             —&gt;模态页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button onPress=&#123;showModal&#125; title=<span class="string">"弹出Modal"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line">      &lt;Button onPress=&#123;showAlert&#125; title=<span class="string">"弹出Alert"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">      &lt;Modal</span><br><span class="line">        animationType=<span class="string">'slide'</span>           <span class="comment">// 从底部滑入</span></span><br><span class="line">        transparent=&#123;<span class="literal">false</span>&#125;             <span class="comment">// 不透明</span></span><br><span class="line">        visible=&#123;showmodal&#125;    <span class="comment">// 根据isModal决定是否显示</span></span><br><span class="line">        onRequestClose=&#123;() =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">"onRequestClose"</span>) &#125;&#125;  <span class="comment">// android必须实现</span></span><br><span class="line">      &gt;</span><br><span class="line">        &lt;View style=&#123;styles.modalViewStyle&#125;&gt;</span><br><span class="line">          &#123;<span class="comment">/* 关闭页面 */</span>&#125;</span><br><span class="line">          &lt;TouchableOpacity</span><br><span class="line">            onPress=&#123;() =&gt; &#123;</span><br><span class="line">              onChangeShowmodal(<span class="literal">false</span>)</span><br><span class="line">            &#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;Text&gt;关闭页面&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Modal&gt;</span><br><span class="line"></span><br><span class="line">      &lt;ActivityIndicator animating=&#123;<span class="literal">true</span>&#125; color=<span class="string">"blue"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ActivityIndicator</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">showAlert = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Alert.alert(</span><br><span class="line">      <span class="string">'Alert Title'</span>,</span><br><span class="line">      <span class="string">'My Alert Msg'</span>,</span><br><span class="line">      [</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'Ask me later'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Ask me later pressed'</span>) &#125;,</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'Cancel'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Cancel Pressed'</span>), <span class="attr">style</span>: <span class="string">'cancel'</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">text</span>: <span class="string">'OK'</span>, <span class="attr">onPress</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'OK Pressed'</span>) &#125;,</span><br><span class="line">      ],</span><br><span class="line">      &#123; <span class="attr">cancelable</span>: <span class="literal">false</span> &#125;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showModal = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    onChangeShowmodal(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> <span class="keyword">const</span> [showModal1,onChangeShowmodal] = React.useState(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Animated的使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [fadeInOpacity, onChangeFadeInOpacity] = React.useState(<span class="keyword">new</span> Animated.Value(<span class="number">0</span>))</span><br><span class="line">  React.useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    Animated.timing(fadeInOpacity, &#123;</span><br><span class="line">      toValue: <span class="number">1</span>, <span class="comment">// 目标值</span></span><br><span class="line">      duration: <span class="number">2500</span>, <span class="comment">// 动画时间</span></span><br><span class="line">    &#125;).start();</span><br><span class="line">  &#125;, [])</span><br><span class="line"></span><br><span class="line"> &lt;Animated.View                       <span class="comment">// 使用专门的可动画化的View组件</span></span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          opacity: fadeInOpacity          <span class="comment">// 将透明度指定为动画变量值</span></span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;Text&gt;测试透明度动画&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>Animated.View&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/22-react项目练手/" rel="next" title="22.react项目练手">
+                <i class="fa fa-chevron-left"></i> 22.react项目练手
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-App开发模式介绍"><span class="nav-number">1.</span> <span class="nav-text">1.App开发模式介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-hybird开发技术选型"><span class="nav-number">2.</span> <span class="nav-text">2.hybird开发技术选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安卓环境配置"><span class="nav-number">3.</span> <span class="nav-text">3.安卓环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-安装java-jdk"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">1.安装java jdk</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-安装Node-js"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">2.安装Node.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-安装Git环境"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">3.安装Git环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-安装python2环境"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">4.安装python2环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-将android压缩包解压之后放到c盘根目录"><span class="nav-number">3.0.0.5.</span> <span class="nav-text">5.将android压缩包解压之后放到c盘根目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-（非必须）模拟器"><span class="nav-number">3.0.0.6.</span> <span class="nav-text">6.（非必须）模拟器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-安装yarn和react-native-cli"><span class="nav-number">3.0.0.7.</span> <span class="nav-text">7.安装yarn和react-native-cli</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-react-native-init"><span class="nav-number">3.0.0.8.</span> <span class="nav-text">8.react-native-init</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-react-native-run-android"><span class="nav-number">3.0.0.9.</span> <span class="nav-text">9.react-native run-android</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-问题"><span class="nav-number">3.0.0.10.</span> <span class="nav-text">10.问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-热更新解决端口被占用的问题"><span class="nav-number">3.0.0.11.</span> <span class="nav-text">11.热更新解决端口被占用的问题</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#4-RN基础组件"><span class="nav-number">4.</span> <span class="nav-text">4.RN基础组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-交互组件"><span class="nav-number">5.</span> <span class="nav-text">5.交互组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-列表组件"><span class="nav-number">6.</span> <span class="nav-text">6.   列表组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-其他组件"><span class="nav-number">7.</span> <span class="nav-text">7.其他组件</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

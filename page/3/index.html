@@ -229,6 +229,284 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/25/4.vue中的切换动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/25/4.vue中的切换动画/" itemprop="url">四. Vue中的切换动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-25T14:40:13+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-动画的控制以及切换"><a href="#1-动画的控制以及切换" class="headerlink" title="1. 动画的控制以及切换"></a>1. 动画的控制以及切换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;mt-header fixed title=<span class="string">"松鼠商城"</span>&gt;</span><br><span class="line">     &lt;a href=<span class="string">"#"</span> v-<span class="keyword">if</span>=<span class="string">"flag"</span> slot=<span class="string">"left"</span>&gt;</span><br><span class="line">       &lt;mt-button icon=<span class="string">"back"</span> @click=<span class="string">"goBack"</span>&gt;返回&lt;<span class="regexp">/mt-button&gt;</span></span><br><span class="line"><span class="regexp">     &lt;/</span>a&gt;</span><br><span class="line">   &lt;<span class="regexp">/mt-header&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">    <span class="comment">//控制返回按钮是否需要显示的</span></span><br><span class="line">    <span class="string">"$route.path"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">newVal, oldVal</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">        newVal == <span class="string">"/"</span> ||</span><br><span class="line">        newVal == <span class="string">"/member"</span> ||</span><br><span class="line">        newVal == <span class="string">"/cart"</span> ||</span><br><span class="line">        newVal == <span class="string">"/search"</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        <span class="keyword">this</span>.flag = <span class="literal">false</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.flag = <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//监听路由变化,控制动画的</span></span><br><span class="line">    $route(to, <span class="keyword">from</span>) &#123;</span><br><span class="line">      <span class="comment">//定义一个数组，用来规定在什么时候不需要动画的切换</span></span><br><span class="line">      <span class="keyword">var</span> arr = [<span class="string">"/"</span>, <span class="string">"/mumber"</span>, <span class="string">"/cart"</span>, <span class="string">"/search"</span>];</span><br><span class="line">      <span class="keyword">let</span> isBack = <span class="keyword">this</span>.isBack;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//如果用户点击了返回按钮，此时用slide-right动画</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.isBack == <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.transitionName = <span class="string">"slide-right"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//如果用户没有点击返回按钮</span></span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//当路由的出发点和目标点在arr数组中，此时不需要动画</span></span><br><span class="line">        <span class="keyword">if</span> (arr.includes(to.path) &amp;&amp; arr.includes(<span class="keyword">from</span>.path)) &#123;</span><br><span class="line">          <span class="keyword">this</span>.transitionName = <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//当路由不是在'/','/member','/cart','/search' 这些之间跳转的时候，需要slide-left动画</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.transitionName = <span class="string">"slide-left"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//重置动画的默认状态</span></span><br><span class="line">      <span class="keyword">this</span>.isBack = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    <span class="comment">//当我们点击返回按钮的时候，修改isBack为true</span></span><br><span class="line">    goBack() &#123;</span><br><span class="line">      <span class="keyword">this</span>.isBack = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-路由的懒加载"><a href="#2-路由的懒加载" class="headerlink" title="2. 路由的懒加载"></a>2. 路由的懒加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Home = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Home.vue'</span>)</span><br><span class="line"><span class="keyword">const</span> Member = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Member.vue'</span>)</span><br><span class="line"><span class="keyword">const</span> Cart = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Cart.vue'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以发现变化如下：</span></span><br><span class="line"><span class="comment">//1.打包后的bundle.js文件体积小了</span></span><br><span class="line"><span class="comment">//2.只有打开某个路由之后才会执行该路由对应的组件中的js代码</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-按需加载-vue-cli中的按需导入"><a href="#3-按需加载-vue-cli中的按需导入" class="headerlink" title="3. 按需加载 vue/cli中的按需导入"></a>3. 按需加载 vue/cli中的按需导入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在使用vue/cli脚手架的项目中要实现按需导入：</span><br><span class="line"><span class="number">1.</span>删除babel.config.js文件</span><br><span class="line"><span class="number">2.</span>在项目根目录下创建.babelrc文件</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"@vue/app"</span>, [<span class="string">"@babel/preset-env"</span>, &#123; <span class="string">"modules"</span>: <span class="literal">false</span> &#125;]],</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">      [</span><br><span class="line">        <span class="string">"component"</span>,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"libraryName"</span>: <span class="string">"mint-ui"</span>,</span><br><span class="line">            <span class="string">"style"</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">3.</span>安装  npm install babel-plugin-component -D  插件</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-移动端的适配问题"><a href="#4-移动端的适配问题" class="headerlink" title="4. 移动端的适配问题"></a>4. 移动端的适配问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.安装flexible。 flexible主要是实现在各种不同的移动端界面实现一稿搞定所有的设备兼容自适应问题</span></span><br><span class="line">npm install lib-flexible --save</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.main.js引入flexible</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'lib-flexible'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//此时运行程序会看到html中自动加上了font-size    font-size的默认值为viewport的十分之一</span></span><br><span class="line"><span class="comment">//在页面中引入flexible.js后，flexible会在&lt;html&gt;标签上增加一个data-dpr属性和font-size样式（如下图）。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.安装postcss-pxtorem</span></span><br><span class="line">npm install postcss-pxtorem --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.修改postcss.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  plugins: &#123;</span><br><span class="line">    <span class="comment">//autoprefixer 自动补全css前缀的东西</span></span><br><span class="line">    <span class="string">'autoprefixer'</span>: &#123;</span><br><span class="line">      <span class="comment">//兼容的机型</span></span><br><span class="line">      browsers: [<span class="string">'Android &gt;= 4.0'</span>, <span class="string">'iOS &gt;= 7'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'postcss-pxtorem'</span>: &#123;</span><br><span class="line">      rootValue: <span class="number">37.5</span>, <span class="comment">//换算基数，一般和html的font-size一致</span></span><br><span class="line">      propList: [<span class="string">'*'</span>]  <span class="comment">//哪些css属性需要换算</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 以37.5位基准,如下图的1.6rem 就是 60px</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mui-grid-view.mui-grid<span class="number">-9</span> img[data-v-fae5bece] &#123;</span><br><span class="line"></span><br><span class="line">    width: <span class="number">1.6</span>rem;</span><br><span class="line">    height: <span class="number">1.6</span>rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-断点的调试"><a href="#5-断点的调试" class="headerlink" title="5. 断点的调试"></a>5. 断点的调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.devtool = &apos;#cheap-module-eval-source-map&apos;</span><br><span class="line">再在需要的地方加上 debugger</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/3.vue中的结尾调试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/17/3.vue中的结尾调试/" itemprop="url">三. Vue项目中的结尾调试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-17T14:40:13+08:00">
+                2019-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-动画的控制以及切换"><a href="#1-动画的控制以及切换" class="headerlink" title="1. 动画的控制以及切换"></a>1. 动画的控制以及切换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;mt-header fixed title=<span class="string">"松鼠商城"</span>&gt;</span><br><span class="line">     &lt;a href=<span class="string">"#"</span> v-<span class="keyword">if</span>=<span class="string">"flag"</span> slot=<span class="string">"left"</span>&gt;</span><br><span class="line">       &lt;mt-button icon=<span class="string">"back"</span> @click=<span class="string">"goBack"</span>&gt;返回&lt;<span class="regexp">/mt-button&gt;</span></span><br><span class="line"><span class="regexp">     &lt;/</span>a&gt;</span><br><span class="line">   &lt;<span class="regexp">/mt-header&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">    <span class="comment">//控制返回按钮是否需要显示的</span></span><br><span class="line">    <span class="string">"$route.path"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">newVal, oldVal</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">        newVal == <span class="string">"/"</span> ||</span><br><span class="line">        newVal == <span class="string">"/member"</span> ||</span><br><span class="line">        newVal == <span class="string">"/cart"</span> ||</span><br><span class="line">        newVal == <span class="string">"/search"</span></span><br><span class="line">      ) &#123;</span><br><span class="line">        <span class="keyword">this</span>.flag = <span class="literal">false</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.flag = <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//监听路由变化,控制动画的</span></span><br><span class="line">    $route(to, <span class="keyword">from</span>) &#123;</span><br><span class="line">      <span class="comment">//定义一个数组，用来规定在什么时候不需要动画的切换</span></span><br><span class="line">      <span class="keyword">var</span> arr = [<span class="string">"/"</span>, <span class="string">"/mumber"</span>, <span class="string">"/cart"</span>, <span class="string">"/search"</span>];</span><br><span class="line">      <span class="keyword">let</span> isBack = <span class="keyword">this</span>.isBack;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//如果用户点击了返回按钮，此时用slide-right动画</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.isBack == <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.transitionName = <span class="string">"slide-right"</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//如果用户没有点击返回按钮</span></span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//当路由的出发点和目标点在arr数组中，此时不需要动画</span></span><br><span class="line">        <span class="keyword">if</span> (arr.includes(to.path) &amp;&amp; arr.includes(<span class="keyword">from</span>.path)) &#123;</span><br><span class="line">          <span class="keyword">this</span>.transitionName = <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//当路由不是在'/','/member','/cart','/search' 这些之间跳转的时候，需要slide-left动画</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.transitionName = <span class="string">"slide-left"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//重置动画的默认状态</span></span><br><span class="line">      <span class="keyword">this</span>.isBack = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    <span class="comment">//当我们点击返回按钮的时候，修改isBack为true</span></span><br><span class="line">    goBack() &#123;</span><br><span class="line">      <span class="keyword">this</span>.isBack = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-路由的懒加载"><a href="#2-路由的懒加载" class="headerlink" title="2. 路由的懒加载"></a>2. 路由的懒加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Home = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Home.vue'</span>)</span><br><span class="line"><span class="keyword">const</span> Member = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Member.vue'</span>)</span><br><span class="line"><span class="keyword">const</span> Cart = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/Cart.vue'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以发现变化如下：</span></span><br><span class="line"><span class="comment">//1.打包后的bundle.js文件体积小了</span></span><br><span class="line"><span class="comment">//2.只有打开某个路由之后才会执行该路由对应的组件中的js代码</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-按需加载-vue-cli中的按需导入"><a href="#3-按需加载-vue-cli中的按需导入" class="headerlink" title="3. 按需加载 vue/cli中的按需导入"></a>3. 按需加载 vue/cli中的按需导入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">在使用vue/cli脚手架的项目中要实现按需导入：</span><br><span class="line"><span class="number">1.</span>删除babel.config.js文件</span><br><span class="line"><span class="number">2.</span>在项目根目录下创建.babelrc文件</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"@vue/app"</span>, [<span class="string">"@babel/preset-env"</span>, &#123; <span class="string">"modules"</span>: <span class="literal">false</span> &#125;]],</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">      [</span><br><span class="line">        <span class="string">"component"</span>,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"libraryName"</span>: <span class="string">"mint-ui"</span>,</span><br><span class="line">            <span class="string">"style"</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">3.</span>安装  npm install babel-plugin-component -D  插件</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-移动端的适配问题"><a href="#4-移动端的适配问题" class="headerlink" title="4. 移动端的适配问题"></a>4. 移动端的适配问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.安装flexible。 flexible主要是实现在各种不同的移动端界面实现一稿搞定所有的设备兼容自适应问题</span></span><br><span class="line">npm install lib-flexible --save</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.main.js引入flexible</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'lib-flexible'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//此时运行程序会看到html中自动加上了font-size    font-size的默认值为viewport的十分之一</span></span><br><span class="line"><span class="comment">//在页面中引入flexible.js后，flexible会在&lt;html&gt;标签上增加一个data-dpr属性和font-size样式（如下图）。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.安装postcss-pxtorem</span></span><br><span class="line">npm install postcss-pxtorem --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.修改postcss.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  plugins: &#123;</span><br><span class="line">    <span class="comment">//autoprefixer 自动补全css前缀的东西</span></span><br><span class="line">    <span class="string">'autoprefixer'</span>: &#123;</span><br><span class="line">      <span class="comment">//兼容的机型</span></span><br><span class="line">      browsers: [<span class="string">'Android &gt;= 4.0'</span>, <span class="string">'iOS &gt;= 7'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'postcss-pxtorem'</span>: &#123;</span><br><span class="line">      rootValue: <span class="number">37.5</span>, <span class="comment">//换算基数，一般和html的font-size一致</span></span><br><span class="line">      propList: [<span class="string">'*'</span>]  <span class="comment">//哪些css属性需要换算</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 以37.5位基准,如下图的1.6rem 就是 60px</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mui-grid-view.mui-grid<span class="number">-9</span> img[data-v-fae5bece] &#123;</span><br><span class="line"></span><br><span class="line">    width: <span class="number">1.6</span>rem;</span><br><span class="line">    height: <span class="number">1.6</span>rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-断点的调试"><a href="#5-断点的调试" class="headerlink" title="5. 断点的调试"></a>5. 断点的调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.devtool = &apos;#cheap-module-eval-source-map&apos;</span><br><span class="line">再在需要的地方加上 debugger</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/15/2.git遇到remote orgin问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -570,7 +848,7 @@ async created() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
