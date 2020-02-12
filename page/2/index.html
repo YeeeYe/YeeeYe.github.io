@@ -229,6 +229,320 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/15.拓展-课外问题总结-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/26/15.拓展-课外问题总结-2/" itemprop="url">15.拓展-课外问题总结(2)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:42:57+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.console.log([] == ![])</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答案：true</span><br><span class="line">![] 会变成 false，false会变成0；也就是==右侧 是 0；</span><br><span class="line">Number([]) == 0</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>打印如下：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'world'</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">var</span> name = <span class="string">'Jake'</span>;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'hi'</span> + name)</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'hello'</span>_name)</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>答案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：hiJake</span><br><span class="line">(function()&#123;&#125;)是个闭包函数，name属于局部变量，无法获取到全局变量，所以name是undefined</span><br></pre></td></tr></table></figure>
+
+<p>3.打印</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k=<span class="number">0</span>;k&lt;<span class="number">3</span>;k++)&#123;</span><br><span class="line"></span><br><span class="line">   data[k] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(k)</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">2</span>]()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答案：3</span><br><span class="line"></span><br><span class="line">输出的data = [3,3,3]</span><br></pre></td></tr></table></figure>
+
+<p>4.不使用第三个变量交换两个数的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1)利用两数之和减去另一个数 </span><br><span class="line">a=a+b</span><br><span class="line">  b=a-b</span><br><span class="line">  a=a-b</span><br><span class="line">2)利用位运算符^</span><br><span class="line">a= a^b   </span><br><span class="line">b= a^b</span><br></pre></td></tr></table></figure>
+
+<p>5.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = (<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.a = a  ---<span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.a+b   ---<span class="number">-1</span>+<span class="number">4</span> </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> a  ----返回a是<span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test(<span class="number">4</span>)) 输出多少</span><br></pre></td></tr></table></figure>
+
+<p>答案：5</p>
+<p>6.打印</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x =<span class="number">1</span>,y=z=<span class="number">0</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">		n = n+<span class="number">1</span></span><br><span class="line">		<span class="keyword">return</span> n</span><br><span class="line">	&#125;</span><br><span class="line">	y = add(x)</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">		n = n+<span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line">	z = add(x)</span><br><span class="line">	<span class="built_in">console</span>.log(x,y,z)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：1 undefined undefined</span><br><span class="line">函数add() 没有返回值，如果同时加上return n，同名函数会调用最后的一个函数</span><br></pre></td></tr></table></figure>
+
+<p>7.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> foo</span><br><span class="line"></span><br><span class="line">      foo = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">var</span> foo = <span class="number">11</span>     </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    alert(<span class="keyword">typeof</span> bar())</span><br></pre></td></tr></table></figure>
+
+<p>答案：function</p>
+<p>8.数组去重</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> ES6</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 利用indexOf去重</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'type error!'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> array = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array .indexOf(arr[i]) === <span class="number">-1</span>) &#123;</span><br><span class="line">            array .push(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>利用sort()</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'type error!'</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    arr = arr.sort()</span><br><span class="line">    <span class="keyword">var</span> arrry= [arr[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] !== arr[i<span class="number">-1</span>]) &#123;</span><br><span class="line">            arrry.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrry;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">4.</span>利用includes</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'type error!'</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> array =[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>( !array.includes( arr[i]) ) &#123;    <span class="comment">//includes 检测数组是否有某个值</span></span><br><span class="line">                    array.push(arr[i]);</span><br><span class="line">              &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>利用filter</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素</span></span><br><span class="line">    <span class="keyword">return</span> arr.indexOf(item, <span class="number">0</span>) === index;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>9.打印</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">3</span></span><br><span class="line">	<span class="keyword">var</span> foo = &#123;</span><br><span class="line">		x:<span class="number">2</span>,</span><br><span class="line">		baz:&#123;</span><br><span class="line">			x:<span class="number">1</span>,</span><br><span class="line">			bar:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">this</span>.x  </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> go = foo.baz.bar;</span><br><span class="line">	alert(go());</span><br><span class="line">	alert(foo.baz.bar())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答案：3,1</span><br><span class="line"></span><br><span class="line">alert(go()); 这个函数执行的上下文为所以结果为这个函数是对象的方法指向该对象所以结果为答案：3,1</span><br><span class="line"></span><br><span class="line">alert(go()); 这个函数执行的上下文为所以结果为这个函数是对象的方法指向该对象所以结果为1</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>[1,2]+[2,1]</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答案：1,22,1</span><br><span class="line">把数组转换成字符串，然后在字符串上进行 + 运算</span><br></pre></td></tr></table></figure>
+
+<p>11.判断是否为回文(写一段命令行)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">若一个数从左到右读与从右到左读都是一样，这个数就叫做回文数。</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> str !== <span class="string">'string'</span> || str.constructor !== <span class="built_in">String</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> len = <span class="built_in">parseInt</span>((str.length+<span class="number">1</span>)/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">	<span class="keyword">if</span> (str[i] !== str[str.length-i<span class="number">-1</span>]) &#123;</span><br><span class="line">	    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/14.react路由/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/26/14.react路由/" itemprop="url">14.react路由</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:24:56+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-react路由基本使用"><a href="#1-react路由基本使用" class="headerlink" title="1.   react路由基本使用"></a>1.   react路由基本使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//react-router的使用步骤:</span></span><br><span class="line"><span class="comment">//1.npm install react-router-dom</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.引入HashRouter Route Link</span></span><br><span class="line"><span class="comment">//HashRouter 表示使用hash模式的路由</span></span><br><span class="line"><span class="comment">//Route 表示一个路由规则</span></span><br><span class="line"><span class="comment">//Link 表示点击跳转路由</span></span><br><span class="line"><span class="keyword">import</span> &#123; HashRouter, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*3.配置路由规则  Route同时会占坑*/</span>&#125;</span><br><span class="line">&#123;<span class="comment">/*路由默认会使用模糊匹配</span></span><br><span class="line"><span class="comment">比如：访问路径 /movie  能够匹配 / 和 /movie */</span>&#125;</span><br><span class="line">&#123;<span class="comment">/* exact表示精确匹配 ：访问路径需要和路由的路径完全一致才能匹配 */</span>&#125;  ★</span><br><span class="line">&lt;Route path=<span class="string">"/"</span> component=&#123;Home&#125; exact&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/* strict : 如果路由规则中的路径有/，则要求访问路径中也要有/才能匹配(只看/) */</span>&#125; </span><br><span class="line">&lt;Route path=<span class="string">"/about/:name/:id"</span> component=&#123;About&#125; strict&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">&lt;Route path=<span class="string">"/movie"</span> component=&#123;Movie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/*4.点击Link去访问路由*/</span>&#125;</span><br><span class="line">&lt;Link to=<span class="string">"/"</span>&gt;来到首页&lt;<span class="regexp">/Link&gt; </span></span><br><span class="line"><span class="regexp">&lt;Link to="/</span>about/zhangsan/<span class="number">13</span><span class="string">"&gt;来到关于我们&lt;/Link&gt;  &lt;Link to="</span>/movie<span class="string">"&gt;来到电影&lt;/Link&gt;</span></span><br><span class="line"><span class="string">&lt;br/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter (RTab);</span><br><span class="line"></span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">      &lt;RNav&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RNav</span>&gt;</span></span></span><br><span class="line">      &lt;RouterMap&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RouterMap</span>&gt;</span></span></span><br><span class="line">      &lt;Button type=<span class="string">'primary'</span>&gt;按钮&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;RTab&gt;&lt;/</span>RTab&gt;  </span><br><span class="line">&lt;<span class="regexp">/HashRouter&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>hashrouter 只建议套一个，一般套在最前面</p>
+<h3 id="2-switch和redirect和组件懒加载"><a href="#2-switch和redirect和组件懒加载" class="headerlink" title="2.  switch和redirect和组件懒加载"></a>2.  switch和redirect和组件懒加载</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*当使用组件懒加载的时候，往往是和Suspense结合使用，fallback表示组件没有加载完毕的时候显示的信息*/</span>&#125;</span><br><span class="line">&lt;Suspense fallback=&#123;&lt;div&gt;Loading...&lt;<span class="regexp">/div&gt;&#125;&gt;</span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*Switch表示路由互斥，我们使用Switch之后，只会匹配一个路由规则*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*我们需要给根路径的路由加上exact属性来精确匹配，否则所有的访问路径都会匹配Home组件*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Route path="/</span><span class="string">" component=&#123;Home&#125; exact&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/about/:name/:id<span class="string">" component=&#123;About&#125; strict&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/movie<span class="string">" component=&#123;Movie&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/search<span class="string">" component=&#123;Search&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#123;/*当没有匹配的路由的时候来到跟路由*/&#125; 重定向</span></span><br><span class="line"><span class="string">&lt;Redirect to="</span>/<span class="string">" /&gt;</span></span><br><span class="line"><span class="string">&lt;/Switch&gt;</span></span><br><span class="line"><span class="string">&lt;/Suspense&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-路由的传参"><a href="#3-路由的传参" class="headerlink" title="3.路由的传参"></a>3.路由的传参</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  <span class="comment">/*通过params方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.match.params  </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/about/zhangsan/13"</span>&gt;来到关于我们-params方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">  <span class="comment">//获取路由中的参数信息</span></span><br><span class="line"> <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>About组件&#123;props.match.params.id&#125;&#123;props.match.params.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> <span class="comment">/*通过search方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.search </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/movie?name=xiaoming"</span>&gt;来到电影-search方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> <span class="comment">/*通过query方式传参  </span></span><br><span class="line"><span class="comment">   获取参数:props.location.query </span></span><br><span class="line"><span class="comment">   好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">query</span>: &#123; <span class="attr">name</span>: <span class="string">'sunny'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">2</span>-query方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> <span class="comment">/*通过state方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.state   </span></span><br><span class="line"><span class="comment">  好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，</span></span><br><span class="line"><span class="comment">  参数是加密的，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">state</span>: &#123; <span class="attr">name</span>: <span class="string">'haha'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">3</span>-state方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-编程式导航"><a href="#4-编程式导航" class="headerlink" title="4.编程式导航"></a>4.编程式导航</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Route包裹的组件会自动将location  history  match注入到组件的props中</span></span><br><span class="line"><span class="comment">//所以在组件中直接可以使用props.location  props.history这些信息</span></span><br><span class="line"><span class="comment">// console.log(props)</span></span><br><span class="line">&lt;Route path=<span class="string">"/movie"</span> component=&#123;Movie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">"/search"</span>&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果组件没有使用Route包裹，那么不能使用props的location history match这三个参数</span></span><br><span class="line"><span class="comment">//如果此时我们想要用这三个参数，我们可以将当前组件使用withRouter来包裹</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//withRouter可以包装任何自定义组件，将react-router 的 history,location,match 三个对象传入</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(MovieDetail);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-ReactCSSTransitionGroup"><a href="#5-ReactCSSTransitionGroup" class="headerlink" title="5.ReactCSSTransitionGroup"></a>5.ReactCSSTransitionGroup</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ReactCSSTransitionGroup 使用步骤</span></span><br><span class="line"><span class="comment">//1.通过npm install react-addons-css-transition-group 安装并引入</span></span><br><span class="line"><span class="keyword">var</span> ReactCSSTransitionGroup = <span class="built_in">require</span>(<span class="string">'react-addons-css-transition-group'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &#123;<span class="comment">/*2.给需要动画的元素包裹ReactCSSTransitionGroup，可以对一组元素进行过渡动画*/</span>&#125;</span><br><span class="line">&lt;ReactCSSTransitionGroup</span><br><span class="line">component=<span class="string">"ul"</span> </span><br><span class="line">transitionName=<span class="string">"example"</span>  </span><br><span class="line">transitionEnterTimeout=&#123;<span class="number">500</span>&#125; </span><br><span class="line">transitionLeaveTimeout=&#123;<span class="number">300</span>&#125; </span><br><span class="line">transitionAppear=&#123;<span class="literal">true</span>&#125; </span><br><span class="line">transitionAppearTimeout=&#123;<span class="number">500</span>&#125;&gt;</span><br><span class="line">&#123;<span class="keyword">this</span>.getItems()&#125;</span><br><span class="line">&lt;<span class="regexp">/ReactCSSTransitionGroup&gt;  </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/3.写动画的样式 (入场动画 出场动画的样式)</span></span><br><span class="line"><span class="regexp">import './</span>demo1.css<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定入场动画的开始状态*/</span></span><br><span class="line"><span class="string">.example-enter &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定入场动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-enter.example-enter-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">    transition: opacity 500ms ease-in;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定出场动画的开始状态*/</span></span><br><span class="line"><span class="string">.example-leave &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定出场动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-leave.example-leave-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">    transition: opacity 300ms ease-in;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定初始动画的样式*/</span></span><br><span class="line"><span class="string">.example-appear &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定初始动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-appear.example-appear-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">    transition: opacity .5s ease-in;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Hook"><a href="#6-Hook" class="headerlink" title="6. Hook"></a>6. Hook</h3><h4 id="6-1-hook的基本使用"><a href="#6-1-hook的基本使用" class="headerlink" title="6.1 hook的基本使用"></a>6.1 hook的基本使用</h4><p><strong><em>Hook</em></strong> <strong>是</strong> <strong>React 16.8</strong> <strong>的新增特性。它可以让你在不编写</strong> <strong>class</strong> <strong>的情况下使用</strong> <strong>state</strong> <strong>以及其他的</strong> <strong>React</strong> <strong>特性。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Demo1</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//count代表state的变量</span></span><br><span class="line">    <span class="comment">//setCount是一个function，如果我们要修改count变量，需要通过setCount来修改</span></span><br><span class="line">    <span class="keyword">let</span> [count, setCount] = useState(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> [count2, setCount2] = useState(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">let</span> [count3, setCount3] = useState(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count&#125;</span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount(++count) &#125;&#125;&gt;点我修改count<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count2&#125;</span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount2(++count2) &#125;&#125;&gt;点我修改count2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count3&#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount3(++count3) &#125;&#125;&gt;点我修改count3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Demo1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不要在循环，条件或嵌套函数中调用Hook，确保总是在你的 React 函数的最顶层调用他们。遵守这条规则，你就能确保<br>Hook 在每一次渲染中都按照同样的顺序被调用。这让 React 能够在多次的 <code>useState</code> 和 <code>useEffect</code> 调用之间保持 hook 状态的正确</li>
+</ul>
+<h4 id="6-2-effectHook"><a href="#6-2-effectHook" class="headerlink" title="6.2 effectHook"></a>6.2 effectHook</h4><p><em>Effect Hook</em> 可以让你在函数组件中执行副作用操作</p>
+<p>副作用：函数内部的代码不对函数外部的代码产生任何影响</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState,useEffect  &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> Child <span class="keyword">from</span> <span class="string">'./Child.jsx'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Demo2</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//count代表state的变量</span></span><br><span class="line">    <span class="comment">//setCount是一个function，如果我们要修改count变量，需要通过setCount来修改</span></span><br><span class="line">    <span class="keyword">let</span> [count, setCount] = useState(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> [count2, setCount2] = useState(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//useEffect函数可以来模拟class组件的中指定生命周期的钩子函数 componentDidMount，componentDidUpdate，componentWillUnmount</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//相当于componentDidMount 、componentDidUpdate</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"xxxxxxxxxxx"</span>,count)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//相当于componentDidMount</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"yyyyyyyyy"</span>)</span><br><span class="line">    &#125;,[])</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当count2的值被改变之后执行当前的useEffect，其他值改变不会执行这个useEffect</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"zzzzzzzzzzzzz"</span>)</span><br><span class="line">    &#125;,[count2])</span><br><span class="line"></span><br><span class="line">    <span class="comment">//useEffect函数中return的function会在组件重新渲染的时候以及组件卸载的时候执行</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'hello Hook'</span>)    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount(++count) &#125;&#125;&gt;点我修改count<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount2(++count2) &#125;&#125;&gt;点我修改count2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Child</span>&gt;</span><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Demo2;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-3-useContext-的使用"><a href="#6-3-useContext-的使用" class="headerlink" title="6.3 useContext 的使用"></a>6.3 useContext 的使用</h4><p>作用：可以向子孙组件发布数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.在App.jsx</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;name:</span>"<span class="attr">zhangsan</span>"&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="xml">        App</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Demo2</span>&gt;</span><span class="tag">&lt;/<span class="name">Demo2</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.Child.jsx</span></span><br><span class="line"><span class="keyword">import</span> React,&#123;useContext&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> MyContext <span class="keyword">from</span> <span class="string">'@/context.js'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在子组件中获取父组件发布的数据</span></span><br><span class="line">    <span class="keyword">const</span> contextValue = useContext(MyContext);</span><br><span class="line">    <span class="built_in">console</span>.log(contextValue)</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义context.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> MyContext = React.createContext();</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyContext;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/13.拓展-课外问题总结-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1642,325 +1956,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/6.vue项目实战/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/13/6.vue项目实战/" itemprop="url">六.vue项目实战</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-13T08:50:01+08:00">
-                2019-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-Vue项目"><a href="#1-Vue项目" class="headerlink" title="1.Vue项目"></a>1.Vue项目</h2><h3 id="1-1-初始阶段进行文档的编写"><a href="#1-1-初始阶段进行文档的编写" class="headerlink" title="1.1 初始阶段进行文档的编写"></a>1.1 初始阶段进行文档的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">发布博客。以下的步骤： </span><br><span class="line">在本地博客文件夹根目录(git bash)输入：</span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"6.vue项目实战"</span> </span><br><span class="line">hexo g <span class="comment">//生成网页 </span></span><br><span class="line">hexo d <span class="comment">//部署到远端(github)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-vue-cli使用"><a href="#1-2-vue-cli使用" class="headerlink" title="1.2 vue-cli使用"></a>1.2 vue-cli使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>npm install -g @vue/cli@<span class="number">3.9</span><span class="number">.1</span></span><br><span class="line"><span class="number">2.</span>将配置环境变量  C:\dev\nodejs</span><br><span class="line"><span class="number">3.</span>vue create project-name</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看最终生效的 webpack 配置信息</span></span><br><span class="line">vue inspect &gt; output.js</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置文件参考文档</span></span><br><span class="line">https:<span class="comment">//cli.vuejs.org/zh/config/#devserver-proxy</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行App</span></span><br><span class="line">npm run serve</span><br><span class="line"></span><br><span class="line"><span class="comment">//编译App</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-vue-cli-的创建使用选项"><a href="#1-3-vue-cli-的创建使用选项" class="headerlink" title="1.3 vue-cli 的创建使用选项"></a>1.3 vue-cli 的创建使用选项</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">? Please pick a preset: Manually select features</span><br><span class="line">? Check the features needed <span class="keyword">for</span> your project: Babel, Router, Vuex, CSS Pre-processors, Linter        </span><br><span class="line">? Use history mode <span class="keyword">for</span> router? (Requires proper server setup <span class="keyword">for</span> index fallback <span class="keyword">in</span> production) No</span><br><span class="line">? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by <span class="keyword">default</span>): Less</span><br><span class="line">? Pick a linter / formatter config: Basic</span><br><span class="line">? Pick additional lint features: Lint and fix on commit</span><br><span class="line">? Where <span class="keyword">do</span> you prefer placing config <span class="keyword">for</span> Babel, PostCSS, ESLint, etc.? In dedicated config files</span><br><span class="line">? Save <span class="keyword">this</span> <span class="keyword">as</span> a preset <span class="keyword">for</span> future projects? No</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-将项目托管到-github"><a href="#1-4-将项目托管到-github" class="headerlink" title="1.4 将项目托管到 github"></a>1.4 将项目托管到 github</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#1.打开git brash，输入命令 ssh-keygen -t rsa -C "youremail@example.com"</span><br><span class="line">#2.找到用户主目录下的ssh文件夹，复制id_rsa.pub 文件内容</span><br><span class="line">#3.码云后台点击设置，ssh公钥，黏贴id_rsa.pub 文件内容</span><br><span class="line">#4.码云后台创建新项目</span><br><span class="line">#5.配置本地全局的账号和密码</span><br><span class="line">  git config --global user.name <span class="string">"shenhaieyu"</span></span><br><span class="line">  git config --global user.email <span class="string">"mazg1987@163.com"</span></span><br><span class="line">#6.关联远程仓库</span><br><span class="line">  cd project</span><br><span class="line">  git remote add origin git@gitee.com:shenhaieyu/zg-vuecms.git</span><br><span class="line">  git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-5-严格模式的忽略"><a href="#1-5-严格模式的忽略" class="headerlink" title="1.5 严格模式的忽略"></a>1.5 严格模式的忽略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mui.js?01c3:3440 Uncaught TypeError: &apos;caller&apos;, &apos;callee&apos;, and &apos;arguments&apos; properties may not be accessed on strict mode functions or the arguments objects for calls to them</span><br></pre></td></tr></table></figure>
-
-<p>  ignore:[‘./lib/mui/js/mui.js’]</p>
-<h3 id="1-6-vue中this-router-push-传参"><a href="#1-6-vue中this-router-push-传参" class="headerlink" title="1.6 vue中this.$router.push() 传参"></a>1.6 vue中this.$router.push() 传参</h3><h4 id="1-params-传参"><a href="#1-params-传参" class="headerlink" title="(1) .  params 传参"></a>(1) .  params 传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注意：patams传参 ，路径不能使用path 只能使用name,不然获取不到传的数据</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>: <span class="string">'dispatch'</span>, <span class="attr">params</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.params.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.params.paicheNo</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-query传参"><a href="#2-query传参" class="headerlink" title="(2) .  query传参"></a>(2) .  query传参</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">path</span>: <span class="string">'/transport/dispatch'</span>, <span class="attr">query</span>: &#123;<span class="attr">paicheNo</span>: obj.paicheNo&#125;&#125;)</span><br><span class="line"></span><br><span class="line">取数据：<span class="keyword">this</span>.$route.query.paicheNo</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.$route.query.paicheNo</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-vuex的基本使用"><a href="#1-7-vuex的基本使用" class="headerlink" title="1.7 vuex的基本使用"></a>1.7 vuex的基本使用</h3><h4 id="1-基本的使用情况"><a href="#1-基本的使用情况" class="headerlink" title="(1). 基本的使用情况"></a>(1). 基本的使用情况</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  <span class="comment">//state用于存储数据</span></span><br><span class="line">  state: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//里面放的是方法,方法主要用于改变state里面的数据</span></span><br><span class="line">  mutations: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//方法,可以修改mutation</span></span><br><span class="line">  <span class="comment">//actions(方法 可以dispatch mutations)  actions中可以有异步操作    </span></span><br><span class="line">  actions: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//对外暴露数据,不修改vuex中的数据</span></span><br><span class="line">  getters: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5.修改store中的数据  （参数1：是mutations的名字  参数2：传递给mutations的数据）</span></span><br><span class="line"> <span class="keyword">this</span>.$store.commit(<span class="string">"subtract"</span>,&#123;<span class="attr">num</span>:<span class="number">3</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-vuex的缓存问题"><a href="#2-vuex的缓存问题" class="headerlink" title="(2). vuex的缓存问题"></a>(2). vuex的缓存问题</h4><p>vuex中数据在刷新网页的时候会丢失。解决思路：我们可以将 vuex 中的数据写到 localstorage 中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm install --save vuex-persistedstate </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//store.js </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">'vuex-persistedstate'</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    selected_card: &#123;&#125;, <span class="comment">//用户选择的银行卡</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    update_selected_card(state, payload) &#123;</span><br><span class="line">      state.selected_card = payload</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [createPersistedState()],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-qs-stringify-、qs-parse-的使用"><a href="#1-8-qs-stringify-、qs-parse-的使用" class="headerlink" title="1.8 qs.stringify()、qs.parse()的使用"></a>1.8 qs.stringify()、qs.parse()的使用</h3><p>qs可通过<strong>npm install qs</strong>命令进行安装，是一个npm仓库所管理的包。</p>
-<p>而qs.stringify()将对象 序列化成URL的形式，以&amp;进行拼接。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>:<span class="string">'hehe'</span>,<span class="attr">age</span>:<span class="number">10</span>&#125;;</span><br><span class="line"> qs.stringify(a)</span><br><span class="line"><span class="comment">// 'name=hehe&amp;age=10'</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(a)</span><br><span class="line"><span class="comment">// '&#123;"name":"hehe","age":10&#125;'</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-9-发送的请求的不同的方法"><a href="#1-9-发送的请求的不同的方法" class="headerlink" title="1.9 发送的请求的不同的方法"></a>1.9 发送的请求的不同的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"><span class="keyword">import</span> QS <span class="keyword">from</span> <span class="string">'qs'</span>;</span><br><span class="line"><span class="comment">//设置超时时间</span></span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span>;</span><br><span class="line"><span class="comment">// post请求头</span></span><br><span class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.baseURL = <span class="string">"http://songshu.xiaomy.net/"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">myaxios</span>(<span class="params">method, url, params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (method == <span class="string">"GET"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> axios.get(url, &#123; <span class="attr">params</span>: params &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == <span class="string">"POST"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> params = QS.stringify(params);</span><br><span class="line">        <span class="keyword">return</span> axios.post(url, params);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> myaxios(<span class="string">"POST"</span>, postusername, <span class="keyword">this</span>.obj)</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.userlist = data.data.message;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.userlist);</span><br><span class="line">       <span class="comment">// this.headimg = this.userlist.headimg_url;</span></span><br><span class="line">       <span class="keyword">this</span>.$store.commit(<span class="string">"imgurl"</span>,<span class="keyword">this</span>.headimg);</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.getters.getimgurl,<span class="string">"22222"</span>);</span><br><span class="line">       <span class="keyword">this</span>.headimg = <span class="keyword">this</span>.$store.getters.getimgurl;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/5.vue项目的打包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/11/5.vue项目的打包/" itemprop="url">五.项目的挂载服务器apache</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-11T09:52:18+08:00">
-                2019-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-打包运行"><a href="#1-打包运行" class="headerlink" title="1. 打包运行"></a>1. 打包运行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm run build </span><br><span class="line"><span class="comment">//注意在 mui, mui.css 中将所有的  svg  注释掉 , 否则就不会执行的</span></span><br><span class="line"><span class="comment">//需要注意的是我在</span></span><br><span class="line"><span class="comment">//E:\code\11.01\vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//vueapp\node_modules\@intervolga\optimize-cssnano-plugin\index.js</span></span><br><span class="line"><span class="comment">//注释了105行到107行的代码</span></span><br><span class="line">  hasErrors = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'CSS minification error: '</span> + err.message +</span><br><span class="line">  <span class="string">'. File: '</span> + assetName);</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-打包后在dist中遇到跨域的问题"><a href="#2-打包后在dist中遇到跨域的问题" class="headerlink" title="2. 打包后在dist中遇到跨域的问题"></a>2. 打包后在dist中遇到跨域的问题</h3><p>一开始的跨域是用file的请求发送的</p>
-<h3 id="3-Apache-服务器的搭建"><a href="#3-Apache-服务器的搭建" class="headerlink" title="3. Apache 服务器的搭建"></a>3. Apache 服务器的搭建</h3><h4 id="3-1-Apache的基础安装"><a href="#3-1-Apache的基础安装" class="headerlink" title="3.1 Apache的基础安装"></a>3.1 Apache的基础安装</h4><ol>
-<li><p>解压  建议把解压后的文件拷贝到不带中文的路径下</p>
-<p>httpd-2.4.35-win32-VC14.zip</p>
-</li>
-<li><p>打开解压后的Apache24目录，找到bin，打开cmd，输入httpd -t 命令，查看错误，如果是在win10 的环境下</p>
-<p>直接使用不可以话，在命令行前面加上 ./</p>
-</li>
-<li><p>修改conf下httpd.conf配置文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">在 Apache24 中 conf 文件夹中改变 httpd.conf</span><br><span class="line"></span><br><span class="line"><span class="number">37</span> Define SRVROOT <span class="string">"D:/1-igeek 前端/tool/工具/Apache24"</span></span><br><span class="line"><span class="number">38</span> ServerRoot <span class="string">"D:/1-igeek 前端/tool/工具/Apache24"</span></span><br><span class="line"></span><br><span class="line">59 #Listen 12.34.56.78:80</span><br><span class="line"><span class="number">60</span> Listen <span class="number">8888</span></span><br><span class="line"></span><br><span class="line">225 #</span><br><span class="line"><span class="number">226</span> ServerName localhost:<span class="number">8888</span></span><br><span class="line"></span><br><span class="line"><span class="number">234</span> &lt;Directory /&gt;</span><br><span class="line">    AllowOverride none</span><br><span class="line">    #Require all denied</span><br><span class="line">    Options FollowSymLinks</span><br><span class="line">    AllowOverride None</span><br><span class="line">    Order deny,allow</span><br><span class="line">    Allow <span class="keyword">from</span> all</span><br><span class="line"><span class="number">241</span> &lt;<span class="regexp">/Directory&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">255 DocumentRoot "E:/</span><span class="number">1</span>-vueapp<span class="string">"</span></span><br><span class="line"><span class="string">256 &lt;Directory "</span>E:<span class="regexp">/1-vueapp"&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在E:/webapps(存放dist文件的文件夹)中准备一个index.html文件</p>
-</li>
-<li><p>​    输入对应的命令来注册apache服务</p>
-<p># 安装 Apache 服务，‐n 参数是指定服务名称</p>
-<p>$ httpd.exe -k install -n “Apache”</p>
-<p># 如果需要卸载 Apache，可以执行以下命令</p>
-<p>$ httpd.exe -k uninstall -n “Apache”</p>
-<p>\2.       启动apache服务器</p>
-<p>$ httpd.exe -k start -n “Apache”</p>
-<p># 重新启动 Apache 服务</p>
-<p>$ httpd.exe -k restart -n “Apache”</p>
-<p># 停止 Apache 服务</p>
-<p>$ httpd.exe -k stop -n “Apache”</p>
-</li>
-<li><p>在浏览器中输入localhost:8888查看是否有网页显示</p>
-</li>
-</ol>
-<h4 id="3-2-配置Apache虚拟主机"><a href="#3-2-配置Apache虚拟主机" class="headerlink" title="3.2 配置Apache虚拟主机"></a>3.2 配置Apache虚拟主机</h4><p>1、修改httpd.conf配置文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Virtual hosts   //508</span><br><span class="line">Include conf/extra/httpd-vhosts.conf  <span class="comment">//509</span></span><br></pre></td></tr></table></figure>
-
-<p>2.修改 vhost.conf 文件 （在conf—&gt;extra—&gt;httpd-vhosts文件中）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt; </span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    ServerName localhost</span><br><span class="line">	&lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">		Options FollowSymLinks Indexes </span><br><span class="line">		AllowOverride none</span><br><span class="line">		Require all granted</span><br><span class="line">	&lt;<span class="regexp">/Directory&gt; </span></span><br><span class="line"><span class="regexp">&lt;/</span>VirtualHost&gt;</span><br><span class="line">解决项目发布之后的跨域问题</span><br><span class="line">配置反向代理：</span><br><span class="line"><span class="number">1</span>、httpd.conf配置文件</span><br><span class="line"> </span><br><span class="line"><span class="number">2</span>、httpd-vhosts.conf配置</span><br><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt;</span><br><span class="line">    #绑定域名</span><br><span class="line">    ServerName localhost</span><br><span class="line">    #默认首页</span><br><span class="line">    DirectoryIndex index.html index.php</span><br><span class="line">    #指定网站根目录</span><br><span class="line">    DocumentRoot <span class="string">"E:/webapps1"</span></span><br><span class="line">    #指定目录分配权限</span><br><span class="line">    &lt;Directory <span class="string">"E:/webapps1"</span>&gt;</span><br><span class="line">        #没有首页就显示列表（开发阶段可以这样）取值：all none Index</span><br><span class="line">        Options Indexes</span><br><span class="line">        #规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span><br><span class="line">        Order Deny,Allow</span><br><span class="line">        #全部禁止访问 取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> All</span><br><span class="line">        #但是，允许自己访问  取值：all none 指定ip</span><br><span class="line">        Allow <span class="keyword">from</span> all</span><br><span class="line">    &lt;<span class="regexp">/Directory&gt;</span></span><br><span class="line"><span class="regexp">	Proxyrequests off</span></span><br><span class="line"><span class="regexp">	&lt;Proxy *&gt;</span></span><br><span class="line"><span class="regexp">		#规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span></span><br><span class="line"><span class="regexp">        Order Deny,Allow</span></span><br><span class="line"><span class="regexp">        #全部禁止访问 取值：all none 指定ip</span></span><br><span class="line"><span class="regexp">        Allow from All</span></span><br><span class="line"><span class="regexp">	&lt;/</span><span class="built_in">Proxy</span>&gt;</span><br><span class="line">        #配置反向代理</span><br><span class="line">		ProxyPass /api http:<span class="comment">//192.168.23.200:8899/api</span></span><br><span class="line">&lt;<span class="regexp">/VirtualHost&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/3、打开浏览器就可以访问网站了</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-开启apache服务器的gzip压缩："><a href="#3-3-开启apache服务器的gzip压缩：" class="headerlink" title="3.3  开启apache服务器的gzip压缩："></a>3.3  开启apache服务器的gzip压缩：</h4><p>1.打开 httpd.conf配置文件中下面两个模块的注释</p>
-<p>#LoadModule deflate_module modules/mod_deflate.so</p>
-<p>#LoadModule headers_module modules/mod_headers.so</p>
-<p>2.在httpd.conf配置文件最下面添加</p>
-<ifmodule deflate_module>
-
-<p>​    SetOutputFilter DEFLATE</p>
-<p>​    DeflateCompressionLevel 9</p>
-</ifmodule>
-
-<h3 id="4-需要注意的一些代理的问题"><a href="#4-需要注意的一些代理的问题" class="headerlink" title="4. 需要注意的一些代理的问题"></a>4. 需要注意的一些代理的问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在 main.js 中如下：</span><br><span class="line"><span class="comment">//打包成apk的时候需要打开的</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">"http://47.103.222.56:8899"</span>;</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-1-需要在-vue-config-js-中配置代理"><a href="#4-1-需要在-vue-config-js-中配置代理" class="headerlink" title="4.1 需要在  vue.config.js 中配置代理"></a>4.1 需要在  vue.config.js 中配置代理</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">proxy: &#123;</span><br><span class="line">           <span class="comment">//凡是请求以api开头的都会使用下面的代理服务器</span></span><br><span class="line">           <span class="string">'/api/*'</span>: &#123;</span><br><span class="line">               <span class="comment">// target: 'http://bc421114.ngrok.io/',</span></span><br><span class="line">               target: <span class="string">'http://47.103.222.56/'</span>, <span class="comment">// 目标服务器地址</span></span><br><span class="line">               secure: <span class="literal">false</span>,                    <span class="comment">// 目标服务器地址是否是安全协议</span></span><br><span class="line">               changeOrigin: <span class="literal">true</span>,               <span class="comment">// 是否修改来源, 为true时会让目标服务器以为是webpack-dev-server发出的请求!服务端和服务端的请求是没有跨域的</span></span><br><span class="line">               <span class="comment">//pathRewrite: &#123;'^/api': '/a'&#125;     // 将/api开头的请求地址, /api 改为 /, 即 /api/xx 改为 /xx</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-2-在Apache中配置方向代理"><a href="#4-2-在Apache中配置方向代理" class="headerlink" title="4.2 在Apache中配置方向代理"></a>4.2 在Apache中配置方向代理</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:<span class="number">8888</span>&gt; </span><br><span class="line">    DocumentRoot <span class="string">"E:/1-vueapp"</span></span><br><span class="line">    ServerName localhost</span><br><span class="line">	&lt;Directory <span class="string">"E:/1-vueapp"</span>&gt;</span><br><span class="line">		Options FollowSymLinks Indexes </span><br><span class="line">		AllowOverride none</span><br><span class="line">		Require all granted</span><br><span class="line">	&lt;<span class="regexp">/Directory&gt;</span></span><br><span class="line"><span class="regexp">	Proxyrequests off</span></span><br><span class="line"><span class="regexp">	&lt;Proxy *&gt;</span></span><br><span class="line"><span class="regexp">		#规定Deny,Allow的执行顺序, Order Deny,Allow ： 先执行Deny，再执行Allow</span></span><br><span class="line"><span class="regexp">        Order Deny,Allow</span></span><br><span class="line"><span class="regexp">        #全部禁止访问 取值：all none 指定ip</span></span><br><span class="line"><span class="regexp">        Allow from All</span></span><br><span class="line"><span class="regexp">	&lt;/</span><span class="built_in">Proxy</span>&gt;</span><br><span class="line">        #配置反向代理</span><br><span class="line">		ProxyPass /api http:<span class="comment">//47.103.222.56:8899/api</span></span><br><span class="line">&lt;<span class="regexp">/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在服务器的后台代码中 ，我们注意的是，开放所有的监听的端口为 0.0.0.0</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2011,7 +2006,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2052,7 +2047,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
