@@ -229,6 +229,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/7.vue项目整合问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/15/7.vue项目整合问题/" itemprop="url">七.vue项目整合问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-15T09:34:58+08:00">
+                2019-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一、vue项目整合中遇到的问题"><a href="#一、vue项目整合中遇到的问题" class="headerlink" title="一、vue项目整合中遇到的问题"></a>一、vue项目整合中遇到的问题</h3><h4 id="1-1-vuex中插件的使用"><a href="#1-1-vuex中插件的使用" class="headerlink" title="1.1 vuex中插件的使用"></a>1.1 vuex中插件的使用</h4><h5 id="1-1-2-插件的功能"><a href="#1-1-2-插件的功能" class="headerlink" title="1.1.2  插件的功能"></a>1.1.2  插件的功能</h5><p>插件通常用来为 Vue 添加全局功能。插件的功能范围没有严格的限制——一般有下面几种：</p>
+<ol>
+<li>添加全局方法或者属性。如: <a href="https://github.com/karol-f/vue-custom-element" target="_blank" rel="noopener">vue-custom-element</a></li>
+<li>添加全局资源：指令/过滤器/过渡等。如 <a href="https://github.com/vuejs/vue-touch" target="_blank" rel="noopener">vue-touch</a></li>
+<li>通过全局混入来添加一些组件选项。如 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router</a></li>
+<li>添加 Vue 实例方法，通过把它们添加到 <code>Vue.prototype</code> 上实现。</li>
+<li>一个库，提供自己的 API，同时提供上面提到的一个或多个功能。如 <a href="https://github.com/vuejs/vue-router" target="_blank" rel="noopener">vue-router</a></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vuex 状态持久化插件 —— vuex-persistedstate</span></span><br><span class="line"><span class="comment">//安装：</span></span><br><span class="line"></span><br><span class="line">　　npm install --save vuex-persistedstate</span><br><span class="line"></span><br><span class="line"><span class="comment">//引用：</span></span><br><span class="line"></span><br><span class="line">　　<span class="keyword">import</span> createPersistedState <span class="keyword">from</span> <span class="string">'vuex-persistedstate'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置：</span></span><br><span class="line"></span><br><span class="line">　　<span class="keyword">new</span> Vuex.Store(&#123;<span class="attr">plugins</span>: [createPersistedState()] &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//作用：</span></span><br><span class="line"></span><br><span class="line">　　将 vuex 状态保存到 localstorage 中</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-1-3-持久化插件优点"><a href="#1-1-3-持久化插件优点" class="headerlink" title="1.1.3 持久化插件优点"></a>1.1.3 持久化插件优点</h5><p>Vuex 解决了多视图之间的数据共享问题。但是运用过程中又带来了一个新的问题是，Vuex 的状态存储并不能持久化。也就是说当你存储在 Vuex 中的 store 里的数据，只要一刷新页面，数据就丢失了。</p>
+<p>引入<a href="https://github.com/championswimmer/vuex-persist" target="_blank" rel="noopener">vuex-persist</a> 插件，它就是为 Vuex 持久化存储而生的一个插件。不需要你手动存取 storage ，而是直接将状态保存至 cookie 或者 localStorage 中</p>
+<h4 id="1-2图片的懒加载"><a href="#1-2图片的懒加载" class="headerlink" title="1.2图片的懒加载"></a>1.2图片的懒加载</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-lazy=<span class="string">"item.v_pic"</span>  /&gt;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">/*懒加载的样式*/</span></span><br><span class="line"> img[lazy=<span class="string">"loading"</span>] &#123;</span><br><span class="line">     width: <span class="number">40</span>px;</span><br><span class="line">     height: <span class="number">300</span>px;</span><br><span class="line">     margin: auto;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3路由的返回设置"><a href="#1-3路由的返回设置" class="headerlink" title="1.3路由的返回设置"></a>1.3路由的返回设置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">reggoback()&#123;</span><br><span class="line">            <span class="keyword">this</span>.$router.go(<span class="number">-1</span>)</span><br><span class="line">            <span class="comment">//返回上一级的路由</span></span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>this.$router.go(val) =&gt; 在history记录中前进或者后退val步，当val为0时刷新当前页面。</li>
+<li>this.$router.push(path) =&gt; 在history栈中添加一条新的记录。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/6.vue项目实战/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1167,7 +1306,7 @@ async created() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
