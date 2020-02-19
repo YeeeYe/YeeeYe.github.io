@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: 26.自学（一）date: 2019-12-27 19:38:05tags: 1.React生命周期函数的理解1.1 React 16.3+之后的生命周期函数1.getDerivedStateFromProps当前组件的 props 和 state 发生变化的时候会触发该函数 2.componentDidMount当组件挂载完毕会执行这个方法(只会执行一次) 3.shouldComp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DWBBlog">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/26-自学（一）/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="title: 26.自学（一）date: 2019-12-27 19:38:05tags: 1.React生命周期函数的理解1.1 React 16.3+之后的生命周期函数1.getDerivedStateFromProps当前组件的 props 和 state 发生变化的时候会触发该函数 2.componentDidMount当组件挂载完毕会执行这个方法(只会执行一次) 3.shouldComp">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/4.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/5.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/6.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/7.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/8.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/9.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/10.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/26-自学（一）/11.png">
+<meta property="og:updated_time" content="2020-02-19T13:14:33.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DWBBlog">
+<meta name="twitter:description" content="title: 26.自学（一）date: 2019-12-27 19:38:05tags: 1.React生命周期函数的理解1.1 React 16.3+之后的生命周期函数1.getDerivedStateFromProps当前组件的 props 和 state 发生变化的时候会触发该函数 2.componentDidMount当组件挂载完毕会执行这个方法(只会执行一次) 3.shouldComp">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/17/26-自学（一）/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/17/26-自学（一）/">
+
+
+
+
+
+  <title> | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/26-自学（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-17T19:38:05+08:00">
+                2020-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>title: 26.自学（一）<br>date: 2019-12-27 19:38:05<br>tags:</p>
+<h3 id="1-React生命周期函数的理解"><a href="#1-React生命周期函数的理解" class="headerlink" title="1.React生命周期函数的理解"></a>1.React生命周期函数的理解</h3><h4 id="1-1-React-16-3-之后的生命周期函数"><a href="#1-1-React-16-3-之后的生命周期函数" class="headerlink" title="1.1 React 16.3+之后的生命周期函数"></a>1.1 React 16.3+之后的生命周期函数</h4><h5 id="1-getDerivedStateFromProps"><a href="#1-getDerivedStateFromProps" class="headerlink" title="1.getDerivedStateFromProps"></a>1.getDerivedStateFromProps</h5><p>当前组件的 props 和 state 发生变化的时候会触发该函数</p>
+<h5 id="2-componentDidMount"><a href="#2-componentDidMount" class="headerlink" title="2.componentDidMount"></a>2.componentDidMount</h5><p>当组件挂载完毕会执行这个方法(只会执行一次)</p>
+<h5 id="3-shouldComponentUpdate"><a href="#3-shouldComponentUpdate" class="headerlink" title="3.shouldComponentUpdate"></a>3.shouldComponentUpdate</h5><p>确定组件是否应该更新。 如果不写默认返回true；如果某些状态改变之后，不想要更新组件，那么我们可以在这个方法中返回false。</p>
+<h5 id="4-getSnapshotBeforeUpdate"><a href="#4-getSnapshotBeforeUpdate" class="headerlink" title="4.getSnapshotBeforeUpdate"></a>4.getSnapshotBeforeUpdate</h5><p>在最新的渲染输出提交给 DOM 前将会立即调用，这对于从 DOM 捕获信息（比如：滚动位置）很有用。</p>
+<h5 id="5-componentDidUpdate"><a href="#5-componentDidUpdate" class="headerlink" title="5.componentDidUpdate"></a>5.componentDidUpdate</h5><p>组件更新完毕会执行该方法，如果shouldComponentUpdate ()返回 false，则不会触发。</p>
+<h5 id="6-componentWillUnmount"><a href="#6-componentWillUnmount" class="headerlink" title="6.componentWillUnmount"></a>6.componentWillUnmount</h5><p>组件卸载的时候回调该方法</p>
+<p><img src="/2020/02/17/26-自学（一）/1.jpg" alt="BP"></p>
+<h4 id="1-2-React-16-3-之前的生命周期函数"><a href="#1-2-React-16-3-之前的生命周期函数" class="headerlink" title="1.2 React 16.3 之前的生命周期函数"></a>1.2 React 16.3 之前的生命周期函数</h4><h5 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount:"></a><strong>componentWillMount:</strong></h5><p>在组件将要挂载到页面的时候执行。</p>
+<h5 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount:"></a><strong>componentDidMount:</strong></h5><p>组件已经挂载到页面的时候执行。</p>
+<h5 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps:"></a><strong>componentWillReceiveProps:</strong></h5><p>在组件接收到新属性前调用。 </p>
+<h5 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate:"></a><strong>shouldComponentUpdate:</strong></h5><p> 确定组件是否应该更新。 如果不写默认返回true；如果某些状态改变之后，不想要更新组件，那么我们可以在这个方法中返回false。 </p>
+<h5 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate:"></a><strong>componentWillUpdate:</strong></h5><p> 在组件将要更新的时候调用</p>
+<h5 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate:"></a><strong>componentDidUpdate:</strong></h5><p>组件更新完毕会执行该方法。 如果shouldComponentUpdate()返回false，则不会触发。</p>
+<h5 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount:"></a><strong>componentWillUnmount:</strong></h5><p>组件卸载的时候回调用该方法。</p>
+<p><img src="/2020/02/17/26-自学（一）/2.png" alt="BP"></p>
+<p>其中注意的是以下的三个方法在 React 16.3 之后的生命周期钩子函数中移除了</p>
+<p>componentWillMount()</p>
+<p>componentWillReceiveProps()</p>
+<p>componentWillUpdate()</p>
+<h3 id="2-Redux更新的方法"><a href="#2-Redux更新的方法" class="headerlink" title="2.Redux更新的方法"></a>2.Redux更新的方法</h3><p>Redux 是一种状态管理的技术，多个组件之间共享数据的一种方式</p>
+<p>Redux强调三个基本原则：</p>
+<ol>
+<li>唯一数据源：唯一数据源指的是应用的状态数据应该只存储在唯一的一个Store上。</li>
+<li>保持状态只读：保持状态只读，就是说不能去直接修改状态，要修改Store的状态，必须要通过派发一个action对象完成。</li>
+<li>状态的修改只能通过纯函数完成：这里所说的纯函数就是把 Reducer，Reducer 描述了 state 状态如何修改</li>
+</ol>
+<p><img src="/2020/02/17/26-自学（一）/3.png" alt="BP"></p>
+<h3 id="3-iframe-优缺点"><a href="#3-iframe-优缺点" class="headerlink" title="3. iframe 优缺点"></a>3. iframe 优缺点</h3><h4 id="3-1-iframe的优点"><a href="#3-1-iframe的优点" class="headerlink" title="3.1 iframe的优点"></a>3.1 iframe的优点</h4><p>1.iframe能够原封不动的把嵌入的网页展现出来，iframe和主页面是并行加载的</p>
+<p>2.如果有多个网页引用iframe，那么你只需要修改iframe的内容，就可以实现调用的每一个页面内容的更改，方便快捷。</p>
+<p>3.网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用iframe来嵌套，可以增加代码的可重用。</p>
+<p>4.如果遇到加载缓慢的第三方内容如图标和广告，这些问题可以由iframe来解决。</p>
+<h4 id="3-2-iframe的缺点"><a href="#3-2-iframe的缺点" class="headerlink" title="3.2 iframe的缺点"></a>3.2 iframe的缺点</h4><p>1.会产生很多页面，不容易管理。</p>
+<p>2.iframe框架结构有时会让人感到迷惑，如果框架个数多的话，可能会出现上下、左右滚动条，会分散访问者的注意力，用户体验度差。</p>
+<p>3.代码复杂，无法被一些搜索引擎索引到，这一点很关键，现在的搜索引擎爬虫还不能很好的处理iframe中的内容，所以使用iframe会不利于搜索引擎优化。</p>
+<p>4.很多的移动设备（PDA 手机）无法完全显示框架，设备兼容性差。</p>
+<p>5.iframe框架页面会增加服务器的http请求，对于大型网站是不可取的。 分析了这么多，现在基本上都是用Ajax来代替iframe，所以iframe已经渐渐的退出了前端开发。</p>
+<p>6.iframe会堵塞主页面的onload事件</p>
+<h3 id="4-如何居中div-如何居中一个浮动元素？如何让绝对定位的div居中？"><a href="#4-如何居中div-如何居中一个浮动元素？如何让绝对定位的div居中？" class="headerlink" title="4.如何居中div,如何居中一个浮动元素？如何让绝对定位的div居中？"></a>4.如何居中div,如何居中一个浮动元素？如何让绝对定位的div居中？</h3><ul>
+<li><h5 id="水平居中div："><a href="#水平居中div：" class="headerlink" title="水平居中div："></a>水平居中div：</h5></li>
+</ul>
+<ol>
+<li><p>给div设定一个宽度</p>
+</li>
+<li><p>设置div  margin:0 auto;</p>
+</li>
+</ol>
+<ul>
+<li><h5 id="居中浮动的div"><a href="#居中浮动的div" class="headerlink" title="居中浮动的div:"></a>居中浮动的div:</h5></li>
+</ul>
+<ol>
+<li><p>给div设定一个宽度 500px</p>
+</li>
+<li><p>margin-left:50%; position:relative; left:-250px;</p>
+</li>
+</ol>
+<ul>
+<li><h5 id="居中绝对定位的div"><a href="#居中绝对定位的div" class="headerlink" title="居中绝对定位的div:"></a>居中绝对定位的div:</h5></li>
+</ul>
+<ol>
+<li>position:absolute;top:50%;left:50%;transform:translate(-50%，-50%)</li>
+</ol>
+<ul>
+<li><h5 id="使用flex布局来居中："><a href="#使用flex布局来居中：" class="headerlink" title="使用flex布局来居中："></a>使用flex布局来居中：</h5><p> justify-content:center align-items:center</p>
+</li>
+</ul>
+<h3 id="5-css-选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？"><a href="#5-css-选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？" class="headerlink" title="5.css 选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？"></a>5.css 选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？</h3><ul>
+<li><h5 id="css选择符："><a href="#css选择符：" class="headerlink" title="css选择符："></a>css选择符：</h5><p>1.id选择器（ # myid）</p>
+<p>2.类选择器（.myclassname）</p>
+<p>3.标签选择器（div, h1, p）</p>
+<p>4.相邻选择器（h1 + p）</p>
+<p>5.子选择器（ul &gt; li）</p>
+<p>6.后代选择器（li a）</p>
+<p>7.通配符选择器（ * ）</p>
+<p>8.属性选择器（a[rel = “external”]）</p>
+<p>9.伪类选择器（a:hover, li:nth-child）</p>
+<p>10.伪元素选择器 (div::before   div::after)</p>
+</li>
+</ul>
+<ul>
+<li><h5 id="哪些属性可以继承"><a href="#哪些属性可以继承" class="headerlink" title="哪些属性可以继承"></a>哪些属性可以继承</h5></li>
+</ul>
+<p>​    * 可继承的样式：  font-size   font-family color  line-height  text开头的  opacity</p>
+<p>​    * 不可继承的样式：border padding margin width height ;  </p>
+<ul>
+<li><h5 id="优先级算法"><a href="#优先级算法" class="headerlink" title="优先级算法"></a>优先级算法</h5></li>
+</ul>
+<p>​      我们可以给标签的权重为1，class的权重为10，id的权重为100，!important权重无限大来计算css样式的优先级。</p>
+<p>​      比如    div  #box  .inner  p 权重</p>
+<p>​                 1      100     10       1              总权重112</p>
+<p>​                 </p>
+<p>​                 div  .content   .inner  p 权重</p>
+<p>​                 1      10             10       1        总权重22</p>
+<p>​       1.优先级就近原则，同权重情况下样式定义最近者为准;</p>
+<p>​       2.载入样式同权重下以最后载入的定位为准;</p>
+<p>​       3.!important &gt; 内联  &gt; id &gt; class &gt; tag</p>
+<h3 id="6-路由跳转"><a href="#6-路由跳转" class="headerlink" title="6.路由跳转"></a>6.路由跳转</h3><p>1.router-link方式</p>
+<p>不带参数：</p>
+<router-link :to="{name:'home'}"> 
+
+
+
+<p>带参数：params传参数</p>
+<p> html 取参 $route.params.id</p>
+<p> script 取参 this.$route.params.id</p>
+<router-link :to="{name:'home', params: {id:1}}"> 
+
+<p>​    </p>
+<p>带参数：query传参数 (类似get,url后面会显示参数)</p>
+<p>注意点：如果使用path，name不可以和params共用</p>
+<p> html 取参 $route.query.id</p>
+<p> script 取参 this.$route.query.id</p>
+<router-link :to="{name:'home', query: {id:1}}"> 
+
+<p>​    </p>
+<p>​    </p>
+<p>2.this.$router.push() 编程式导航</p>
+<p>不带参数:</p>
+<p>this.$router.push(‘/home’)</p>
+<p>this.$router.push({name:’home’})</p>
+<p>this.$router.push({path:’/home’})</p>
+<p>query传参:</p>
+<p>this.$router.push({name:’home’,query: {id:’1’}})</p>
+<p>this.$router.push({path:’/home’,query: {id:’1’}})</p>
+<p>params传参:</p>
+<p>this.$router.push({name:’home’,params: {id:’1’}})</p>
+<p>query类似get,跳转之后页面url后面会拼接参数,类似?id=1,非重要性的可以这样传,密码之类还是用params刷新页面id还在;</p>
+<p>params类似post,跳转之后页面url后面不会拼接参数,但是刷新页面id会消失。</p>
+<h3 id="7-清除浮动的方式"><a href="#7-清除浮动的方式" class="headerlink" title="7.清除浮动的方式"></a>7.清除浮动的方式</h3><ol>
+<li>父级div定义伪类:after和zoom和:before</li>
+<li>父级div定义overflow:auto</li>
+<li>使用空div隔墙(内墙)法：<div style="clear:both;"></div></li>
+</ol>
+<h3 id="8-Promise-方法"><a href="#8-Promise-方法" class="headerlink" title="8.Promise 方法"></a>8.Promise 方法</h3><p> Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。runAsync1(),runAsync2()两个函数是并行执行的，等到它们都执行完后才会进到then里面。</p>
+<h3 id="9-Js原型链"><a href="#9-Js原型链" class="headerlink" title="9.Js原型链"></a>9.Js原型链</h3><p>new 操作符具体干了什么呢?其实很简单，就干了三件事情。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line"><span class="number">2</span> obj.__proto__ = Base.prototype;</span><br><span class="line"><span class="number">3</span> Base.call(obj);</span><br></pre></td></tr></table></figure>
+
+<p>第一行，我们创建了一个空对象 obj<br>第二行，我们将这个空对象的  <code>__proto__</code> 成员指向了 Base 函数对象 prototype 成员对象<br>第三行，我们将 Base 函数对象的 this 指针替换成 obj，然后再调用 Base 函数，于是我们就给 obj 对象赋值了一个 id 成员变量，这个成员变量的值是 ”base”，关于call函数的用法。</p>
+<p> 在谈原型链之前，我们首先要了解自定义函数与 Function 之间是什么关系，而构造函数、原型和实例之间又存在什么千丝万缕的关系呢？其实，所有的函数都是 Function 的实例。在构造函数上都有一个原型属性 prototype，该属性也是一个对象；那么在原型对象上有一个 constructor 属性，该属性指向的就是构造函数；而实例对象上有一个 <em>proto</em>  属性，该属性也指向原型对象，并且该属性不是标准属性，不可以用在编程中，该属性用于浏览器内部使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _proto_</span></span><br><span class="line">在函数里有一个属性prototype</span><br><span class="line">由该函数创建的对象默认会连接到该属性上</span><br><span class="line">    <span class="comment">//prototype 与 _proto_ 的关系</span></span><br><span class="line">_proto_是站在对象角度来说的</span><br><span class="line">prototype 是站在构造函数角度来说的</span><br></pre></td></tr></table></figure>
+
+<h4 id="构造函数、原型和实例之间的关系"><a href="#构造函数、原型和实例之间的关系" class="headerlink" title="构造函数、原型和实例之间的关系"></a>构造函数、原型和实例之间的关系</h4><h5 id="①-Object"><a href="#①-Object" class="headerlink" title="①+Object"></a>①+Object</h5><h5 id="②-Function-Object-Array"><a href="#②-Function-Object-Array" class="headerlink" title=" ②+Function+Object+Array"></a><img src="/2020/02/17/26-自学（一）/4.png" alt="BP"> ②+Function+Object+Array</h5><p><img src="/2020/02/17/26-自学（一）/5.png" alt="BP"></p>
+<p><img src="/2020/02/17/26-自学（一）/6.png" alt="BP"></p>
+<p><strong>【小结】</strong>套用一句很粗暴的话，所谓原型链就是找妈的一种行为方式，就可以理解为人是人他妈生的，妖是妖他妈生的。原型链的核心其实就只有一个：属性共享和独立的控制，当你的对象实例需要独立的属性，所有做法的本质都是在对象实例里面创建属性。若不考虑太多，你大可以在Person里面直接定义你所需要独立的属性来覆盖掉原型的属性。总之，使用原型继承的时候，要对于原型中的属性要特别注意，因为他们都是牵一发而动全身的存在。现在最常用的方法是组合模式。</p>
+<p>1、原型链</p>
+<p>​    1）构造函数、原型和实例的关系</p>
+<p>​        ①构造函数都有一个属性prototype，这个属性是一个对象（Object的实例）</p>
+<p>​        ②原型对象prototype里面有一个constructor属性，该属性指向原型对象所属的构造函数</p>
+<p>​        ③实例对象都有一个_proto_属性，该属性也指向构造函数的原型对象，它是一个非标准属性，不可以用于编程，它是用于浏览器自己使用的</p>
+<p>​    2）prototype与_proto_的关系</p>
+<p>​        ①prototype是构造函数的属性</p>
+<p>​        ②_proto_是实例对象的属性</p>
+<p>​                    ——这两者都指向同一个对象</p>
+<p>​    【总结】i）函数也是对象，对象不一定是函数；</p>
+<p>​            ii）对象的本质：无序的键值对集合；键值对当中的值可以是任意数据类型的值</p>
+<p>​            iii）对象就是一个容器，这个容器当中放的是（属性和方法）</p>
+<p>​    3）属性搜索</p>
+<p>​    　　①在访问对象的某个成员的时候会先在对象中找是否存在</p>
+<p>​    　　②如果当前对象中没有就在构造函数的原型对象中找</p>
+<p>​    　　③如果原型对象中没有找到就到原型对象的原型上找</p>
+<p>​    　　④知道Object的原型对象的原型是null为止</p>
+<p>2、Function</p>
+<p>——所有函数都是Function的实例</p>
+<p>​    ①本地对象：独立于宿主环境（浏览器）的对象——包括Object、Array、Date、RegExp、Function、Error、Number、String、Boolean</p>
+<p>​    ②内置对象——包括Math、Global（window，在js中就是全局变量），使用的时候不需要new</p>
+<p>​    ③宿主对象——包括自定义对象、DOM、BOM</p>
+<h3 id="10-JS-数组去重"><a href="#10-JS-数组去重" class="headerlink" title="10. JS 数组去重"></a>10. JS 数组去重</h3><h4 id="10-1-简单的去重方法"><a href="#10-1-简单的去重方法" class="headerlink" title="10.1 简单的去重方法"></a>10.1 简单的去重方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最简单数组去重法</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 新建一新数组，遍历传入数组，值不在新数组就push进该新数组中</span></span><br><span class="line"><span class="comment">* IE8以下不支持数组的indexOf方法</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = []; <span class="comment">//一个新的临时数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.indexOf(array[i]) == <span class="number">-1</span>)&#123;</span><br><span class="line">            temp.push(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-2-对象键值法去重"><a href="#10-2-对象键值法去重" class="headerlink" title="10.2 对象键值法去重"></a>10.2 对象键值法去重</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 速度最快， 占空间最多（空间换时间）</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 该方法执行的速度比其他任何方法都快， 就是占用的内存大一些。</span></span><br><span class="line"><span class="comment">* 现思路：新建一js对象以及新数组，遍历传入数组时，判断值是否为js对象的键，</span></span><br><span class="line"><span class="comment">* 不是的话给对象新增该键并放入新数组。</span></span><br><span class="line"><span class="comment">* 注意点：判断是否为js对象键时，会自动对传入的键执行“toString()”，</span></span><br><span class="line"><span class="comment">* 不同的键可能会被误认为一样，例如n[val]-- n[1]、n["1"]；</span></span><br><span class="line"><span class="comment">* 解决上述问题还是得调用“indexOf”。*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = &#123;&#125;, r = [], len = array.length, val, type;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        val = array[i];</span><br><span class="line">        type = <span class="keyword">typeof</span> val;</span><br><span class="line">        <span class="keyword">if</span> (!temp[val]) &#123;</span><br><span class="line">            temp[val] = [type];</span><br><span class="line">            r.push(val);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp[val].indexOf(type) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            temp[val].push(type);</span><br><span class="line">            r.push(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-3-排序后相邻去除法"><a href="#10-3-排序后相邻去除法" class="headerlink" title="10.3 排序后相邻去除法"></a>10.3 排序后相邻去除法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 给传入数组排序，排序后相同值相邻，</span></span><br><span class="line"><span class="comment">* 然后遍历时,新数组只加入不与前一值重复的值。</span></span><br><span class="line"><span class="comment">* 会打乱原来数组的顺序</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">var</span> temp=[array[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( array[i] !== temp[temp.length<span class="number">-1</span>])&#123;</span><br><span class="line">            temp.push(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-4-数组下标法"><a href="#10-4-数组下标法" class="headerlink" title="10.4 数组下标法"></a>10.4 数组下标法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 还是得调用“indexOf”性能跟方法1差不多，</span></span><br><span class="line"><span class="comment">* 实现思路：如果当前数组的第i项在当前数组中第一次出现的位置不是i，</span></span><br><span class="line"><span class="comment">* 那么表示第i项是重复的，忽略掉。否则存入结果数组。</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="comment">//如果当前数组的第i项在当前数组中第一次出现的位置是i，才存入数组；否则代表是重复的</span></span><br><span class="line">        <span class="keyword">if</span>(array.indexOf(array[i]) == i)&#123;</span><br><span class="line">            temp.push(array[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-5-优化遍历数组法"><a href="#10-5-优化遍历数组法" class="headerlink" title="10.5 优化遍历数组法"></a>10.5 优化遍历数组法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：获取没重复的最右一值放入新数组</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 推荐的方法</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 方法的实现代码相当酷炫，</span></span><br><span class="line"><span class="comment">* 实现思路：获取没重复的最右一值放入新数组。</span></span><br><span class="line"><span class="comment">* （检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断）*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = [];</span><br><span class="line">    <span class="keyword">var</span> index = [];</span><br><span class="line">    <span class="keyword">var</span> l = array.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; l; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (array[i] === array[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push(array[i]);</span><br><span class="line">        index.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-请描述一下cookies，sessionStorage和localStorage的区别？"><a href="#11-请描述一下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="11. 请描述一下cookies，sessionStorage和localStorage的区别？"></a>11. 请描述一下cookies，sessionStorage和localStorage的区别？</h3><p><img src="/2020/02/17/26-自学（一）/7.png" alt="BP"></p>
+<h3 id="12-使用js实现链表数据结构-增-删-该-查-打印"><a href="#12-使用js实现链表数据结构-增-删-该-查-打印" class="headerlink" title="12.使用js实现链表数据结构(增 删 该 查 打印)"></a>12.使用js实现链表数据结构(增 删 该 查 打印)</h3><ul>
+<li><p>链表是一种非线性、非顺序的物理结构，是由若干个节点组成。</p>
+</li>
+<li><p>链表采用的是“见缝插针”的存储方法，不要求内存连续，靠next指针关联起来。</p>
+</li>
+<li><p>链表的物理存储方式为随机存储，访问方式为顺序访问。</p>
+</li>
+<li><p>查找节点的时间复杂度为O(n)，插入、删除节点的时间复杂度为O(1)。</p>
+</li>
+<li><p>链表适用于写操作多，读操作少的场景。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*======定义结构======*/</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="function"><span class="keyword">function</span> (<span class="params">element</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.element = element</span><br><span class="line">	<span class="keyword">this</span>.next = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> linkedList = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.head = <span class="keyword">new</span> node(<span class="string">"head"</span>)</span><br><span class="line">	<span class="keyword">this</span>.find = find</span><br><span class="line">	<span class="keyword">this</span>.insert = insert</span><br><span class="line">	<span class="keyword">this</span>.update = update</span><br><span class="line">	<span class="keyword">this</span>.remove = remove</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======查找======*/</span></span><br><span class="line"><span class="keyword">var</span> find = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> currNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======插入======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*newElement:一个新节点，item:链表的目标节点</span></span><br><span class="line"><span class="comment">*1.查找找到目标节点，将新节点的next指向目标节点的下一个节点</span></span><br><span class="line"><span class="comment">*2.将目标节点的next指向这个新节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> insert = <span class="function"><span class="keyword">function</span> (<span class="params">newElement, item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> newNode = <span class="keyword">new</span> node(newElement)</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	newNode.next = currNode.next</span><br><span class="line">	currNode.next = newNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======修改======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*查找到目标节点，将其element修改</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> update = <span class="function"><span class="keyword">function</span> (<span class="params">item, newItem</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	currNode.element = newItem</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======删除======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*找到匹配节点的前一个节点，将其next指向当前节点的下一个节点，即删除当前节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> remove = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.next !== <span class="literal">null</span> &amp;&amp; currNode.next.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (currNode.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">		currNode.next = currNode.next.next</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======测试代码======*/</span></span><br><span class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> linkedList();</span><br><span class="line">list.insert(<span class="string">'first'</span>, <span class="string">'head'</span>)</span><br><span class="line">list.insert(<span class="string">'second'</span>, <span class="string">'first'</span>)</span><br><span class="line">list.insert(<span class="string">'third'</span>, <span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.find(<span class="string">'first'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list.find(<span class="string">'first'</span>))</span><br><span class="line">list.update(<span class="string">'third'</span>, <span class="string">'three'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.remove(<span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br></pre></td></tr></table></figure>
+
+<h4 id="单链表图解："><a href="#单链表图解：" class="headerlink" title="单链表图解："></a>单链表图解：</h4><p><img src="/2020/02/17/26-自学（一）/8.png" alt="BP"></p>
+</li>
+</ul>
+<h3 id="13-总结-MVC-和-MVVM"><a href="#13-总结-MVC-和-MVVM" class="headerlink" title="13.总结  MVC 和 MVVM"></a>13.总结  MVC 和 MVVM</h3><h4 id="13-1-MVC"><a href="#13-1-MVC" class="headerlink" title="13.1 MVC"></a>13.1 MVC</h4><p>MVC是 Model-View-Controller 的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即 Controller 指的是页面业务逻辑。使用MVC的目的就是将 M 和 V 的代码分离。MVC 是单向通信。也就是View 跟 Model，必须通过Controller来承上启下。MVC 和MVVM的区别并不是 VM完全取代了C，只是在MVC的基础上增加了一层VM，只不过是弱化了C的概念，ViewModel 存在目的在于抽离Controller中展示的业务逻辑，而不是替代Controller，其它视图操作业务等还是应该放在Controller中实现。也就是说MVVM实现的是业务逻辑组件的重用，使开发更高效，结构更清晰，增加代码的复用性。</p>
+<p><img src="/2020/02/17/26-自学（一）/9.jpg" alt="BP"></p>
+<h4 id="13-2-MVVM"><a href="#13-2-MVVM" class="headerlink" title="13.2 MVVM"></a>13.2 MVVM</h4><p>MVVM即Model-View-ViewModel的简写。即模型-视图-视图模型。模型（Model）指的是后端传递的数据。视图(View)指的是所看到的页面。视图模型(ViewModel)是mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将模型（Model）转化成视图(View)，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将视图(View)转化成模型(Model)，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听。这两个方向都实现的，我们称之为数据的双向绑定。</p>
+<p><img src="/2020/02/17/26-自学（一）/10.jpg" alt="BP"></p>
+<h4 id="13-3-总结"><a href="#13-3-总结" class="headerlink" title="13.3 总结"></a>13.3 总结</h4><p>MVVM和MVC的区别就在于，MVVM将MVC中的数据解析功能剥离了出来，将这部分的工作交给了VM来做：</p>
+<p>在MVC里，View是可以直接访问Model的，所以View里会包含Model信息以及一些业务逻辑。 MVC模型关注的是Model的不变，所以在MVC模型里，Model不依赖于View，但是 View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。</p>
+<p>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。此外MVVM另一个重要特性双向绑定，它更方便你去同时维护页面上都依赖于某个字段的N个区域，而不用手动更新它们。</p>
+<p><img src="/2020/02/17/26-自学（一）/11.png" alt="BP"></p>
+<h3 id="14-总结前端性能优化方案，前端兼容性问题"><a href="#14-总结前端性能优化方案，前端兼容性问题" class="headerlink" title="14.总结前端性能优化方案，前端兼容性问题"></a>14.总结前端性能优化方案，前端兼容性问题</h3><ol>
+<li>减少 HTTP请求数<ul>
+<li>从设计实现层面简化页面</li>
+<li>合理设置 HTTP缓存</li>
+<li>资源合并与压缩</li>
+<li>CSS Sprites（精灵图）</li>
+<li>Lazy Load Images（懒加载）</li>
+</ul>
+</li>
+<li>将 js 文件置底<ul>
+<li>外链脚本在加载时却会阻塞其他资源，例如在脚本加载完成之前，它后面的图片、样式以及其他脚本都处于阻塞状态，直到脚本加载完成后才会开始加载</li>
+</ul>
+</li>
+<li>将 CSS放在 head 中</li>
+<li>在js中尽量减少闭包的使用(闭包不会释放栈内存)</li>
+<li>进行js和css文件的合并</li>
+<li>减少对DOM的操作（主要是减少DOM的重绘和回流（重排）</li>
+<li>避免重定向（301：资源永久转移/302：暂时转移）</li>
+<li>交互时，数据尽可能基于json格式进行传送（处理方便，资源偏小）==》相对于XML</li>
+<li>尽量减少filter属性滤镜的使用。</li>
+<li>基于AJAX的get请求根据需求产生缓存（非304），但不建议使用</li>
+<li>css中设置定位后，最好使用z-index改变层级，让盒子不在同一平面上，性能会提高一丢</li>
+<li>避免使用iframe</li>
+<li>基于script调用js的时候，使用defer或者async来异步加载</li>
+<li>使用window.requestAnimationFrame（js的帧动画）代替传统的定时器动画</li>
+<li>页面中数据获取采用异步编程和延迟分批加载</li>
+</ol>
+<p>本文从页面级以及代码级两个粒度对前端优化的各种方式做了一个总结，这些方法基本上都是前端开发人员在开发的过程中可以借鉴和实践的，除此之外，完整的前端优化还应该包括很多其他的途径，例如 CDN、 Gzip、多域名、无 Cookie服务器等等</p>
+<h3 id="15-cookie的弊端"><a href="#15-cookie的弊端" class="headerlink" title="15.cookie的弊端"></a>15.cookie的弊端</h3><p>(1) Cookie数量和长度的限制</p>
+<p>   1.IE6或更低版本一个站点最多20个cookie</p>
+<p>   2.IE7和之后的版本一个站点可以有50个cookie。</p>
+<p>   3.Firefox一个站点最多50个cookie</p>
+<p>   4.chrome和Safari没有做硬性限制</p>
+<p>(2) 安全性问题，因为Cookie是保存在客户端，所以很可能被用户人为篡改。</p>
+<p>(3) 长度限制，每个cookie长度不能超过4KB，否则会被截掉。</p>
+<p>(4) Cookie只能保存非中文的字符串。</p>
+<h3 id="16-Ajax的常用方法"><a href="#16-Ajax的常用方法" class="headerlink" title="16. Ajax的常用方法"></a>16. Ajax的常用方法</h3><p>1.open方法：与服务器建立连接<br>2.send方法：向服务器发送数据<br>3.onreadystatechange：监听服务器响应的回调<br>4.responseText/responseXML：获取服务器响应的数据<br>5.readyState：ajax的状态码，4表示ajax响应已经完成</p>
+</router-link></router-link></router-link>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/13/25-Angular的使用/" rel="next" title="25.Angular的使用">
+                <i class="fa fa-chevron-left"></i> 25.Angular的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-React生命周期函数的理解"><span class="nav-number">1.</span> <span class="nav-text">1.React生命周期函数的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-React-16-3-之后的生命周期函数"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 React 16.3+之后的生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-getDerivedStateFromProps"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.getDerivedStateFromProps</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-componentDidMount"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.componentDidMount</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-shouldComponentUpdate"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.shouldComponentUpdate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-getSnapshotBeforeUpdate"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.getSnapshotBeforeUpdate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-componentDidUpdate"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.componentDidUpdate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-componentWillUnmount"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.componentWillUnmount</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-React-16-3-之前的生命周期函数"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 React 16.3 之前的生命周期函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#componentWillMount"><span class="nav-number">1.2.1.</span> <span class="nav-text">componentWillMount:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#componentDidMount"><span class="nav-number">1.2.2.</span> <span class="nav-text">componentDidMount:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#componentWillReceiveProps"><span class="nav-number">1.2.3.</span> <span class="nav-text">componentWillReceiveProps:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">1.2.4.</span> <span class="nav-text">shouldComponentUpdate:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#componentWillUpdate"><span class="nav-number">1.2.5.</span> <span class="nav-text">componentWillUpdate:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">1.2.6.</span> <span class="nav-text">componentDidUpdate:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">1.2.7.</span> <span class="nav-text">componentWillUnmount:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Redux更新的方法"><span class="nav-number">2.</span> <span class="nav-text">2.Redux更新的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-iframe-优缺点"><span class="nav-number">3.</span> <span class="nav-text">3. iframe 优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-iframe的优点"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 iframe的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-iframe的缺点"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 iframe的缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何居中div-如何居中一个浮动元素？如何让绝对定位的div居中？"><span class="nav-number">4.</span> <span class="nav-text">4.如何居中div,如何居中一个浮动元素？如何让绝对定位的div居中？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#水平居中div："><span class="nav-number">4.0.1.</span> <span class="nav-text">水平居中div：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#居中浮动的div"><span class="nav-number">4.0.2.</span> <span class="nav-text">居中浮动的div:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#居中绝对定位的div"><span class="nav-number">4.0.3.</span> <span class="nav-text">居中绝对定位的div:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用flex布局来居中："><span class="nav-number">4.0.4.</span> <span class="nav-text">使用flex布局来居中：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#5-css-选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？"><span class="nav-number">5.</span> <span class="nav-text">5.css 选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#css选择符："><span class="nav-number">5.0.1.</span> <span class="nav-text">css选择符：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#哪些属性可以继承"><span class="nav-number">5.0.2.</span> <span class="nav-text">哪些属性可以继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优先级算法"><span class="nav-number">5.0.3.</span> <span class="nav-text">优先级算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-路由跳转"><span class="nav-number">6.</span> <span class="nav-text">6.路由跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-清除浮动的方式"><span class="nav-number">7.</span> <span class="nav-text">7.清除浮动的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Promise-方法"><span class="nav-number">8.</span> <span class="nav-text">8.Promise 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Js原型链"><span class="nav-number">9.</span> <span class="nav-text">9.Js原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数、原型和实例之间的关系"><span class="nav-number">9.1.</span> <span class="nav-text">构造函数、原型和实例之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-Object"><span class="nav-number">9.1.1.</span> <span class="nav-text">①+Object</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#②-Function-Object-Array"><span class="nav-number">9.1.2.</span> <span class="nav-text"> ②+Function+Object+Array</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-JS-数组去重"><span class="nav-number">10.</span> <span class="nav-text">10. JS 数组去重</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1-简单的去重方法"><span class="nav-number">10.1.</span> <span class="nav-text">10.1 简单的去重方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-对象键值法去重"><span class="nav-number">10.2.</span> <span class="nav-text">10.2 对象键值法去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-排序后相邻去除法"><span class="nav-number">10.3.</span> <span class="nav-text">10.3 排序后相邻去除法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-数组下标法"><span class="nav-number">10.4.</span> <span class="nav-text">10.4 数组下标法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-5-优化遍历数组法"><span class="nav-number">10.5.</span> <span class="nav-text">10.5 优化遍历数组法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-请描述一下cookies，sessionStorage和localStorage的区别？"><span class="nav-number">11.</span> <span class="nav-text">11. 请描述一下cookies，sessionStorage和localStorage的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-使用js实现链表数据结构-增-删-该-查-打印"><span class="nav-number">12.</span> <span class="nav-text">12.使用js实现链表数据结构(增 删 该 查 打印)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单链表图解："><span class="nav-number">12.1.</span> <span class="nav-text">单链表图解：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-总结-MVC-和-MVVM"><span class="nav-number">13.</span> <span class="nav-text">13.总结  MVC 和 MVVM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-1-MVC"><span class="nav-number">13.1.</span> <span class="nav-text">13.1 MVC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-2-MVVM"><span class="nav-number">13.2.</span> <span class="nav-text">13.2 MVVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-3-总结"><span class="nav-number">13.3.</span> <span class="nav-text">13.3 总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-总结前端性能优化方案，前端兼容性问题"><span class="nav-number">14.</span> <span class="nav-text">14.总结前端性能优化方案，前端兼容性问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-cookie的弊端"><span class="nav-number">15.</span> <span class="nav-text">15.cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-Ajax的常用方法"><span class="nav-number">16.</span> <span class="nav-text">16. Ajax的常用方法</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
