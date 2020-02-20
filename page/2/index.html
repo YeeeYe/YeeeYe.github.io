@@ -229,6 +229,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/17.拓展-课外问题总结-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/26/17.拓展-课外问题总结-4/" itemprop="url">17.拓展-课外问题总结(4)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:44:57+08:00">
+                2019-11-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.分别一句话介绍，Cookie和session是什么，两者的关系和区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie   位于用户的计算机上，用来维护用户计算机中的信息，直到用户删除。   (比如我们在网页上登录某个软件时输入用户名及密码时如果保存为cookie，则每次我们访问的时候就不需要登录网站了。我们可以在浏览器上保存任何文本，而且我们还可以随时随地的去阻止它或者删除。我们同样也可以禁用或者编辑cookie，但是有一点需要注意不要使用cookie来存储一些隐私数据，以防隐私泄露。)   session   session称为会话信息，位于web服务器上，主要负责访问者与网站之间的交互，当访问浏览器请求http地址时，将传递到web服务器上并与访问信息进行匹配， 当关闭网站时就表示会话已经结束，网站无法访问该信息了，所以它无法保存永久数据，我们无法访问以及禁用网站   session与cookie的区别   Cookie数据存在客户端本地，Session数据存在服务器   Cookie数据可以被客户端随意修改，Session因为数据在服务器，所以用户不可以随意修改,因此session更安全   Cookie的存储是有限制的(每个站点cookie不超过50个，每个cookie不超过4kb，cookie只能存储非中文的字符串)，Session没有限制   设置cookie时间可以使cookie过期。但是使用session-destory（），我们将会销毁会话。           如果我们需要经常登录一个站点时，最好用cookie来保存信息，要不然每次登陆都特别麻烦，如果对于需要安全性高的站点以及控制数据的能力时需要用会话效果更佳，当然我们也可以结合两者，使网站按照我们的想法进行运行</span><br></pre></td></tr></table></figure>
+
+<p>2一句话解释Bootstrap的栅格系统。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多<span class="number">12</span>列。</span><br><span class="line">栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</span><br><span class="line">（<span class="number">1</span>）第一步：创建栅格系统的容器　　　 </span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container-fluid"</span>&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">.container是固定宽度，居中显示:下面是Bootstrap中.container类的代码</span><br><span class="line"></span><br><span class="line">.container-fluid是 <span class="number">100</span>% 宽度：下面是Bootstrap中.container-fluid类的代码</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)第二步：创建合适的栅格系统</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-1"</span>&gt;.col-md<span class="number">-1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-1"&gt;.col-md-1&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="row"&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-8"&gt;.col-md-8&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-4"&gt;.col-md-4&lt;/</span>div&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-4"</span>&gt;.col-md<span class="number">-4</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"row"</span>&gt;</span><br><span class="line">　　&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-6"</span>&gt;.col-md<span class="number">-6</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;div class="col-md-6"&gt;.col-md-6&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">每一个“row”代表一行，而内部的“col-md-数字”代表一个单元格；</span></span><br><span class="line"><span class="regexp">Bootstrap把每一行分成12等份，“col-md-数字”中的“数字”从1-12中取，数字等于几，就占几份；</span></span><br><span class="line"><span class="regexp">合理的选择单元格的数字配置，再往单元格中添加我们想要的内容，这样一个栅格系统就完成了！</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>  3一句话介绍Vuex是什么?用于哪些场景?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。（vuex是一个全局单例模式管理。）</span><br><span class="line">使用场景：当应用遇到多个组件共享状态的时候，使用vuex。即：多个视图依赖于同一个状态，不同视图的行为需要变更同一个状态。</span><br><span class="line"></span><br><span class="line">拓展内容：</span><br><span class="line">如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</span><br><span class="line">什么是单页应用</span><br><span class="line">在应用整个使用流程里浏览器由始至终没有刷新，所有的数据交互由ajax完成。但是用户体验起来和app一样，有明确的页面区分，即所谓的web app，整个webapp就一个html文件，里面的各个功能页面是javascript通过hash,或者history api来进行路由，并通过ajax拉取数据来实现响应功能。因为整个webapp就一个html，所以叫单页面。</span><br><span class="line">在我们以前开发web程序的时候，都是通过不同的html，js，css进行控制。网站就是网页的集合，但是如今react，angular，vue的诞生，产生了单页面应用（single page application），构建web应用可能只有一个页面，这个页面不再是简单地把内容进行布局排序，它已经成为web应用的容器。</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p> 4分别一句话介绍，父子组件怎么传值?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">父传子</span><br><span class="line">1.在子组件中声明props，这边的数据表示来自父亲的数据</span><br><span class="line">2.在父组件中使用子组件的时候给子组件绑定值</span><br><span class="line">3.在页面上使用父亲传递过来的值</span><br><span class="line">子传父</span><br><span class="line">1.在父亲中声明一个方法用于接收子组件的数据</span><br><span class="line">2.在创建子组件的时候把父亲中的函数传递给子组件</span><br><span class="line">3.点击子组件按钮执行子组件的方法，在子组件的方法中触发父组件传递过来的函数</span><br></pre></td></tr></table></figure>
+
+<p> 5 Vue router如何实现跳转，跳转后的view是否更新了，如果不能，怎样触发更新?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">首先在页面中引入VueJS以及vue-router模块，使用router-link可以把文字设置成超链接的形式，而to则是指要跳转到哪个路由，当路由跳转后所有的数据都会在router-view中呈现，在script中创建router实例，将创建的组件与路由绑定即可。</span><br><span class="line"></span><br><span class="line">&lt;!-- :key=&quot;$route.fullPath&quot; 解决同路由但不同查询参数跳转后数据不更新 --&gt; &lt;router-view :key=&quot;$route.fullPath&quot; /&gt;</span><br><span class="line">（：key=“一个具有唯一值的 key 属性即可”）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/16.拓展-课外问题总结-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1816,161 +1965,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/特殊：前端问题持续更新/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/16/特殊：前端问题持续更新/" itemprop="url">特殊：前端问题持续更新</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-16T15:07:43+08:00">
-                2019-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-函数的副作用"><a href="#1-函数的副作用" class="headerlink" title="1. 函数的副作用"></a>1. 函数的副作用</h3><p>vue 中的 setstate 会产生副作用 ， 佐证为 watch 监听时里面的属性的改变不会引发监听的事件。</p>
-<p>函数的副作用的举例：</p>
-<ol>
-<li><p>纯函数的副作用 ， 通过函数直接改变obj中的属性值，会造成副作用</p>
-</li>
-<li><p>以下情况下没有副作用：通过函数的值改变 obj2 的值，再用 obj2 的值来替换 obj 的值 ，这样就不会造成函数的副作用 </p>
-</li>
-</ol>
-<h3 id="2-函数式编程思想-待更新"><a href="#2-函数式编程思想-待更新" class="headerlink" title="2. 函数式编程思想(待更新)"></a>2. 函数式编程思想(待更新)</h3><p> React 16.7.0  ——&gt; React 16.8.0 (Hook)</p>
-<p> Vue 2.0 ——&gt; Vue 3.0 ( Hook 、Proxy)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> vue中的 proxy代理  ，数据劫持的核心就是在代理对象的身上重新定义被代理对象的所有可枚举属性，并设置 getter 和 setter 监听着它的变化，然而实现这个功能就是一个方法：</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty() ，通过该方法在实例对象上重新定义了和data 对象里面所有的属性，然而就实现了数据劫持。</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Tomcat服务器的搭建"><a href="#3-Tomcat服务器的搭建" class="headerlink" title="3. Tomcat服务器的搭建"></a>3. Tomcat服务器的搭建</h3><h5 id="（1）下载tomcat服务器"><a href="#（1）下载tomcat服务器" class="headerlink" title="（1）下载tomcat服务器"></a>（1）下载tomcat服务器</h5><p><a href="https://tomcat.apache.org/download-70.cgi" target="_blank" rel="noopener">https://tomcat.apache.org/download-70.cgi</a></p>
-<h5 id="（2）下载java的jdk、安装"><a href="#（2）下载java的jdk、安装" class="headerlink" title="（2）下载java的jdk、安装"></a>（2）下载java的jdk、安装</h5><p>配置环境变量</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=C:\Java\jdk1.8.0_144</span><br><span class="line">classpath=.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\tools.jar</span><br><span class="line">PATH配置：;%JAVA_HOME%\bin;</span><br></pre></td></tr></table></figure>
-
-<h5 id="（3）解压tomcat，修改里面的server-xml配置"><a href="#（3）解压tomcat，修改里面的server-xml配置" class="headerlink" title="（3）解压tomcat，修改里面的server.xml配置"></a>（3）解压tomcat，修改里面的server.xml配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在apache-tomcat-7.0.96-windows-x64—&gt;apache-tomcat-7.0.96—&gt;conf 中</span><br><span class="line"></span><br><span class="line">修改如下的代码：</span><br><span class="line">&lt;Connector port = &quot;8090&quot; protocol:&quot;HTTP/1.1&quot;</span><br><span class="line">       connectionTimeout = &quot;20000&quot;</span><br><span class="line">       redirectPort = &quot;8843&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="（4）启动-tomcat-服务器"><a href="#（4）启动-tomcat-服务器" class="headerlink" title="（4）启动 tomcat 服务器"></a>（4）启动 tomcat 服务器</h5><h3 id="4-node中注意的东西"><a href="#4-node中注意的东西" class="headerlink" title="4. node中注意的东西"></a>4. node中注意的东西</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__filename : 包含文件名称的全路径</span><br><span class="line">__dirname : 文件所处的目录的绝对路径（不包含文件名称）</span><br><span class="line"></span><br><span class="line"><span class="comment">//在 node 中没有dom操作和 bom 操作的api ， 也就意味着window document 等对象在 node 中不可以使用 ， 可以使用如下：</span></span><br><span class="line">global.console.log(<span class="string">"aaa"</span>)</span><br><span class="line">global 就是 顶层对象</span><br><span class="line"></span><br><span class="line">process.argv  argv 是一个数组，默认情况下，前两项的数据分别是：Node.js环境的路径：当前执行的js文件的全路径 </span><br><span class="line"><span class="comment">// 从第三个参数开始表示命令行参数</span></span><br><span class="line">process.arch 就是系统的架构，<span class="number">64</span>位或者<span class="number">32</span>位</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-1-stat-和-fstat-的区别"><a href="#4-1-stat-和-fstat-的区别" class="headerlink" title="4.1 stat 和 fstat 的区别"></a>4.1 stat 和 fstat 的区别</h5><p>fs.stat 接收的第一个参数是一个文件路径字符串</p>
-<p>fs.fstat接收的是一个文件描述符；</p>
-<p>内核（kernel）利用文件描述符（file descriptor）来访问文件。文件描述符是非负整数。打开现存文件或新建文件时，内核会返回一个文件描述符。读写文件也需要使用文件描述符来指定待读写的文件</p>
-<p>其它的Fs方法中和这种类似的也是这样的描述；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基于Promise的API的所有方法调用之后都会给我们返回一个promise，然后我们就可以使用.then</span></span><br><span class="line">fsPromises.stat(<span class="string">"./tt"</span>)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">return</span> fsPromises.mkdir(<span class="string">"./tt"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> fsPromises.writeFile(<span class="string">"./tt/bb.txt"</span>,<span class="string">"xxxxx你好"</span>);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-e-target-innerHTML"><a href="#5-e-target-innerHTML" class="headerlink" title="5. e.target.innerHTML"></a>5. e.target.innerHTML</h3><p>可以获取到 a 标签里的值，不是用value进行获取的。</p>
-<h3 id="6-axios-原生的了解"><a href="#6-axios-原生的了解" class="headerlink" title="6.  axios 原生的了解"></a>6.  axios 原生的了解</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// always executed</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-<p>params 的传递是根据对象的形式，在发送请求的时候要进行封装成对象的形式。</p>
-<p>原生的 axios get请求的形式值得去了解一下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">'axios'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Make a request for a user with a given ID</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// handle success</span></span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// handle error</span></span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;)</span><br><span class="line">  .finally(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// always executed</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-<p>友情链接： <a href="https://www.npmjs.com/package/axios?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/axios?activeTab=readme</a></p>
-<h3 id="7-数组的-…-进行添加"><a href="#7-数组的-…-进行添加" class="headerlink" title="7. 数组的 … 进行添加"></a>7. 数组的 … 进行添加</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.array = [...cdata.message,...this.array]</span><br><span class="line"><span class="comment">//数组的叠加</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2021,7 +2015,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
