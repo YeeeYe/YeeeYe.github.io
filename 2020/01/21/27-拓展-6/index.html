@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.严格模式use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持 设立”严格模式”的目的，主要有以下几个： 　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为; 　　- 消除代码运行的一些不安全之处，保证代码运行的安全； 　　- 提高编译器效率，增加运行速度； 　　- 为未来新版本的 Javascript 做好铺垫。 进入”严格模式”的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="27.拓展-6">
+<meta property="og:url" content="http://yoursite.com/2020/01/21/27-拓展-6/index.html">
+<meta property="og:site_name" content="DWBBlog">
+<meta property="og:description" content="1.严格模式use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持 设立”严格模式”的目的，主要有以下几个： 　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为; 　　- 消除代码运行的一些不安全之处，保证代码运行的安全； 　　- 提高编译器效率，增加运行速度； 　　- 为未来新版本的 Javascript 做好铺垫。 进入”严格模式”的">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2020/01/21/27-拓展-6/1.png">
+<meta property="og:updated_time" content="2020-02-21T13:16:38.370Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="27.拓展-6">
+<meta name="twitter:description" content="1.严格模式use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持 设立”严格模式”的目的，主要有以下几个： 　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为; 　　- 消除代码运行的一些不安全之处，保证代码运行的安全； 　　- 提高编译器效率，增加运行速度； 　　- 为未来新版本的 Javascript 做好铺垫。 进入”严格模式”的">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/21/27-拓展-6/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/21/27-拓展-6/">
+
+
+
+
+
+  <title>27.拓展-6 | DWBBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DWBBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/27-拓展-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">27.拓展-6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-21T20:25:28+08:00">
+                2020-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-严格模式"><a href="#1-严格模式" class="headerlink" title="1.严格模式"></a>1.严格模式</h3><p>use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持</p>
+<p>设立”严格模式”的目的，主要有以下几个：</p>
+<p>　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为;</p>
+<p>　　- 消除代码运行的一些不安全之处，保证代码运行的安全；</p>
+<p>　　- 提高编译器效率，增加运行速度；</p>
+<p>　　- 为未来新版本的 Javascript 做好铺垫。</p>
+<p>进入”严格模式”的标志，是下面这行语句：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">　　"use strict"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>严格模式的一些特点：</p>
+<ul>
+<li><p>使调试更加容易。那些被忽略或默默失败了的代码错误，会产生错误或抛出异常，因此尽早提醒你代码中的问题，你才能更快地指引到它们的源代码。(实时显示错误代码，方便调试)</p>
+</li>
+<li><p>防止意外的全局变量（不支持隐式全局变量）。</p>
+</li>
+<li><p>禁止this关键字指向全局对象。在严格模式下，普通函数中的this默认是undefined，不再指向window；</p>
+</li>
+<li><p>对象不能有重名的属性，函数不能有重名的参数</p>
+</li>
+<li><p>使eval() 更安全。在严格模式下，新增了eval作用域。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">   <span class="keyword">var</span> webName = <span class="string">"蚂蚁部落"</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var webName ='softwhy.com'; </span></span><br><span class="line"><span class="string">   console.log(webName)"</span>); <span class="comment">//softwhy.com</span></span><br><span class="line">   <span class="built_in">console</span>.info(webName); <span class="comment">//蚂蚁部落</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>严格模式下，函数的caller、arguments等信息都不可以获取</p>
+</li>
+<li><p>严格模式下，不支持8进制表示法</p>
+</li>
+<li><p>严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield</p>
+</li>
+<li><p>严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。</p>
+</li>
+</ul>
+<p>友情链接：<a href="http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html</a></p>
+<h3 id="2-Js内存管理"><a href="#2-Js内存管理" class="headerlink" title="2.  Js内存管理"></a>2.  Js内存管理</h3><pre><code>js 内存是由 GC 自动管理的</code></pre><h4 id="2-1-内存生命周期："><a href="#2-1-内存生命周期：" class="headerlink" title="2.1 内存生命周期："></a>2.1 内存生命周期：</h4><ol>
+<li><p>分配你所需要的内存</p>
+</li>
+<li><p>使用分配到的内存（读、写）</p>
+</li>
+<li><p>不需要时将其释放\归还</p>
+<p><img src="/2020/01/21/27-拓展-6/1.png" alt="BP"></p>
+</li>
+</ol>
+<p>js中垃圾收集机制原理：垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间）， 周期性地执行这一操作：找出那些不再继续使用的变量，然后释放其占用的内存。</p>
+<h4 id="2-2-引用计数法"><a href="#2-2-引用计数法" class="headerlink" title="2.2 引用计数法"></a>2.2 引用计数法</h4><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><p>这是最初级的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
+<p>当JavaScript代码生成一个新的内存驻留项时（比如一个对象或函数），系统就会为这个项留出一块内存空间。因为这个对象可能会被传递给很多函数，并且会被指定给很多变量，所以很多代码都会指向这个对象的内存空间。JavaScript会跟踪这些指针，当最后一个指针废弃不用时，这个对象占用的内存会被释放。</p>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>​    -内存泄漏问题(内存泄漏是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果)</p>
+<p>​    -循环引用问题</p>
+<h4 id="2-3-标记清除法"><a href="#2-3-标记清除法" class="headerlink" title="2.3 标记清除法"></a>2.3 标记清除法</h4><h5 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h5><p>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。</p>
+<h5 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h5><p>那些无法从根对象查询到的对象都将被清除。</p>
+<h4 id="2-4-步骤组成："><a href="#2-4-步骤组成：" class="headerlink" title="2.4 步骤组成："></a>2.4 步骤组成：</h4><ul>
+<li><p>​    垃圾回收器构建”roots”列表。Roots通常是代码中保留引用的全局变量。在JavaScript中，”window”对象可以作为 root 全局变量示例。</p>
+</li>
+<li><p>​    所有的”roots”被检查并标记为active（即不是垃圾）。所有的children也被递归检查。从”root”能够到达的一切都不被认为是垃圾。</p>
+</li>
+<li><p>​    所有为不被标记为active的内存可以被认为是垃圾了。收集器限制可以释放这些内存并将其返回到操作系统。</p>
+</li>
+</ul>
+<h3 id="3-渲染进程包含的线程"><a href="#3-渲染进程包含的线程" class="headerlink" title="3. 渲染进程包含的线程"></a>3. 渲染进程包含的线程</h3><h5 id="1-GUI渲染线程"><a href="#1-GUI渲染线程" class="headerlink" title="1. GUI渲染线程"></a>1. GUI渲染线程</h5><p> - 负责渲染浏览器界面，解析HTML，CSS，构建DOM树和RenderObject树，布局和绘制等。</p>
+<p> - 当界面需要重绘（Repaint）或由于某种操作引发回流(reflow)时，该线程就会执行</p>
+<p> - 注意，GUI渲染线程与JS引擎线程是互斥的，当JS引擎执行时GUI线程会被挂起（相当于被冻结了），GUI更新会被保存在一个队列中等到JS引擎空闲时立即被执行。</p>
+<h5 id="2-JS引擎线程"><a href="#2-JS引擎线程" class="headerlink" title="2. JS引擎线程"></a>2. JS引擎线程</h5><p> - 也称为JS内核，负责处理Javascript脚本程序。（例如V8引擎）</p>
+<p> - JS引擎线程负责解析Javascript脚本，运行代码。</p>
+<p> - JS引擎一直等待着任务队列中任务的到来，然后加以处理，一个Tab页（renderer进程）中无论什么时候都只有一个JS线程在运行JS程序</p>
+<p> - 同样注意，GUI渲染线程与JS引擎线程是互斥的，所以如果JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
+<h5 id="3-事件触发线程"><a href="#3-事件触发线程" class="headerlink" title="3. 事件触发线程"></a>3. 事件触发线程</h5><p> - 用来控制事件循环（可以理解，JS引擎自己都忙不过来，需要浏览器另开线程协助）</p>
+<p> - 当JS引擎执行代码块如setTimeOut时（也可是鼠标点击、AJAX异步请求等），会将对应任务添加到事件线程中</p>
+<p> - 当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎的处理</p>
+<p> - 注意，由于JS的单线程关系，所以这些待处理队列中的事件都得排队等待JS引擎处理（当JS引擎空闲时才会去执行）</p>
+<h5 id="4-定时触发器线程"><a href="#4-定时触发器线程" class="headerlink" title="4. 定时触发器线程"></a>4. 定时触发器线程</h5><p> - 浏览器定时计数器并不是由JavaScript引擎计数的（因为JavaScript引擎是单线程的, 如果处于阻塞线程状态就会影响记计时的准确）</p>
+<p> - 因此通过单独线程来计时并触发定时（计时完毕后，添加到事件队列中，等待JS引擎空闲后执行）</p>
+<p> - 注意，W3C在HTML标准中规定，规定要求setTimeout中低于4ms的时间间隔算为4ms。</p>
+<h5 id="5-异步http请求线程"><a href="#5-异步http请求线程" class="headerlink" title="5. 异步http请求线程"></a>5. 异步http请求线程</h5><p> - 在XMLHttpRequest在连接后是通过浏览器新开一个线程请求</p>
+<p> - 将检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件，将这个回调再放入事件队列中。再由JavaScript引擎执行。</p>
+<h3 id="4-http协议的缓存"><a href="#4-http协议的缓存" class="headerlink" title="4. http协议的缓存"></a>4. http协议的缓存</h3><h4 id="4-1-缓存的类型"><a href="#4-1-缓存的类型" class="headerlink" title="4.1 缓存的类型"></a>4.1 缓存的类型</h4><ol>
+<li><p>页面缓存</p>
+<p>页面缓存是将动态页面直接生成静态的页面放在服务器端，用户调取相同页面时，静态页面将直接下载到客户端，不再需要通过程序的运行和数据库的访问，大大节约了服务器的负载。每次访问页面时，会检测相应的缓存页面是否存在，若不存在，则连接数据库得到数据渲染页面并生成缓存页面文件，这样下次访问的页面文件就发挥作用了。</p>
+</li>
+<li><p>浏览器缓存</p>
+<p>浏览器缓存机制，主要就是 HTTP 协议的缓存机制(如 Expires;Cache-control等),还包括非HTTP协议定义的缓存机制，如使用HTML Meta标签。</p>
+</li>
+<li><p>数据缓存</p>
+<p>数据缓存是最灵活的一种缓存。但是需要在代码中额外的步骤才能使用。当所有用户都在发布信息的时候，用户发布信息后想立即看到这些数据，就需要数据缓存来实现。</p>
+<p>目前的实现分为两种方式：<br> 1.内容缓存：将缓存数据存放在服务器的内存空间中。<br> 2.文件缓存：缓存数据存放在服务器的硬盘空间中</p>
+</li>
+<li><p>数据缓存</p>
+<p>数据库的缓存一般由数据库提供，可以对表建立高速缓存。数据库中，用户可能多次执行相同的查询语句，为了提高查询效率，数据库会在内存划分一个专门的区域，用来存放用户最近执行的查询，这块区域就是缓存。</p>
+</li>
+<li><p>反向代理缓存</p>
+<p>就像代理服务器缓存和浏览器缓存一样，我们同样可以讲内容缓存在反向代理服务器上，所有缓存机制的实现仍然采用HTTP/1.1协议。</p>
+</li>
+</ol>
+<h4 id="4-2-程序的运行具有局部性特征"><a href="#4-2-程序的运行具有局部性特征" class="headerlink" title="4.2 程序的运行具有局部性特征"></a>4.2 程序的运行具有局部性特征</h4><p> 时间局部性：一个数据被访问过之后，可能很快会被再次访问到；<br> 空间局部性：一个数据被访问时，其周边的数据也有可能被访问到</p>
+<h4 id="4-3-缓存应用特点"><a href="#4-3-缓存应用特点" class="headerlink" title="4.3 缓存应用特点"></a>4.3 缓存应用特点</h4><p> 提高cache缓存命中，<br> 增强热区局部性；<br> 改善提高时效性：<br> 在缓存空间耗尽时使用LRU（最近最少使用算法）；<br> 过期：缓存清理</p>
+<h3 id="5-闭包"><a href="#5-闭包" class="headerlink" title="5. 闭包"></a>5. 闭包</h3><h4 id="5-1-概念："><a href="#5-1-概念：" class="headerlink" title="5.1 概念："></a>5.1 概念：</h4><p>定义在一个函数内部的函数，静态保存所有了父级作用域的内部函数。</p>
+<h4 id="5-2-用途："><a href="#5-2-用途：" class="headerlink" title="5.2 用途："></a>5.2 用途：</h4><ol>
+<li><p>缓存，延长变量的作用域链</p>
+</li>
+<li><p>面向对象中的对象</p>
+</li>
+<li><p>实现封装，防止变量跑到外层作用域中，发生命名冲突</p>
+</li>
+</ol>
+<h4 id="5-3-危害："><a href="#5-3-危害：" class="headerlink" title="5.3 危害："></a>5.3 危害：</h4><ol>
+<li><p>闭包有一个非常严重的问题，那就是内存浪费问题，这个内存浪费不仅仅因为它常驻内存，更重要的是，对闭包的使用不当的话会内存泄漏。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+</li>
+<li><p>性能问题，使用闭包时，会涉及到跨作用域访问，由于闭包内部变量优先级高于外部变量，所以多查找作用域链中的一个层次，就会在一定程度上影响查找速度。</p>
+</li>
+</ol>
+<h3 id="6-多页页面通信"><a href="#6-多页页面通信" class="headerlink" title="6.  多页页面通信"></a>6.  多页页面通信</h3><p>·         localStorage</p>
+<p>·         cookie</p>
+<p>·         postMessage API支持两个页面跨域；只能传递字符串数据；参考window.open；</p>
+<p>·         url传参</p>
+<h3 id="7-箭头函数和普通函数"><a href="#7-箭头函数和普通函数" class="headerlink" title="7.  箭头函数和普通函数"></a>7.  箭头函数和普通函数</h3><p>- 普通function的提升在变量提升之前，箭头函数没有函数提升</p>
+<p>- 箭头函数没有this,super，函数体内部的this对象就是定义的时候所在的对象而不是使用时所在的对象</p>
+<p>- 箭头函数没有arguments对象，如果要用，可以使用rest参数</p>
+<p>- 箭头函数不能作为构造函数，不能被new</p>
+<p>- 箭头函数没有原型（prototype）</p>
+<p>- 不能通过call、bind、apply方法修改箭头函数中的this</p>
+<p>- 不可以使用yield命令，因此箭头函数不能做Generator函数</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/13/25-Angular的使用/" rel="next" title="25.Angular的使用">
+                <i class="fa fa-chevron-left"></i> 25.Angular的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/12/20/26-自学/" rel="prev" title="26.自学">
+                26.自学 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dong Wenbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-严格模式"><span class="nav-number">1.</span> <span class="nav-text">1.严格模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Js内存管理"><span class="nav-number">2.</span> <span class="nav-text">2.  Js内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-内存生命周期："><span class="nav-number">2.1.</span> <span class="nav-text">2.1 内存生命周期：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-引用计数法"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 引用计数法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原理："><span class="nav-number">2.2.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点："><span class="nav-number">2.2.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-标记清除法"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 标记清除法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原理：-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缺点：-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-步骤组成："><span class="nav-number">2.4.</span> <span class="nav-text">2.4 步骤组成：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-渲染进程包含的线程"><span class="nav-number">3.</span> <span class="nav-text">3. 渲染进程包含的线程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-GUI渲染线程"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. GUI渲染线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-JS引擎线程"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. JS引擎线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-事件触发线程"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 事件触发线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-定时触发器线程"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. 定时触发器线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-异步http请求线程"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. 异步http请求线程</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#4-http协议的缓存"><span class="nav-number">4.</span> <span class="nav-text">4. http协议的缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-缓存的类型"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 缓存的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-程序的运行具有局部性特征"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 程序的运行具有局部性特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-缓存应用特点"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 缓存应用特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-闭包"><span class="nav-number">5.</span> <span class="nav-text">5. 闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-概念："><span class="nav-number">5.1.</span> <span class="nav-text">5.1 概念：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-用途："><span class="nav-number">5.2.</span> <span class="nav-text">5.2 用途：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-危害："><span class="nav-number">5.3.</span> <span class="nav-text">5.3 危害：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-多页页面通信"><span class="nav-number">6.</span> <span class="nav-text">6.  多页页面通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-箭头函数和普通函数"><span class="nav-number">7.</span> <span class="nav-text">7.  箭头函数和普通函数</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong Wenbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

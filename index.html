@@ -306,7 +306,7 @@
 <h5 id="4-getSnapshotBeforeUpdate"><a href="#4-getSnapshotBeforeUpdate" class="headerlink" title="4.getSnapshotBeforeUpdate"></a>4.getSnapshotBeforeUpdate</h5><p>在最新的渲染输出提交给 DOM 前将会立即调用，这对于从 DOM 捕获信息（比如：滚动位置）很有用。</p>
 <h5 id="5-componentDidUpdate"><a href="#5-componentDidUpdate" class="headerlink" title="5.componentDidUpdate"></a>5.componentDidUpdate</h5><p>组件更新完毕会执行该方法，如果shouldComponentUpdate ()返回 false，则不会触发。</p>
 <h5 id="6-componentWillUnmount"><a href="#6-componentWillUnmount" class="headerlink" title="6.componentWillUnmount"></a>6.componentWillUnmount</h5><p>组件卸载的时候回调该方法</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/1.jpg" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/1.jpg" alt="BP"></p>
 <h4 id="1-2-React-16-3-之前的生命周期函数"><a href="#1-2-React-16-3-之前的生命周期函数" class="headerlink" title="1.2 React 16.3 之前的生命周期函数"></a>1.2 React 16.3 之前的生命周期函数</h4><h5 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount:"></a><strong>componentWillMount:</strong></h5><p>在组件将要挂载到页面的时候执行。</p>
 <h5 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount:"></a><strong>componentDidMount:</strong></h5><p>组件已经挂载到页面的时候执行。</p>
 <h5 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps:"></a><strong>componentWillReceiveProps:</strong></h5><p>在组件接收到新属性前调用。 </p>
@@ -314,7 +314,7 @@
 <h5 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate:"></a><strong>componentWillUpdate:</strong></h5><p> 在组件将要更新的时候调用</p>
 <h5 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate:"></a><strong>componentDidUpdate:</strong></h5><p>组件更新完毕会执行该方法。 如果shouldComponentUpdate()返回false，则不会触发。</p>
 <h5 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount:"></a><strong>componentWillUnmount:</strong></h5><p>组件卸载的时候回调用该方法。</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/2.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/2.png" alt="BP"></p>
 <p>其中注意的是以下的三个方法在 React 16.3 之后的生命周期钩子函数中移除了</p>
 <p>componentWillMount()</p>
 <p>componentWillReceiveProps()</p>
@@ -326,7 +326,7 @@
 <li>保持状态只读：保持状态只读，就是说不能去直接修改状态，要修改Store的状态，必须要通过派发一个action对象完成。</li>
 <li>状态的修改只能通过纯函数完成：这里所说的纯函数就是把 Reducer，Reducer 描述了 state 状态如何修改</li>
 </ol>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/3.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/3.png" alt="BP"></p>
 <h3 id="3-iframe-优缺点"><a href="#3-iframe-优缺点" class="headerlink" title="3. iframe 优缺点"></a>3. iframe 优缺点</h3><h4 id="3-1-iframe的优点"><a href="#3-1-iframe的优点" class="headerlink" title="3.1 iframe的优点"></a>3.1 iframe的优点</h4><p>1.iframe能够原封不动的把嵌入的网页展现出来，iframe和主页面是并行加载的</p>
 <p>2.如果有多个网页引用iframe，那么你只需要修改iframe的内容，就可以实现调用的每一个页面内容的更改，方便快捷。</p>
 <p>3.网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用iframe来嵌套，可以增加代码的可重用。</p>
@@ -436,8 +436,8 @@
 <p> 在谈原型链之前，我们首先要了解自定义函数与 Function 之间是什么关系，而构造函数、原型和实例之间又存在什么千丝万缕的关系呢？其实，所有的函数都是 Function 的实例。在构造函数上都有一个原型属性 prototype，该属性也是一个对象；那么在原型对象上有一个 constructor 属性，该属性指向的就是构造函数；而实例对象上有一个 <em>proto</em>  属性，该属性也指向原型对象，并且该属性不是标准属性，不可以用在编程中，该属性用于浏览器内部使用。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _proto_</span></span><br><span class="line">在函数里有一个属性prototype</span><br><span class="line">由该函数创建的对象默认会连接到该属性上</span><br><span class="line">    <span class="comment">//prototype 与 _proto_ 的关系</span></span><br><span class="line">_proto_是站在对象角度来说的</span><br><span class="line">prototype 是站在构造函数角度来说的</span><br></pre></td></tr></table></figure>
 
-<h4 id="构造函数、原型和实例之间的关系"><a href="#构造函数、原型和实例之间的关系" class="headerlink" title="构造函数、原型和实例之间的关系"></a>构造函数、原型和实例之间的关系</h4><h5 id="①-Object"><a href="#①-Object" class="headerlink" title="①+Object"></a>①+Object</h5><h5 id="②-Function-Object-Array"><a href="#②-Function-Object-Array" class="headerlink" title=" ②+Function+Object+Array"></a><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/4.png" alt="BP"> ②+Function+Object+Array</h5><p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/5.png" alt="BP"></p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/6.png" alt="BP"></p>
+<h4 id="构造函数、原型和实例之间的关系"><a href="#构造函数、原型和实例之间的关系" class="headerlink" title="构造函数、原型和实例之间的关系"></a>构造函数、原型和实例之间的关系</h4><h5 id="①-Object"><a href="#①-Object" class="headerlink" title="①+Object"></a>①+Object</h5><h5 id="②-Function-Object-Array"><a href="#②-Function-Object-Array" class="headerlink" title=" ②+Function+Object+Array"></a><img src="/2020/12/20/26-自学/4.png" alt="BP"> ②+Function+Object+Array</h5><p><img src="/2020/12/20/26-自学/5.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/6.png" alt="BP"></p>
 <p><strong>【小结】</strong>套用一句很粗暴的话，所谓原型链就是找妈的一种行为方式，就可以理解为人是人他妈生的，妖是妖他妈生的。原型链的核心其实就只有一个：属性共享和独立的控制，当你的对象实例需要独立的属性，所有做法的本质都是在对象实例里面创建属性。若不考虑太多，你大可以在Person里面直接定义你所需要独立的属性来覆盖掉原型的属性。总之，使用原型继承的时候，要对于原型中的属性要特别注意，因为他们都是牵一发而动全身的存在。现在最常用的方法是组合模式。</p>
 <p>1、原型链</p>
 <p>​    1）构造函数、原型和实例的关系</p>
@@ -471,7 +471,7 @@
 
 <h4 id="10-5-优化遍历数组法"><a href="#10-5-优化遍历数组法" class="headerlink" title="10.5 优化遍历数组法"></a>10.5 优化遍历数组法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：获取没重复的最右一值放入新数组</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 推荐的方法</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 方法的实现代码相当酷炫，</span></span><br><span class="line"><span class="comment">* 实现思路：获取没重复的最右一值放入新数组。</span></span><br><span class="line"><span class="comment">* （检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断）*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = [];</span><br><span class="line">    <span class="keyword">var</span> index = [];</span><br><span class="line">    <span class="keyword">var</span> l = array.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; l; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (array[i] === array[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push(array[i]);</span><br><span class="line">        index.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
 
-<h3 id="11-请描述一下cookies，sessionStorage和localStorage的区别？"><a href="#11-请描述一下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="11. 请描述一下cookies，sessionStorage和localStorage的区别？"></a>11. 请描述一下cookies，sessionStorage和localStorage的区别？</h3><p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/7.png" alt="BP"></p>
+<h3 id="11-请描述一下cookies，sessionStorage和localStorage的区别？"><a href="#11-请描述一下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="11. 请描述一下cookies，sessionStorage和localStorage的区别？"></a>11. 请描述一下cookies，sessionStorage和localStorage的区别？</h3><p><img src="/2020/12/20/26-自学/7.png" alt="BP"></p>
 <h3 id="12-使用js实现链表数据结构-增-删-该-查-打印"><a href="#12-使用js实现链表数据结构-增-删-该-查-打印" class="headerlink" title="12.使用js实现链表数据结构(增 删 该 查 打印)"></a>12.使用js实现链表数据结构(增 删 该 查 打印)</h3><ul>
 <li><p>链表是一种非线性、非顺序的物理结构，是由若干个节点组成。</p>
 </li>
@@ -484,17 +484,17 @@
 <li><p>链表适用于写操作多，读操作少的场景。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*======定义结构======*/</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="function"><span class="keyword">function</span> (<span class="params">element</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.element = element</span><br><span class="line">	<span class="keyword">this</span>.next = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> linkedList = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.head = <span class="keyword">new</span> node(<span class="string">"head"</span>)</span><br><span class="line">	<span class="keyword">this</span>.find = find</span><br><span class="line">	<span class="keyword">this</span>.insert = insert</span><br><span class="line">	<span class="keyword">this</span>.update = update</span><br><span class="line">	<span class="keyword">this</span>.remove = remove</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======查找======*/</span></span><br><span class="line"><span class="keyword">var</span> find = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> currNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======插入======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*newElement:一个新节点，item:链表的目标节点</span></span><br><span class="line"><span class="comment">*1.查找找到目标节点，将新节点的next指向目标节点的下一个节点</span></span><br><span class="line"><span class="comment">*2.将目标节点的next指向这个新节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> insert = <span class="function"><span class="keyword">function</span> (<span class="params">newElement, item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> newNode = <span class="keyword">new</span> node(newElement)</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	newNode.next = currNode.next</span><br><span class="line">	currNode.next = newNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======修改======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*查找到目标节点，将其element修改</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> update = <span class="function"><span class="keyword">function</span> (<span class="params">item, newItem</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	currNode.element = newItem</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======删除======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*找到匹配节点的前一个节点，将其next指向当前节点的下一个节点，即删除当前节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> remove = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.next !== <span class="literal">null</span> &amp;&amp; currNode.next.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (currNode.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">		currNode.next = currNode.next.next</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======测试代码======*/</span></span><br><span class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> linkedList();</span><br><span class="line">list.insert(<span class="string">'first'</span>, <span class="string">'head'</span>)</span><br><span class="line">list.insert(<span class="string">'second'</span>, <span class="string">'first'</span>)</span><br><span class="line">list.insert(<span class="string">'third'</span>, <span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.find(<span class="string">'first'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list.find(<span class="string">'first'</span>))</span><br><span class="line">list.update(<span class="string">'third'</span>, <span class="string">'three'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.remove(<span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br></pre></td></tr></table></figure>
 
-<h4 id="单链表图解："><a href="#单链表图解：" class="headerlink" title="单链表图解："></a>单链表图解：</h4><p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/8.png" alt="BP"></p>
+<h4 id="单链表图解："><a href="#单链表图解：" class="headerlink" title="单链表图解："></a>单链表图解：</h4><p><img src="/2020/12/20/26-自学/8.png" alt="BP"></p>
 </li>
 </ul>
 <h3 id="13-总结-MVC-和-MVVM"><a href="#13-总结-MVC-和-MVVM" class="headerlink" title="13.总结  MVC 和 MVVM"></a>13.总结  MVC 和 MVVM</h3><h4 id="13-1-MVC"><a href="#13-1-MVC" class="headerlink" title="13.1 MVC"></a>13.1 MVC</h4><p>MVC是 Model-View-Controller 的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即 Controller 指的是页面业务逻辑。使用MVC的目的就是将 M 和 V 的代码分离。MVC 是单向通信。也就是View 跟 Model，必须通过Controller来承上启下。MVC 和MVVM的区别并不是 VM完全取代了C，只是在MVC的基础上增加了一层VM，只不过是弱化了C的概念，ViewModel 存在目的在于抽离Controller中展示的业务逻辑，而不是替代Controller，其它视图操作业务等还是应该放在Controller中实现。也就是说MVVM实现的是业务逻辑组件的重用，使开发更高效，结构更清晰，增加代码的复用性。</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/9.jpg" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/9.jpg" alt="BP"></p>
 <h4 id="13-2-MVVM"><a href="#13-2-MVVM" class="headerlink" title="13.2 MVVM"></a>13.2 MVVM</h4><p>MVVM即Model-View-ViewModel的简写。即模型-视图-视图模型。模型（Model）指的是后端传递的数据。视图(View)指的是所看到的页面。视图模型(ViewModel)是mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将模型（Model）转化成视图(View)，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将视图(View)转化成模型(Model)，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听。这两个方向都实现的，我们称之为数据的双向绑定。</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/10.jpg" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/10.jpg" alt="BP"></p>
 <h4 id="13-3-总结"><a href="#13-3-总结" class="headerlink" title="13.3 总结"></a>13.3 总结</h4><p>MVVM和MVC的区别就在于，MVVM将MVC中的数据解析功能剥离了出来，将这部分的工作交给了VM来做：</p>
 <p>在MVC里，View是可以直接访问Model的，所以View里会包含Model信息以及一些业务逻辑。 MVC模型关注的是Model的不变，所以在MVC模型里，Model不依赖于View，但是 View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。</p>
 <p>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。此外MVVM另一个重要特性双向绑定，它更方便你去同时维护页面上都依赖于某个字段的N个区域，而不用手动更新它们。</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/11.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/11.png" alt="BP"></p>
 <h3 id="14-总结前端性能优化方案，前端兼容性问题"><a href="#14-总结前端性能优化方案，前端兼容性问题" class="headerlink" title="14.总结前端性能优化方案，前端兼容性问题"></a>14.总结前端性能优化方案，前端兼容性问题</h3><ol>
 <li>减少 HTTP请求数<ul>
 <li>从设计实现层面简化页面</li>
@@ -532,7 +532,7 @@
 <p>(3) 长度限制，每个cookie长度不能超过4KB，否则会被截掉。</p>
 <p>(4) Cookie只能保存非中文的字符串。</p>
 <h3 id="16-Ajax的常用方法"><a href="#16-Ajax的常用方法" class="headerlink" title="16. Ajax的常用方法"></a>16. Ajax的常用方法</h3><p>1.open方法：与服务器建立连接<br>2.send方法：向服务器发送数据<br>3.onreadystatechange：监听服务器响应的回调<br>4.responseText/responseXML：获取服务器响应的数据<br>5.readyState：ajax的状态码，4表示ajax响应已经完成</p>
-<h3 id="17-js事件循环"><a href="#17-js事件循环" class="headerlink" title="17. js事件循环"></a>17. js事件循环</h3><p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/12.png" alt="BP"></p>
+<h3 id="17-js事件循环"><a href="#17-js事件循环" class="headerlink" title="17. js事件循环"></a>17. js事件循环</h3><p><img src="/2020/12/20/26-自学/12.png" alt="BP"></p>
 <p>先执行主线程执行栈的内容（Promise），再执行微队列的内容（.then（）），最后执行宏队列的内容（setTimeout）的内容。如果宏队列里有为队列的任务，再入微队列。</p>
 <h4 id="17-1-任务队列"><a href="#17-1-任务队列" class="headerlink" title="17.1 任务队列"></a>17.1 任务队列</h4><ul>
 <li><p>JS分为同步任务和异步任务</p>
@@ -546,8 +546,8 @@
 </ul>
 <h5 id="17-1-1-宏任务"><a href="#17-1-1-宏任务" class="headerlink" title="17.1.1 宏任务"></a>17.1.1 宏任务</h5><p>task主要包含：script(整体代码)、setTimeout、setInterval、I/O、UI交互事件、postMessage、MessageChannel、setImmediate(Node.js 环境)</p>
 <h5 id="17-1-2-微任务"><a href="#17-1-2-微任务" class="headerlink" title="17.1.2 微任务"></a>17.1.2 微任务</h5><p>microtask主要包含：Promise.then、MutaionObserver、process.nextTick(Node.js 环境)</p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/13.png" alt="BP"></p>
-<p><img src="/2020/12/20/26-自学/myHexoBlog/source/_posts/26-%E8%87%AA%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/14.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/13.png" alt="BP"></p>
+<p><img src="/2020/12/20/26-自学/14.png" alt="BP"></p>
 <p>我们知道Promise中的异步体现在<code>then</code>和<code>catch</code>中，所以写在Promise中的代码是被当做同步任务立即执行的。</p>
 <p><strong>实际上await是一个让出线程的标志。await后面的表达式会先执行一遍，将await后面的代码加入到microtask中，然后就会跳出整个async函数来执行后面的代码。</strong></p>
 <h3 id="18-手写Promise"><a href="#18-手写Promise" class="headerlink" title="18.手写Promise"></a>18.手写Promise</h3><ol>
@@ -651,7 +651,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/20/26-自学(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/27-拓展-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dong Wenbin">
@@ -670,7 +670,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/02/20/26-自学(一)/" itemprop="url">26.自学</a></h1>
+                <a class="post-title-link" href="/2020/01/21/27-拓展-6/" itemprop="url">27.拓展-6</a></h1>
         
 
         <div class="post-meta">
@@ -682,8 +682,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T21:52:16+08:00">
-                2020-02-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-21T20:25:28+08:00">
+                2020-01-21
               </time>
             
 
@@ -722,7 +722,129 @@
       
         
           
-            
+            <h3 id="1-严格模式"><a href="#1-严格模式" class="headerlink" title="1.严格模式"></a>1.严格模式</h3><p>use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持</p>
+<p>设立”严格模式”的目的，主要有以下几个：</p>
+<p>　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为;</p>
+<p>　　- 消除代码运行的一些不安全之处，保证代码运行的安全；</p>
+<p>　　- 提高编译器效率，增加运行速度；</p>
+<p>　　- 为未来新版本的 Javascript 做好铺垫。</p>
+<p>进入”严格模式”的标志，是下面这行语句：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">　　"use strict"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>严格模式的一些特点：</p>
+<ul>
+<li><p>使调试更加容易。那些被忽略或默默失败了的代码错误，会产生错误或抛出异常，因此尽早提醒你代码中的问题，你才能更快地指引到它们的源代码。(实时显示错误代码，方便调试)</p>
+</li>
+<li><p>防止意外的全局变量（不支持隐式全局变量）。</p>
+</li>
+<li><p>禁止this关键字指向全局对象。在严格模式下，普通函数中的this默认是undefined，不再指向window；</p>
+</li>
+<li><p>对象不能有重名的属性，函数不能有重名的参数</p>
+</li>
+<li><p>使eval() 更安全。在严格模式下，新增了eval作用域。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">   <span class="keyword">var</span> webName = <span class="string">"蚂蚁部落"</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var webName ='softwhy.com'; </span></span><br><span class="line"><span class="string">   console.log(webName)"</span>); <span class="comment">//softwhy.com</span></span><br><span class="line">   <span class="built_in">console</span>.info(webName); <span class="comment">//蚂蚁部落</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>严格模式下，函数的caller、arguments等信息都不可以获取</p>
+</li>
+<li><p>严格模式下，不支持8进制表示法</p>
+</li>
+<li><p>严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield</p>
+</li>
+<li><p>严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。</p>
+</li>
+</ul>
+<p>友情链接：<a href="http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html</a></p>
+<h3 id="2-Js内存管理"><a href="#2-Js内存管理" class="headerlink" title="2.  Js内存管理"></a>2.  Js内存管理</h3><pre><code>js 内存是由 GC 自动管理的</code></pre><h4 id="2-1-内存生命周期："><a href="#2-1-内存生命周期：" class="headerlink" title="2.1 内存生命周期："></a>2.1 内存生命周期：</h4><ol>
+<li><p>分配你所需要的内存</p>
+</li>
+<li><p>使用分配到的内存（读、写）</p>
+</li>
+<li><p>不需要时将其释放\归还</p>
+<p><img src="/2020/01/21/27-拓展-6/1.png" alt="BP"></p>
+</li>
+</ol>
+<p>js中垃圾收集机制原理：垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间）， 周期性地执行这一操作：找出那些不再继续使用的变量，然后释放其占用的内存。</p>
+<h4 id="2-2-引用计数法"><a href="#2-2-引用计数法" class="headerlink" title="2.2 引用计数法"></a>2.2 引用计数法</h4><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><p>这是最初级的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
+<p>当JavaScript代码生成一个新的内存驻留项时（比如一个对象或函数），系统就会为这个项留出一块内存空间。因为这个对象可能会被传递给很多函数，并且会被指定给很多变量，所以很多代码都会指向这个对象的内存空间。JavaScript会跟踪这些指针，当最后一个指针废弃不用时，这个对象占用的内存会被释放。</p>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>​    -内存泄漏问题(内存泄漏是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果)</p>
+<p>​    -循环引用问题</p>
+<h4 id="2-3-标记清除法"><a href="#2-3-标记清除法" class="headerlink" title="2.3 标记清除法"></a>2.3 标记清除法</h4><h5 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h5><p>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。</p>
+<h5 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h5><p>那些无法从根对象查询到的对象都将被清除。</p>
+<h4 id="2-4-步骤组成："><a href="#2-4-步骤组成：" class="headerlink" title="2.4 步骤组成："></a>2.4 步骤组成：</h4><ul>
+<li><p>​    垃圾回收器构建”roots”列表。Roots通常是代码中保留引用的全局变量。在JavaScript中，”window”对象可以作为 root 全局变量示例。</p>
+</li>
+<li><p>​    所有的”roots”被检查并标记为active（即不是垃圾）。所有的children也被递归检查。从”root”能够到达的一切都不被认为是垃圾。</p>
+</li>
+<li><p>​    所有为不被标记为active的内存可以被认为是垃圾了。收集器限制可以释放这些内存并将其返回到操作系统。</p>
+</li>
+</ul>
+<h3 id="3-渲染进程包含的线程"><a href="#3-渲染进程包含的线程" class="headerlink" title="3. 渲染进程包含的线程"></a>3. 渲染进程包含的线程</h3><h5 id="1-GUI渲染线程"><a href="#1-GUI渲染线程" class="headerlink" title="1. GUI渲染线程"></a>1. GUI渲染线程</h5><p> - 负责渲染浏览器界面，解析HTML，CSS，构建DOM树和RenderObject树，布局和绘制等。</p>
+<p> - 当界面需要重绘（Repaint）或由于某种操作引发回流(reflow)时，该线程就会执行</p>
+<p> - 注意，GUI渲染线程与JS引擎线程是互斥的，当JS引擎执行时GUI线程会被挂起（相当于被冻结了），GUI更新会被保存在一个队列中等到JS引擎空闲时立即被执行。</p>
+<h5 id="2-JS引擎线程"><a href="#2-JS引擎线程" class="headerlink" title="2. JS引擎线程"></a>2. JS引擎线程</h5><p> - 也称为JS内核，负责处理Javascript脚本程序。（例如V8引擎）</p>
+<p> - JS引擎线程负责解析Javascript脚本，运行代码。</p>
+<p> - JS引擎一直等待着任务队列中任务的到来，然后加以处理，一个Tab页（renderer进程）中无论什么时候都只有一个JS线程在运行JS程序</p>
+<p> - 同样注意，GUI渲染线程与JS引擎线程是互斥的，所以如果JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
+<h5 id="3-事件触发线程"><a href="#3-事件触发线程" class="headerlink" title="3. 事件触发线程"></a>3. 事件触发线程</h5><p> - 用来控制事件循环（可以理解，JS引擎自己都忙不过来，需要浏览器另开线程协助）</p>
+<p> - 当JS引擎执行代码块如setTimeOut时（也可是鼠标点击、AJAX异步请求等），会将对应任务添加到事件线程中</p>
+<p> - 当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎的处理</p>
+<p> - 注意，由于JS的单线程关系，所以这些待处理队列中的事件都得排队等待JS引擎处理（当JS引擎空闲时才会去执行）</p>
+<h5 id="4-定时触发器线程"><a href="#4-定时触发器线程" class="headerlink" title="4. 定时触发器线程"></a>4. 定时触发器线程</h5><p> - 浏览器定时计数器并不是由JavaScript引擎计数的（因为JavaScript引擎是单线程的, 如果处于阻塞线程状态就会影响记计时的准确）</p>
+<p> - 因此通过单独线程来计时并触发定时（计时完毕后，添加到事件队列中，等待JS引擎空闲后执行）</p>
+<p> - 注意，W3C在HTML标准中规定，规定要求setTimeout中低于4ms的时间间隔算为4ms。</p>
+<h5 id="5-异步http请求线程"><a href="#5-异步http请求线程" class="headerlink" title="5. 异步http请求线程"></a>5. 异步http请求线程</h5><p> - 在XMLHttpRequest在连接后是通过浏览器新开一个线程请求</p>
+<p> - 将检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件，将这个回调再放入事件队列中。再由JavaScript引擎执行。</p>
+<h3 id="4-http协议的缓存"><a href="#4-http协议的缓存" class="headerlink" title="4. http协议的缓存"></a>4. http协议的缓存</h3><h4 id="4-1-缓存的类型"><a href="#4-1-缓存的类型" class="headerlink" title="4.1 缓存的类型"></a>4.1 缓存的类型</h4><ol>
+<li><p>页面缓存</p>
+<p>页面缓存是将动态页面直接生成静态的页面放在服务器端，用户调取相同页面时，静态页面将直接下载到客户端，不再需要通过程序的运行和数据库的访问，大大节约了服务器的负载。每次访问页面时，会检测相应的缓存页面是否存在，若不存在，则连接数据库得到数据渲染页面并生成缓存页面文件，这样下次访问的页面文件就发挥作用了。</p>
+</li>
+<li><p>浏览器缓存</p>
+<p>浏览器缓存机制，主要就是 HTTP 协议的缓存机制(如 Expires;Cache-control等),还包括非HTTP协议定义的缓存机制，如使用HTML Meta标签。</p>
+</li>
+<li><p>数据缓存</p>
+<p>数据缓存是最灵活的一种缓存。但是需要在代码中额外的步骤才能使用。当所有用户都在发布信息的时候，用户发布信息后想立即看到这些数据，就需要数据缓存来实现。</p>
+<p>目前的实现分为两种方式：<br> 1.内容缓存：将缓存数据存放在服务器的内存空间中。<br> 2.文件缓存：缓存数据存放在服务器的硬盘空间中</p>
+</li>
+<li><p>数据缓存</p>
+<p>数据库的缓存一般由数据库提供，可以对表建立高速缓存。数据库中，用户可能多次执行相同的查询语句，为了提高查询效率，数据库会在内存划分一个专门的区域，用来存放用户最近执行的查询，这块区域就是缓存。</p>
+</li>
+<li><p>反向代理缓存</p>
+<p>就像代理服务器缓存和浏览器缓存一样，我们同样可以讲内容缓存在反向代理服务器上，所有缓存机制的实现仍然采用HTTP/1.1协议。</p>
+</li>
+</ol>
+<h4 id="4-2-程序的运行具有局部性特征"><a href="#4-2-程序的运行具有局部性特征" class="headerlink" title="4.2 程序的运行具有局部性特征"></a>4.2 程序的运行具有局部性特征</h4><p> 时间局部性：一个数据被访问过之后，可能很快会被再次访问到；<br> 空间局部性：一个数据被访问时，其周边的数据也有可能被访问到</p>
+<h4 id="4-3-缓存应用特点"><a href="#4-3-缓存应用特点" class="headerlink" title="4.3 缓存应用特点"></a>4.3 缓存应用特点</h4><p> 提高cache缓存命中，<br> 增强热区局部性；<br> 改善提高时效性：<br> 在缓存空间耗尽时使用LRU（最近最少使用算法）；<br> 过期：缓存清理</p>
+<h3 id="5-闭包"><a href="#5-闭包" class="headerlink" title="5. 闭包"></a>5. 闭包</h3><h4 id="5-1-概念："><a href="#5-1-概念：" class="headerlink" title="5.1 概念："></a>5.1 概念：</h4><p>定义在一个函数内部的函数，静态保存所有了父级作用域的内部函数。</p>
+<h4 id="5-2-用途："><a href="#5-2-用途：" class="headerlink" title="5.2 用途："></a>5.2 用途：</h4><ol>
+<li><p>缓存，延长变量的作用域链</p>
+</li>
+<li><p>面向对象中的对象</p>
+</li>
+<li><p>实现封装，防止变量跑到外层作用域中，发生命名冲突</p>
+</li>
+</ol>
+<h4 id="5-3-危害："><a href="#5-3-危害：" class="headerlink" title="5.3 危害："></a>5.3 危害：</h4><ol>
+<li><p>闭包有一个非常严重的问题，那就是内存浪费问题，这个内存浪费不仅仅因为它常驻内存，更重要的是，对闭包的使用不当的话会内存泄漏。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+</li>
+<li><p>性能问题，使用闭包时，会涉及到跨作用域访问，由于闭包内部变量优先级高于外部变量，所以多查找作用域链中的一个层次，就会在一定程度上影响查找速度。</p>
+</li>
+</ol>
+<h3 id="6-多页页面通信"><a href="#6-多页页面通信" class="headerlink" title="6.  多页页面通信"></a>6.  多页页面通信</h3><p>·         localStorage</p>
+<p>·         cookie</p>
+<p>·         postMessage API支持两个页面跨域；只能传递字符串数据；参考window.open；</p>
+<p>·         url传参</p>
+<h3 id="7-箭头函数和普通函数"><a href="#7-箭头函数和普通函数" class="headerlink" title="7.  箭头函数和普通函数"></a>7.  箭头函数和普通函数</h3><p>- 普通function的提升在变量提升之前，箭头函数没有函数提升</p>
+<p>- 箭头函数没有this,super，函数体内部的this对象就是定义的时候所在的对象而不是使用时所在的对象</p>
+<p>- 箭头函数没有arguments对象，如果要用，可以使用rest参数</p>
+<p>- 箭头函数不能作为构造函数，不能被new</p>
+<p>- 箭头函数没有原型（prototype）</p>
+<p>- 不能通过call、bind、apply方法修改箭头函数中的this</p>
+<p>- 不可以使用yield命令，因此箭头函数不能做Generator函数</p>
+
           
         
       
@@ -2066,7 +2188,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/18.拓展-课外问题总结-5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/18.拓展-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dong Wenbin">
@@ -2085,7 +2207,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/26/18.拓展-课外问题总结-5/" itemprop="url">18.拓展-课外问题总结(5)</a></h1>
+                <a class="post-title-link" href="/2019/11/26/18.拓展-5/" itemprop="url">18.拓展-(5)</a></h1>
         
 
         <div class="post-meta">
