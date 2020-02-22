@@ -229,669 +229,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/20/26-自学/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/12/20/26-自学/" itemprop="url">26.自学</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-20T21:52:16+08:00">
-                2020-12-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-React生命周期函数的理解"><a href="#1-React生命周期函数的理解" class="headerlink" title="1.React生命周期函数的理解"></a>1.React生命周期函数的理解</h3><h4 id="1-1-React-16-3-之后的生命周期函数"><a href="#1-1-React-16-3-之后的生命周期函数" class="headerlink" title="1.1 React 16.3+之后的生命周期函数"></a>1.1 React 16.3+之后的生命周期函数</h4><h5 id="1-getDerivedStateFromProps"><a href="#1-getDerivedStateFromProps" class="headerlink" title="1.getDerivedStateFromProps"></a>1.getDerivedStateFromProps</h5><p>当前组件的 props 和 state 发生变化的时候会触发该函数</p>
-<h5 id="2-componentDidMount"><a href="#2-componentDidMount" class="headerlink" title="2.componentDidMount"></a>2.componentDidMount</h5><p>当组件挂载完毕会执行这个方法(只会执行一次)</p>
-<h5 id="3-shouldComponentUpdate"><a href="#3-shouldComponentUpdate" class="headerlink" title="3.shouldComponentUpdate"></a>3.shouldComponentUpdate</h5><p>确定组件是否应该更新。 如果不写默认返回true；如果某些状态改变之后，不想要更新组件，那么我们可以在这个方法中返回false。</p>
-<h5 id="4-getSnapshotBeforeUpdate"><a href="#4-getSnapshotBeforeUpdate" class="headerlink" title="4.getSnapshotBeforeUpdate"></a>4.getSnapshotBeforeUpdate</h5><p>在最新的渲染输出提交给 DOM 前将会立即调用，这对于从 DOM 捕获信息（比如：滚动位置）很有用。</p>
-<h5 id="5-componentDidUpdate"><a href="#5-componentDidUpdate" class="headerlink" title="5.componentDidUpdate"></a>5.componentDidUpdate</h5><p>组件更新完毕会执行该方法，如果shouldComponentUpdate ()返回 false，则不会触发。</p>
-<h5 id="6-componentWillUnmount"><a href="#6-componentWillUnmount" class="headerlink" title="6.componentWillUnmount"></a>6.componentWillUnmount</h5><p>组件卸载的时候回调该方法</p>
-<p><img src="/2020/12/20/26-自学/1.jpg" alt="BP"></p>
-<h4 id="1-2-React-16-3-之前的生命周期函数"><a href="#1-2-React-16-3-之前的生命周期函数" class="headerlink" title="1.2 React 16.3 之前的生命周期函数"></a>1.2 React 16.3 之前的生命周期函数</h4><h5 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount:"></a><strong>componentWillMount:</strong></h5><p>在组件将要挂载到页面的时候执行。</p>
-<h5 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount:"></a><strong>componentDidMount:</strong></h5><p>组件已经挂载到页面的时候执行。</p>
-<h5 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps:"></a><strong>componentWillReceiveProps:</strong></h5><p>在组件接收到新属性前调用。 </p>
-<h5 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate:"></a><strong>shouldComponentUpdate:</strong></h5><p> 确定组件是否应该更新。 如果不写默认返回true；如果某些状态改变之后，不想要更新组件，那么我们可以在这个方法中返回false。 </p>
-<h5 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate:"></a><strong>componentWillUpdate:</strong></h5><p> 在组件将要更新的时候调用</p>
-<h5 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate:"></a><strong>componentDidUpdate:</strong></h5><p>组件更新完毕会执行该方法。 如果shouldComponentUpdate()返回false，则不会触发。</p>
-<h5 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount:"></a><strong>componentWillUnmount:</strong></h5><p>组件卸载的时候回调用该方法。</p>
-<p><img src="/2020/12/20/26-自学/2.png" alt="BP"></p>
-<p>其中注意的是以下的三个方法在 React 16.3 之后的生命周期钩子函数中移除了</p>
-<p>componentWillMount()</p>
-<p>componentWillReceiveProps()</p>
-<p>componentWillUpdate()</p>
-<h3 id="2-Redux更新的方法"><a href="#2-Redux更新的方法" class="headerlink" title="2.Redux更新的方法"></a>2.Redux更新的方法</h3><p>Redux 是一种状态管理的技术，多个组件之间共享数据的一种方式</p>
-<p>Redux强调三个基本原则：</p>
-<ol>
-<li>唯一数据源：唯一数据源指的是应用的状态数据应该只存储在唯一的一个Store上。</li>
-<li>保持状态只读：保持状态只读，就是说不能去直接修改状态，要修改Store的状态，必须要通过派发一个action对象完成。</li>
-<li>状态的修改只能通过纯函数完成：这里所说的纯函数就是把 Reducer，Reducer 描述了 state 状态如何修改</li>
-</ol>
-<p><img src="/2020/12/20/26-自学/3.png" alt="BP"></p>
-<h3 id="3-iframe-优缺点"><a href="#3-iframe-优缺点" class="headerlink" title="3. iframe 优缺点"></a>3. iframe 优缺点</h3><h4 id="3-1-iframe的优点"><a href="#3-1-iframe的优点" class="headerlink" title="3.1 iframe的优点"></a>3.1 iframe的优点</h4><p>1.iframe能够原封不动的把嵌入的网页展现出来，iframe和主页面是并行加载的</p>
-<p>2.如果有多个网页引用iframe，那么你只需要修改iframe的内容，就可以实现调用的每一个页面内容的更改，方便快捷。</p>
-<p>3.网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用iframe来嵌套，可以增加代码的可重用。</p>
-<p>4.如果遇到加载缓慢的第三方内容如图标和广告，这些问题可以由iframe来解决。</p>
-<h4 id="3-2-iframe的缺点"><a href="#3-2-iframe的缺点" class="headerlink" title="3.2 iframe的缺点"></a>3.2 iframe的缺点</h4><p>1.会产生很多页面，不容易管理。</p>
-<p>2.iframe框架结构有时会让人感到迷惑，如果框架个数多的话，可能会出现上下、左右滚动条，会分散访问者的注意力，用户体验度差。</p>
-<p>3.代码复杂，无法被一些搜索引擎索引到，这一点很关键，现在的搜索引擎爬虫还不能很好的处理iframe中的内容，所以使用iframe会不利于搜索引擎优化。</p>
-<p>4.很多的移动设备（PDA 手机）无法完全显示框架，设备兼容性差。</p>
-<p>5.iframe框架页面会增加服务器的http请求，对于大型网站是不可取的。 分析了这么多，现在基本上都是用Ajax来代替iframe，所以iframe已经渐渐的退出了前端开发。</p>
-<p>6.iframe会堵塞主页面的onload事件</p>
-<h3 id="4-如何居中div-如何居中一个浮动元素？如何让绝对定位的div居中？"><a href="#4-如何居中div-如何居中一个浮动元素？如何让绝对定位的div居中？" class="headerlink" title="4.如何居中div,如何居中一个浮动元素？如何让绝对定位的div居中？"></a>4.如何居中div,如何居中一个浮动元素？如何让绝对定位的div居中？</h3><ul>
-<li><h5 id="水平居中div："><a href="#水平居中div：" class="headerlink" title="水平居中div："></a>水平居中div：</h5></li>
-</ul>
-<ol>
-<li>给div设定一个宽度</li>
-<li>设置div  margin:0 auto;</li>
-</ol>
-<ul>
-<li><h5 id="居中浮动的div"><a href="#居中浮动的div" class="headerlink" title="居中浮动的div:"></a>居中浮动的div:</h5></li>
-</ul>
-<ol>
-<li>给div设定一个宽度 500px</li>
-<li>margin-left:50%; position:relative; left:-250px;</li>
-</ol>
-<ul>
-<li><h5 id="居中绝对定位的div"><a href="#居中绝对定位的div" class="headerlink" title="居中绝对定位的div:"></a>居中绝对定位的div:</h5></li>
-</ul>
-<ol>
-<li>position:absolute;top:50%;left:50%;transform:translate(-50%，-50%)</li>
-</ol>
-<ul>
-<li><h5 id="使用flex布局来居中："><a href="#使用flex布局来居中：" class="headerlink" title="使用flex布局来居中："></a>使用flex布局来居中：</h5><p>justify-content:center align-items:center</p>
-</li>
-</ul>
-<h3 id="5-css-选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？"><a href="#5-css-选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？" class="headerlink" title="5.css 选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？"></a>5.css 选择符有哪些？哪些属性可以继承？优先级算法如何计算？内联和important那个优先级高？</h3><ul>
-<li><h5 id="css选择符："><a href="#css选择符：" class="headerlink" title="css选择符："></a>css选择符：</h5><p>1.id选择器（ # myid）</p>
-<p>2.类选择器（.myclassname）</p>
-<p>3.标签选择器（div, h1, p）</p>
-<p>4.相邻选择器（h1 + p）</p>
-<p>5.子选择器（ul &gt; li）</p>
-<p>6.后代选择器（li a）</p>
-<p>7.通配符选择器（ * ）</p>
-<p>8.属性选择器（a[rel = “external”]）</p>
-<p>9.伪类选择器（a:hover, li:nth-child）</p>
-<p>10.伪元素选择器 (div::before   div::after)</p>
-</li>
-</ul>
-<ul>
-<li><h5 id="哪些属性可以继承"><a href="#哪些属性可以继承" class="headerlink" title="哪些属性可以继承"></a>哪些属性可以继承</h5></li>
-</ul>
-<p>​    * 可继承的样式：  font-size   font-family color  line-height  text开头的  opacity</p>
-<p>​    * 不可继承的样式：border padding margin width height ;  </p>
-<ul>
-<li><h5 id="优先级算法"><a href="#优先级算法" class="headerlink" title="优先级算法"></a>优先级算法</h5></li>
-</ul>
-<p>​      我们可以给标签的权重为1，class的权重为10，id的权重为100，!important权重无限大来计算css样式的优先级。</p>
-<p>​      比如    div  #box  .inner  p 权重</p>
-<p>​                 1      100     10       1              总权重112</p>
-<p>​                 </p>
-<p>​                 div  .content   .inner  p 权重</p>
-<p>​                 1      10             10       1        总权重22</p>
-<p>​       1.优先级就近原则，同权重情况下样式定义最近者为准;</p>
-<p>​       2.载入样式同权重下以最后载入的定位为准;</p>
-<p>​       3.!important &gt; 内联  &gt; id &gt; class &gt; tag</p>
-<h3 id="6-路由跳转"><a href="#6-路由跳转" class="headerlink" title="6.路由跳转"></a>6.路由跳转</h3><p>1.router-link方式</p>
-<p>不带参数：</p>
-<router-link :to="{name:'home'}"> 
-
-
-
-<p>带参数：params传参数</p>
-<p> html 取参 $route.params.id</p>
-<p> script 取参 this.$route.params.id</p>
-<router-link :to="{name:'home', params: {id:1}}"> 
-
-<p>​    </p>
-<p>带参数：query传参数 (类似get,url后面会显示参数)</p>
-<p>注意点：如果使用path，name不可以和params共用</p>
-<p> html 取参 $route.query.id</p>
-<p> script 取参 this.$route.query.id</p>
-<router-link :to="{name:'home', query: {id:1}}"> 
-
-<p>​    </p>
-<p>​    </p>
-<p>2.this.$router.push() 编程式导航</p>
-<p>不带参数:</p>
-<p>this.$router.push(‘/home’)</p>
-<p>this.$router.push({name:’home’})</p>
-<p>this.$router.push({path:’/home’})</p>
-<p>query传参:</p>
-<p>this.$router.push({name:’home’,query: {id:’1’}})</p>
-<p>this.$router.push({path:’/home’,query: {id:’1’}})</p>
-<p>params传参:</p>
-<p>this.$router.push({name:’home’,params: {id:’1’}})</p>
-<p>query类似get,跳转之后页面url后面会拼接参数,类似?id=1,非重要性的可以这样传,密码之类还是用params刷新页面id还在;</p>
-<p>params类似post,跳转之后页面url后面不会拼接参数,但是刷新页面id会消失。</p>
-<h3 id="7-清除浮动的方式"><a href="#7-清除浮动的方式" class="headerlink" title="7.清除浮动的方式"></a>7.清除浮动的方式</h3><ol>
-<li>父级div定义伪类:after和zoom和:before</li>
-<li>父级div定义overflow:auto</li>
-<li>使用空div隔墙(内墙)法：<div style="clear:both;"></div></li>
-</ol>
-<h3 id="8-Promise-方法"><a href="#8-Promise-方法" class="headerlink" title="8.Promise 方法"></a>8.Promise 方法</h3><p> Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。runAsync1(),runAsync2()两个函数是并行执行的，等到它们都执行完后才会进到then里面。</p>
-<h3 id="9-Js原型链"><a href="#9-Js原型链" class="headerlink" title="9.Js原型链"></a>9.Js原型链</h3><p>new 操作符具体干了什么呢?其实很简单，就干了三件事情。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line"><span class="number">2</span> obj.__proto__ = Base.prototype;</span><br><span class="line"><span class="number">3</span> Base.call(obj);</span><br></pre></td></tr></table></figure>
-
-<p>第一行，我们创建了一个空对象 obj<br>第二行，我们将这个空对象的  <code>__proto__</code> 成员指向了 Base 函数对象 prototype 成员对象<br>第三行，我们将 Base 函数对象的 this 指针替换成 obj，然后再调用 Base 函数，于是我们就给 obj 对象赋值了一个 id 成员变量，这个成员变量的值是 ”base”，关于call函数的用法。</p>
-<p> 在谈原型链之前，我们首先要了解自定义函数与 Function 之间是什么关系，而构造函数、原型和实例之间又存在什么千丝万缕的关系呢？其实，所有的函数都是 Function 的实例。在构造函数上都有一个原型属性 prototype，该属性也是一个对象；那么在原型对象上有一个 constructor 属性，该属性指向的就是构造函数；而实例对象上有一个 <em>proto</em>  属性，该属性也指向原型对象，并且该属性不是标准属性，不可以用在编程中，该属性用于浏览器内部使用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _proto_</span></span><br><span class="line">在函数里有一个属性prototype</span><br><span class="line">由该函数创建的对象默认会连接到该属性上</span><br><span class="line">    <span class="comment">//prototype 与 _proto_ 的关系</span></span><br><span class="line">_proto_是站在对象角度来说的</span><br><span class="line">prototype 是站在构造函数角度来说的</span><br></pre></td></tr></table></figure>
-
-<h4 id="构造函数、原型和实例之间的关系"><a href="#构造函数、原型和实例之间的关系" class="headerlink" title="构造函数、原型和实例之间的关系"></a>构造函数、原型和实例之间的关系</h4><h5 id="①-Object"><a href="#①-Object" class="headerlink" title="①+Object"></a>①+Object</h5><h5 id="②-Function-Object-Array"><a href="#②-Function-Object-Array" class="headerlink" title=" ②+Function+Object+Array"></a><img src="/2020/12/20/26-自学/4.png" alt="BP"> ②+Function+Object+Array</h5><p><img src="/2020/12/20/26-自学/5.png" alt="BP"></p>
-<p><img src="/2020/12/20/26-自学/6.png" alt="BP"></p>
-<p><strong>【小结】</strong>套用一句很粗暴的话，所谓原型链就是找妈的一种行为方式，就可以理解为人是人他妈生的，妖是妖他妈生的。原型链的核心其实就只有一个：属性共享和独立的控制，当你的对象实例需要独立的属性，所有做法的本质都是在对象实例里面创建属性。若不考虑太多，你大可以在Person里面直接定义你所需要独立的属性来覆盖掉原型的属性。总之，使用原型继承的时候，要对于原型中的属性要特别注意，因为他们都是牵一发而动全身的存在。现在最常用的方法是组合模式。</p>
-<p>1、原型链</p>
-<p>​    1）构造函数、原型和实例的关系</p>
-<p>​        ①构造函数都有一个属性prototype，这个属性是一个对象（Object的实例）</p>
-<p>​        ②原型对象prototype里面有一个constructor属性，该属性指向原型对象所属的构造函数</p>
-<p>​        ③实例对象都有一个_proto_属性，该属性也指向构造函数的原型对象，它是一个非标准属性，不可以用于编程，它是用于浏览器自己使用的</p>
-<p>​    2）prototype与_proto_的关系</p>
-<p>​        ①prototype是构造函数的属性</p>
-<p>​        ②_proto_是实例对象的属性</p>
-<p>​                    ——这两者都指向同一个对象</p>
-<p>​    【总结】i）函数也是对象，对象不一定是函数；</p>
-<p>​            ii）对象的本质：无序的键值对集合；键值对当中的值可以是任意数据类型的值</p>
-<p>​            iii）对象就是一个容器，这个容器当中放的是（属性和方法）</p>
-<p>​    3）属性搜索</p>
-<p>​    　　①在访问对象的某个成员的时候会先在对象中找是否存在</p>
-<p>​    　　②如果当前对象中没有就在构造函数的原型对象中找</p>
-<p>​    　　③如果原型对象中没有找到就到原型对象的原型上找</p>
-<p>​    　　④知道Object的原型对象的原型是null为止</p>
-<p>2、Function</p>
-<p>——所有函数都是Function的实例</p>
-<p>​    ①本地对象：独立于宿主环境（浏览器）的对象——包括Object、Array、Date、RegExp、Function、Error、Number、String、Boolean</p>
-<p>​    ②内置对象——包括Math、Global（window，在js中就是全局变量），使用的时候不需要new</p>
-<p>​    ③宿主对象——包括自定义对象、DOM、BOM</p>
-<h3 id="10-JS-数组去重"><a href="#10-JS-数组去重" class="headerlink" title="10. JS 数组去重"></a>10. JS 数组去重</h3><h4 id="10-1-简单的去重方法"><a href="#10-1-简单的去重方法" class="headerlink" title="10.1 简单的去重方法"></a>10.1 简单的去重方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最简单数组去重法</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 新建一新数组，遍历传入数组，值不在新数组就push进该新数组中</span></span><br><span class="line"><span class="comment">* IE8以下不支持数组的indexOf方法</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = []; <span class="comment">//一个新的临时数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp.indexOf(array[i]) == <span class="number">-1</span>)&#123;</span><br><span class="line">            temp.push(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-2-对象键值法去重"><a href="#10-2-对象键值法去重" class="headerlink" title="10.2 对象键值法去重"></a>10.2 对象键值法去重</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 速度最快， 占空间最多（空间换时间）</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 该方法执行的速度比其他任何方法都快， 就是占用的内存大一些。</span></span><br><span class="line"><span class="comment">* 现思路：新建一js对象以及新数组，遍历传入数组时，判断值是否为js对象的键，</span></span><br><span class="line"><span class="comment">* 不是的话给对象新增该键并放入新数组。</span></span><br><span class="line"><span class="comment">* 注意点：判断是否为js对象键时，会自动对传入的键执行“toString()”，</span></span><br><span class="line"><span class="comment">* 不同的键可能会被误认为一样，例如n[val]-- n[1]、n["1"]；</span></span><br><span class="line"><span class="comment">* 解决上述问题还是得调用“indexOf”。*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = &#123;&#125;, r = [], len = array.length, val, type;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        val = array[i];</span><br><span class="line">        type = <span class="keyword">typeof</span> val;</span><br><span class="line">        <span class="keyword">if</span> (!temp[val]) &#123;</span><br><span class="line">            temp[val] = [type];</span><br><span class="line">            r.push(val);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (temp[val].indexOf(type) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            temp[val].push(type);</span><br><span class="line">            r.push(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-3-排序后相邻去除法"><a href="#10-3-排序后相邻去除法" class="headerlink" title="10.3 排序后相邻去除法"></a>10.3 排序后相邻去除法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 给传入数组排序，排序后相同值相邻，</span></span><br><span class="line"><span class="comment">* 然后遍历时,新数组只加入不与前一值重复的值。</span></span><br><span class="line"><span class="comment">* 会打乱原来数组的顺序</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">var</span> temp=[array[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( array[i] !== temp[temp.length<span class="number">-1</span>])&#123;</span><br><span class="line">            temp.push(array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-4-数组下标法"><a href="#10-4-数组下标法" class="headerlink" title="10.4 数组下标法"></a>10.4 数组下标法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 还是得调用“indexOf”性能跟方法1差不多，</span></span><br><span class="line"><span class="comment">* 实现思路：如果当前数组的第i项在当前数组中第一次出现的位置不是i，</span></span><br><span class="line"><span class="comment">* 那么表示第i项是重复的，忽略掉。否则存入结果数组。</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="comment">//如果当前数组的第i项在当前数组中第一次出现的位置是i，才存入数组；否则代表是重复的</span></span><br><span class="line">        <span class="keyword">if</span>(array.indexOf(array[i]) == i)&#123;</span><br><span class="line">            temp.push(array[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"2"</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-5-优化遍历数组法"><a href="#10-5-优化遍历数组法" class="headerlink" title="10.5 优化遍历数组法"></a>10.5 优化遍历数组法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 思路：获取没重复的最右一值放入新数组</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 推荐的方法</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 方法的实现代码相当酷炫，</span></span><br><span class="line"><span class="comment">* 实现思路：获取没重复的最右一值放入新数组。</span></span><br><span class="line"><span class="comment">* （检测到有重复值时终止当前循环同时进入顶层循环的下一轮判断）*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniq</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = [];</span><br><span class="line">    <span class="keyword">var</span> index = [];</span><br><span class="line">    <span class="keyword">var</span> l = array.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; l; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (array[i] === array[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push(array[i]);</span><br><span class="line">        index.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(index);</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aa = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(uniq(aa));</span><br></pre></td></tr></table></figure>
-
-<h3 id="11-请描述一下cookies，sessionStorage和localStorage的区别？"><a href="#11-请描述一下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="11. 请描述一下cookies，sessionStorage和localStorage的区别？"></a>11. 请描述一下cookies，sessionStorage和localStorage的区别？</h3><p><img src="/2020/12/20/26-自学/7.png" alt="BP"></p>
-<h3 id="12-使用js实现链表数据结构-增-删-该-查-打印"><a href="#12-使用js实现链表数据结构-增-删-该-查-打印" class="headerlink" title="12.使用js实现链表数据结构(增 删 该 查 打印)"></a>12.使用js实现链表数据结构(增 删 该 查 打印)</h3><ul>
-<li><p>链表是一种非线性、非顺序的物理结构，是由若干个节点组成。</p>
-</li>
-<li><p>链表采用的是“见缝插针”的存储方法，不要求内存连续，靠next指针关联起来。</p>
-</li>
-<li><p>链表的物理存储方式为随机存储，访问方式为顺序访问。</p>
-</li>
-<li><p>查找节点的时间复杂度为O(n)，插入、删除节点的时间复杂度为O(1)。</p>
-</li>
-<li><p>链表适用于写操作多，读操作少的场景。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*======定义结构======*/</span></span><br><span class="line"><span class="keyword">var</span> node = <span class="function"><span class="keyword">function</span> (<span class="params">element</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.element = element</span><br><span class="line">	<span class="keyword">this</span>.next = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> linkedList = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.head = <span class="keyword">new</span> node(<span class="string">"head"</span>)</span><br><span class="line">	<span class="keyword">this</span>.find = find</span><br><span class="line">	<span class="keyword">this</span>.insert = insert</span><br><span class="line">	<span class="keyword">this</span>.update = update</span><br><span class="line">	<span class="keyword">this</span>.remove = remove</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======查找======*/</span></span><br><span class="line"><span class="keyword">var</span> find = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> currNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======插入======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*newElement:一个新节点，item:链表的目标节点</span></span><br><span class="line"><span class="comment">*1.查找找到目标节点，将新节点的next指向目标节点的下一个节点</span></span><br><span class="line"><span class="comment">*2.将目标节点的next指向这个新节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> insert = <span class="function"><span class="keyword">function</span> (<span class="params">newElement, item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> newNode = <span class="keyword">new</span> node(newElement)</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	newNode.next = currNode.next</span><br><span class="line">	currNode.next = newNode</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======修改======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*查找到目标节点，将其element修改</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> update = <span class="function"><span class="keyword">function</span> (<span class="params">item, newItem</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.find(item)</span><br><span class="line">	currNode.element = newItem</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======删除======*/</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*找到匹配节点的前一个节点，将其next指向当前节点的下一个节点，即删除当前节点</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> remove = <span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">	<span class="keyword">while</span> (currNode.next !== <span class="literal">null</span> &amp;&amp; currNode.next.element !== item) &#123;</span><br><span class="line">		currNode = currNode.next</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (currNode.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">		currNode.next = currNode.next.next</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*======测试代码======*/</span></span><br><span class="line"><span class="keyword">var</span> list = <span class="keyword">new</span> linkedList();</span><br><span class="line">list.insert(<span class="string">'first'</span>, <span class="string">'head'</span>)</span><br><span class="line">list.insert(<span class="string">'second'</span>, <span class="string">'first'</span>)</span><br><span class="line">list.insert(<span class="string">'third'</span>, <span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.find(<span class="string">'first'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list.find(<span class="string">'first'</span>))</span><br><span class="line">list.update(<span class="string">'third'</span>, <span class="string">'three'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br><span class="line">list.remove(<span class="string">'second'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(list)</span><br></pre></td></tr></table></figure>
-
-<h4 id="单链表图解："><a href="#单链表图解：" class="headerlink" title="单链表图解："></a>单链表图解：</h4><p><img src="/2020/12/20/26-自学/8.png" alt="BP"></p>
-</li>
-</ul>
-<h3 id="13-总结-MVC-和-MVVM"><a href="#13-总结-MVC-和-MVVM" class="headerlink" title="13.总结  MVC 和 MVVM"></a>13.总结  MVC 和 MVVM</h3><h4 id="13-1-MVC"><a href="#13-1-MVC" class="headerlink" title="13.1 MVC"></a>13.1 MVC</h4><p>MVC是 Model-View-Controller 的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即 Controller 指的是页面业务逻辑。使用MVC的目的就是将 M 和 V 的代码分离。MVC 是单向通信。也就是View 跟 Model，必须通过Controller来承上启下。MVC 和MVVM的区别并不是 VM完全取代了C，只是在MVC的基础上增加了一层VM，只不过是弱化了C的概念，ViewModel 存在目的在于抽离Controller中展示的业务逻辑，而不是替代Controller，其它视图操作业务等还是应该放在Controller中实现。也就是说MVVM实现的是业务逻辑组件的重用，使开发更高效，结构更清晰，增加代码的复用性。</p>
-<p><img src="/2020/12/20/26-自学/9.jpg" alt="BP"></p>
-<h4 id="13-2-MVVM"><a href="#13-2-MVVM" class="headerlink" title="13.2 MVVM"></a>13.2 MVVM</h4><p>MVVM即Model-View-ViewModel的简写。即模型-视图-视图模型。模型（Model）指的是后端传递的数据。视图(View)指的是所看到的页面。视图模型(ViewModel)是mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将模型（Model）转化成视图(View)，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将视图(View)转化成模型(Model)，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听。这两个方向都实现的，我们称之为数据的双向绑定。</p>
-<p><img src="/2020/12/20/26-自学/10.jpg" alt="BP"></p>
-<h4 id="13-3-总结"><a href="#13-3-总结" class="headerlink" title="13.3 总结"></a>13.3 总结</h4><p>MVVM和MVC的区别就在于，MVVM将MVC中的数据解析功能剥离了出来，将这部分的工作交给了VM来做：</p>
-<p>在MVC里，View是可以直接访问Model的，所以View里会包含Model信息以及一些业务逻辑。 MVC模型关注的是Model的不变，所以在MVC模型里，Model不依赖于View，但是 View是依赖于Model的。不仅如此，因为有一些业务逻辑在View里实现了，导致要更改View也是比较困难的，至少那些业务逻辑是无法重用的。</p>
-<p>MVVM在概念上是真正将页面与数据逻辑分离的模式，它把数据绑定工作放到一个JS里去实现，而这个JS文件的主要功能是完成数据的绑定，即把model绑定到UI的元素上。此外MVVM另一个重要特性双向绑定，它更方便你去同时维护页面上都依赖于某个字段的N个区域，而不用手动更新它们。</p>
-<p><img src="/2020/12/20/26-自学/11.png" alt="BP"></p>
-<h3 id="14-总结前端性能优化方案，前端兼容性问题"><a href="#14-总结前端性能优化方案，前端兼容性问题" class="headerlink" title="14.总结前端性能优化方案，前端兼容性问题"></a>14.总结前端性能优化方案，前端兼容性问题</h3><ol>
-<li>减少 HTTP请求数<ul>
-<li>从设计实现层面简化页面</li>
-<li>合理设置 HTTP缓存</li>
-<li>资源合并与压缩</li>
-<li>CSS Sprites（精灵图）</li>
-<li>Lazy Load Images（懒加载）</li>
-</ul>
-</li>
-<li>将 js 文件置底<ul>
-<li>外链脚本在加载时却会阻塞其他资源，例如在脚本加载完成之前，它后面的图片、样式以及其他脚本都处于阻塞状态，直到脚本加载完成后才会开始加载</li>
-</ul>
-</li>
-<li>将 CSS放在 head 中</li>
-<li>在js中尽量减少闭包的使用(闭包不会释放栈内存)</li>
-<li>进行js和css文件的合并</li>
-<li>减少对DOM的操作（主要是减少DOM的重绘和回流（重排）</li>
-<li>避免重定向（301：资源永久转移/302：暂时转移）</li>
-<li>交互时，数据尽可能基于json格式进行传送（处理方便，资源偏小）==》相对于XML</li>
-<li>尽量减少filter属性滤镜的使用。</li>
-<li>基于AJAX的get请求根据需求产生缓存（非304），但不建议使用</li>
-<li>css中设置定位后，最好使用z-index改变层级，让盒子不在同一平面上，性能会提高一丢</li>
-<li>避免使用iframe</li>
-<li>基于script调用js的时候，使用defer或者async来异步加载</li>
-<li>使用window.requestAnimationFrame（js的帧动画）代替传统的定时器动画</li>
-<li>页面中数据获取采用异步编程和延迟分批加载</li>
-</ol>
-<p>本文从页面级以及代码级两个粒度对前端优化的各种方式做了一个总结，这些方法基本上都是前端开发人员在开发的过程中可以借鉴和实践的，除此之外，完整的前端优化还应该包括很多其他的途径，例如 CDN、 Gzip、多域名、无 Cookie服务器等等</p>
-<h3 id="15-cookie的弊端"><a href="#15-cookie的弊端" class="headerlink" title="15.cookie的弊端"></a>15.cookie的弊端</h3><p>(1) Cookie数量和长度的限制</p>
-<p>   1.IE6或更低版本一个站点最多20个cookie</p>
-<p>   2.IE7和之后的版本一个站点可以有50个cookie。</p>
-<p>   3.Firefox一个站点最多50个cookie</p>
-<p>   4.chrome和Safari没有做硬性限制</p>
-<p>(2) 安全性问题，因为Cookie是保存在客户端，所以很可能被用户人为篡改。</p>
-<p>(3) 长度限制，每个cookie长度不能超过4KB，否则会被截掉。</p>
-<p>(4) Cookie只能保存非中文的字符串。</p>
-<h3 id="16-Ajax的常用方法"><a href="#16-Ajax的常用方法" class="headerlink" title="16. Ajax的常用方法"></a>16. Ajax的常用方法</h3><p>1.open方法：与服务器建立连接<br>2.send方法：向服务器发送数据<br>3.onreadystatechange：监听服务器响应的回调<br>4.responseText/responseXML：获取服务器响应的数据<br>5.readyState：ajax的状态码，4表示ajax响应已经完成</p>
-<h3 id="17-js事件循环"><a href="#17-js事件循环" class="headerlink" title="17. js事件循环"></a>17. js事件循环</h3><p><img src="/2020/12/20/26-自学/12.png" alt="BP"></p>
-<p>先执行主线程执行栈的内容（Promise），再执行微队列的内容（.then（）），最后执行宏队列的内容（setTimeout）的内容。如果宏队列里有为队列的任务，再入微队列。</p>
-<h4 id="17-1-任务队列"><a href="#17-1-任务队列" class="headerlink" title="17.1 任务队列"></a>17.1 任务队列</h4><ul>
-<li><p>JS分为同步任务和异步任务</p>
-</li>
-<li><p>同步任务都在主线程上执行，形成一个执行栈</p>
-</li>
-<li><p>主线程之外，事件触发线程管理着一个任务队列（包括 <strong>宏任务队列</strong> 和 <strong>微任务队列</strong>），只要异步任务有了运行结果，就在任务队列之中放置一个事件。</p>
-</li>
-<li><p>一旦执行栈中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行</p>
-</li>
-</ul>
-<h5 id="17-1-1-宏任务"><a href="#17-1-1-宏任务" class="headerlink" title="17.1.1 宏任务"></a>17.1.1 宏任务</h5><p>task主要包含：script(整体代码)、setTimeout、setInterval、I/O、UI交互事件、postMessage、MessageChannel、setImmediate(Node.js 环境)</p>
-<h5 id="17-1-2-微任务"><a href="#17-1-2-微任务" class="headerlink" title="17.1.2 微任务"></a>17.1.2 微任务</h5><p>microtask主要包含：Promise.then、MutaionObserver、process.nextTick(Node.js 环境)</p>
-<p><img src="/2020/12/20/26-自学/13.png" alt="BP"></p>
-<p><img src="/2020/12/20/26-自学/14.png" alt="BP"></p>
-<p>我们知道Promise中的异步体现在<code>then</code>和<code>catch</code>中，所以写在Promise中的代码是被当做同步任务立即执行的。</p>
-<p><strong>实际上await是一个让出线程的标志。await后面的表达式会先执行一遍，将await后面的代码加入到microtask中，然后就会跳出整个async函数来执行后面的代码。</strong></p>
-<h3 id="18-手写Promise"><a href="#18-手写Promise" class="headerlink" title="18.手写Promise"></a>18.手写Promise</h3><ol>
-<li>promise里的方法：resolve ， reject</li>
-<li>promise的属性：value ，reason</li>
-<li>.then()的方法</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Promise</span> </span>&#123;</span><br><span class="line">		<span class="keyword">constructor</span>(fn) &#123;</span><br><span class="line">			<span class="keyword">this</span>.state = <span class="string">"pending"</span>;</span><br><span class="line">			<span class="keyword">this</span>.value = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">this</span>.reason = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">this</span>.then = <span class="function"><span class="keyword">function</span> (<span class="params">onFulfilled, onRejected</span>) </span>&#123;</span><br><span class="line">				<span class="keyword">switch</span> (<span class="keyword">this</span>.state) &#123;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'fulfilled'</span>:</span><br><span class="line">						onFulfilled(<span class="keyword">this</span>.value)</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					<span class="keyword">case</span> <span class="string">'rejected'</span>:</span><br><span class="line">						onRejected(<span class="keyword">this</span>.reason)</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">let</span> resolve = <span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="keyword">this</span>.state == <span class="string">'pending'</span>) &#123;</span><br><span class="line">					<span class="keyword">this</span>.state = <span class="string">'fulfilled'</span>;</span><br><span class="line">					<span class="keyword">this</span>.value = value;</span><br><span class="line"></span><br><span class="line">					<span class="comment">//console.log("resolve执行了",this.value)</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">let</span> reject = <span class="function"><span class="params">reason</span> =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="keyword">this</span>.state == <span class="string">'pending'</span>) &#123;</span><br><span class="line">					<span class="keyword">this</span>.state = <span class="string">'reject'</span>;</span><br><span class="line">					<span class="keyword">this</span>.reason = reason;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//执行fn函数</span></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				fn(resolve, reject)</span><br><span class="line">			&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">				reject(e)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"22222"</span>)</span><br><span class="line">		resolve(<span class="string">"董文斌"</span>)</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Promise.then()接收两个函数作为参数，</span></span><br><span class="line">	<span class="comment">// 第一个函数是Promise成功的回调</span></span><br><span class="line">	<span class="comment">// 第二个函数是失败的回调</span></span><br><span class="line">	p.then(<span class="function">(<span class="params">msg</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(msg,<span class="string">"AAAAAAAAAAAAAAAAA"</span>)</span><br><span class="line">	&#125;, (err) =&gt; &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(err,<span class="string">"bbbbbbbbbbbbbbbbbbbS"</span>)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="19-position常用的属性"><a href="#19-position常用的属性" class="headerlink" title="19.position常用的属性"></a>19.position常用的属性</h3><p>1.absolute:绝对定位，脱标，不保留原空间，相对于 static 定位以外的第一个父元素进行定位。<br>2.relative:相对定位，不脱标，原位置仍占用空间，相对于其正常位置进行定位。<br>3.fixed:绝对定位，脱标，相对于浏览器窗口进行定位。<br>4.static:静态定位，没有定位，元素出现在正常的流中。<br>5.inherit:规定应该从父元素继承 position 属性的值</p>
-<h3 id="20-回流"><a href="#20-回流" class="headerlink" title="20.回流"></a>20.回流</h3><p> 文档初次加载时，HTML解析器会解析元素构建DOM树，CSS解析器将样式解析为样式结构体，之后通过DOM树和样式结构体构建渲染树，渲染树具有样式属性。然后遍历渲染树的每个渲染器将器布局到页面，最后浏览器将器绘制到页面。</p>
-<p>重绘：当元素的外观或外观可见性（visibility）发生变化时会触发重绘</p>
-<p>回流(重排)：render树中的部分或全部因为元素的规模尺寸、布局、隐藏等改变，需要重新计算render树。</p>
-<p>​    回流时，浏览器会使渲染树中受影响的部分失效，然后重新构造这部分的render树。完成回流之后浏览器会重新布局、绘制受影响的部分到屏幕中，该过程就是重绘。所以回流必定会引起重绘，但重绘不一定引起回流</p>
-<p>​    每个页面至少需要一次回流，就是页面第一次加载时。回流变化涉及到部分页面（或整个页面）的布局。一个元素的回流导致其所有子元素以及DOM中紧随其后的祖先元素和其子元素都发生回流。</p>
-<p>是什么导致回流呢？</p>
-<p>​    （1） 调整窗口大小—-发生resize事件时</p>
-<p>​    （2） 元素位置改变</p>
-<p>​    （3） 元素尺寸改变——边距、填充、边框、高度和宽度</p>
-<p>​    （4） 内容改变——比如文本字体或图片大小改变而引起的宽度和高度改变</p>
-<p>​    （5） 页面渲染初始化</p>
-<p>​    （6） 添加或删除可见的DOM元素</p>
-<p>聪明的浏览器</p>
-<p>​     很多浏览器都会优化repaint和reflow操作，浏览器会维护1个队列，把所有会引起回流、重绘的操作放入这个队列，等队列中的操作到了一定的数量或者到了一定的时间间隔，浏览器就会把flush队列，进行一个批处理。这样就会让多次的回流、重绘变成一次回流重绘。 虽然有了浏览器的优化，但有时候我们写的一些代码可能会强制浏览器提前flush队列，比如设置width，offsetTop，scrollTop,clientTop精确值时，这样浏览器的优化可能就起不到作用了。</p>
-<p>避免回流和重绘方法</p>
-<p>​     减少回流、重绘其实就是需要减少对render tree的操作，并减少对一些style信息的请求，尽量利用好浏览器的优化策略</p>
-<p>   （1） 避免操作DOM，创建一个documentFragment或div，在它上面应用所有DOM操作，最后再把它添加到window.document。也可以在一个display:none的元素上进行操作，最终把它显示出来。因为display:none上的DOM操作不会引发回流和重绘。   </p>
-<p>   （2） 让要操作的元素进行”离线处理”，处理完后一起更新，这里所谓的”离线处理”即让元素不存在于render tree中。如读取offsetLeft等属性。</p>
-<p>   （3） 尽可能在DOM树的末端改变class ，可以限制回流的范围，使其影响尽可能少的节点。</p>
-<p>   （4） 将需要多次回流的元素position属性设为absolute或fixed，这样该元素就会脱离文档流，它的变化不会影响其他元素变化。比如动画效果应用到position属性为absolute或fixed的元素上。</p>
-<p>   （5） 避免使用table布局，在布局完全建立之前，table需要很多关口，table是可以影响之前已经进入的DOM元素的显示的元素。即使一些小的变化和会导致table中所有其他节点回流。</p>
-<p>   （6） 避免使用css的JavaScript表达式，该规则较过时，但是个好主意。因为每次都需要重新计算文档，或部分文档、回流。</p>
-<h3 id="21-React和Vue有哪些不同，说说你对这两个框架的看法？"><a href="#21-React和Vue有哪些不同，说说你对这两个框架的看法？" class="headerlink" title="21.React和Vue有哪些不同，说说你对这两个框架的看法？"></a>21.React和Vue有哪些不同，说说你对这两个框架的看法？</h3><h4 id="1-React和Vue不同点"><a href="#1-React和Vue不同点" class="headerlink" title="1.React和Vue不同点"></a>1.React和Vue不同点</h4><p>1.Vue和React采用的模式不一样</p>
-<p>React严格上只针对MVC的view层，数据流向是单项的；Vue则是MVVM模式，需要创建ViewModel，实现了数据的双向绑定</p>
-<p>2.组件写法不一样</p>
-<p>React推荐的做法是 JSX + inline style, 也就是把HTML和CSS全都写进JavaScript了,即’all in js’; Vue推荐的做法是webpack+vue-loader的单文件组件格式，即html、css、js写在同一个文件，在写html的时候使用的是vue的指令。</p>
-<p>3.路由和状态管理解决方案</p>
-<p>React提供了一种称为Flux / Redux架构的创新解决方案，它代表单向数据流，是著名MVC架构的替代方案。Vue使用Vuex这个更高级架构，它集成到Vue中并提供无与伦比的体验。</p>
-<p>4.建筑工具</p>
-<p>React和Vue都有一个非常好的开发环境。只需很少或没有配置，您就可以创建应用程序，使您能够使用最新的实践和模板。在React中，有一个Create React App（CRA），在Vue中，它是vue-cli。</p>
-<p>5.监听数据变化的原理不同</p>
-<p>React 组件中的 state 对象不可以直接修改，需要使用 setState 方法来更新状态，然后内部会触发 forceUpdate 方法更新页面(forceUpdate是否会执行会参照shouldComponentUpdate方法的返回值或者比较对象的引用地址是否一致)。</p>
-<p>Vue组件中的data可以直接修改，Vue是通过数据劫持(Object.defindProperty)+观察者模式来监听数据变化从而更新页面。</p>
-<p>6.重新渲染和优化</p>
-<p>当组件的状态发生变化时，React的机制会触发整个组件树的重新呈现。您可能需要使用额外的属性(shouldComponentUpdate)来避免不必要地重新渲染子组件。</p>
-<p>但Vue提供了优化的重新渲染，Vue会跟踪每一个组件的依赖关系,不需要重新渲染整个组件树。</p>
-<p>看法</p>
-<p>实际开发中，如果想要简单、快速、灵活的开发中小型SPA单页面应用程序，推荐使用Vue，因为它容易上手。而React适用于大规模应用程序和移动应用程序，它由Facebook团队提供支持，包含许多用例、解决方案、资源和项目。</p>
-<h3 id="22-路由的理解，实现的原理是什么？"><a href="#22-路由的理解，实现的原理是什么？" class="headerlink" title="22.路由的理解，实现的原理是什么？"></a>22.路由的理解，实现的原理是什么？</h3><p>前端路由顾名思义就是一个前端不同页面的状态管理器，可以不向后台发送请求直接通过前端技术实现多个页面的效果。vue中的vue-router,react中的react-router。</p>
-<p>前端路由主要有两种模式：history模式 hash模式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1.hash模式的原理(url带有#号部分)：</span><br><span class="line">    在vue-router.js的2.8版本之前，在路由的hash部分发生了任何变化，都会执行window.onhashchange方法，在这个方法内部我们可以根据当前匹配到的hash去加载对应的组件</span><br><span class="line">    在vue-router.js的2.8版本之后，内部使用window.history.pushState来完成相应的功能</span><br><span class="line">    hash模式的特点：在切换路由的时候，不会向服务器发送请求，但是刷新网页的时候，此时会向服务器发送请求，在向服务器发送请求的时候，hash部分的信息是不会发送到服务器的，所以此时刷新网页没有问题</span><br><span class="line">            </span><br><span class="line">   localhost:8888        ---&gt;加载spa单页面应用程序</span><br><span class="line">   localhost:8888#index  ---&gt;当localhost:8888切换到localhost:8888#index 没有发送请求</span><br><span class="line">   localhost:8888#login  ---&gt;当localhost:8888#index切换到localhost:8888#login 没有发送请求     </span><br><span class="line">   localhost:8888#login  ---&gt;当我们直接刷新浏览器的时候，此时会向服务器发送请求，但是我们请求url的中hash部分不会提交到服务器，所以真正的请求地址是localhost:8888，就相当于此时重新去加载spa单页面应用程序</span><br><span class="line"></span><br><span class="line">2.history模式的原理(url中通过/表示路径)</span><br><span class="line">    内部使用window.history.pushState来处理url的变化，切换对应的组件</span><br><span class="line">    history模式的特点：在切换路由的时候，不会向服务器发送请求，但是当刷新网页的时候，此时会向服务器发送请求，如果后端没有对应的接口与此匹配，此时会报资源找不到的错误</span><br><span class="line">history模式一般情况下不能刷新网页</span><br><span class="line"></span><br><span class="line">    localhost:8888    ---&gt;加载spa单页面应用程序</span><br><span class="line">    localhost:8888/index ---&gt;当localhost:8888切换到localhost:8888/index没有发送请求</span><br><span class="line">    localhost:8888/login ---&gt;当localhost:8888/index切换到localhost:8888/login没有发送请求</span><br><span class="line"></span><br><span class="line">    localhost:8888/login  ---&gt;当我们直接刷新浏览器的时候，此时会向服务器发送请求，请求地址就是localhost:8888/login，所以如果服务器没有对应的/login接口，那么此时会报404错误</span><br></pre></td></tr></table></figure>
-
-<h3 id="23-axios、fetch与ajax有什么区别？"><a href="#23-axios、fetch与ajax有什么区别？" class="headerlink" title="23.axios、fetch与ajax有什么区别？"></a>23.axios、fetch与ajax有什么区别？</h3><h4 id="ajax："><a href="#ajax：" class="headerlink" title="ajax："></a>ajax：</h4><p>JQuery ajax 是对原生XHR的封装，除此以外还增添了对JSONP的支持。经过多年的更新维护，真的已经是非常的方便了，优点无需多言</p>
-<h4 id="axios"><a href="#axios" class="headerlink" title="axios:"></a>axios:</h4><p>是一个基于Promise的请求库，用于浏览器和nodejs中，本质上浏览器的axios也是对原生XHR的封装，只不过它是Promise的实现版本，符合最新的ES规范，它本身具有以下特征</p>
-<h4 id="fetch"><a href="#fetch" class="headerlink" title="fetch:"></a>fetch:</h4><p>fetch号称是AJAX的替代品，是在ES6出现的，使用了ES6中的promise对象。Fetch是基于promise设计的，Fetch的代码结构比起ajax简单多了，参数有点像jQuery ajax。但是一定记住fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象。</p>
-</router-link></router-link></router-link>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/27-拓展-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dong Wenbin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DWBBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/21/27-拓展-6/" itemprop="url">27.拓展-6</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-21T20:25:28+08:00">
-                2020-01-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-严格模式"><a href="#1-严格模式" class="headerlink" title="1.严格模式"></a>1.严格模式</h3><p>use strict 意思是使用严格模式，使用严格模式，一些不规范的语法将不再支持</p>
-<p>设立”严格模式”的目的，主要有以下几个：</p>
-<p>　　- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为;</p>
-<p>　　- 消除代码运行的一些不安全之处，保证代码运行的安全；</p>
-<p>　　- 提高编译器效率，增加运行速度；</p>
-<p>　　- 为未来新版本的 Javascript 做好铺垫。</p>
-<p>进入”严格模式”的标志，是下面这行语句：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">　　"use strict"</span>;</span><br></pre></td></tr></table></figure>
-
-<p>严格模式的一些特点：</p>
-<ul>
-<li><p>使调试更加容易。那些被忽略或默默失败了的代码错误，会产生错误或抛出异常，因此尽早提醒你代码中的问题，你才能更快地指引到它们的源代码。(实时显示错误代码，方便调试)</p>
-</li>
-<li><p>防止意外的全局变量（不支持隐式全局变量）。</p>
-</li>
-<li><p>禁止this关键字指向全局对象。在严格模式下，普通函数中的this默认是undefined，不再指向window；</p>
-</li>
-<li><p>对象不能有重名的属性，函数不能有重名的参数</p>
-</li>
-<li><p>使eval() 更安全。在严格模式下，新增了eval作用域。</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">   <span class="keyword">var</span> webName = <span class="string">"蚂蚁部落"</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var webName ='softwhy.com'; </span></span><br><span class="line"><span class="string">   console.log(webName)"</span>); <span class="comment">//softwhy.com</span></span><br><span class="line">   <span class="built_in">console</span>.info(webName); <span class="comment">//蚂蚁部落</span></span><br></pre></td></tr></table></figure>
-
-
-<ul>
-<li><p>严格模式下，函数的caller、arguments等信息都不可以获取</p>
-</li>
-<li><p>严格模式下，不支持8进制表示法</p>
-</li>
-<li><p>严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield</p>
-</li>
-<li><p>严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。</p>
-</li>
-</ul>
-<p>友情链接：<a href="http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html</a></p>
-<h3 id="2-Js内存管理"><a href="#2-Js内存管理" class="headerlink" title="2.  Js内存管理"></a>2.  Js内存管理</h3><pre><code>js 内存是由 GC 自动管理的</code></pre><h4 id="2-1-内存生命周期："><a href="#2-1-内存生命周期：" class="headerlink" title="2.1 内存生命周期："></a>2.1 内存生命周期：</h4><ol>
-<li><p>分配你所需要的内存</p>
-</li>
-<li><p>使用分配到的内存（读、写）</p>
-</li>
-<li><p>不需要时将其释放\归还</p>
-<p><img src="/2020/01/21/27-拓展-6/1.png" alt="BP"></p>
-</li>
-</ol>
-<p>js中垃圾收集机制原理：垃圾收集器会按照固定的时间间隔（或代码执行中预定的收集时间）， 周期性地执行这一操作：找出那些不再继续使用的变量，然后释放其占用的内存。</p>
-<h4 id="2-2-引用计数法"><a href="#2-2-引用计数法" class="headerlink" title="2.2 引用计数法"></a>2.2 引用计数法</h4><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><p>这是最初级的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
-<p>当JavaScript代码生成一个新的内存驻留项时（比如一个对象或函数），系统就会为这个项留出一块内存空间。因为这个对象可能会被传递给很多函数，并且会被指定给很多变量，所以很多代码都会指向这个对象的内存空间。JavaScript会跟踪这些指针，当最后一个指针废弃不用时，这个对象占用的内存会被释放。</p>
-<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>​    -内存泄漏问题(内存泄漏是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果)</p>
-<p>​    -循环引用问题</p>
-<h4 id="2-3-标记清除法"><a href="#2-3-标记清除法" class="headerlink" title="2.3 标记清除法"></a>2.3 标记清除法</h4><h5 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h5><p>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。</p>
-<h5 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h5><p>那些无法从根对象查询到的对象都将被清除。</p>
-<h4 id="2-4-步骤组成："><a href="#2-4-步骤组成：" class="headerlink" title="2.4 步骤组成："></a>2.4 步骤组成：</h4><ul>
-<li><p>​    垃圾回收器构建”roots”列表。Roots通常是代码中保留引用的全局变量。在JavaScript中，”window”对象可以作为 root 全局变量示例。</p>
-</li>
-<li><p>​    所有的”roots”被检查并标记为active（即不是垃圾）。所有的children也被递归检查。从”root”能够到达的一切都不被认为是垃圾。</p>
-</li>
-<li><p>​    所有为不被标记为active的内存可以被认为是垃圾了。收集器限制可以释放这些内存并将其返回到操作系统。</p>
-</li>
-</ul>
-<h3 id="3-渲染进程包含的线程"><a href="#3-渲染进程包含的线程" class="headerlink" title="3. 渲染进程包含的线程"></a>3. 渲染进程包含的线程</h3><h5 id="1-GUI渲染线程"><a href="#1-GUI渲染线程" class="headerlink" title="1. GUI渲染线程"></a>1. GUI渲染线程</h5><p> - 负责渲染浏览器界面，解析HTML，CSS，构建DOM树和RenderObject树，布局和绘制等。</p>
-<p> - 当界面需要重绘（Repaint）或由于某种操作引发回流(reflow)时，该线程就会执行</p>
-<p> - 注意，GUI渲染线程与JS引擎线程是互斥的，当JS引擎执行时GUI线程会被挂起（相当于被冻结了），GUI更新会被保存在一个队列中等到JS引擎空闲时立即被执行。</p>
-<h5 id="2-JS引擎线程"><a href="#2-JS引擎线程" class="headerlink" title="2. JS引擎线程"></a>2. JS引擎线程</h5><p> - 也称为JS内核，负责处理Javascript脚本程序。（例如V8引擎）</p>
-<p> - JS引擎线程负责解析Javascript脚本，运行代码。</p>
-<p> - JS引擎一直等待着任务队列中任务的到来，然后加以处理，一个Tab页（renderer进程）中无论什么时候都只有一个JS线程在运行JS程序</p>
-<p> - 同样注意，GUI渲染线程与JS引擎线程是互斥的，所以如果JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
-<h5 id="3-事件触发线程"><a href="#3-事件触发线程" class="headerlink" title="3. 事件触发线程"></a>3. 事件触发线程</h5><p> - 用来控制事件循环（可以理解，JS引擎自己都忙不过来，需要浏览器另开线程协助）</p>
-<p> - 当JS引擎执行代码块如setTimeOut时（也可是鼠标点击、AJAX异步请求等），会将对应任务添加到事件线程中</p>
-<p> - 当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎的处理</p>
-<p> - 注意，由于JS的单线程关系，所以这些待处理队列中的事件都得排队等待JS引擎处理（当JS引擎空闲时才会去执行）</p>
-<h5 id="4-定时触发器线程"><a href="#4-定时触发器线程" class="headerlink" title="4. 定时触发器线程"></a>4. 定时触发器线程</h5><p> - 浏览器定时计数器并不是由JavaScript引擎计数的（因为JavaScript引擎是单线程的, 如果处于阻塞线程状态就会影响记计时的准确）</p>
-<p> - 因此通过单独线程来计时并触发定时（计时完毕后，添加到事件队列中，等待JS引擎空闲后执行）</p>
-<p> - 注意，W3C在HTML标准中规定，规定要求setTimeout中低于4ms的时间间隔算为4ms。</p>
-<h5 id="5-异步http请求线程"><a href="#5-异步http请求线程" class="headerlink" title="5. 异步http请求线程"></a>5. 异步http请求线程</h5><p> - 在XMLHttpRequest在连接后是通过浏览器新开一个线程请求</p>
-<p> - 将检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件，将这个回调再放入事件队列中。再由JavaScript引擎执行。</p>
-<h3 id="4-http协议的缓存"><a href="#4-http协议的缓存" class="headerlink" title="4. http协议的缓存"></a>4. http协议的缓存</h3><h4 id="4-1-缓存的类型"><a href="#4-1-缓存的类型" class="headerlink" title="4.1 缓存的类型"></a>4.1 缓存的类型</h4><ol>
-<li><p>页面缓存</p>
-<p>页面缓存是将动态页面直接生成静态的页面放在服务器端，用户调取相同页面时，静态页面将直接下载到客户端，不再需要通过程序的运行和数据库的访问，大大节约了服务器的负载。每次访问页面时，会检测相应的缓存页面是否存在，若不存在，则连接数据库得到数据渲染页面并生成缓存页面文件，这样下次访问的页面文件就发挥作用了。</p>
-</li>
-<li><p>浏览器缓存</p>
-<p>浏览器缓存机制，主要就是 HTTP 协议的缓存机制(如 Expires;Cache-control等),还包括非HTTP协议定义的缓存机制，如使用HTML Meta标签。</p>
-</li>
-<li><p>数据缓存</p>
-<p>数据缓存是最灵活的一种缓存。但是需要在代码中额外的步骤才能使用。当所有用户都在发布信息的时候，用户发布信息后想立即看到这些数据，就需要数据缓存来实现。</p>
-<p>目前的实现分为两种方式：<br> 1.内容缓存：将缓存数据存放在服务器的内存空间中。<br> 2.文件缓存：缓存数据存放在服务器的硬盘空间中</p>
-</li>
-<li><p>数据缓存</p>
-<p>数据库的缓存一般由数据库提供，可以对表建立高速缓存。数据库中，用户可能多次执行相同的查询语句，为了提高查询效率，数据库会在内存划分一个专门的区域，用来存放用户最近执行的查询，这块区域就是缓存。</p>
-</li>
-<li><p>反向代理缓存</p>
-<p>就像代理服务器缓存和浏览器缓存一样，我们同样可以讲内容缓存在反向代理服务器上，所有缓存机制的实现仍然采用HTTP/1.1协议。</p>
-</li>
-</ol>
-<h4 id="4-2-程序的运行具有局部性特征"><a href="#4-2-程序的运行具有局部性特征" class="headerlink" title="4.2 程序的运行具有局部性特征"></a>4.2 程序的运行具有局部性特征</h4><p> 时间局部性：一个数据被访问过之后，可能很快会被再次访问到；<br> 空间局部性：一个数据被访问时，其周边的数据也有可能被访问到</p>
-<h4 id="4-3-缓存应用特点"><a href="#4-3-缓存应用特点" class="headerlink" title="4.3 缓存应用特点"></a>4.3 缓存应用特点</h4><p> 提高cache缓存命中，<br> 增强热区局部性；<br> 改善提高时效性：<br> 在缓存空间耗尽时使用LRU（最近最少使用算法）；<br> 过期：缓存清理</p>
-<h3 id="5-闭包"><a href="#5-闭包" class="headerlink" title="5. 闭包"></a>5. 闭包</h3><h4 id="5-1-概念："><a href="#5-1-概念：" class="headerlink" title="5.1 概念："></a>5.1 概念：</h4><p>定义在一个函数内部的函数，静态保存所有了父级作用域的内部函数。</p>
-<h4 id="5-2-用途："><a href="#5-2-用途：" class="headerlink" title="5.2 用途："></a>5.2 用途：</h4><ol>
-<li><p>缓存，延长变量的作用域链</p>
-</li>
-<li><p>面向对象中的对象</p>
-</li>
-<li><p>实现封装，防止变量跑到外层作用域中，发生命名冲突</p>
-</li>
-</ol>
-<h4 id="5-3-危害："><a href="#5-3-危害：" class="headerlink" title="5.3 危害："></a>5.3 危害：</h4><ol>
-<li><p>闭包有一个非常严重的问题，那就是内存浪费问题，这个内存浪费不仅仅因为它常驻内存，更重要的是，对闭包的使用不当的话会内存泄漏。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
-</li>
-<li><p>性能问题，使用闭包时，会涉及到跨作用域访问，由于闭包内部变量优先级高于外部变量，所以多查找作用域链中的一个层次，就会在一定程度上影响查找速度。</p>
-</li>
-</ol>
-<h3 id="6-多页页面通信"><a href="#6-多页页面通信" class="headerlink" title="6.  多页页面通信"></a>6.  多页页面通信</h3><p>·         localStorage</p>
-<p>·         cookie</p>
-<p>·         postMessage API支持两个页面跨域；只能传递字符串数据；参考window.open；</p>
-<p>·         url传参</p>
-<h3 id="7-箭头函数和普通函数"><a href="#7-箭头函数和普通函数" class="headerlink" title="7.  箭头函数和普通函数"></a>7.  箭头函数和普通函数</h3><p>- 普通function的提升在变量提升之前，箭头函数没有函数提升</p>
-<p>- 箭头函数没有this,super，函数体内部的this对象就是定义的时候所在的对象而不是使用时所在的对象</p>
-<p>- 箭头函数没有arguments对象，如果要用，可以使用rest参数</p>
-<p>- 箭头函数不能作为构造函数，不能被new</p>
-<p>- 箭头函数没有原型（prototype）</p>
-<p>- 不能通过call、bind、apply方法修改箭头函数中的this</p>
-<p>- 不可以使用yield命令，因此箭头函数不能做Generator函数</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/25-Angular的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2188,7 +1525,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/18.拓展-5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/26/14.react路由/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dong Wenbin">
@@ -2207,7 +1544,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/26/18.拓展-5/" itemprop="url">18.拓展-(5)</a></h1>
+                <a class="post-title-link" href="/2019/11/26/14.react路由/" itemprop="url">14.react路由</a></h1>
         
 
         <div class="post-meta">
@@ -2219,7 +1556,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:45:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-26T16:24:56+08:00">
                 2019-11-26
               </time>
             
@@ -2259,56 +1596,395 @@
       
         
           
-            <h3 id="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是-B"><a href="#1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是-B" class="headerlink" title="1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)"></a>1、将A、B、C、D四个元素次序进栈（中间可能有出栈操作，例如A进栈后出栈，B再进栈），则可能的出栈系列是(B)</h3><p>A. C A D B    B. B D C A    C. C D A B     D. D A B C</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">栈是先进后出  次序进栈  出栈的顺序应该是 D C B A（方便理解 命名为倒序）</span><br><span class="line">因为有提前出栈的可能，所以出现的可能有三种：</span><br><span class="line">①单个字母 + 倒序      ② 顺序 + 倒序    ③ 顺序</span><br></pre></td></tr></table></figure>
+            <h3 id="1-react路由基本使用"><a href="#1-react路由基本使用" class="headerlink" title="1.   react路由基本使用"></a>1.   react路由基本使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//react-router的使用步骤:</span></span><br><span class="line"><span class="comment">//1.npm install react-router-dom</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.引入HashRouter Route Link</span></span><br><span class="line"><span class="comment">//HashRouter 表示使用hash模式的路由</span></span><br><span class="line"><span class="comment">//Route 表示一个路由规则</span></span><br><span class="line"><span class="comment">//Link 表示点击跳转路由</span></span><br><span class="line"><span class="keyword">import</span> &#123; HashRouter, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*3.配置路由规则  Route同时会占坑*/</span>&#125;</span><br><span class="line">&#123;<span class="comment">/*路由默认会使用模糊匹配</span></span><br><span class="line"><span class="comment">比如：访问路径 /movie  能够匹配 / 和 /movie */</span>&#125;</span><br><span class="line">&#123;<span class="comment">/* exact表示精确匹配 ：访问路径需要和路由的路径完全一致才能匹配 */</span>&#125;  ★</span><br><span class="line">&lt;Route path=<span class="string">"/"</span> component=&#123;Home&#125; exact&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/* strict : 如果路由规则中的路径有/，则要求访问路径中也要有/才能匹配(只看/) */</span>&#125; </span><br><span class="line">&lt;Route path=<span class="string">"/about/:name/:id"</span> component=&#123;About&#125; strict&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">&lt;Route path=<span class="string">"/movie"</span> component=&#123;Movie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;<span class="comment">/*4.点击Link去访问路由*/</span>&#125;</span><br><span class="line">&lt;Link to=<span class="string">"/"</span>&gt;来到首页&lt;<span class="regexp">/Link&gt; </span></span><br><span class="line"><span class="regexp">&lt;Link to="/</span>about/zhangsan/<span class="number">13</span><span class="string">"&gt;来到关于我们&lt;/Link&gt;  &lt;Link to="</span>/movie<span class="string">"&gt;来到电影&lt;/Link&gt;</span></span><br><span class="line"><span class="string">&lt;br/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.props.history.push(<span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter (RTab);</span><br><span class="line"></span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">      &lt;RNav&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RNav</span>&gt;</span></span></span><br><span class="line">      &lt;RouterMap&gt;<span class="xml"><span class="tag">&lt;/<span class="name">RouterMap</span>&gt;</span></span></span><br><span class="line">      &lt;Button type=<span class="string">'primary'</span>&gt;按钮&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;RTab&gt;&lt;/</span>RTab&gt;  </span><br><span class="line">&lt;<span class="regexp">/HashRouter&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>hashrouter 只建议套一个，一般套在最前面</p>
+<h3 id="2-switch和redirect和组件懒加载"><a href="#2-switch和redirect和组件懒加载" class="headerlink" title="2.  switch和redirect和组件懒加载"></a>2.  switch和redirect和组件懒加载</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="comment">/*当使用组件懒加载的时候，往往是和Suspense结合使用，fallback表示组件没有加载完毕的时候显示的信息*/</span>&#125;</span><br><span class="line">&lt;Suspense fallback=&#123;&lt;div&gt;Loading...&lt;<span class="regexp">/div&gt;&#125;&gt;</span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">                    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*Switch表示路由互斥，我们使用Switch之后，只会匹配一个路由规则*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Switch&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">&#123;/</span>*我们需要给根路径的路由加上exact属性来精确匹配，否则所有的访问路径都会匹配Home组件*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">&lt;Route path="/</span><span class="string">" component=&#123;Home&#125; exact&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/about/:name/:id<span class="string">" component=&#123;About&#125; strict&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/movie<span class="string">" component=&#123;Movie&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">&lt;Route path="</span>/search<span class="string">" component=&#123;Search&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#123;/*当没有匹配的路由的时候来到跟路由*/&#125; 重定向</span></span><br><span class="line"><span class="string">&lt;Redirect to="</span>/<span class="string">" /&gt;</span></span><br><span class="line"><span class="string">&lt;/Switch&gt;</span></span><br><span class="line"><span class="string">&lt;/Suspense&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-路由的传参"><a href="#3-路由的传参" class="headerlink" title="3.路由的传参"></a>3.路由的传参</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  <span class="comment">/*通过params方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.match.params  </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/about/zhangsan/13"</span>&gt;来到关于我们-params方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">  <span class="comment">//获取路由中的参数信息</span></span><br><span class="line"> <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>About组件&#123;props.match.params.id&#125;&#123;props.match.params.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span> <span class="comment">/*通过search方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.search </span></span><br><span class="line"><span class="comment">  参数只能是字符串，而且参数会在浏览器地址栏中显示*/</span></span><br><span class="line">&lt;Link to=<span class="string">"/movie?name=xiaoming"</span>&gt;来到电影-search方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> <span class="comment">/*通过query方式传参  </span></span><br><span class="line"><span class="comment">   获取参数:props.location.query </span></span><br><span class="line"><span class="comment">   好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">query</span>: &#123; <span class="attr">name</span>: <span class="string">'sunny'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">2</span>-query方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span> <span class="comment">/*通过state方式传参</span></span><br><span class="line"><span class="comment">  获取参数:props.location.state   </span></span><br><span class="line"><span class="comment">  好处参数可以是对象，参数信息不会在浏览器的地址栏中显示，</span></span><br><span class="line"><span class="comment">  参数是加密的，所以一刷新页面参数就没了*/</span></span><br><span class="line">&lt;Link to=&#123;&#123; <span class="attr">pathname</span>: <span class="string">'/movie'</span>, <span class="attr">state</span>: &#123; <span class="attr">name</span>: <span class="string">'haha'</span> &#125; &#125;&#125;&gt;来到电影<span class="number">3</span>-state方式传参&lt;<span class="regexp">/Link&gt; &lt;br /</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-编程式导航"><a href="#4-编程式导航" class="headerlink" title="4.编程式导航"></a>4.编程式导航</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Route包裹的组件会自动将location  history  match注入到组件的props中</span></span><br><span class="line"><span class="comment">//所以在组件中直接可以使用props.location  props.history这些信息</span></span><br><span class="line"><span class="comment">// console.log(props)</span></span><br><span class="line">&lt;Route path=<span class="string">"/movie"</span> component=&#123;Movie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">props.history.push(&#123;<span class="attr">pathname</span>:<span class="string">"/search"</span>&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果组件没有使用Route包裹，那么不能使用props的location history match这三个参数</span></span><br><span class="line"><span class="comment">//如果此时我们想要用这三个参数，我们可以将当前组件使用withRouter来包裹</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//withRouter可以包装任何自定义组件，将react-router 的 history,location,match 三个对象传入</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(MovieDetail);</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-ReactCSSTransitionGroup"><a href="#5-ReactCSSTransitionGroup" class="headerlink" title="5.ReactCSSTransitionGroup"></a>5.ReactCSSTransitionGroup</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ReactCSSTransitionGroup 使用步骤</span></span><br><span class="line"><span class="comment">//1.通过npm install react-addons-css-transition-group 安装并引入</span></span><br><span class="line"><span class="keyword">var</span> ReactCSSTransitionGroup = <span class="built_in">require</span>(<span class="string">'react-addons-css-transition-group'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &#123;<span class="comment">/*2.给需要动画的元素包裹ReactCSSTransitionGroup，可以对一组元素进行过渡动画*/</span>&#125;</span><br><span class="line">&lt;ReactCSSTransitionGroup</span><br><span class="line">component=<span class="string">"ul"</span> </span><br><span class="line">transitionName=<span class="string">"example"</span>  </span><br><span class="line">transitionEnterTimeout=&#123;<span class="number">500</span>&#125; </span><br><span class="line">transitionLeaveTimeout=&#123;<span class="number">300</span>&#125; </span><br><span class="line">transitionAppear=&#123;<span class="literal">true</span>&#125; </span><br><span class="line">transitionAppearTimeout=&#123;<span class="number">500</span>&#125;&gt;</span><br><span class="line">&#123;<span class="keyword">this</span>.getItems()&#125;</span><br><span class="line">&lt;<span class="regexp">/ReactCSSTransitionGroup&gt;  </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/3.写动画的样式 (入场动画 出场动画的样式)</span></span><br><span class="line"><span class="regexp">import './</span>demo1.css<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定入场动画的开始状态*/</span></span><br><span class="line"><span class="string">.example-enter &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定入场动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-enter.example-enter-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">    transition: opacity 500ms ease-in;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定出场动画的开始状态*/</span></span><br><span class="line"><span class="string">.example-leave &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定出场动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-leave.example-leave-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">    transition: opacity 300ms ease-in;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定初始动画的样式*/</span></span><br><span class="line"><span class="string">.example-appear &#123;</span></span><br><span class="line"><span class="string">    opacity: 0.01;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/*指定初始动画的整个过程*/</span></span><br><span class="line"><span class="string">.example-appear.example-appear-active &#123;</span></span><br><span class="line"><span class="string">    opacity: 1;</span></span><br><span class="line"><span class="string">    transition: opacity .5s ease-in;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Hook"><a href="#6-Hook" class="headerlink" title="6. Hook"></a>6. Hook</h3><h4 id="6-1-hook的基本使用"><a href="#6-1-hook的基本使用" class="headerlink" title="6.1 hook的基本使用"></a>6.1 hook的基本使用</h4><p><strong><em>Hook</em></strong> <strong>是</strong> <strong>React 16.8</strong> <strong>的新增特性。它可以让你在不编写</strong> <strong>class</strong> <strong>的情况下使用</strong> <strong>state</strong> <strong>以及其他的</strong> <strong>React</strong> <strong>特性。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Demo1</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//count代表state的变量</span></span><br><span class="line">    <span class="comment">//setCount是一个function，如果我们要修改count变量，需要通过setCount来修改</span></span><br><span class="line">    <span class="keyword">let</span> [count, setCount] = useState(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> [count2, setCount2] = useState(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">let</span> [count3, setCount3] = useState(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count&#125;</span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount(++count) &#125;&#125;&gt;点我修改count<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count2&#125;</span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount2(++count2) &#125;&#125;&gt;点我修改count2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count3&#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount3(++count3) &#125;&#125;&gt;点我修改count3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Demo1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不要在循环，条件或嵌套函数中调用Hook，确保总是在你的 React 函数的最顶层调用他们。遵守这条规则，你就能确保<br>Hook 在每一次渲染中都按照同样的顺序被调用。这让 React 能够在多次的 <code>useState</code> 和 <code>useEffect</code> 调用之间保持 hook 状态的正确</li>
+</ul>
+<h4 id="6-2-effectHook"><a href="#6-2-effectHook" class="headerlink" title="6.2 effectHook"></a>6.2 effectHook</h4><p><em>Effect Hook</em> 可以让你在函数组件中执行副作用操作</p>
+<p>副作用：函数内部的代码不对函数外部的代码产生任何影响</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState,useEffect  &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> Child <span class="keyword">from</span> <span class="string">'./Child.jsx'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Demo2</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//count代表state的变量</span></span><br><span class="line">    <span class="comment">//setCount是一个function，如果我们要修改count变量，需要通过setCount来修改</span></span><br><span class="line">    <span class="keyword">let</span> [count, setCount] = useState(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> [count2, setCount2] = useState(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//useEffect函数可以来模拟class组件的中指定生命周期的钩子函数 componentDidMount，componentDidUpdate，componentWillUnmount</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//相当于componentDidMount 、componentDidUpdate</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"xxxxxxxxxxx"</span>,count)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//相当于componentDidMount</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"yyyyyyyyy"</span>)</span><br><span class="line">    &#125;,[])</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当count2的值被改变之后执行当前的useEffect，其他值改变不会执行这个useEffect</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"zzzzzzzzzzzzz"</span>)</span><br><span class="line">    &#125;,[count2])</span><br><span class="line"></span><br><span class="line">    <span class="comment">//useEffect函数中return的function会在组件重新渲染的时候以及组件卸载的时候执行</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'hello Hook'</span>)    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;count&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount(++count) &#125;&#125;&gt;点我修改count<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; setCount2(++count2) &#125;&#125;&gt;点我修改count2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Child</span>&gt;</span><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Demo2;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-3-useContext-的使用"><a href="#6-3-useContext-的使用" class="headerlink" title="6.3 useContext 的使用"></a>6.3 useContext 的使用</h4><p>作用：可以向子孙组件发布数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.在App.jsx</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;name:</span>"<span class="attr">zhangsan</span>"&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="xml">        App</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Demo2</span>&gt;</span><span class="tag">&lt;/<span class="name">Demo2</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.Child.jsx</span></span><br><span class="line"><span class="keyword">import</span> React,&#123;useContext&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> MyContext <span class="keyword">from</span> <span class="string">'@/context.js'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在子组件中获取父组件发布的数据</span></span><br><span class="line">    <span class="keyword">const</span> contextValue = useContext(MyContext);</span><br><span class="line">    <span class="built_in">console</span>.log(contextValue)</span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义context.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> MyContext = React.createContext();</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyContext;</span><br></pre></td></tr></table></figure>
 
 
+          
+        
+      
+    </div>
+    
+    
+    
 
-<h3 id="2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？"><a href="#2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？" class="headerlink" title="2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？"></a>2、JavaScript怎样添加、移除、移动、复制、创建和查找节点？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）创建新节点</span><br><span class="line">      createDocumentFragment()    <span class="comment">//创建一个DOM片段</span></span><br><span class="line">      createElement()   <span class="comment">//创建一个具体的元素</span></span><br><span class="line">      createTextNode()   <span class="comment">//创建一个文本节点</span></span><br><span class="line">（<span class="number">2</span>）添加、移除、替换、插入</span><br><span class="line">      appendChild()</span><br><span class="line">      removeChild()</span><br><span class="line">      replaceChild()</span><br><span class="line">      insertBefore()</span><br><span class="line">（<span class="number">3</span>）查找</span><br><span class="line">      getElementsByTagName()    <span class="comment">//通过标签名称</span></span><br><span class="line">      getElementsByName()    <span class="comment">//通过元素的Name属性的值</span></span><br><span class="line">      getElementById()    <span class="comment">//通过元素Id，唯一性</span></span><br></pre></td></tr></table></figure>
+    
 
-<h3 id="3、请写出Jquery-Ajax简单调用方法"><a href="#3、请写出Jquery-Ajax简单调用方法" class="headerlink" title="3、请写出Jquery Ajax简单调用方法"></a>3、请写出Jquery Ajax简单调用方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">　　type: <span class="string">"post"</span>,　　　　　　　　　　<span class="comment">//以POST的方式发送请求</span></span><br><span class="line">　　url: url,　　　　　　　　　　　　<span class="comment">//拼凑的链接及参数</span></span><br><span class="line">　　contentType: <span class="string">"application/json"</span>,</span><br><span class="line">　　dataType: <span class="string">"json"</span>,</span><br><span class="line">　　success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span></span><br><span class="line"><span class="function">　　</span>&#123;</span><br><span class="line">　　　　<span class="comment">//成功获取一般处理程序响应后执行的代码</span></span><br><span class="line">　　&#125;,</span><br><span class="line">　　error: <span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span></span><br><span class="line"><span class="function">　　</span>&#123;</span><br><span class="line">　　　　<span class="comment">//收到一般处理程序响应失败后执行的代码</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+    
 
-<h3 id="4、请你谈一谈你是如何理解前端模块化"><a href="#4、请你谈一谈你是如何理解前端模块化" class="headerlink" title="4、请你谈一谈你是如何理解前端模块化"></a>4、请你谈一谈你是如何理解前端模块化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">前端模块化侧重代码的功能封装，方便代码的分层开发，保证每个功能模块的职能单一，降低了代码的耦合度，减少重复代码，提高代码重用性</span><br></pre></td></tr></table></figure>
+    
 
+    <footer class="post-footer">
+      
 
+      
 
-<h3 id="5、请描述下cookies，sessionStorage和localStorage的区别？"><a href="#5、请描述下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="5、请描述下cookies，sessionStorage和localStorage的区别？"></a>5、请描述下cookies，sessionStorage和localStorage的区别？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">共同点：都是保存在浏览器端</span><br><span class="line">cookies：在浏览器和服务器间来回传递，数据不能超过4k，只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭，在所有同浏览器窗口中都是共享的。</span><br><span class="line">sessionStorage：不会自动把数据发给服务器，仅在本地保存，存储可以达到5M，仅在当前浏览器窗口关闭前有效，不能持久保持，且仅在当前页面中有效，不能共享。</span><br><span class="line">localStorage也不会自动把数据发给服务器，仅在本地保存，存储可以达到20M，存储在硬盘上，即使窗口或浏览器关闭也一直保存，用作持久保持，在所有同浏览器窗口中都是共享的。</span><br></pre></td></tr></table></figure>
+      
 
-
-
-<h3 id="6、什么是跨域？解决跨域的方法有哪些？"><a href="#6、什么是跨域？解决跨域的方法有哪些？" class="headerlink" title="6、什么是跨域？解决跨域的方法有哪些？"></a>6、什么是跨域？解决跨域的方法有哪些？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">跨域问题只有在前端的ajax和后台交互的过程中才会产生，当使用ajax从一个url向另外一个url发送请求时，只要两个url的协议、域名、端口号中任何一个不一样，就构成了跨域</span><br><span class="line"></span><br><span class="line">解决跨域<span class="number">9</span>种办法：</span><br><span class="line"><span class="number">1</span>、 JSONP：</span><br><span class="line">jsonp的原理就是利用&lt;script&gt;标签没有跨域限制，通过&lt;script&gt;标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。</span><br><span class="line">jsonp的缺点：只能发送<span class="keyword">get</span>一种请求。</span><br><span class="line"></span><br><span class="line">2、 跨域资源共享（CORS）</span><br><span class="line">它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</span><br><span class="line">CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</span><br><span class="line">浏览器将CORS跨域请求分为简单请求和非简单请求。</span><br><span class="line"></span><br><span class="line">3、 nginx代理跨域</span><br><span class="line">nginx代理跨域，实质和CORS跨域原理一样，通过配置文件设置请求响应头Access-Control-Allow-Origin…等字段。</span><br><span class="line"></span><br><span class="line">4、nodejs中间件代理跨域</span><br><span class="line">1）非vue框架的跨域</span><br><span class="line">使用node + express + http-proxy-middleware搭建一个proxy服务器。</span><br><span class="line">2）vue框架的跨域</span><br><span class="line">node + vue + webpack + webpack-dev-server搭建的项目，跨域请求接口，直接修改webpack.config.js配置。开发环境下，vue渲染服务和接口代理服务都是webpack-dev-server同一个，所以页面与代理接口之间不再跨域。</span><br><span class="line"></span><br><span class="line">5、 document.domain + iframe跨域</span><br><span class="line">此方案仅限主域相同，子域不同的跨域应用场景。实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。</span><br><span class="line"></span><br><span class="line">父窗口：(http://www.domain.com/a.html)</span><br><span class="line">子窗口：(http://child.domain.com/a.html)</span><br><span class="line">document.domain = 'domain.com';</span><br><span class="line">     </span><br><span class="line">6、location.hash + iframe跨域</span><br><span class="line">实现原理： a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。</span><br><span class="line"></span><br><span class="line">具体实现：A域：a.html -&gt; B域：b.html -&gt; A域：c.html，a与b不同域只能通过hash值单向通信，b与c也不同域也只能单向通信，但c与a同域，所以c可通过parent.parent访问a页面所有对象。</span><br><span class="line"></span><br><span class="line">7、window.name + iframe跨域</span><br><span class="line">window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。</span><br><span class="line"></span><br><span class="line">8、跨文档通信 API：window.postMessage()</span><br><span class="line">postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一。</span><br><span class="line">主要包括接受信息的”message”事件和发送消息的”postMessage”方法。</span><br><span class="line"></span><br><span class="line">9、WebSocket协议跨域</span><br><span class="line">WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。</span><br><span class="line"></span><br><span class="line">http://www.imooc.com/article/291931</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）"><a href="#8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）" class="headerlink" title="8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）"></a>8、写出一条Sql语句：查询User表中第11条到第30条记录（以自动增长的ID作为主键，注意：ID可能不是连续的）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">解1: select top 20 * from User where id not in (select top 10 id from User) </span><br><span class="line">解2: select top 20 * from User where id &gt; (select max(id) from (select top 10 id from User )as</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="9、请问在JavaScript程序中，alert-undefined-null-的输出结果是？（C）"><a href="#9、请问在JavaScript程序中，alert-undefined-null-的输出结果是？（C）" class="headerlink" title="9、请问在JavaScript程序中，alert(undefined == null)的输出结果是？（C）"></a>9、请问在JavaScript程序中，alert(undefined == null)的输出结果是？（C）</h3><p>  A. null   B. undefined   C. true    D. false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ECMAScript认为undefined是从null派生出来的，因此将它们定义为不严格意义上的相等，即undefined==null。</span><br><span class="line"></span><br><span class="line">console.log( undefined === null ) //false</span><br><span class="line">typeof null          //object</span><br><span class="line">typeof undefined    //undefined</span><br></pre></td></tr></table></figure>
-
-<h3 id="10、下面JavaScript代码显示结果是？（A）"><a href="#10、下面JavaScript代码显示结果是？（A）" class="headerlink" title="10、下面JavaScript代码显示结果是？（A）"></a>10、下面JavaScript代码显示结果是？（A）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="keyword">new</span> Bollean(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">If(x)&#123;</span><br><span class="line"></span><br><span class="line">alert(‘hi’);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="built_in">Boolean</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">If(y)&#123;</span><br><span class="line"></span><br><span class="line">Alert(‘hello’);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>A. Hi   B. hi hello   C. hello   D.不显示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean对象与Boolean原始值的区别   当一个值为false的Boolean对象放到条件语句当中的时候，Boolean对象的值会被当作true来计算   Boolean(0)强制转化成布尔值而不是布尔对象，仅返回一个为false的值</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="11、分析下面这两行JavaScript代码的作用（C）"><a href="#11、分析下面这两行JavaScript代码的作用（C）" class="headerlink" title="11、分析下面这两行JavaScript代码的作用（C）"></a>11、分析下面这两行JavaScript代码的作用（C）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span>  &lt;a href=<span class="string">"javascript:history.back()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="number">02</span>  &lt;a href=<span class="string">"javascript:history.forward()"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>A. 代码第1行的作用相当于前进按钮</p>
-<p>B. 代码第2行的作用相当于后退按钮</p>
-<p>C. 代码第1行的作用相当于后退按钮</p>
-<p>D. 以上表述都不正确</p>
-<h3 id="12、关于HTTP协议，下列说法错误的是（C）"><a href="#12、关于HTTP协议，下列说法错误的是（C）" class="headerlink" title="12、关于HTTP协议，下列说法错误的是（C）"></a>12、关于HTTP协议，下列说法错误的是（C）</h3><p>A. HTTP是无状态协议           B.HTTP是应用层协议</p>
-<p>C. HTTP是基于二进制的协议     D. HTTP状态码200表示成功</p>
-<h3 id="13、在HTML页面上包含如下所示的层对象，则JavaScript语句document-getElementById-“info”-innerHTML-的值是（B）"><a href="#13、在HTML页面上包含如下所示的层对象，则JavaScript语句document-getElementById-“info”-innerHTML-的值是（B）" class="headerlink" title="13、在HTML页面上包含如下所示的层对象，则JavaScript语句document.getElementById(“info”).innerHTML 的值是（B）"></a>13、在HTML页面上包含如下所示的层对象，则JavaScript语句document.getElementById(“info”).innerHTML 的值是（B）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=”info”</span><br><span class="line">style=”display:block”&gt;&lt;p&gt;请填写&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A. 请填写</span><br><span class="line"></span><br><span class="line">B. &lt;p&gt;请填写&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">C. id=”info” style=”display:block”</span><br><span class="line"></span><br><span class="line">D. &lt;div id=&quot;info&quot; style=&quot;display:block&quot;&gt;&lt;p&gt;请填写&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/12-拓展-GraphQL简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/25/12-拓展-GraphQL简介/" itemprop="url">12.拓展-GraphQL简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T16:17:41+08:00">
+                2019-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-GraphQL"><a href="#1-GraphQL" class="headerlink" title="1.GraphQL"></a>1.GraphQL</h1><h2 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h2><p>GraphQL 是一种 API 查询语言<br>GraphQL 是一种为 API 接口和查询已有数据运行时环境的查询语言. 它提供了一套完整的和易于理解的 API 接口数据描述, 给客户端权力去精准查询他们需要的数据, 而不用再去实现其他更多的代码, 使 API 接口开发变得更简单高效, 支持强大的开发者工具.</p>
+<p>友情链接：</p>
+<p><a href="https://graphql.org/" target="_blank" rel="noopener">https://graphql.org</a></p>
+<p><a href="https://graphql.js.cool/" target="_blank" rel="noopener">https://graphql.js.cool/</a></p>
+<h3 id="1-1-1-What-is-GraphQL"><a href="#1-1-1-What-is-GraphQL" class="headerlink" title="1.1.1 What is GraphQL?"></a>1.1.1 What is GraphQL?</h3><p>正如副标题所说，GraphQL 是由 Facebook 创造的用于描述复杂数据模型的一种查询语言。这里查询语言所指的并不是常规意义上的类似 sql 语句的查询语言，而是一种用于前后端数据查询方式的规范。</p>
+<h3 id="1-1-2-Why-using-GraphQL"><a href="#1-1-2-Why-using-GraphQL" class="headerlink" title="1.1.2 Why using GraphQL?"></a>1.1.2 Why using GraphQL?</h3><p>当今客户端和服务端主要的交互方式有 2 种，分别是 REST 和 ad hoc 端点。GraphQL 官网指出了它们的不足之处主要在于：当需求或数据发生变化时，它们都需要建立新的接口来适应变化，而不断添加的接口，会造成服务器代码的不断增长，即使通过增加接口版本，也并不能够完全限制服务器代码的增长。</p>
+<h5 id="GraphQL-特性"><a href="#GraphQL-特性" class="headerlink" title="GraphQL 特性"></a>GraphQL 特性</h5><ul>
+<li>首先，它是<strong>声明式的</strong>。查询的结果格式由请求方（即客户端）决定而非响应方（即服务器端）决定，也就是说，一个 GraphQL 查询结果的返回是同客户端请求时的结构一样的，不多不少，不增不减。</li>
+<li>其次，它是<strong>可组合的</strong>。一个 GraphQL 的查询结构是一个有层次的字段集，它可以任意层次地进行嵌套或组合，也就是说它可以通过对字段进行组合、嵌套来满足需求。</li>
+<li>第三，它是<strong>强类型的</strong>。强类型保证，只有当一个 GraphQL 查询满足所设定的查询类型，那么查询的结果才会被执行。</li>
+</ul>
+<p><img src="/2019/11/25/12-拓展-GraphQL简介/3.png" alt="BP"></p>
+<h2 id="1-2-Node-js-环境简单用法"><a href="#1-2-Node-js-环境简单用法" class="headerlink" title="1.2  Node.js 环境简单用法"></a>1.2  Node.js 环境简单用法</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p>GraphQL 规范的参考实现, 专为在 Node.js 环境中运行 GraphQL 而设计.</p>
+<p>通过 命令行 执行 <code>GraphQL.js</code> hello world 脚本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install graphql</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-创建-hello-js"><a href="#2-创建-hello-js" class="headerlink" title="2.创建 hello.js"></a>2.创建 hello.js</h3><p>然后执行 <code>node hello.js</code>.</p>
+<p><code>hello.js</code>源码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; graphql, buildSchema &#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> schema = buildSchema(<span class="string">`</span></span><br><span class="line"><span class="string">  type Query &#123;</span></span><br><span class="line"><span class="string">    hello: String</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> root = &#123; <span class="attr">hello</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'Hello world!'</span> &#125;;</span><br><span class="line"></span><br><span class="line">graphql(schema, <span class="string">'&#123; hello &#125;'</span>, root).then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(response);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-Express-运行"><a href="#1-3-Express-运行" class="headerlink" title="1.3 Express 运行"></a>1.3 Express 运行</h2><p>通过 Express 实现的 GraphQL 参考实现, 你可以联合 Express 运行或独立运行.</p>
+<p>为了方便下面的步骤，我们在graphql文件夹中手动创建下面的目录结构，并安装指定的依赖</p>
+<p><img src="/2019/11/25/12-拓展-GraphQL简介/1.png" alt="BP"></p>
+<p>运行一个 <code>express-graphql</code> 安装项目依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express express-graphql graphql</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-index-js代码"><a href="#1-index-js代码" class="headerlink" title="1.index.js代码"></a>1.index.js代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> expressGraphql = <span class="built_in">require</span>(<span class="string">'express-graphql'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="comment">// 配置路由</span></span><br><span class="line">app.use(<span class="string">'/graphql'</span>, expressGraphql(<span class="function"><span class="params">req</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    schema: <span class="built_in">require</span>(<span class="string">'./schema'</span>), <span class="comment">// graphql相关代码主目录</span></span><br><span class="line">    graphiql: <span class="literal">true</span> <span class="comment">// 是否开启可视化工具</span></span><br><span class="line">    <span class="comment">// ... 此处还有很多参数，为了简化文章，此处就一一举出, 具体可以看 刚才开篇提到的 express文档,</span></span><br><span class="line">    <span class="comment">// 也可以在文章末尾拉取项目demo进行查阅</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 服务使用3000端口</span></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"graphql server is ok open http://localhost:3000/graphql"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-graphql-schema-js代码"><a href="#2-graphql-schema-js代码" class="headerlink" title="2.graphql/schema.js代码"></a>2.graphql/schema.js代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLSchema,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 规范写法，声明query(查询类型接口) 和 mutation(修改类型接口)</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">new</span> GraphQLSchema(&#123;</span><br><span class="line">  query: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Query'</span>,</span><br><span class="line">    description: <span class="string">'查询数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 查询类型接口方法名称</span></span><br><span class="line">      fetchObjectData: <span class="built_in">require</span>(<span class="string">'./queries/fetchObjectData'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  mutation: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Mutation'</span>,</span><br><span class="line">    description: <span class="string">'修改数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 修改类型接口方法名称</span></span><br><span class="line">      updateData: <span class="built_in">require</span>(<span class="string">'./mutations/updateData'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-graphql-queries-fetchObjectData-js代码"><a href="#3-graphql-queries-fetchObjectData-js代码" class="headerlink" title="3.graphql/queries/fetchObjectData.js代码"></a>3.graphql/queries/fetchObjectData.js代码</h3><p>先在graphql/queries文件夹下创建fetchObjectData.js文件, 并填入以下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLID,</span><br><span class="line">  GraphQLInt,</span><br><span class="line">  GraphQLFloat,</span><br><span class="line">  GraphQLString,</span><br><span class="line">  GraphQLBoolean,</span><br><span class="line">  GraphQLNonNull,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 定义接口返回的数据结构</span></span><br><span class="line"><span class="keyword">const</span> userType = <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">  name: <span class="string">'userItem'</span>,</span><br><span class="line">  description: <span class="string">'用户信息'</span>,</span><br><span class="line">  fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    id: &#123;</span><br><span class="line">      type: GraphQLID,</span><br><span class="line">      description: <span class="string">'数据唯一标识'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    username: &#123;</span><br><span class="line">      type: GraphQLString,</span><br><span class="line">      description: <span class="string">'用户名'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: &#123;</span><br><span class="line">      type: GraphQLInt,</span><br><span class="line">      description: <span class="string">'年龄'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    height: &#123;</span><br><span class="line">      type: GraphQLFloat,</span><br><span class="line">      description: <span class="string">'身高'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    isMarried: &#123;</span><br><span class="line">      type: GraphQLBoolean,</span><br><span class="line">      description: <span class="string">'是否已婚'</span>,</span><br><span class="line">      deprecationReason: <span class="string">"这个字段现在不需要了"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: userType,</span><br><span class="line">  description: <span class="string">'object类型数据例子'</span>,</span><br><span class="line">  <span class="comment">// 定义接口传参的数据结构</span></span><br><span class="line">  args: &#123;</span><br><span class="line">    isReturn: &#123;</span><br><span class="line">      type: <span class="keyword">new</span> GraphQLNonNull(GraphQLBoolean),</span><br><span class="line">      description: <span class="string">'是否返回数据'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params, context</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; isReturn &#125; = params</span><br><span class="line">    <span class="keyword">if</span> (isReturn) &#123;</span><br><span class="line">      <span class="comment">// 返回的数据与前面定义的返回数据结构一致</span></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">          <span class="string">"id"</span>: <span class="string">"110000199811259999"</span>,</span><br><span class="line">          <span class="string">"username"</span>: <span class="string">"DongWenbin"</span>,</span><br><span class="line">          <span class="string">"age"</span>: <span class="number">21</span>,</span><br><span class="line">          <span class="string">"height"</span>: <span class="number">182.5</span>,</span><br><span class="line">          <span class="string">"isMarried"</span>: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-graphql-mutations-updateData-js代码"><a href="#4-graphql-mutations-updateData-js代码" class="headerlink" title="4.graphql/mutations/updateData.js代码"></a>4.graphql/mutations/updateData.js代码</h3><p>先在graphql/mutations文件夹下创建updateData.js文件, 并填入以下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLInt</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: GraphQLInt,  <span class="comment">// 定义返回的数据类型</span></span><br><span class="line">  description: <span class="string">'修改例子'</span>,</span><br><span class="line">  args: &#123;  <span class="comment">// 定义传参的数据结构</span></span><br><span class="line">    num: &#123;</span><br><span class="line">      type: GraphQLInt,</span><br><span class="line">      description: <span class="string">'数量'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; num &#125; = params</span><br><span class="line">    count += num</span><br><span class="line">    <span class="keyword">return</span> count</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好了，到此为止，简单的GraphQL服务器就搭建好了，让我们来启动看看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js  // 启动项目</span><br></pre></td></tr></table></figure>
+
+<p>然后我们在浏览器打开 <a href="http://localhost:3000/graphql" target="_blank" rel="noopener">http://localhost:3000/graphql</a> 如下图所示</p>
+<p><img src="/2019/11/25/12-拓展-GraphQL简介/2.png" alt="BP"></p>
+<p>我们可以看到页面分为3栏，左边的是调用api用的，中间是调用api返回的结果 右边实际上就是我们刚才定义接口相关的东西，也就是api文档。<br>我们在左边粘贴以下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">query fetchObjectData &#123;</span><br><span class="line">  fetchObjectData(</span><br><span class="line">    isReturn: <span class="literal">true</span></span><br><span class="line">  ) &#123;</span><br><span class="line">    id</span><br><span class="line">    username</span><br><span class="line">    age</span><br><span class="line">    height</span><br><span class="line">    isMarried</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mutation updateData &#123;</span><br><span class="line">  updateData(</span><br><span class="line">    num: <span class="number">2</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-语法规范"><a href="#1-4-语法规范" class="headerlink" title="1.4 语法规范"></a>1.4 语法规范</h2><h3 id="1、导入GraphQL-js及类型"><a href="#1、导入GraphQL-js及类型" class="headerlink" title="1、导入GraphQL.js及类型"></a>1、导入GraphQL.js及类型</h3><p>graphql 无论在定义接口参数和接口返回结果时, 都需要先定义好其中所包含数据结构的类型, 这不难理解，可以理解为我们定义的就是数据模型，其中常用的类型如下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    GraphQLList,  <span class="comment">// 数组列表</span></span><br><span class="line">    GraphQLObjectType, <span class="comment">// 对象</span></span><br><span class="line">    GraphQLString, <span class="comment">// 字符串</span></span><br><span class="line">    GraphQLInt,  <span class="comment">// int类型</span></span><br><span class="line">    GraphQLFloat,  <span class="comment">// float类型</span></span><br><span class="line">    GraphQLEnumType,  <span class="comment">// 枚举类型</span></span><br><span class="line">    GraphQLNonNull,  <span class="comment">// 非空类型</span></span><br><span class="line">    GraphQLSchema <span class="comment">// schema(定义接口时使用)</span></span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、定义schema"><a href="#2、定义schema" class="headerlink" title="2、定义schema"></a>2、定义schema</h3><p>schema实例中，一般规范为<br>query: 定义查询类的接口<br>mutation: 定义修改类的接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> GraphQLSchema(&#123;</span><br><span class="line">  query: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Query'</span>, <span class="comment">// 查询实例名称</span></span><br><span class="line">    description: <span class="string">'查询数据'</span>, <span class="comment">// 接口描述</span></span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 查询类型接口方法名称</span></span><br><span class="line">      fetchDataApi1: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi1'</span>),</span><br><span class="line">      fetchDataApi2: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi2'</span>),</span><br><span class="line">      fetchDataApi3: <span class="built_in">require</span>(<span class="string">'./queries/fetchDataApi3'</span>),</span><br><span class="line">      ...</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;),</span><br><span class="line">  mutation: <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Mutation'</span>,</span><br><span class="line">    description: <span class="string">'修改数据'</span>,</span><br><span class="line">    fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">      <span class="comment">// 修改类型接口方法名称</span></span><br><span class="line">      updateDataApi1: <span class="built_in">require</span>(<span class="string">'./mutations/updateDataApi1'</span>),</span><br><span class="line">      updateDataApi2: <span class="built_in">require</span>(<span class="string">'./mutations/updateDataApi2'</span>),</span><br><span class="line">      ...</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、接口方法定义"><a href="#3、接口方法定义" class="headerlink" title="3、接口方法定义"></a>3、接口方法定义</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用需要用到的数据类型</span></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  GraphQLID,</span><br><span class="line">  GraphQLString,</span><br><span class="line">  GraphQLNonNull,</span><br><span class="line">  GraphQLObjectType</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>)</span><br><span class="line"><span class="comment">// 第一部分 定义接口返回的数据结构</span></span><br><span class="line"><span class="comment">// 不难看出来，下面定义的是</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   &#123;</span></span><br><span class="line"><span class="comment">      id</span></span><br><span class="line"><span class="comment">      username</span></span><br><span class="line"><span class="comment">   &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> userType = <span class="keyword">new</span> GraphQLObjectType(&#123;</span><br><span class="line">  name: <span class="string">'userItem'</span>,</span><br><span class="line">  description: <span class="string">'用户信息'</span>,</span><br><span class="line">  fields: <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span><br><span class="line">    id: &#123;</span><br><span class="line">      type: GraphQLID,</span><br><span class="line">      description: <span class="string">'数据唯一标识'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    username: &#123;</span><br><span class="line">      type: GraphQLString,</span><br><span class="line">      description: <span class="string">'用户名'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 第二部分 定义接口</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  type: userType,</span><br><span class="line">  description: <span class="string">'object类型数据例子'</span>,</span><br><span class="line">  <span class="comment">// 定义接口传参的数据结构</span></span><br><span class="line">  args: &#123;</span><br><span class="line">    isReturn: &#123;</span><br><span class="line">      type: <span class="keyword">new</span> GraphQLNonNull(GraphQLBoolean),</span><br><span class="line">      description: <span class="string">'是否返回数据'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  resolve: <span class="function">(<span class="params">root, params, context</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; isReturn &#125; = params</span><br><span class="line">    <span class="comment">// 返回的数据与前面定义的返回数据结构一致</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">       <span class="string">"id"</span>: <span class="string">"5bce2b8c7fde05hytsdsc12c"</span>,</span><br><span class="line">       <span class="string">"username"</span>: <span class="string">"Davis"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-5-前后端交互（入门）"><a href="#1-5-前后端交互（入门）" class="headerlink" title="1.5 前后端交互（入门）"></a>1.5 前后端交互（入门）</h2><h3 id="1、准备"><a href="#1、准备" class="headerlink" title="1、准备"></a>1、准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save express express-graphql graphql cors</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-服务器端代码app-js"><a href="#2-服务器端代码app-js" class="headerlink" title="2.服务器端代码app.js"></a>2.服务器端代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> graphqlHTTP = <span class="built_in">require</span>(<span class="string">'express-graphql'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; buildSchema &#125; = <span class="built_in">require</span>(<span class="string">'graphql'</span>);</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">'cors'</span>); <span class="comment">// 用来解决跨域问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 schema，需要注意到：</span></span><br><span class="line"><span class="comment">// 1. 感叹号 ！ 代表 not-null</span></span><br><span class="line"><span class="comment">// 2. rollDice 接受参数</span></span><br><span class="line"><span class="keyword">const</span> schema = buildSchema(<span class="string">`</span></span><br><span class="line"><span class="string">  type Query &#123;</span></span><br><span class="line"><span class="string">    username: String</span></span><br><span class="line"><span class="string">    age: Int!</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line"><span class="keyword">const</span> root = &#123;</span><br><span class="line">    username: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'董文斌'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">100</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">app.use(cors());</span><br><span class="line">app.use(<span class="string">'/graphql'</span>, graphqlHTTP(&#123;</span><br><span class="line">    schema: schema,</span><br><span class="line">    rootValue: root,</span><br><span class="line">    graphiql: <span class="literal">true</span></span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3300</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Running a GraphQL API server at http://localhost:3300/graphql'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-客户端代码index-html"><a href="#3-客户端代码index-html" class="headerlink" title="3. 客户端代码index.html"></a>3. 客户端代码index.html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>graphql demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span>获取当前用户数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"age"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> test = <span class="built_in">document</span>.querySelector(<span class="string">'.test'</span>);</span></span><br><span class="line"><span class="javascript">    test.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> username = <span class="built_in">document</span>.querySelector(<span class="string">'.username'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> age = <span class="built_in">document</span>.querySelector(<span class="string">'.age'</span>);</span></span><br><span class="line"><span class="javascript">        fetch(<span class="string">'http://localhost:3300/graphql'</span>, &#123;</span></span><br><span class="line">            headers: &#123;</span><br><span class="line"><span class="javascript">                <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,</span></span><br><span class="line"><span class="javascript">                <span class="string">'Accept'</span>: <span class="string">'application/json'</span></span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="javascript">            method: <span class="string">'POST'</span>,</span></span><br><span class="line"><span class="javascript">            body: <span class="built_in">JSON</span>.stringify(&#123;</span></span><br><span class="line">                query: `&#123;</span><br><span class="line">                    username,</span><br><span class="line">                    age,</span><br><span class="line">            &#125;`</span><br><span class="line">            &#125;),</span><br><span class="line"><span class="javascript">            mode: <span class="string">'cors'</span> <span class="comment">// no-cors, cors, *same-origin</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> response.json();</span></span><br><span class="line">            &#125;)</span><br><span class="line"><span class="javascript">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">'返回结果'</span>, res);</span></span><br><span class="line"><span class="javascript">                username.innerHTML = <span class="string">`姓名：<span class="subst">$&#123;res.data.username&#125;</span>`</span>;</span></span><br><span class="line"><span class="javascript">                age.innerHTML = <span class="string">`年龄：<span class="subst">$&#123;res.data.age&#125;</span>`</span></span></span><br><span class="line">            &#125;)</span><br><span class="line"><span class="javascript">            .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.error(<span class="string">'错误'</span>, err);</span></span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-6-总结"><a href="#1-6-总结" class="headerlink" title="1.6 总结"></a>1.6 总结</h2><p>目前前后端的结构大概如下图。后端通过 DAO 层与数据库连接，服务于主要处理业务逻辑的 Service 层，为 Controller 层提供数据源并产出 API；前端通过浏览器 URL 进行路由命中获取目标视图状态，而页面视图是由组件嵌套组成，每个组件维护着各自的组件级状态，一些稍微复杂的应用还会使用集中式状态管理的工具，比如 Vuex、Redux、Mobx 等。前后端只通过 API 来交流，这也是现在前后端分离开发的基础。</p>
+<p><img src="/2019/11/25/12-拓展-GraphQL简介/4.png" alt="BP"></p>
+<p>如果使用 GraphQL，那么后端将不再产出 API，而是将 Controller 层维护为 Resolver，和前端约定一套 Schema，这个 Schema 将用来生成接口文档，前端直接通过 Schema 或生成的接口文档来进行自己期望的请求。</p>
+<p>经过几年一线开发者的填坑，已经有一些不错的工具链可以使用于开发与生产，很多语言也提供了对 GraphQL 的支持，比如 Java/Nodejs、Java、PHP、Ruby、Python、Go、C# 等。</p>
+<p>一些比较有名的公司比如 Twitter、IBM、Coursera、Airbnb、Facebook、Github、携程等，内部或外部 API 从 RESTful 转为了 GraphQL 风格，特别是 Github，它的 v4 版外部 API 只使用 GraphQL。据一位在 Twitter 工作的大佬说硅谷不少一线二线的公司都在想办法转到 GraphQL 上，但是同时也说了 GraphQL 还需要时间发展，因为将它使用到生产环境需要前后端大量的重构，这无疑需要高层的推动和决心。</p>
+<p>正如尤雨溪所说，为什么 GraphQL 两三年前没有广泛使用起来呢，可能有下面两个原因：</p>
+<blockquote>
+<ol>
+<li>GraphQL 的 field resolve 如果按照 naive 的方式来写，每一个 field 都对数据库直接跑一个 query，会产生大量冗余 query，虽然网络层面的请求数被优化了，但数据库查询可能会成为性能瓶颈，这里面有很大的优化空间，但并不是那么容易做。FB 本身没有这个问题，因为他们内部数据库这一层也是抽象掉的，写 GraphQL 接口的人不需要顾虑 query 优化的问题。</li>
+<li>GraphQL 的利好主要是在于前端的开发效率，但落地却需要服务端的全力配合。如果是小公司或者整个公司都是全栈，那可能可以做，但在很多前后端分工比较明确的团队里，要推动 GraphQL 还是会遇到各种协作上的阻力。</li>
+</ol>
+</blockquote>
+<p>大约可以概括为性能瓶颈和团队分工的原因，希望随着社区的发展，基础设施的完善，会渐渐有完善的解决方案提出，让广大前后端开发者们可以早日用上此利器。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/25/11.react生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong Wenbin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DWBBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/25/11.react生命周期/" itemprop="url">11.react生命周期</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T16:16:07+08:00">
+                2019-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-React父子组件通信"><a href="#1-React父子组件通信" class="headerlink" title="1. React父子组件通信"></a>1. React父子组件通信</h3><h4 id="1-1-父亲给孩子传递参数"><a href="#1-1-父亲给孩子传递参数" class="headerlink" title="1.1 父亲给孩子传递参数"></a>1.1 父亲给孩子传递参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        App</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">CMTItem</span> <span class="attr">name</span>=<span class="string">&#123;</span>'<span class="attr">zhangsan</span>'&#125; &#123;<span class="attr">...obj</span>&#125;&gt;</span><span class="tag">&lt;/<span class="name">CMTItem</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-孩子给父亲传递参数"><a href="#1-2-孩子给父亲传递参数" class="headerlink" title="1.2 孩子给父亲传递参数"></a>1.2 孩子给父亲传递参数</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">// 父亲中用来接收参数的函数 </span></span><br><span class="line">&gt; getChild = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">&gt;         <span class="keyword">const</span> id = <span class="keyword">this</span>.state.CommentList.length + <span class="number">1</span>;</span><br><span class="line">&gt;         <span class="built_in">console</span>.log()</span><br><span class="line">&gt;         obj.id = id;</span><br><span class="line">&gt;         <span class="built_in">console</span>.log(<span class="string">"父亲接收数据的方法"</span>,obj);</span><br><span class="line">&gt;         <span class="keyword">this</span>.setState(<span class="function">(<span class="params">state</span>) =&gt;</span>(&#123;</span><br><span class="line">&gt;             CommentList :[obj,...this.state.CommentList] ★★</span><br><span class="line">&gt;             <span class="comment">// 用来添加到数组，</span></span><br><span class="line">&gt;         &#125;))</span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt; <span class="comment">// 父亲中的子组件的使用</span></span><br><span class="line">&gt;      <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">&gt;         App</span></span><br><span class="line"><span class="xml">&gt;         <span class="tag">&lt;<span class="name">CMTItem</span> <span class="attr">func</span>=<span class="string">&#123;reload&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">CMTItem</span>&gt;</span></span></span><br><span class="line"><span class="xml">&gt;     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="comment">// 按钮绑定的函数用来传递数据</span></span><br><span class="line">&gt; postComment = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">&gt;         <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">&gt;         obj.user = <span class="keyword">this</span>.refs.user.value</span><br><span class="line">&gt;         obj.content = <span class="keyword">this</span>.refs.content.value</span><br><span class="line">&gt;         <span class="built_in">console</span>.log(obj)</span><br><span class="line">&gt;         <span class="keyword">if</span>(<span class="keyword">this</span>.refs.user.value&amp;&amp; <span class="keyword">this</span>.refs.content.value)&#123;</span><br><span class="line">&gt;             <span class="keyword">this</span>.props.func(obj); ★</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;         <span class="keyword">this</span>.refs.user.value = <span class="keyword">this</span>.refs.content.value =<span class="string">""</span></span><br><span class="line">&gt;     &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="1-3-Context的跨层传递"><a href="#1-3-Context的跨层传递" class="headerlink" title="1.3 Context的跨层传递"></a>1.3 Context的跨层传递</h4><ul>
+<li>使用要点：1.保证父子组件必须是类组件 ★</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个方法用于给子孙组件传递数据 (数据的跨层传递)</span></span><br><span class="line">    getChildContext() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            color: <span class="keyword">this</span>.state.color</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义向子孙组件传递的数据的类型</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">    color: PropTypes.string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子组件在使用父组件context数据的时候首先需要对父组件传递过来的数据做类型校验</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line">    <span class="comment">//从this.context中获取跨层传递的数据</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>这是CMTChild组件 &#123;this.context.color&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-react-组件的生命周期"><a href="#2-react-组件的生命周期" class="headerlink" title="2. react 组件的生命周期"></a>2. react 组件的生命周期</h3><h4 id="2-1-对比-vue-的生命周期"><a href="#2-1-对比-vue-的生命周期" class="headerlink" title="2.1 对比 vue 的生命周期"></a>2.1 对比 vue 的生命周期</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue生命周期：</span><br><span class="line"><span class="number">1.</span>	beforeCreate     组件创建之前，此时method和state还不可以使用</span><br><span class="line"><span class="number">2.</span>	created         组件创建完毕，此时method和state可以使用</span><br><span class="line"><span class="number">3.</span>	beforeMount    在内存中创建虚拟dom，此时页面还没有挂载</span><br><span class="line"><span class="number">4.</span>	mounted        内存中虚拟dom已经渲染到页面，此时页面是最新的</span><br><span class="line"><span class="number">5.</span>	beforeUpdate    页面更新之前，此时页面还是旧的</span><br><span class="line"><span class="number">6.</span>	updated        页面更新之后，此时页面是最新的</span><br><span class="line"><span class="number">7.</span>	beforeDestory    组件销毁之前</span><br><span class="line"><span class="number">8.</span>	destroyed       组件销毁之后</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-react-生命周期的介绍"><a href="#2-2-react-生命周期的介绍" class="headerlink" title="2.2 react 生命周期的介绍"></a>2.2 react 生命周期的介绍</h4><ul>
+<li>React组件的生命周期分为三个阶段：组件的创建阶段、组件的运行阶段、组件的销毁阶段</li>
+</ul>
+<h5 id="a-创建阶段"><a href="#a-创建阶段" class="headerlink" title="a. 创建阶段"></a>a. 创建阶段</h5><h6 id="1-static-defaultProps"><a href="#1-static-defaultProps" class="headerlink" title="1. static defaultProps"></a>1. static defaultProps</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在封装一个组件的时候，组件内部肯定有一些数据是必须的，哪怕用户没有传递一些相关的启动参数，这时候组件内部尽量给自己提供一个默认值；</span></span><br><span class="line"> <span class="comment">// 在 React 中使用静态的defaultProps属性来设置组件的默认属性值；</span></span><br><span class="line"> <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line">   initcount: <span class="number">0</span> <span class="comment">// 如果外界没有传递 initcount  那么自己初始化一个 数值为0</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">import</span> ReactTypes <span class="keyword">from</span> <span class="string">"prop-types"</span></span><br><span class="line"><span class="comment">// 这是创建一个 静态的 propTypes 对象，可以对外界传递过来的属性做类型校验；</span></span><br><span class="line"><span class="comment">// 注意： 如果要为传递过来的属性做类型校验，必须安装 React 提供的 第三方包叫做 prop-types ;</span></span><br><span class="line"><span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">    <span class="comment">// 使用 prop-types 包 来定义 initcount 为 number 类型</span></span><br><span class="line">    <span class="comment">// isRequired 表示这个props属性是必须要传递的 </span></span><br><span class="line">    initcount: ReactTypes.number.isRequired </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果有些数据是必须的，必须要有初始值，但是没有传递，就可以使用 static</li>
+</ul>
+<h6 id="2-constructor"><a href="#2-constructor" class="headerlink" title="2.constructor"></a>2.constructor</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.生命周期第二个执行的是constructor 构造函数 (执行一次)</span></span><br><span class="line">   <span class="comment">// 在创建组件对象的时候会自动调用构造函数</span></span><br><span class="line">   <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"constructor"</span>)</span><br><span class="line">       <span class="keyword">super</span>(props)</span><br><span class="line">       <span class="comment">//在构造函数中指定组件的私有数据</span></span><br><span class="line">       <span class="keyword">this</span>.state = &#123;</span><br><span class="line">           count: props.initcount</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">this</span>.divRef = React.createRef()</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-componentWillMount"><a href="#3-componentWillMount" class="headerlink" title="3.   componentWillMount"></a>3.   componentWillMount</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.当子组件接收到新的props会执行,在react16.4版本以后，setState修改state数据之后也会触发这个方法(执行多次)</span></span><br><span class="line">    <span class="comment">// 在该方法中不能通过this.setSate来修改state数据,因为在staic修饰的方法中就没有this</span></span><br><span class="line">    <span class="comment">//作用：将传递的props映射到state里面</span></span><br><span class="line">    <span class="comment">//参数： nextProps 外部传递过来的props属性</span></span><br><span class="line">    <span class="comment">//      prevState 之前的state状态</span></span><br><span class="line">    <span class="keyword">static</span> getDerivedStateFromProps(nextProps, prevState) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"getDerivedStateFromProps"</span>, nextProps, prevState)</span><br><span class="line">        <span class="comment">//获取到父组件中传递过来的initcount值</span></span><br><span class="line">        <span class="keyword">const</span> &#123; initcount &#125; = nextProps;</span><br><span class="line">        <span class="comment">//当父组件中传递过来的initcount发生改变了</span></span><br><span class="line">        <span class="keyword">if</span> (initcount != prevState.prevCount) &#123;</span><br><span class="line">            <span class="comment">//在方法中返回&#123;count:initcount&#125; 替换掉当前state中的 count值</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                count: initcount,</span><br><span class="line">                prevCount:initcount</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果父组件中传递过来的initcount没有变化，就返回一个空对象(此时不对当前的state做任何修改)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-render"><a href="#4-render" class="headerlink" title="4.render (){}"></a>4.render (){}</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4.创建虚拟dom，但是虚拟dom还没有挂载到页面 (执行多次)</span></span><br><span class="line">   <span class="comment">// render函数中不能使用setState()来修改state的数据，因为会死循环</span></span><br><span class="line">   render() &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"render"</span>, <span class="keyword">this</span>.divRef.current)  <span class="comment">//null</span></span><br><span class="line">       <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.divRef&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">           哈哈Counter &#123;this.state.count&#125;</span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-componentDidMount"><a href="#5-componentDidMount" class="headerlink" title="5.componentDidMount"></a>5.componentDidMount</h6><p>虚拟 dom 已经挂载到页面，此时可以获取到最新的页面（执行一次）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5.虚拟dom已经挂载到页面，此时可以获取到最新的页面 (执行一次)</span></span><br><span class="line">   componentDidMount() &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"componentDidMount"</span>, <span class="keyword">this</span>.divRef.current, <span class="keyword">this</span>.state)  <span class="comment">//null</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="b-运行阶段"><a href="#b-运行阶段" class="headerlink" title="b.  运行阶段"></a>b.  运行阶段</h5><h6 id="1-static-getDerivedStateFromProps"><a href="#1-static-getDerivedStateFromProps" class="headerlink" title="1.static getDerivedStateFromProps"></a>1.static getDerivedStateFromProps</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一个会执行：<span class="keyword">static</span> getDerivedStateFromProps</span><br><span class="line">当父组件给子组件传递的props发生变化的时候，会执行该方法。</span><br><span class="line">在react16<span class="number">.4</span>版本以后，当前组件的state发生变化，会触发forceUpdate方法，然后还是会触发该方法</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-shouldComponentUpdate"><a href="#2-shouldComponentUpdate" class="headerlink" title="2.shouldComponentUpdate"></a>2.shouldComponentUpdate</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第二个会执行: shouldComponentUpdate</span></span><br><span class="line">    <span class="comment">// 在这个函数中，我们可以设置指定条件下去更新页面，指定条件下不更新页面。这个函数中入参props和state都是最新的</span></span><br><span class="line">    <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">    shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"shouldComponentUpdate"</span>, nextProps, nextState)</span><br><span class="line">        <span class="comment">// 在 shouldComponentUpdate 中要求必须返回一个布尔值</span></span><br><span class="line">        <span class="comment">// 在 shouldComponentUpdate 中，如果返回的值是 false，则不会继续执行后续的生命周期函数，而是直接退回到了运行中的状态，此时后续的render函数并没有被调用，因此页面不会被更新，但是组件的 state 状态，却被修改了；</span></span><br><span class="line">        <span class="comment">// return nextState.count % 2 == 0 ? true : false;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-render"><a href="#3-render" class="headerlink" title="3.render"></a>3.render</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第三个会执行:render  此时会重新构建虚拟dom，但是新的虚拟dom还没有渲染到页面</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="4-getSnapshotBeforeUpdate"><a href="#4-getSnapshotBeforeUpdate" class="headerlink" title="4.getSnapshotBeforeUpdate"></a>4.getSnapshotBeforeUpdate</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第四个会执行getSnapshotBeforeUpdate 函数</span></span><br><span class="line">  <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">  getSnapshotBeforeUpdate() &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"getSnapshotBeforeUpdate"</span>)</span><br><span class="line">      <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-componentDidUpdate-★★"><a href="#5-componentDidUpdate-★★" class="headerlink" title="5.componentDidUpdate ★★"></a>5.componentDidUpdate ★★</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 在该方法中不能通过this.setSate来修改state数据</span></span><br><span class="line">    <span class="comment">//表示组件已经更新完毕  此时可以获取到最新的页面</span></span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"componentDidUpdate"</span>, <span class="keyword">this</span>.state)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//只有在 componentDidMount 这个生命周期钩子函数中才可以写 setState， 其他钩子函数统统不可以写 ★</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="c-销毁阶段"><a href="#c-销毁阶段" class="headerlink" title="c . 销毁阶段"></a>c . 销毁阶段</h5><h6 id="1-componentWillUnmount"><a href="#1-componentWillUnmount" class="headerlink" title="1. componentWillUnmount()"></a>1. componentWillUnmount()</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//很关键的，我们获取当前rootNode的scrollHeight，传到componentDidUpdate 的参数perScrollHeight</span></span><br><span class="line">  <span class="comment">//在render方法调用之后，在componentDidUpdate之前执行，我们可以在这个方法中获取到元素的滚动位置的信息</span></span><br><span class="line">  <span class="comment">//还可以在该方法中做一些样式的微调</span></span><br><span class="line">  getSnapshotBeforeUpdate() &#123;</span><br><span class="line">      <span class="comment">//console.log(this.rootNode.clientHeight)</span></span><br><span class="line">      <span class="comment">//this.rootNode.style.backgroundColor = "red";</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.rootNode.scrollHeight;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 
           
@@ -2395,7 +2071,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
